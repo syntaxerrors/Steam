@@ -29,7 +29,6 @@ class Steam_Player extends Client {
 	public function GetPlayerLevelDetails()
 	{
 		$details = $this->GetBadges();
-		// ppd($details);
 
 		$details = new Containers\Player_Level($details);
 
