@@ -1,0 +1,323 @@
+Array
+(
+    [0] => Syntax\SteamApi\Containers\Achievement Object
+        (
+            [apiName] => slayer
+            [achieved] => 0
+            [name] => Slayer - Gold
+            [description] => Kill 50000 Monsters
+        )
+
+    [1] => Syntax\SteamApi\Containers\Achievement Object
+        (
+            [apiName] => eating_off_the_floor
+            [achieved] => 0
+            [name] => Eating off the Floor - Gold
+            [description] => Destroy the Food 500 Times
+        )
+
+    [2] => Syntax\SteamApi\Containers\Achievement Object
+        (
+            [apiName] => dropper_of_treasure
+            [achieved] => 0
+            [name] => Dropper of Crowns - Gold
+            [description] => Drop the Crown 200 Times
+        )
+
+    [3] => Syntax\SteamApi\Containers\Achievement Object
+        (
+            [apiName] => as_luck_would_have_it
+            [achieved] => 0
+            [name] => As Luck Would Have It... - Gold
+            [description] => Destroy 800 Props
+        )
+
+    [4] => Syntax\SteamApi\Containers\Achievement Object
+        (
+            [apiName] => formidable_fortune
+            [achieved] => 0
+            [name] => Formidable Fortune - Gold
+            [description] => Destroy 5000 Props
+        )
+
+    [5] => Syntax\SteamApi\Containers\Achievement Object
+        (
+            [apiName] => heroic_hunger
+            [achieved] => 0
+            [name] => Heroic Hunger - Gold
+            [description] => Eat food equal to 6000 health in total
+        )
+
+    [6] => Syntax\SteamApi\Containers\Achievement Object
+        (
+            [apiName] => dying_for_a_living
+            [achieved] => 0
+            [name] => Dying for a Living - Gold
+            [description] => Die 100 Times
+        )
+
+    [7] => Syntax\SteamApi\Containers\Achievement Object
+        (
+            [apiName] => deader_than_dead
+            [achieved] => 0
+            [name] => Deader than Dead - Gold
+            [description] => Die 8 Times in one session on a single Floor
+        )
+
+    [8] => Syntax\SteamApi\Containers\Achievement Object
+        (
+            [apiName] => icy_tomb
+            [achieved] => 0
+            [name] => Icy Tomb
+            [description] => Die while Frozen
+        )
+
+    [9] => Syntax\SteamApi\Containers\Achievement Object
+        (
+            [apiName] => explosive_exit
+            [achieved] => 1
+            [name] => Explosive Exit
+            [description] => Die from Area Damage
+        )
+
+    [10] => Syntax\SteamApi\Containers\Achievement Object
+        (
+            [apiName] => embracing_the_end
+            [achieved] => 0
+            [name] => Embracing the End
+            [description] => Die by taking Area Damage from an Explosive Barrel that you are Carrying
+        )
+
+    [11] => Syntax\SteamApi\Containers\Achievement Object
+        (
+            [apiName] => suddenly_skewered
+            [achieved] => 1
+            [name] => Suddenly Skewered
+            [description] => Die by taking damage from a Spike Trap
+        )
+
+    [12] => Syntax\SteamApi\Containers\Achievement Object
+        (
+            [apiName] => seriously_severed
+            [achieved] => 0
+            [name] => Seriously Severed
+            [description] => Die by taking damage from a Blade Trap
+        )
+
+    [13] => Syntax\SteamApi\Containers\Achievement Object
+        (
+            [apiName] => whirling_death
+            [achieved] => 0
+            [name] => Whirling Death - Gold
+            [description] => Kill 12000 Monsters with Spin Attack - Warrior
+        )
+
+    [14] => Syntax\SteamApi\Containers\Achievement Object
+        (
+            [apiName] => furious_charge
+            [achieved] => 0
+            [name] => Furious Charge
+            [description] => Tackle 50 Monsters using Rush - Warrior
+        )
+
+    [15] => Syntax\SteamApi\Containers\Achievement Object
+        (
+            [apiName] => hardened_champion
+            [achieved] => 0
+            [name] => Hardened Champion - Gold
+            [description] => Take 15000 Cumulative Damage as the Warrior
+        )
+
+    [16] => Syntax\SteamApi\Containers\Achievement Object
+        (
+            [apiName] => bombardier
+            [achieved] => 0
+            [name] => Bombardier - Gold
+            [description] => Kill 12000 Monsters with Bomb/Bomb Shot - Elf
+        )
+
+    [17] => Syntax\SteamApi\Containers\Achievement Object
+        (
+            [apiName] => precision_strike
+            [achieved] => 0
+            [name] => Precision Strike
+            [description] => Kill 50 Monsters with Bomb or Sniper Shot - Elf
+        )
+
+    [18] => Syntax\SteamApi\Containers\Achievement Object
+        (
+            [apiName] => artful_dodger
+            [achieved] => 0
+            [name] => Mysteries of the Elf-folk  - Gold
+            [description] => Take 10000 Cumulative Damage as the Elf
+        )
+
+    [19] => Syntax\SteamApi\Containers\Achievement Object
+        (
+            [apiName] => the_captains_special
+            [achieved] => 0
+            [name] => The Captain's Special - Gold
+            [description] => Kill 12000 Monsters with Shield Throw - Valkyrie
+        )
+
+    [20] => Syntax\SteamApi\Containers\Achievement Object
+        (
+            [apiName] => eye_for_an_eye
+            [achieved] => 0
+            [name] => Eye for an Eye
+            [description] => Block 10 projectiles with Shield Block - Valkyrie
+        )
+
+    [21] => Syntax\SteamApi\Containers\Achievement Object
+        (
+            [apiName] => scarred_veteran
+            [achieved] => 0
+            [name] => Heir of Valhalla - Gold
+            [description] => Take 12000 Cumulative Damage as the Valkyrie
+        )
+
+    [22] => Syntax\SteamApi\Containers\Achievement Object
+        (
+            [apiName] => frostweaver
+            [achieved] => 0
+            [name] => Frostweaver - Gold
+            [description] => Kill 8000 Monsters while they are Frozen or Chilled
+        )
+
+    [23] => Syntax\SteamApi\Containers\Achievement Object
+        (
+            [apiName] => pyromancer
+            [achieved] => 0
+            [name] => Flamewalker - Gold
+            [description] => Kill 8000 Monsters with Fire Spells
+        )
+
+    [24] => Syntax\SteamApi\Containers\Achievement Object
+        (
+            [apiName] => stormcaller
+            [achieved] => 0
+            [name] => Stormcaller - Gold
+            [description] => Kill 8000 Monsters with Lightning Spells
+        )
+
+    [25] => Syntax\SteamApi\Containers\Achievement Object
+        (
+            [apiName] => accomplished_master
+            [achieved] => 0
+            [name] => Accomplished Master - Gold
+            [description] => Take 10000 Cumulative Damage as the Wizard
+        )
+
+    [26] => Syntax\SteamApi\Containers\Achievement Object
+        (
+            [apiName] => the_undeath_of_khamun
+            [achieved] => 1
+            [name] => The Undeath of Khamun
+            [description] => Kill The Boss of the Crypts
+        )
+
+    [27] => Syntax\SteamApi\Containers\Achievement Object
+        (
+            [apiName] => crypt_kicker
+            [achieved] => 0
+            [name] => Crypt Kicker - Gold
+            [description] => Complete 1 of the first 3 Crypts Chapters without dying on Unfair
+        )
+
+    [28] => Syntax\SteamApi\Containers\Achievement Object
+        (
+            [apiName] => mummy_slayer
+            [achieved] => 0
+            [name] => Mummy Slayer - Gold
+            [description] => Kill 15000 Mummies
+        )
+
+    [29] => Syntax\SteamApi\Containers\Achievement Object
+        (
+            [apiName] => skeleton_slayer
+            [achieved] => 0
+            [name] => Skeleton Slayer - Gold
+            [description] => Kill 15000 Skeletons
+        )
+
+    [30] => Syntax\SteamApi\Containers\Achievement Object
+        (
+            [apiName] => lich_slayer
+            [achieved] => 0
+            [name] => Lich Slayer - Gold
+            [description] => Kill 50 Liches
+        )
+
+    [31] => Syntax\SteamApi\Containers\Achievement Object
+        (
+            [apiName] => besting_the_beast_of_orox
+            [achieved] => 0
+            [name] => Besting the Beast of Orox
+            [description] => Kill The Boss of the Caves
+        )
+
+    [32] => Syntax\SteamApi\Containers\Achievement Object
+        (
+            [apiName] => cave_crusher
+            [achieved] => 0
+            [name] => Cave Crusher - Gold
+            [description] => Complete 1 of the first 3 Caves Chapters without dying on Unfair
+        )
+
+    [33] => Syntax\SteamApi\Containers\Achievement Object
+        (
+            [apiName] => grunt_slayer
+            [achieved] => 0
+            [name] => Grunt Slayer - Gold
+            [description] => Kill 15000 Grunts
+        )
+
+    [34] => Syntax\SteamApi\Containers\Achievement Object
+        (
+            [apiName] => orc_slayer
+            [achieved] => 0
+            [name] => Orc Slayer - Gold
+            [description] => Kill 15000 Orcs
+        )
+
+    [35] => Syntax\SteamApi\Containers\Achievement Object
+        (
+            [apiName] => giant_spider_slayer
+            [achieved] => 0
+            [name] => Spider Queen Slayer - Gold
+            [description] => Kill 50 Spider Queens
+        )
+
+    [36] => Syntax\SteamApi\Containers\Achievement Object
+        (
+            [apiName] => morak_defeated
+            [achieved] => 0
+            [name] => Morak Defeated
+            [description] => Kill The Boss of the Temple
+        )
+
+    [37] => Syntax\SteamApi\Containers\Achievement Object
+        (
+            [apiName] => temple_toppler
+            [achieved] => 0
+            [name] => Temple Toppler - Gold
+            [description] => Complete 1 of the first 3 Temple Chapters without dying on Unfair
+        )
+
+    [38] => Syntax\SteamApi\Containers\Achievement Object
+        (
+            [apiName] => cultist_slayer
+            [achieved] => 0
+            [name] => Cultist Slayer - Gold
+            [description] => Kill 15000 Cultists
+        )
+
+    [39] => Syntax\SteamApi\Containers\Achievement Object
+        (
+            [apiName] => demon_slayer
+            [achieved] => 0
+            [name] => Demon Slayer - Gold
+            [description] => Kill 15000 Demons
+        )
+
+)

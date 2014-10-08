@@ -1,0 +1,39 @@
+Array
+(
+    [0] => stdClass Object
+        (
+            [appid] => 5
+            [name] => Dedicated Server
+        )
+
+    [1] => stdClass Object
+        (
+            [appid] => 7
+            [name] => Steam Client
+        )
+
+    [2] => stdClass Object
+        (
+            [appid] => 8
+            [name] => winui2
+        )
+
+    [3] => stdClass Object
+        (
+            [appid] => 10
+            [name] => Counter-Strike
+        )
+
+    [4] => stdClass Object
+        (
+            [appid] => 20
+            [name] => Team Fortress Classic
+        )
+
+    [5] => stdClass Object
+        (
+            [appid] => 30
+            [name] => Day of Defeat
+        )
+
+)

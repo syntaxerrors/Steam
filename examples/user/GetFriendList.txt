@@ -1,0 +1,36 @@
+Array
+(
+    [0] => Syntax\SteamApi\Containers\Player Object
+        (
+            [steamId] => 76561198022436617
+            [communityVisibilityState] => 3
+            [profileState] => 1
+            [personaName] => Stygian
+            [lastLogoff] => October 8th, 2014 10:50am
+            [profileUrl] => http://steamcommunity.com/id/stygiansabyss/
+            [avatar] => <img src="http://media.steampowered.com/steamcommunity/public/images/avatars/3a/3a718856298ce108a71dfd5b0bc5eb913a8ff650.jpg" />
+            [avatarMedium] => <img src="http://media.steampowered.com/steamcommunity/public/images/avatars/3a/3a718856298ce108a71dfd5b0bc5eb913a8ff650_medium.jpg" />
+            [avatarFull] => <img src="http://media.steampowered.com/steamcommunity/public/images/avatars/3a/3a718856298ce108a71dfd5b0bc5eb913a8ff650_full.jpg" />
+            [personaState] => Online
+            [primaryClanId] => 103582791435113986
+            [timecreated] => March 15th, 2010 01:31pm
+            [personaStateFlags] => 0
+        )
+    [1] => Syntax\SteamApi\Containers\Player Object
+        (
+            [steamId] => 76561198028432364
+            [communityVisibilityState] => 3
+            [profileState] => 1
+            [personaName] => [GoB] Bindusara
+            [lastLogoff] => October 8th, 2014 05:39am
+            [profileUrl] => http://steamcommunity.com/id/bindusara/
+            [avatar] => <img src="http://media.steampowered.com/steamcommunity/public/images/avatars/3a/3a718856298ce108a71dfd5b0bc5eb913a8ff650.jpg" />
+            [avatarMedium] => <img src="http://media.steampowered.com/steamcommunity/public/images/avatars/3a/3a718856298ce108a71dfd5b0bc5eb913a8ff650_medium.jpg" />
+            [avatarFull] => <img src="http://media.steampowered.com/steamcommunity/public/images/avatars/3a/3a718856298ce108a71dfd5b0bc5eb913a8ff650_full.jpg" />
+            [personaState] => Online
+            [primaryClanId] => 103582791432779431
+            [timecreated] => August 1st, 2010 04:38am
+            [personaStateFlags] => 0
+        )
+
+)

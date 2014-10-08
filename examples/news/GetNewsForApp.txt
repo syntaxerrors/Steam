@@ -1,0 +1,68 @@
+Array
+(
+    [0] => stdClass Object
+        (
+            [gid] => 521614150601956190
+            [title] => Think Of All The Things We Learned In Portal 2
+            [url] => http://store.steampowered.com/news/externalpost/rps/521614150601956190
+            [is_external_url] => 1
+            [author] => contact@rockpapershotgun.com (Philippa Warr)
+            [contents] => Have you ever idly wondered whether GLaDOS might have been up to more research and testing than the Portal games let on? A study from Florida State University into the effects of playing Portal 2 on a variety of skills won’t do much to ease your fears, then. According to the study, spending eight hours playing Portal 2 is more effective at improving a range of cognitive skills than a dedicated brain training program called Lumosity. …
+            [feedlabel] => Rock, Paper, Shotgun
+            [date] => 1412265624
+            [feedname] => rps
+        )
+
+    [1] => stdClass Object
+        (
+            [gid] => 521614150561342440
+            [title] => Think Of All The Things We Learned In Portal 2
+            [url] => http://store.steampowered.com/news/externalpost/rps/521614150561342440
+            [is_external_url] => 1
+            [author] => contact@rockpapershotgun.com (Philippa Warr)
+            [contents] => Have you ever idly wondered whether GLaDOS might have been up to more research and testing than the Portal games let on? A study from Florida State University into the effects of playing Portal 2 on a variety of skills won’t do much to ease your fears, then. According to the study, spending eight hours playing Portal 2 is more effective at improving a range of cognitive skills than a dedicated brain training program called Lumosity. …
+            [feedlabel] => Rock, Paper, Shotgun
+            [date] => 1412265624
+            [feedname] => rps
+        )
+
+    [2] => stdClass Object
+        (
+            [gid] => 521613514271155690
+            [title] => Steam Music Player Out Of Beta, Valve s Soundtracks Free
+            [url] => http://store.steampowered.com/news/externalpost/rps/521613514271155690
+            [is_external_url] => 1
+            [author] => contact@rockpapershotgun.com (Graham Smith)
+            [contents] => In almost every strategy, management or sim game I play, I will immediately turn off the music which comes with the game in favour of my own. That means that Steam Music Player sounds like a good idea to me even if I long ago abandoned mp3s in favour of streaming. The built-in functionality, which lets you browse your music library and control playback from in-game using the Steam overlay, has just left beta after its initial announcement back in February. To celebrate, Valve have made the sound...
+            [feedlabel] => Rock, Paper, Shotgun
+            [date] => 1411657215
+            [feedname] => rps
+        )
+
+    [3] => stdClass Object
+        (
+            [gid] => 521612880947759679
+            [title] => Introducing The Portal Merchandise Workshop
+            [url] => http://store.steampowered.com/news/externalpost/portal2_blog/521612880947759679
+            [is_external_url] => 1
+            [author] =>
+            [contents] => It seems Dota 2 and Team Fortress 2 have launched Merchandise Workshops, where the community can submit, vote on and sell their own non-virtual, actually real t-shirts and posters. And so far, the response from their communities has been overwhelmingly positive. So we thought: What if we applied that same idea, but to a good game, with a smarter, more attractive community? Introducing the Portal Merchandise Workshop, where you can heroes can bravely design their own Portal universe concepts. "Bu...
+            [feedlabel] => Portal 2 Blog
+            [date] => 1410973260
+            [feedname] => portal2_blog
+        )
+
+    [4] => stdClass Object
+        (
+            [gid] => 552009088168130714
+            [title] => Midweek Madness - Portal 2, 75% Off
+            [url] => http://store.steampowered.com/news/14193/
+            [is_external_url] =>
+            [author] => Valve
+            [contents] => Save 75% on Portal 2 during this week's Midweek Madness*! Portal 2 draws from the award-winning formula of innovative gameplay, story, and music that earned the original Portal over 70 industry accolades and created a cult following. The single-player portion of Portal 2 introduces a cast of dynamic new characters, a host of fresh puzzle elements, and a much larger set of devious test chambers. Players will explore never-before-seen areas of the Aperture Science Labs and be reunited with GLaDOS,...
+            [feedlabel] => Announcement
+            [date] => 1408467600
+            [feedname] => steam_announce
+        )
+
+)
