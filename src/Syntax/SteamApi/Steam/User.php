@@ -30,6 +30,8 @@ class User extends Client {
 		// Get the client
 		$client = $this->setUpClient($arguments)->response;
 
+		pp($client);
+
 		// Clean up the games
 		$players = $this->convertToObjects($client->players);
 

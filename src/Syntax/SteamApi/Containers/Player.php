@@ -1,6 +1,7 @@
 <?php namespace Syntax\SteamApi\Containers;
 
 class Player {
+
 	public $steamId;
 
 	public $communityVisibilityState;
@@ -21,11 +22,19 @@ class Player {
 
 	public $personaState;
 
+	public $realName;
+
 	public $primaryClanId;
 
 	public $timecreated;
 
 	public $personaStateFlags;
+
+	public $locCountryCode;
+
+	public $locStateCode;
+
+	public $locCityId;
 
 	public function __construct($player)
 	{
@@ -39,9 +48,13 @@ class Player {
 		$this->avatarMedium             = $this->getImageForAvatar($player->avatarmedium);
 		$this->avatarFull               = $this->getImageForAvatar($player->avatarfull);
 		$this->personaState             = $this->convertPersonaState($player->personastate);
+		$this->realName                 = isset($player->realname) ? $player->realname : null;
 		$this->primaryClanId            = isset($player->primaryclanid) ? $player->primaryclanid : null;
 		$this->timecreated              = isset($player->timecreated) ? date('F jS, Y h:ia', $player->timecreated) : null;
 		$this->personaStateFlags        = isset($player->personastateflags) ? $player->personastateflags : null;
+		$this->$locCountryCode          = isset($player->loccountrycode) ? $player->loccountrycode : null;
+		$this->$locStateCode            = isset($player->locstatecode) ? $player->locstatecode : null;
+		$this->$locCityId               = isset($player->loccityid) ? $player->loccityid : null;
 	}
 
 	protected function getImageForAvatar($image)
@@ -54,25 +67,25 @@ class Player {
 		switch ($personaState) {
 			case 0:
 				return '<span class="text-error">Offline</span>';
-			break;
+				break;
 			case 1:
 				return '<span class="text-success">Online</span>';
-			break;
+				break;
 			case 2:
 				return '<span class="text-warning">Busy</span>';
-			break;
+				break;
 			case 3:
 				return '<span class="text-warning">Away</span>';
-			break;
+				break;
 			case 4:
 				return '<span class="text-warning">Snooze</span>';
-			break;
+				break;
 			case 5:
 				return 'Looking to Trade';
-			break;
+				break;
 			case 6:
 				return 'Looking to Play';
-			break;
+				break;
 		}
 	}
 
