@@ -52,9 +52,9 @@ class Player {
 		$this->primaryClanId            = isset($player->primaryclanid) ? $player->primaryclanid : null;
 		$this->timecreated              = isset($player->timecreated) ? date('F jS, Y h:ia', $player->timecreated) : null;
 		$this->personaStateFlags        = isset($player->personastateflags) ? $player->personastateflags : null;
-		$this->$locCountryCode          = isset($player->loccountrycode) ? $player->loccountrycode : null;
-		$this->$locStateCode            = isset($player->locstatecode) ? $player->locstatecode : null;
-		$this->$locCityId               = isset($player->loccityid) ? $player->loccityid : null;
+		$this->locCountryCode          = isset($player->loccountrycode) ? $player->loccountrycode : null;
+		$this->locStateCode            = isset($player->locstatecode) ? $player->locstatecode : null;
+		$this->locCityId               = isset($player->loccityid) ? $player->loccityid : null;
 	}
 
 	protected function getImageForAvatar($image)
