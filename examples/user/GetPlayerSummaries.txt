@@ -12,9 +12,14 @@ Array
             [avatarMedium] => <img src="http://media.steampowered.com/steamcommunity/public/images/avatars/3a/3a718856298ce108a71dfd5b0bc5eb913a8ff650_medium.jpg" />
             [avatarFull] => <img src="http://media.steampowered.com/steamcommunity/public/images/avatars/3a/3a718856298ce108a71dfd5b0bc5eb913a8ff650_full.jpg" />
             [personaState] => Online
+            [personaStateId] => 3
+            [realName] => Joe Smith
             [primaryClanId] => 103582791435113986
             [timecreated] => March 15th, 2010 01:31pm
             [personaStateFlags] => 0
+            [locCountryCode] => US
+            [locStateCode] => TX
+            [locCityId] => 3620
         )
 
 )
