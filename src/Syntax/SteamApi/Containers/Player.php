@@ -20,6 +20,12 @@ class Player {
 
 	public $avatarFull;
 
+	public $avatarUrl;
+
+	public $avatarMediumUrl;
+
+	public $avatarFullUrl;
+
 	public $personaState;
 
 	public $personaStateId;
@@ -49,6 +55,9 @@ class Player {
 		$this->avatar                   = $this->getImageForAvatar($player->avatar);
 		$this->avatarMedium             = $this->getImageForAvatar($player->avatarmedium);
 		$this->avatarFull               = $this->getImageForAvatar($player->avatarfull);
+		$this->avatarUrl                = $player->avatar;
+		$this->avatarMediumUrl          = $player->avatarmedium;
+		$this->avatarFullUrl            = $player->avatarfull;
 		$this->personaState             = $this->convertPersonaState($player->personastate);
 		$this->personaStateId           = $player->personastate;
 		$this->realName                 = isset($player->realname) ? $player->realname : null;

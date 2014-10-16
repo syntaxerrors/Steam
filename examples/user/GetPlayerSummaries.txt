@@ -11,6 +11,9 @@ Array
             [avatar] => <img src="http://media.steampowered.com/steamcommunity/public/images/avatars/3a/3a718856298ce108a71dfd5b0bc5eb913a8ff650.jpg" />
             [avatarMedium] => <img src="http://media.steampowered.com/steamcommunity/public/images/avatars/3a/3a718856298ce108a71dfd5b0bc5eb913a8ff650_medium.jpg" />
             [avatarFull] => <img src="http://media.steampowered.com/steamcommunity/public/images/avatars/3a/3a718856298ce108a71dfd5b0bc5eb913a8ff650_full.jpg" />
+            [avatarUrl] => http://media.steampowered.com/steamcommunity/public/images/avatars/3a/3a718856298ce108a71dfd5b0bc5eb913a8ff650.jpg
+            [avatarMediumUrl] => http://media.steampowered.com/steamcommunity/public/images/avatars/3a/3a718856298ce108a71dfd5b0bc5eb913a8ff650_medium.jpg
+            [avatarFullUrl] => http://media.steampowered.com/steamcommunity/public/images/avatars/3a/3a718856298ce108a71dfd5b0bc5eb913a8ff650_full.jpg
             [personaState] => Online
             [personaStateId] => 3
             [realName] => Joe Smith
