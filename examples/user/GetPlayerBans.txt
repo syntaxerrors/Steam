@@ -1,0 +1,13 @@
+Array
+(
+    [0] => stdClass Object
+        (
+            [SteamId] => 76561197979958413
+            [CommunityBanned] =>
+            [VACBanned] =>
+            [NumberOfVACBans] => 0
+            [DaysSinceLastBan] => 0
+            [EconomyBan] => banned
+        )
+
+)

@@ -172,6 +172,18 @@ Once the list of friends is gathered, it is passed through [GetPlayerSummaries](
 
 > Example Output: [GetFriendList](./examples/user/GetFriendList.txt)
 
+#### GetPlayerBans
+Returns the possible bans placed on the provided steam ID(s).
+
+##### Arguments
+
+Name | Type | Description | Required | Default
+-----|------|-------------|----------|---------
+steamId| int[]  | An array of (or singular) steam id(s) to get details for  | No | Steam id passed to user()
+
+
+> Example Output: [GetPlayerBans](./examples/user/GetPlayerBans.txt)
+
 ### User Stats
 The [User Stats](https://developer.valvesoftware.com/wiki/Steam_Web_API#GetPlayerAchievements_.28v0001.29) WebAPI call is used to get details about a user's gaming.
 
