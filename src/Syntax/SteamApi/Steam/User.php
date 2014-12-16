@@ -35,7 +35,28 @@ class User extends Client {
 
 		return $players;
 	}
+	
+	public function GetPlayerBans($steamId = null)
+	{
+		// Set up the api details
+		$this->method  = __FUNCTION__;
+		$this->version = 'v1';
 
+		if ($steamId == null) {
+			$steamId = $this->steamId;
+		}
+
+		// Set up the arguments
+		$arguments = [
+			'steamids' => $steamId
+		];
+
+		// Get the client
+		$client = $this->setUpClient($arguments);
+
+		return $client->players;
+	}
+	
 	public function GetFriendList($relationship = 'all')
 	{
 		// Set up the api details
