@@ -73,7 +73,7 @@ maxlength | int | The maximum number of characters to return | No | null
 ### Player
 The [Player Service](https://developer.valvesoftware.com/wiki/Steam_Web_API#GetOwnedGames_.28v0001.29) is used to get details on players.
 
-When instantiating the player class, you are required to pass a steamId.
+When instantiating the player class, you are required to pass a steamId or steam community ID.
 
 ```php
 Steam::player($steamId)
@@ -137,7 +137,7 @@ appId| int  | The game to check for  | Yes |
 ### User
 The [User](https://developer.valvesoftware.com/wiki/Steam_Web_API#GetFriendList_.28v0001.29) WebAPI call is used to get details about the user specifically.
 
-When instantiating the user class, you are required to pass a steamId.
+When instantiating the user class, you are required to pass a steamId or steam community ID.
 
 ```php
 Steam::user($steamId)
@@ -187,7 +187,7 @@ steamId| int[]  | An array of (or singular) steam id(s) to get details for  | No
 ### User Stats
 The [User Stats](https://developer.valvesoftware.com/wiki/Steam_Web_API#GetPlayerAchievements_.28v0001.29) WebAPI call is used to get details about a user's gaming.
 
-When instantiating the user stats class, you are required to pass a steamId.
+When instantiating the user stats class, you are required to pass a steamId or steam community ID.
 
 ```php
 Steam::userStats($steamId)

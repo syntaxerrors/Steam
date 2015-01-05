@@ -47,14 +47,24 @@ class Client {
 		return $this;
 	}
 
-	public function convertCommunityIdToSteamId(int $id)
+	/**
+	 * @param int $id
+	 *
+	 * @return string
+	 */
+	public function convertCommunityIdToSteamId($id)
 	{
 		$x = ($id - 76561197960265728) / 2;
 
 		return 'STEAM_0:' . is_float($x) . ':' . (int)$x;
 	}
 
-	public function convertSteamIdToCommunityId(string $id)
+	/**
+	 * @param string $id
+	 *
+	 * @return string
+	 */
+	public function convertSteamIdToCommunityId($id)
 	{
 		$x = explode(':', $id);
 		return (string) ($x[2] * 2) + 76561197960265728 + $x[1];

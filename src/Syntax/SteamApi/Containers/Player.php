@@ -1,8 +1,12 @@
 <?php namespace Syntax\SteamApi\Containers;
 
+use Syntax\SteamApi\Client;
+
 class Player {
 
 	public $steamId;
+
+	public $communityId;
 
 	public $communityVisibilityState;
 
@@ -47,6 +51,7 @@ class Player {
 	public function __construct($player)
 	{
 		$this->steamId                  = $player->steamid;
+		$this->communityId              = (new Client)->convertCommunityIdToSteamId((int) $this->steamId);
 		$this->communityVisibilityState = $player->communityvisibilitystate;
 		$this->profileState             = $player->profilestate;
 		$this->personaName              = $player->personaname;
