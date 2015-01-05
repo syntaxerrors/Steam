@@ -53,7 +53,7 @@ This will convert the given steam ID to each type of steam ID (64 bit, 32 bit an
 
 Name | Type | Description | Required | Default
 -----|------|-------------|----------|---------
-id| string|int  | The id you want to convert | Yes
+id| string  | The id you want to convert | Yes
 format | string | The format you want back. | No | null
 
 > Possible formats are ID64, id64, 64, ID32, id32, 32, ID3, id3 and 3.
