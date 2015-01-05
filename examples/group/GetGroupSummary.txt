@@ -7,9 +7,12 @@ Syntax\SteamApi\Containers\Group Object
             [url] =>
             [headline] => VALVE
             [summary] => In addition to producing best-selling entertainment titles, Valve is a developer of leading-edge technologies such as the Sourceâ„¢ game engine and Steamâ„¢, a broadband platform for the delivery and management of digital content.
-            [avatarIcon] => http://cdn.akamai.steamstatic.com/steamcommunity/public/images/avatars/1d/1d8baf5a2b5968ae5ca65d7a971c02e222c9a17e.jpg
-            [avatarMedium] => http://cdn.akamai.steamstatic.com/steamcommunity/public/images/avatars/1d/1d8baf5a2b5968ae5ca65d7a971c02e222c9a17e_medium.jpg
-            [avatarFull] => http://cdn.akamai.steamstatic.com/steamcommunity/public/images/avatars/1d/1d8baf5a2b5968ae5ca65d7a971c02e222c9a17e_full.jpg
+            [avatarIcon] => <img src="http://cdn.akamai.steamstatic.com/steamcommunity/public/images/avatars/1d/1d8baf5a2b5968ae5ca65d7a971c02e222c9a17e.jpg" />
+            [avatarMedium] => <img src="http://cdn.akamai.steamstatic.com/steamcommunity/public/images/avatars/1d/1d8baf5a2b5968ae5ca65d7a971c02e222c9a17e_medium.jpg" />
+            [avatarFull] => <img src="http://cdn.akamai.steamstatic.com/steamcommunity/public/images/avatars/1d/1d8baf5a2b5968ae5ca65d7a971c02e222c9a17e_full.jpg" />
+            [avatarIconUrl] => http://cdn.akamai.steamstatic.com/steamcommunity/public/images/avatars/1d/1d8baf5a2b5968ae5ca65d7a971c02e222c9a17e.jpg
+            [avatarMediumUrl] => http://cdn.akamai.steamstatic.com/steamcommunity/public/images/avatars/1d/1d8baf5a2b5968ae5ca65d7a971c02e222c9a17e_medium.jpg
+            [avatarFullUrl] => http://cdn.akamai.steamstatic.com/steamcommunity/public/images/avatars/1d/1d8baf5a2b5968ae5ca65d7a971c02e222c9a17e_full.jpg
         )
 
     [memberDetails] => Syntax\SteamApi\Containers\Group\MemberDetails Object
