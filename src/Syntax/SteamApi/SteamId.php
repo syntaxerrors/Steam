@@ -1,23 +1,20 @@
 <?php namespace Syntax\SteamApi;
 
-use Syntax\SteamApi\Exceptions\InvalidIdType;
 use Syntax\SteamApi\Exceptions\UnrecognizedId;
 
 trait SteamId {
-
-	public         $validTypes = ['ID32', 'ID64', 'ID3'];
 
 	public         $formatted;
 
 	private        $rawValue;
 
-	private static $ID32       = 'id32';
+	private static $ID32     = 'id32';
 
-	private static $ID64       = 'id64';
+	private static $ID64     = 'id64';
 
-	private static $ID3        = 'id3';
+	private static $ID3      = 'id3';
 
-	private static $id64Base   = '76561197960265728';
+	private static $id64Base = '76561197960265728';
 
 	public function convertId($id, $format = null)
 	{
@@ -65,29 +62,23 @@ trait SteamId {
 
 	private function convertToID32()
 	{
-		if (! isset($this->formatted->{self::$ID32})) {
-			$z                              = bcdiv($this->rawValue, '2', 0);
-			$y                              = bcmul($z, '2', 0);
-			$y                              = bcsub($this->rawValue, $y, 0);
-			$formatted                      = "STEAM_1:$y:$z";
-			$this->formatted->{self::$ID32} = $formatted;
-		}
+		$z                              = bcdiv($this->rawValue, '2', 0);
+		$y                              = bcmul($z, '2', 0);
+		$y                              = bcsub($this->rawValue, $y, 0);
+		$formatted                      = "STEAM_1:$y:$z";
+		$this->formatted->{self::$ID32} = $formatted;
 	}
 
 	private function convertToID64()
 	{
-		if (! isset($this->formatted->{self::$ID64})) {
-			$formatted                      = bcadd($this->rawValue, self::$id64Base, 0);
-			$this->formatted->{self::$ID64} = $formatted;
-		}
+		$formatted                      = bcadd($this->rawValue, self::$id64Base, 0);
+		$this->formatted->{self::$ID64} = $formatted;
 	}
 
 	private function convertToID3()
 	{
-		if (! isset($this->formatted->{self::$ID3})) {
-			$formatted                     = "[U:1:$this->rawValue]";
-			$this->formatted->{self::$ID3} = $formatted;
-		}
+		$formatted                     = "[U:1:$this->rawValue]";
+		$this->formatted->{self::$ID3} = $formatted;
 	}
 
 	private function determineIDType($id)

@@ -105,6 +105,17 @@ class Client {
 		return $response->body;
 	}
 
+	protected function setUpXml(array $arguments = [])
+	{
+		$steamUrl    = $this->buildUrl();
+
+		// Build the query string
+		$parameters = http_build_query($arguments);
+
+		// Pass the results back
+		return simplexml_load_file($steamUrl . '?' . $parameters);
+	}
+
 	/**
 	 * @param $request
 	 *

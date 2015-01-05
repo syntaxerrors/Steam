@@ -42,6 +42,7 @@ Each service from the steam api has it's own methods you can use.
 - [User](#user)
 - [User Stats](#user-stats)
 - [App](#app)
+- [Group](#group)
 
 ### Global
 These are methods that are available to each service
@@ -276,3 +277,29 @@ appIds| int[] | The ids of the games you want details for | Yes |
 This method will return an array of app objects directly from steam.  It includes the appId and the app name.
 
 > Example Output: [GetAppList](./examples/app/GetAppList.txt)
+
+### Group
+This service is used to get details on a steam group.
+
+```php
+Steam::group()
+```
+
+#### GetGroupSummary
+This method will get the details for a group.
+
+##### Arguments
+
+Name | Type | Description | Required | Default
+-----|------|-------------|----------|---------
+group| string or int  | The id or the name of the group. | Yes
+
+##### Example usage
+
+```php
+<?php
+	$news = Steam::group()->GetGroupSummary('Valve');
+?>
+```
+
+> Example Output: [GetGroupSummary](./examples/group/GetGroupSummary.txt)
