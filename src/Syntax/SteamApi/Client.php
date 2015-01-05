@@ -10,6 +10,8 @@ use Syntax\SteamApi\Exceptions\ClassNotFoundException;
 
 class Client {
 
+	public    $validFormats = ['json', 'xml', 'vdf'];
+
 	protected $url          = 'http://api.steampowered.com/';
 
 	protected $interface;
@@ -25,8 +27,6 @@ class Client {
 	protected $steamId;
 
 	protected $isService    = false;
-
-	public    $validFormats = array('json', 'xml', 'vdf');
 
 	public function __construct()
 	{
@@ -45,6 +45,19 @@ class Client {
 	public function get()
 	{
 		return $this;
+	}
+
+	public function convertCommunityIdToSteamId(int $id)
+	{
+		$x = ($id - 76561197960265728) / 2;
+
+		return 'STEAM_0:' . is_float($x) . ':' . (int)$x;
+	}
+
+	public function convertSteamIdToCommunityId(string $id)
+	{
+		$x = explode(':', $id);
+		return (string) ($x[2] * 2) + 76561197960265728 + $x[1];
 	}
 
 	protected function setUpService($arguments = null)
@@ -147,8 +160,12 @@ class Client {
 	public function __call($name, $arguments)
 	{
 		// Handle a steamId being passed
-		if (!empty($arguments) && count($arguments) == 1) {
+		if (! empty($arguments) && count($arguments) == 1) {
 			$this->steamId = $arguments[0];
+
+			if (strpos(':', $this->steamId) !== false) {
+				$this->steamId = $this->convertSteamIdToCommunityId($this->steamId);
+			}
 		}
 
 		// Inside the root steam directory
