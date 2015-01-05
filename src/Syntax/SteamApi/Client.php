@@ -10,23 +10,25 @@ use Syntax\SteamApi\Exceptions\ClassNotFoundException;
 
 class Client {
 
-	public    $validFormats = ['json', 'xml', 'vdf'];
+	use SteamId;
 
-	protected $url          = 'http://api.steampowered.com/';
+	public    $validFormats      = ['json', 'xml', 'vdf'];
+
+	protected $url               = 'http://api.steampowered.com/';
 
 	protected $interface;
 
 	protected $method;
 
-	protected $version      = 'v0002';
+	protected $version           = 'v0002';
 
 	protected $apiKey;
 
-	protected $apiFormat    = 'json';
+	protected $apiFormat         = 'json';
 
 	protected $steamId;
 
-	protected $isService    = false;
+	protected $isService         = false;
 
 	public function __construct()
 	{
@@ -39,35 +41,15 @@ class Client {
 		$this->client = new GuzzleClient($this->url);
 		$this->apiKey = $apiKey;
 
+		// Set up the Ids
+		$this->setUpFormatted();
+
 		return $this;
 	}
 
 	public function get()
 	{
 		return $this;
-	}
-
-	/**
-	 * @param int $id
-	 *
-	 * @return string
-	 */
-	public function convertCommunityIdToSteamId($id)
-	{
-		$x = ($id - 76561197960265728) / 2;
-
-		return 'STEAM_0:' . is_float($x) . ':' . (int)$x;
-	}
-
-	/**
-	 * @param string $id
-	 *
-	 * @return string
-	 */
-	public function convertSteamIdToCommunityId($id)
-	{
-		$x = explode(':', $id);
-		return (string) ($x[2] * 2) + 76561197960265728 + $x[1];
 	}
 
 	protected function setUpService($arguments = null)
@@ -174,7 +156,8 @@ class Client {
 			$this->steamId = $arguments[0];
 
 			if (strpos(':', $this->steamId) !== false) {
-				$this->steamId = $this->convertSteamIdToCommunityId($this->steamId);
+				// Convert the id to all types and grab the 64 bit version
+				$this->steamId = $this->convertToAll($this->steamId)[2];
 			}
 		}
 

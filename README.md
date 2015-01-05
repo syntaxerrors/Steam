@@ -36,11 +36,35 @@ Lastly, publish the config file.  You can get your API key from [Steam](http://s
 
 Each service from the steam api has it's own methods you can use.
 
+- [Global](#global)
 - [News](#news)
 - [Player](#player)
 - [User](#user)
 - [User Stats](#user-stats)
 - [App](#app)
+
+### Global
+These are methods that are available to each service
+
+#### convertId
+This will convert the given steam ID to each type of steam ID (64 bit, 32 bit and steam ID3).
+
+##### Arguments
+
+Name | Type | Description | Required | Default
+-----|------|-------------|----------|---------
+id| string|int  | The id you want to convert | Yes
+format | string | The format you want back. | No | null
+
+> Possible formats are ID64, id64, 64, ID32, id32, 32, ID3, id3 and 3.
+
+##### Example usage
+
+```php
+Steam::convertId($id, $format);
+```
+
+> Example Output: [convertId](./examples/global/convertId.txt)
 
 ### News
 The [Steam News](https://developer.valvesoftware.com/wiki/Steam_Web_API#GetNewsForApp_.28v0002.29) web api is used to get articles for games.

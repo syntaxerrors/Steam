@@ -6,7 +6,7 @@ class Player {
 
 	public $steamId;
 
-	public $communityId;
+	public $steamIds;
 
 	public $communityVisibilityState;
 
@@ -51,7 +51,7 @@ class Player {
 	public function __construct($player)
 	{
 		$this->steamId                  = $player->steamid;
-		$this->communityId              = (new Client)->convertCommunityIdToSteamId((int) $this->steamId);
+		$this->steamIds                 = (new Id((int)$this->steamId));
 		$this->communityVisibilityState = $player->communityvisibilitystate;
 		$this->profileState             = $player->profilestate;
 		$this->personaName              = $player->personaname;

@@ -3,7 +3,14 @@ Array
     [0] => Syntax\SteamApi\Containers\Player Object
         (
             [steamId] => 76561198022436617
-            [communityId] => STEAM_0:1:9846342
+            [steamIds] => Syntax\SteamApi\Containers\Id Object
+                (
+                    [id32] => STEAM_1:1:31085444
+                    [id64] => 76561198022436617
+                    [id3] => [U:1:62170889]
+                    [communityId] => STEAM_1:1:31085444
+                    [steamId] => 76561198022436617
+                )
             [communityVisibilityState] => 3
             [profileState] => 1
             [personaName] => Stygian
