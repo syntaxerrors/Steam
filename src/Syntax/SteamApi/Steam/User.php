@@ -1,7 +1,7 @@
 <?php namespace Syntax\SteamApi\Steam;
 
 use Syntax\SteamApi\Client;
-use Syntax\SteamApi\Containers\Player;
+use Syntax\SteamApi\Containers\Player as PlayerContainer;
 
 class User extends Client {
 
@@ -89,7 +89,7 @@ class User extends Client {
 		$cleanedPlayers = array();
 
 		foreach ($players as $player) {
-			$cleanedPlayers[] = new Player($player);
+			$cleanedPlayers[] = new PlayerContainer($player);
 		}
 
 		return $cleanedPlayers;

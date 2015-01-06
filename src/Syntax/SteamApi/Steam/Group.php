@@ -5,7 +5,7 @@ use Syntax\SteamApi\Containers\Group as GroupContainer;
 
 class Group extends Client {
 
-	public function __construct($steamId)
+	public function __construct()
 	{
 		parent::__construct();
 	}

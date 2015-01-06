@@ -17,7 +17,7 @@ class Group {
 
 	public $members;
 
-	function __construct($group, $getMemberDetails = false)
+	function __construct($group)
 	{
 		$this->groupID64      = (string)$group->groupID64;
 		$this->groupDetails   = new Details($group->groupDetails);

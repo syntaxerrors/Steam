@@ -10,185 +10,187 @@ use Syntax\SteamApi\Exceptions\ClassNotFoundException;
 
 class Client {
 
-	use SteamId;
+    use SteamId;
 
-	public    $validFormats      = ['json', 'xml', 'vdf'];
+    public    $validFormats = ['json', 'xml', 'vdf'];
 
-	protected $url               = 'http://api.steampowered.com/';
+    protected $url          = 'http://api.steampowered.com/';
 
-	protected $interface;
+    protected $client;
 
-	protected $method;
+    protected $interface;
 
-	protected $version           = 'v0002';
+    protected $method;
 
-	protected $apiKey;
+    protected $version      = 'v0002';
 
-	protected $apiFormat         = 'json';
+    protected $apiKey;
 
-	protected $steamId;
+    protected $apiFormat    = 'json';
 
-	protected $isService         = false;
+    protected $steamId;
 
-	public function __construct()
-	{
-		$apiKey = \Config::get('steam-api::steamApiKey');
+    protected $isService    = false;
 
-		if ($apiKey == 'YOUR-API-KEY') {
-			throw new Exceptions\InvalidApiKeyException();
-		}
+    public function __construct()
+    {
+        $apiKey = \Config::get('steam-api::steamApiKey');
 
-		$this->client = new GuzzleClient($this->url);
-		$this->apiKey = $apiKey;
+        if ($apiKey == 'YOUR-API-KEY') {
+            throw new Exceptions\InvalidApiKeyException();
+        }
 
-		// Set up the Ids
-		$this->setUpFormatted();
+        $this->client = new GuzzleClient($this->url);
+        $this->apiKey = $apiKey;
 
-		return $this;
-	}
+        // Set up the Ids
+        $this->setUpFormatted();
 
-	public function get()
-	{
-		return $this;
-	}
+        return $this;
+    }
 
-	protected function setUpService($arguments = null)
-	{
-		// Services have a different url syntax
-		if ($arguments == null) {
-			throw new ApiArgumentRequired;
-		}
+    public function get()
+    {
+        return $this;
+    }
 
-		$parameters = [
-			'key'        => $this->apiKey,
-			'format'     => $this->apiFormat,
-			'input_json' => $arguments,
-		];
+    protected function setUpService($arguments = null)
+    {
+        // Services have a different url syntax
+        if ($arguments == null) {
+            throw new ApiArgumentRequired;
+        }
 
-		$steamUrl = $this->buildUrl(true);
+        $parameters = [
+            'key'        => $this->apiKey,
+            'format'     => $this->apiFormat,
+            'input_json' => $arguments,
+        ];
 
-		// Build the query string
-		$parameters = http_build_query($parameters);
+        $steamUrl = $this->buildUrl(true);
 
-		//ppd($steamUrl . '?' . $parameters);
+        // Build the query string
+        $parameters = http_build_query($parameters);
 
-		// Send the request and get the results
-		$request  = $this->client->get($steamUrl . '?' . $parameters);
-		$response = $this->sendRequest($request);
+        //ppd($steamUrl . '?' . $parameters);
 
-		// Pass the results back
-		return $response->body;
-	}
+        // Send the request and get the results
+        $request  = $this->client->get($steamUrl . '?' . $parameters);
+        $response = $this->sendRequest($request);
 
-	protected function setUpClient(array $arguments = [])
-	{
-		$versionFlag = ! is_null($this->version);
-		$steamUrl    = $this->buildUrl($versionFlag);
+        // Pass the results back
+        return $response->body;
+    }
 
-		$parameters = [
-			'key'    => $this->apiKey,
-			'format' => $this->apiFormat
-		];
+    protected function setUpClient(array $arguments = [])
+    {
+        $versionFlag = ! is_null($this->version);
+        $steamUrl    = $this->buildUrl($versionFlag);
 
-		if (! empty($arguments)) {
-			$parameters = array_merge($parameters, $arguments);
-		}
+        $parameters = [
+            'key'    => $this->apiKey,
+            'format' => $this->apiFormat
+        ];
 
-		// Build the query string
-		$parameters = http_build_query($parameters);
+        if (! empty($arguments)) {
+            $parameters = array_merge($parameters, $arguments);
+        }
 
-		// Send the request and get the results
-		$request  = $this->client->get($steamUrl . '?' . $parameters);
-		$response = $this->sendRequest($request);
+        // Build the query string
+        $parameters = http_build_query($parameters);
 
-		// Pass the results back
-		return $response->body;
-	}
+        // Send the request and get the results
+        $request  = $this->client->get($steamUrl . '?' . $parameters);
+        $response = $this->sendRequest($request);
 
-	protected function setUpXml(array $arguments = [])
-	{
-		$steamUrl    = $this->buildUrl();
+        // Pass the results back
+        return $response->body;
+    }
 
-		// Build the query string
-		$parameters = http_build_query($arguments);
+    protected function setUpXml(array $arguments = [])
+    {
+        $steamUrl = $this->buildUrl();
 
-		// Pass the results back
-		return simplexml_load_file($steamUrl . '?' . $parameters);
-	}
+        // Build the query string
+        $parameters = http_build_query($arguments);
 
-	/**
-	 * @param $request
-	 *
-	 * @throws ApiCallFailedException
-	 * @return stdClass
-	 */
-	protected function sendRequest($request)
-	{
-		// Try to get the result.  Handle the possible exceptions that can arise
-		try {
-			$response = $this->client->send($request);
+        // Pass the results back
+        return simplexml_load_file($steamUrl . '?' . $parameters);
+    }
 
-			$result       = new stdClass();
-			$result->code = $response->getStatusCode();
-			$result->body = json_decode($response->getBody(true));
+    /**
+     * @param $request
+     *
+     * @throws ApiCallFailedException
+     * @return stdClass
+     */
+    protected function sendRequest($request)
+    {
+        // Try to get the result.  Handle the possible exceptions that can arise
+        try {
+            $response = $this->client->send($request);
 
-		} catch (ClientErrorResponseException $e) {
-			throw new ApiCallFailedException($e->getMessage(), $e->getResponse()->getStatusCode(), $e);
+            $result       = new stdClass();
+            $result->code = $response->getStatusCode();
+            $result->body = json_decode($response->getBody(true));
 
-		} catch (ServerErrorResponseException $e) {
-			throw new ApiCallFailedException('Api call failed to complete due to a server error.', $e->getResponse()->getStatusCode(), $e);
+        } catch (ClientErrorResponseException $e) {
+            throw new ApiCallFailedException($e->getMessage(), $e->getResponse()->getStatusCode(), $e);
 
-		} catch (Exception $e) {
-			throw new ApiCallFailedException($e->getMessage(), $e->getCode(), $e);
+        } catch (ServerErrorResponseException $e) {
+            throw new ApiCallFailedException('Api call failed to complete due to a server error.', $e->getResponse()->getStatusCode(), $e);
 
-		}
+        } catch (Exception $e) {
+            throw new ApiCallFailedException($e->getMessage(), $e->getCode(), $e);
 
-		// If all worked out, return the result
-		return $result;
-	}
+        }
 
-	private function buildUrl($version = false)
-	{
-		// Set up the basic url
-		$url = $this->url . $this->interface . '/' . $this->method . '/';
+        // If all worked out, return the result
+        return $result;
+    }
 
-		// If we have a version, add it
-		if ($version) {
-			return $url . $this->version . '/';
-		}
+    private function buildUrl($version = false)
+    {
+        // Set up the basic url
+        $url = $this->url . $this->interface . '/' . $this->method . '/';
 
-		return $url;
-	}
+        // If we have a version, add it
+        if ($version) {
+            return $url . $this->version . '/';
+        }
 
-	public function __call($name, $arguments)
-	{
-		// Handle a steamId being passed
-		if (! empty($arguments) && count($arguments) == 1) {
-			$this->steamId = $arguments[0];
+        return $url;
+    }
 
-			if (strpos(':', $this->steamId) !== false) {
-				// Convert the id to all types and grab the 64 bit version
-				$this->steamId = $this->convertToAll($this->steamId)[2];
-			}
-		}
+    public function __call($name, $arguments)
+    {
+        // Handle a steamId being passed
+        if (! empty($arguments) && count($arguments) == 1) {
+            $this->steamId = $arguments[0];
 
-		// Inside the root steam directory
-		$class      = ucfirst($name);
-		$steamClass = '\Syntax\SteamApi\Steam\\' . $class;
+            if (strpos(':', $this->steamId) !== false) {
+                // Convert the id to all types and grab the 64 bit version
+                $this->steamId = $this->convertToAll($this->steamId)[2];
+            }
+        }
 
-		if (class_exists($steamClass)) {
-			return new $steamClass($this->steamId);
-		}
+        // Inside the root steam directory
+        $class      = ucfirst($name);
+        $steamClass = '\Syntax\SteamApi\Steam\\' . $class;
 
-		// Inside a nested directory
-		$class      = implode('\\', preg_split('/(?=[A-Z])/', $class, -1, PREG_SPLIT_NO_EMPTY));
-		$steamClass = '\Syntax\SteamApi\Steam\\' . $class;
+        if (class_exists($steamClass)) {
+            return new $steamClass($this->steamId);
+        }
 
-		if (class_exists($steamClass)) {
-			return new $steamClass($this->steamId);
-		}
+        // Inside a nested directory
+        $class      = implode('\\', preg_split('/(?=[A-Z])/', $class, -1, PREG_SPLIT_NO_EMPTY));
+        $steamClass = '\Syntax\SteamApi\Steam\\' . $class;
 
-		// Nothing found
-		throw new ClassNotFoundException($name);
-	}
+        if (class_exists($steamClass)) {
+            return new $steamClass($this->steamId);
+        }
+
+        // Nothing found
+        throw new ClassNotFoundException($name);
+    }
 }

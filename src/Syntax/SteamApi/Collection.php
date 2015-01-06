@@ -55,23 +55,18 @@ class Collection extends \Illuminate\Database\Eloquent\Collection {
 	/**
 	 * Insert into an object
 	 *
-	 * @param int 	$key
 	 * @param mixed	$value
 	 * @param int 	$afterKey
 	 *
 	 * @return Collection
 	 */
-	public function insertAfter($key, $value, $afterKey)
+	public function insertAfter($value, $afterKey)
 	{
 		$new_object = new Collection();
-
-		$afterFlag  = false;
-		$afterValue = $key;
 
 		foreach ((array) $this->items as $k => $v) {
 			if ($afterKey == $k) {
 				$new_object->add($value);
-				$afterFlag        = true;
 			}
 
 			$new_object->add($v);

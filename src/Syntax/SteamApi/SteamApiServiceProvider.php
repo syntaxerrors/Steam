@@ -31,7 +31,7 @@ class SteamApiServiceProvider extends ServiceProvider {
 	{
 		$this->registerAlias();
 
-		$this->app['steam-api'] = $this->app->share(function($app)
+		$this->app['steam-api'] = $this->app->share(function()
 		{
 			return new Client;
 		});

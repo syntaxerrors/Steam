@@ -138,7 +138,7 @@ class Player extends Client {
 		return $client->lender_steamid;
 	}
 
-	protected function convertToObjects($games, $totalTimeFlag = true)
+	protected function convertToObjects($games)
 	{
 		$cleanedGames = new Collection;
 

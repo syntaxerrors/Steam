@@ -60,10 +60,6 @@ class Game {
 		$minuteSeconds = $hourSeconds % $secondsInAnHour;
 		$minutes = floor($minuteSeconds / $secondsInAMinute);
 
-		// extract the remaining seconds
-		$remainingSeconds = $minuteSeconds % $secondsInAMinute;
-		$seconds = ceil($remainingSeconds);
-
 		// return the final string
 		$output = '';
 
