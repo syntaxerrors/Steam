@@ -140,10 +140,9 @@ class Player extends Client {
             'steamId'       => $this->steamId,
             'appid_playing' => $appIdPlaying
         ];
-        $arguments = json_encode($arguments);
 
         // Get the client
-        $client = $this->setUpService($arguments)->response;
+        $client = $this->getServiceResponse($arguments);
 
         return $client->lender_steamid;
     }

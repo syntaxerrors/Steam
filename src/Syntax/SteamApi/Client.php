@@ -200,4 +200,12 @@ class Client {
             return $object->name;
         });
     }
+
+    protected function getServiceResponse($arguments)
+    {
+        $arguments = json_encode($arguments);
+
+        // Get the client
+        $client = $this->setUpService($arguments)->response;
+    }
 }
