@@ -1,7 +1,10 @@
 # Steam
 
+[![Build Status](https://travis-ci.org/syntaxerrors/Steam.svg)](https://travis-ci.org/syntaxerrors/Steam)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/syntaxerrors/Steam/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/syntaxerrors/Steam/?branch=master)
-[![Build Status](https://scrutinizer-ci.com/g/syntaxerrors/Steam/badges/build.png?b=master)](https://scrutinizer-ci.com/g/syntaxerrors/Steam/build-status/master)
+[![Latest Stable Version](https://poser.pugx.org/syntax/steam-api/v/stable.svg)](https://packagist.org/packages/syntax/steam-api)
+[![Total Downloads](https://poser.pugx.org/syntax/steam-api/downloads.svg)](https://packagist.org/packages/syntax/steam-api)
+[![License](https://poser.pugx.org/syntax/steam-api/license.svg)](https://packagist.org/packages/syntax/steam-api)
 
 
 This package provides an easy way to get details from the steam api service.  The services it can access are:
