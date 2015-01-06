@@ -65,13 +65,18 @@ class Player {
 		$this->avatarFullUrl            = $player->avatarfull;
 		$this->personaState             = $this->convertPersonaState($player->personastate);
 		$this->personaStateId           = $player->personastate;
-		$this->realName                 = isset($player->realname) ? $player->realname : null;
-		$this->primaryClanId            = isset($player->primaryclanid) ? $player->primaryclanid : null;
-		$this->timecreated              = isset($player->timecreated) ? date('F jS, Y h:ia', $player->timecreated) : null;
-		$this->personaStateFlags        = isset($player->personastateflags) ? $player->personastateflags : null;
-		$this->locCountryCode           = isset($player->loccountrycode) ? $player->loccountrycode : null;
-		$this->locStateCode             = isset($player->locstatecode) ? $player->locstatecode : null;
-		$this->locCityId                = isset($player->loccityid) ? $player->loccityid : null;
+		$this->realName                 = $this->checkIsset($player, 'realName');
+		$this->primaryClanId            = $this->checkIsset($player, 'primaryClanId');
+		$this->timecreated              = $this->checkIsset($player, 'timecreated');
+		$this->personaStateFlags        = $this->checkIsset($player, 'personaStateFlags');
+		$this->locCountryCode           = $this->checkIsset($player, 'locCountryCode');
+		$this->locStateCode             = $this->checkIsset($player, 'locStateCode');
+		$this->locCityId                = $this->checkIsset($player, 'locCityId');
+	}
+
+	protected function checkIsset($player, $field)
+	{
+		return isset($player->$field) ? $player->$field : null;
 	}
 
 	protected function getImageForAvatar($image)
