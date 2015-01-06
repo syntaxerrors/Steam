@@ -7,149 +7,164 @@ use Syntax\SteamApi\Containers\Player\Level;
 
 class Player extends Client {
 
-	public function __construct($steamId)
-	{
-		parent::__construct();
-		$this->interface = 'IPlayerService';
-		$this->isService = true;
-		$this->steamId   = $steamId;
-	}
+    public function __construct($steamId)
+    {
+        parent::__construct();
+        $this->interface = 'IPlayerService';
+        $this->isService = true;
+        $this->steamId   = $steamId;
+    }
 
-	public function GetSteamLevel()
-	{
-		// Set up the api details
-		$this->method  = __FUNCTION__;
-		$this->version = 'v0001';
+    public function GetSteamLevel()
+    {
+        // Set up the api details
+        $this->method  = __FUNCTION__;
+        $this->version = 'v0001';
 
-		// Set up the arguments
-		$arguments = ['steamId' => $this->steamId];
-		$arguments = json_encode($arguments);
+        // Set up the arguments
+        $arguments = ['steamId' => $this->steamId];
+        $arguments = json_encode($arguments);
 
-		// Get the client
-		$client = $this->setUpService($arguments)->response;
+        // Get the client
+        $client = $this->setUpService($arguments)->response;
 
-		return $client->player_level;
-	}
+        return $client->player_level;
+    }
 
-	public function GetPlayerLevelDetails()
-	{
-		$details = $this->GetBadges();
+    public function GetPlayerLevelDetails()
+    {
+        $details = $this->GetBadges();
 
-		$details = new Level($details);
+        $details = new Level($details);
 
-		return $details;
-	}
+        return $details;
+    }
 
-	public function GetBadges()
-	{
-		// Set up the api details
-		$this->method  = __FUNCTION__;
-		$this->version = 'v0001';
+    public function GetBadges()
+    {
+        // Set up the api details
+        $this->method  = __FUNCTION__;
+        $this->version = 'v0001';
 
-		// Set up the arguments
-		$arguments = ['steamId' => $this->steamId];
-		$arguments = json_encode($arguments);
+        // Set up the arguments
+        $arguments = ['steamId' => $this->steamId];
+        $arguments = json_encode($arguments);
 
-		// Get the client
-		$client = $this->setUpService($arguments)->response;
+        // Get the client
+        $client = $this->setUpService($arguments)->response;
 
-		return $client;
-	}
+        return $client;
+    }
 
-	public function GetCommunityBadgeProgress($badgeId = null)
-	{
-		// Set up the api details
-		$this->method  = __FUNCTION__;
-		$this->version = 'v0001';
+    public function GetCommunityBadgeProgress($badgeId = null)
+    {
+        // Set up the api details
+        $this->method  = __FUNCTION__;
+        $this->version = 'v0001';
 
-		// Set up the arguments
-		$arguments   = ['steamId' => $this->steamId];
-		if ($badgeId != null) $arguments['badgeid'] = $badgeId;
-		$arguments   = json_encode($arguments);
+        // Set up the arguments
+        $arguments = ['steamId' => $this->steamId];
+        if ($badgeId != null) {
+            $arguments['badgeid'] = $badgeId;
+        }
+        $arguments = json_encode($arguments);
 
-		// Get the client
-		$client = $this->setUpService($arguments)->response;
+        // Get the client
+        $client = $this->setUpService($arguments)->response;
 
-		return $client;
-	}
+        return $client;
+    }
 
-	public function GetOwnedGames($includeAppInfo = true, $includePlayedFreeGames = false, $appIdsFilter = array())
-	{
-		// Set up the api details
-		$this->method  = __FUNCTION__;
-		$this->version = 'v0001';
+    public function GetOwnedGames($includeAppInfo = true, $includePlayedFreeGames = false, $appIdsFilter = [])
+    {
+        // Set up the api details
+        $this->method  = __FUNCTION__;
+        $this->version = 'v0001';
 
-		// Set up the arguments
-		$arguments                                                           = ['steamId' => $this->steamId];
-		if ($includeAppInfo) $arguments['include_appinfo']                   = $includeAppInfo;
-		if ($includePlayedFreeGames) $arguments['include_played_free_games'] = $includePlayedFreeGames;
-		if (count($appIdsFilter) > 0) $arguments['appids_filter']            = $appIdsFilter;
-		$arguments                                                           = json_encode($arguments);
+        // Set up the arguments
+        $arguments = ['steamId' => $this->steamId];
+        if ($includeAppInfo) {
+            $arguments['include_appinfo'] = $includeAppInfo;
+        }
+        if ($includePlayedFreeGames) {
+            $arguments['include_played_free_games'] = $includePlayedFreeGames;
+        }
+        if (count($appIdsFilter) > 0) {
+            $arguments['appids_filter'] = $appIdsFilter;
+        }
+        $arguments = json_encode($arguments);
 
-		// Get the client
-		$client = $this->setUpService($arguments)->response;
+        // Get the client
+        $client = $this->setUpService($arguments)->response;
 
-		// Clean up the games
-		$games = $this->convertToObjects($client->games);
+        // Clean up the games
+        $games = $this->convertToObjects($client->games);
 
-		return $games;
-	}
+        return $games;
+    }
 
-	public function GetRecentlyPlayedGames($count = null)
-	{
-		// Set up the api details
-		$this->method  = __FUNCTION__;
-		$this->version = 'v0001';
+    public function GetRecentlyPlayedGames($count = null)
+    {
+        // Set up the api details
+        $this->method  = __FUNCTION__;
+        $this->version = 'v0001';
 
-		// Set up the arguments
-		$arguments                                = ['steamId' => $this->steamId];
-		if (!is_null($count)) $arguments['count'] = $count;
-		$arguments                                = json_encode($arguments);
+        // Set up the arguments
+        $arguments = ['steamId' => $this->steamId];
+        if (! is_null($count)) {
+            $arguments['count'] = $count;
+        }
+        $arguments = json_encode($arguments);
 
-		// Get the client
-		$client = $this->setUpService($arguments)->response;
+        // Get the client
+        $client = $this->setUpService($arguments)->response;
 
-		if ($client->total_count > 0) {
-			// Clean up the games
-			$games = $this->convertToObjects($client->games);
+        if ($client->total_count > 0) {
+            // Clean up the games
+            $games = $this->convertToObjects($client->games);
 
-			return $games;
-		}
+            return $games;
+        }
 
-		return null;
-	}
+        return null;
+    }
 
-	public function IsPlayingSharedGame($appIdPlaying)
-	{
-		// Set up the api details
-		$this->method  = __FUNCTION__;
-		$this->version = 'v0001';
+    public function IsPlayingSharedGame($appIdPlaying)
+    {
+        // Set up the api details
+        $this->method  = __FUNCTION__;
+        $this->version = 'v0001';
 
-		// Set up the arguments
-		$arguments = [
-			'steamId'       => $this->steamId,
-			'appid_playing' => $appIdPlaying
-		];
-		$arguments = json_encode($arguments);
+        // Set up the arguments
+        $arguments = [
+            'steamId'       => $this->steamId,
+            'appid_playing' => $appIdPlaying
+        ];
+        $arguments = json_encode($arguments);
 
-		// Get the client
-		$client = $this->setUpService($arguments)->response;
+        // Get the client
+        $client = $this->setUpService($arguments)->response;
 
-		return $client->lender_steamid;
-	}
+        return $client->lender_steamid;
+    }
 
-	protected function convertToObjects($games)
-	{
-		$cleanedGames = new Collection;
+    protected function convertToObjects($games)
+    {
+        $convertedGames = $this->convertGames($games);
 
-		foreach ($games as $game) {
-			$cleanedGames->add(new Game($game));
-		}
+        $games = $this->sortObjects($convertedGames);
 
-		$games = $cleanedGames->sortBy(function ($game) {
-			return $game->name;
-		});
+        return $games;
+    }
 
-		return $games;
-	}
+    private function convertGames($games)
+    {
+        $convertedGames = new Collection;
+
+        foreach ($games as $game) {
+            $convertedGames->add(new Game($game));
+        }
+
+        return $convertedGames;
+    }
 }

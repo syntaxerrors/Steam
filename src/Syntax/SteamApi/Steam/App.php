@@ -47,18 +47,28 @@ class App extends Client {
 
 	protected function convertToObjects($apps)
 	{
-		$cleanedApps = new Collection();
+		$convertedApps = $this->convertGames($apps);
+
+		$apps = $this->sortObjects($convertedApps);
+
+		return $apps;
+	}
+
+	/**
+	 * @param $apps
+	 *
+	 * @return Collection
+	 */
+	protected function convertGames($apps)
+	{
+		$convertedApps = new Collection();
 
 		foreach ($apps as $app) {
 			if (isset($app->data)) {
-				$cleanedApps->add(new AppContainer($app->data));
+				$convertedApps->add(new AppContainer($app->data));
 			}
 		}
 
-		$apps = $cleanedApps->sortBy(function ($app) {
-			return $app->name;
-		});
-
-		return $apps;
+		return $convertedApps;
 	}
 }

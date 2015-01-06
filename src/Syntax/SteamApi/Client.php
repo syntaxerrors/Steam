@@ -193,4 +193,11 @@ class Client {
         // Nothing found
         throw new ClassNotFoundException($name);
     }
+
+    protected function sortObjects($objects)
+    {
+        return $objects->sortBy(function ($object) {
+            return $object->name;
+        });
+    }
 }
