@@ -18,8 +18,7 @@ class Player extends Client {
     public function GetSteamLevel()
     {
         // Set up the api details
-        $this->method  = __FUNCTION__;
-        $this->version = 'v0001';
+        $this->setApiDetails(__FUNCTION__, 'v0001');
 
         // Set up the arguments
         $arguments = ['steamId' => $this->steamId];
@@ -42,8 +41,7 @@ class Player extends Client {
     public function GetBadges()
     {
         // Set up the api details
-        $this->method  = __FUNCTION__;
-        $this->version = 'v0001';
+        $this->setApiDetails(__FUNCTION__, 'v0001');
 
         // Set up the arguments
         $arguments = ['steamId' => $this->steamId];
@@ -57,8 +55,7 @@ class Player extends Client {
     public function GetCommunityBadgeProgress($badgeId = null)
     {
         // Set up the api details
-        $this->method  = __FUNCTION__;
-        $this->version = 'v0001';
+        $this->setApiDetails(__FUNCTION__, 'v0001');
 
         // Set up the arguments
         $arguments = ['steamId' => $this->steamId];
@@ -75,8 +72,7 @@ class Player extends Client {
     public function GetOwnedGames($includeAppInfo = true, $includePlayedFreeGames = false, $appIdsFilter = [])
     {
         // Set up the api details
-        $this->method  = __FUNCTION__;
-        $this->version = 'v0001';
+        $this->setApiDetails(__FUNCTION__, 'v0001');
 
         // Set up the arguments
         $arguments = ['steamId' => $this->steamId];
@@ -102,8 +98,7 @@ class Player extends Client {
     public function GetRecentlyPlayedGames($count = null)
     {
         // Set up the api details
-        $this->method  = __FUNCTION__;
-        $this->version = 'v0001';
+        $this->setApiDetails(__FUNCTION__, 'v0001');
 
         // Set up the arguments
         $arguments = ['steamId' => $this->steamId];
@@ -127,8 +122,7 @@ class Player extends Client {
     public function IsPlayingSharedGame($appIdPlaying)
     {
         // Set up the api details
-        $this->method  = __FUNCTION__;
-        $this->version = 'v0001';
+        $this->setApiDetails(__FUNCTION__, 'v0001');
 
         // Set up the arguments
         $arguments = [

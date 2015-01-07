@@ -201,6 +201,12 @@ class Client {
         });
     }
 
+    protected function setApiDetails($method, $version)
+    {
+        $this->method  = $method;
+        $this->version = $version;
+    }
+
     protected function getServiceResponse($arguments)
     {
         $arguments = json_encode($arguments);
