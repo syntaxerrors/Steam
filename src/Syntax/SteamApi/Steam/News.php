@@ -2,6 +2,9 @@
 
 use Syntax\SteamApi\Client;
 
+/**
+ * @method GetNewsForApp($appId, $count, $maxLength)
+ */
 class News extends Client {
 
 	public function __construct()
