@@ -36,6 +36,9 @@ class Details {
 		$this->avatarFullUrl   = (string)$details->avatarFull;
 	}
 
+	/**
+	 * @param string $image
+	 */
 	protected function getImageForAvatar($image)
 	{
 		return \HTML::image($image);

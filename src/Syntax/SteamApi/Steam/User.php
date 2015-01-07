@@ -12,6 +12,9 @@ class User extends Client {
 		$this->steamId   = $steamId;
 	}
 
+	/**
+	 * @param string $steamId
+	 */
 	public function GetPlayerSummaries($steamId = null)
 	{
 		// Set up the api details
