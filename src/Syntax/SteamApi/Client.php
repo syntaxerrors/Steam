@@ -207,5 +207,7 @@ class Client {
 
         // Get the client
         $client = $this->setUpService($arguments)->response;
+
+        return $client;
     }
 }
