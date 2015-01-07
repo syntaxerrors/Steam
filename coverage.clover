@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1420609763">
-  <project timestamp="1420609763">
+<coverage generated="1420610153">
+  <project timestamp="1420610153">
     <package name="Syntax\SteamApi">
       <file name="/Users/travis/Code/Personal/steam/vendor/syntax/steam-api/src/Syntax/SteamApi/Client.php">
         <class name="Client" namespace="Syntax\SteamApi">
-          <metrics methods="11" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="72" coveredstatements="6" elements="83" coveredelements="6"/>
+          <metrics methods="12" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="76" coveredstatements="6" elements="88" coveredelements="7"/>
         </class>
+        <line num="0" type="stmt" count="1"/>
         <line num="36" type="method" name="__construct" crap="2.01" count="1"/>
         <line num="38" type="stmt" count="1"/>
         <line num="40" type="stmt" count="1"/>
@@ -78,6 +79,7 @@
         <line num="193" type="stmt" count="0"/>
         <line num="194" type="stmt" count="0"/>
         <line num="198" type="stmt" count="0"/>
+        <line num="204" type="method" name="sortObjects" crap="1" count="0"/>
         <line num="206" type="method" name="anonymous function" crap="2" count="0"/>
         <line num="207" type="stmt" count="0"/>
         <line num="208" type="stmt" count="0"/>
@@ -89,11 +91,11 @@
         <line num="223" type="stmt" count="0"/>
         <line num="226" type="stmt" count="0"/>
         <line num="228" type="stmt" count="0"/>
-        <metrics loc="229" ncloc="171" classes="1" methods="11" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="72" coveredstatements="6" elements="83" coveredelements="6"/>
+        <metrics loc="229" ncloc="171" classes="1" methods="11" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="73" coveredstatements="6" elements="84" coveredelements="6"/>
       </file>
       <file name="/Users/travis/Code/Personal/steam/vendor/syntax/steam-api/src/Syntax/SteamApi/SteamId.php">
         <class name="SteamId" namespace="Syntax\SteamApi">
-          <metrics methods="8" coveredmethods="5" conditionals="0" coveredconditionals="0" statements="61" coveredstatements="38" elements="69" coveredelements="43"/>
+          <metrics methods="8" coveredmethods="8" conditionals="0" coveredconditionals="0" statements="61" coveredstatements="38" elements="69" coveredelements="46"/>
         </class>
         <line num="25" type="method" name="convertId" crap="42.50" count="1"/>
         <line num="27" type="stmt" count="1"/>
@@ -167,6 +169,213 @@
         <metrics loc="138" ncloc="123" classes="1" methods="8" coveredmethods="5" conditionals="0" coveredconditionals="0" statements="61" coveredstatements="38" elements="69" coveredelements="43"/>
       </file>
     </package>
+    <package name="Composer\Autoload">
+      <file name="/Users/travis/Code/Personal/steam/vendor/syntax/steam-api/vendor/composer/ClassLoader.php">
+        <class name="ClassLoader" namespace="Composer\Autoload">
+          <metrics methods="17" coveredmethods="5" conditionals="0" coveredconditionals="0" statements="139" coveredstatements="35" elements="156" coveredelements="40"/>
+        </class>
+        <line num="0" type="stmt" count="1"/>
+        <line num="57" type="method" name="getPrefixes" crap="3.69" count="1"/>
+        <line num="58" type="stmt" count="1"/>
+        <line num="59" type="stmt" count="0"/>
+        <line num="60" type="stmt" count="0"/>
+        <line num="63" type="stmt" count="0"/>
+        <line num="66" type="method" name="getPrefixesPsr4" crap="1" count="1"/>
+        <line num="68" type="stmt" count="1"/>
+        <line num="71" type="method" name="getFallbackDirs" crap="2" count="0"/>
+        <line num="73" type="stmt" count="0"/>
+        <line num="76" type="method" name="getFallbackDirsPsr4" crap="2" count="0"/>
+        <line num="78" type="stmt" count="0"/>
+        <line num="81" type="method" name="getClassMap" crap="2" count="0"/>
+        <line num="83" type="stmt" count="0"/>
+        <line num="89" type="method" name="addClassMap" crap="6" count="0"/>
+        <line num="91" type="stmt" count="0"/>
+        <line num="92" type="stmt" count="0"/>
+        <line num="93" type="stmt" count="0"/>
+        <line num="94" type="stmt" count="0"/>
+        <line num="96" type="stmt" count="0"/>
+        <line num="106" type="method" name="add" crap="30" count="0"/>
+        <line num="108" type="stmt" count="0"/>
+        <line num="109" type="stmt" count="0"/>
+        <line num="110" type="stmt" count="0"/>
+        <line num="111" type="stmt" count="0"/>
+        <line num="112" type="stmt" count="0"/>
+        <line num="113" type="stmt" count="0"/>
+        <line num="114" type="stmt" count="0"/>
+        <line num="115" type="stmt" count="0"/>
+        <line num="116" type="stmt" count="0"/>
+        <line num="118" type="stmt" count="0"/>
+        <line num="121" type="stmt" count="0"/>
+        <line num="124" type="stmt" count="0"/>
+        <line num="125" type="stmt" count="0"/>
+        <line num="126" type="stmt" count="0"/>
+        <line num="128" type="stmt" count="0"/>
+        <line num="130" type="stmt" count="0"/>
+        <line num="131" type="stmt" count="0"/>
+        <line num="132" type="stmt" count="0"/>
+        <line num="133" type="stmt" count="0"/>
+        <line num="134" type="stmt" count="0"/>
+        <line num="135" type="stmt" count="0"/>
+        <line num="136" type="stmt" count="0"/>
+        <line num="137" type="stmt" count="0"/>
+        <line num="139" type="stmt" count="0"/>
+        <line num="141" type="stmt" count="0"/>
+        <line num="153" type="method" name="addPsr4" crap="42" count="0"/>
+        <line num="155" type="stmt" count="0"/>
+        <line num="157" type="stmt" count="0"/>
+        <line num="158" type="stmt" count="0"/>
+        <line num="159" type="stmt" count="0"/>
+        <line num="160" type="stmt" count="0"/>
+        <line num="161" type="stmt" count="0"/>
+        <line num="162" type="stmt" count="0"/>
+        <line num="163" type="stmt" count="0"/>
+        <line num="164" type="stmt" count="0"/>
+        <line num="166" type="stmt" count="0"/>
+        <line num="168" type="stmt" count="0"/>
+        <line num="170" type="stmt" count="0"/>
+        <line num="171" type="stmt" count="0"/>
+        <line num="172" type="stmt" count="0"/>
+        <line num="174" type="stmt" count="0"/>
+        <line num="175" type="stmt" count="0"/>
+        <line num="176" type="stmt" count="0"/>
+        <line num="178" type="stmt" count="0"/>
+        <line num="179" type="stmt" count="0"/>
+        <line num="180" type="stmt" count="0"/>
+        <line num="181" type="stmt" count="0"/>
+        <line num="182" type="stmt" count="0"/>
+        <line num="184" type="stmt" count="0"/>
+        <line num="185" type="stmt" count="0"/>
+        <line num="187" type="stmt" count="0"/>
+        <line num="189" type="stmt" count="0"/>
+        <line num="198" type="method" name="set" crap="6" count="0"/>
+        <line num="200" type="stmt" count="0"/>
+        <line num="201" type="stmt" count="0"/>
+        <line num="202" type="stmt" count="0"/>
+        <line num="203" type="stmt" count="0"/>
+        <line num="205" type="stmt" count="0"/>
+        <line num="216" type="method" name="setPsr4" crap="12" count="0"/>
+        <line num="218" type="stmt" count="0"/>
+        <line num="219" type="stmt" count="0"/>
+        <line num="220" type="stmt" count="0"/>
+        <line num="221" type="stmt" count="0"/>
+        <line num="222" type="stmt" count="0"/>
+        <line num="223" type="stmt" count="0"/>
+        <line num="225" type="stmt" count="0"/>
+        <line num="226" type="stmt" count="0"/>
+        <line num="228" type="stmt" count="0"/>
+        <line num="235" type="method" name="setUseIncludePath" crap="2" count="0"/>
+        <line num="237" type="stmt" count="0"/>
+        <line num="238" type="stmt" count="0"/>
+        <line num="246" type="method" name="getUseIncludePath" crap="2" count="0"/>
+        <line num="248" type="stmt" count="0"/>
+        <line num="256" type="method" name="register" crap="2" count="0"/>
+        <line num="258" type="stmt" count="0"/>
+        <line num="259" type="stmt" count="0"/>
+        <line num="264" type="method" name="unregister" crap="2" count="0"/>
+        <line num="266" type="stmt" count="0"/>
+        <line num="267" type="stmt" count="0"/>
+        <line num="275" type="method" name="loadClass" crap="2.06" count="1"/>
+        <line num="277" type="stmt" count="1"/>
+        <line num="278" type="stmt" count="1"/>
+        <line num="280" type="stmt" count="1"/>
+        <line num="282" type="stmt" count="0"/>
+        <line num="291" type="method" name="findFile" crap="8.60" count="1"/>
+        <line num="294" type="stmt" count="1"/>
+        <line num="295" type="stmt" count="0"/>
+        <line num="296" type="stmt" count="0"/>
+        <line num="299" type="stmt" count="1"/>
+        <line num="300" type="stmt" count="1"/>
+        <line num="303" type="stmt" count="1"/>
+        <line num="306" type="stmt" count="1"/>
+        <line num="307" type="stmt" count="0"/>
+        <line num="308" type="stmt" count="0"/>
+        <line num="310" type="stmt" count="1"/>
+        <line num="312" type="stmt" count="0"/>
+        <line num="315" type="stmt" count="1"/>
+        <line num="318" type="method" name="findFileWithExtension" crap="37.93" count="1"/>
+        <line num="321" type="stmt" count="1"/>
+        <line num="323" type="stmt" count="1"/>
+        <line num="324" type="stmt" count="1"/>
+        <line num="325" type="stmt" count="1"/>
+        <line num="326" type="stmt" count="1"/>
+        <line num="327" type="stmt" count="1"/>
+        <line num="328" type="stmt" count="1"/>
+        <line num="329" type="stmt" count="1"/>
+        <line num="331" type="stmt" count="0"/>
+        <line num="332" type="stmt" count="0"/>
+        <line num="333" type="stmt" count="1"/>
+        <line num="334" type="stmt" count="1"/>
+        <line num="337" type="stmt" count="1"/>
+        <line num="338" type="stmt" count="0"/>
+        <line num="339" type="stmt" count="0"/>
+        <line num="341" type="stmt" count="1"/>
+        <line num="344" type="stmt" count="1"/>
+        <line num="346" type="stmt" count="1"/>
+        <line num="347" type="stmt" count="1"/>
+        <line num="348" type="stmt" count="1"/>
+        <line num="350" type="stmt" count="0"/>
+        <line num="353" type="stmt" count="1"/>
+        <line num="354" type="stmt" count="1"/>
+        <line num="355" type="stmt" count="1"/>
+        <line num="356" type="stmt" count="1"/>
+        <line num="357" type="stmt" count="1"/>
+        <line num="358" type="stmt" count="1"/>
+        <line num="360" type="stmt" count="0"/>
+        <line num="361" type="stmt" count="0"/>
+        <line num="362" type="stmt" count="1"/>
+        <line num="363" type="stmt" count="0"/>
+        <line num="366" type="stmt" count="0"/>
+        <line num="367" type="stmt" count="0"/>
+        <line num="368" type="stmt" count="0"/>
+        <line num="370" type="stmt" count="0"/>
+        <line num="373" type="stmt" count="0"/>
+        <line num="374" type="stmt" count="0"/>
+        <line num="376" type="stmt" count="0"/>
+        <line num="386" type="stmt" count="1"/>
+        <line num="387" type="stmt" count="1"/>
+        <metrics loc="387" ncloc="242" classes="1" methods="17" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="141" coveredstatements="37" elements="158" coveredelements="38"/>
+      </file>
+    </package>
+    <file name="/Users/travis/Code/Personal/steam/vendor/syntax/steam-api/vendor/composer/autoload_real.php">
+      <class name="ComposerAutoloaderInit5ba69d6a9ffcd90852f453f9040d969c" namespace="global">
+        <metrics methods="2" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="30" coveredstatements="0" elements="32" coveredelements="0"/>
+      </class>
+      <line num="9" type="method" name="loadClassLoader" crap="6" count="0"/>
+      <line num="11" type="stmt" count="0"/>
+      <line num="12" type="stmt" count="0"/>
+      <line num="13" type="stmt" count="0"/>
+      <line num="14" type="stmt" count="0"/>
+      <line num="16" type="method" name="getLoader" crap="42" count="0"/>
+      <line num="18" type="stmt" count="0"/>
+      <line num="19" type="stmt" count="0"/>
+      <line num="22" type="stmt" count="0"/>
+      <line num="23" type="stmt" count="0"/>
+      <line num="24" type="stmt" count="0"/>
+      <line num="26" type="stmt" count="0"/>
+      <line num="27" type="stmt" count="0"/>
+      <line num="28" type="stmt" count="0"/>
+      <line num="30" type="stmt" count="0"/>
+      <line num="31" type="stmt" count="0"/>
+      <line num="32" type="stmt" count="0"/>
+      <line num="33" type="stmt" count="0"/>
+      <line num="35" type="stmt" count="0"/>
+      <line num="36" type="stmt" count="0"/>
+      <line num="37" type="stmt" count="0"/>
+      <line num="38" type="stmt" count="0"/>
+      <line num="40" type="stmt" count="0"/>
+      <line num="41" type="stmt" count="0"/>
+      <line num="42" type="stmt" count="0"/>
+      <line num="43" type="stmt" count="0"/>
+      <line num="45" type="stmt" count="0"/>
+      <line num="47" type="stmt" count="0"/>
+      <line num="48" type="stmt" count="0"/>
+      <line num="49" type="stmt" count="0"/>
+      <line num="50" type="stmt" count="0"/>
+      <line num="52" type="stmt" count="0"/>
+      <line num="58" type="stmt" count="0"/>
+      <line num="59" type="stmt" count="0"/>
+      <metrics loc="59" ncloc="57" classes="1" methods="2" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="32" coveredstatements="0" elements="34" coveredelements="0"/>
+    </file>
     <package name="Whoops\Handler">
       <file name="/Users/travis/Code/Personal/steam/vendor/syntax/steam-api/vendor/filp/whoops/src/Whoops/Handler/Handler.php">
         <class name="Handler" namespace="Whoops\Handler">
@@ -187,6 +396,7 @@
         <line num="80" type="stmt" count="0"/>
         <line num="85" type="method" name="getException" crap="2" count="0"/>
         <line num="87" type="stmt" count="0"/>
+        <line num="90" type="stmt" count="1"/>
         <metrics loc="89" ncloc="47" classes="1" methods="6" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="9" coveredstatements="0" elements="15" coveredelements="0"/>
       </file>
       <file name="/Users/travis/Code/Personal/steam/vendor/syntax/steam-api/vendor/filp/whoops/src/Whoops/Handler/JsonResponseHandler.php">
@@ -219,16 +429,18 @@
         <line num="85" type="stmt" count="0"/>
         <line num="87" type="stmt" count="0"/>
         <line num="88" type="stmt" count="0"/>
+        <line num="91" type="stmt" count="1"/>
         <metrics loc="90" ncloc="59" classes="1" methods="4" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="22" coveredstatements="0" elements="26" coveredelements="0"/>
       </file>
     </package>
     <file name="/Users/travis/Code/Personal/steam/vendor/syntax/steam-api/vendor/filp/whoops/src/Whoops/Handler/HandlerInterface.php">
+      <line num="38" type="stmt" count="1"/>
       <metrics loc="37" ncloc="18" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
     </file>
     <package name="Whoops">
       <file name="/Users/travis/Code/Personal/steam/vendor/syntax/steam-api/vendor/filp/whoops/src/Whoops/Run.php">
         <class name="Run" namespace="Whoops">
-          <metrics methods="17" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="121" coveredstatements="8" elements="138" coveredelements="8"/>
+          <metrics methods="17" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="128" coveredstatements="8" elements="145" coveredelements="11"/>
         </class>
         <line num="42" type="method" name="pushHandler" crap="4.94" count="1"/>
         <line num="44" type="stmt" count="1"/>
@@ -277,7 +489,6 @@
         <line num="161" type="stmt" count="0"/>
         <line num="162" type="stmt" count="0"/>
         <line num="163" type="stmt" count="0"/>
-        <line num="164" type="method" name="anonymous function" crap="2" count="0"/>
         <line num="166" type="stmt" count="0"/>
         <line num="167" type="stmt" count="0"/>
         <line num="168" type="stmt" count="0"/>
@@ -371,6 +582,7 @@
         <line num="386" type="stmt" count="0"/>
         <line num="387" type="stmt" count="0"/>
         <line num="388" type="stmt" count="0"/>
+        <line num="391" type="stmt" count="1"/>
         <metrics loc="390" ncloc="226" classes="1" methods="17" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="124" coveredstatements="8" elements="141" coveredelements="8"/>
       </file>
     </package>
@@ -379,6 +591,7 @@
         <class name="AbstractHasDispatcher" namespace="Guzzle\Common">
           <metrics methods="5" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="10" coveredstatements="6" elements="15" coveredelements="8"/>
         </class>
+        <line num="0" type="stmt" count="1"/>
         <line num="17" type="method" name="getAllEvents" crap="2" count="0"/>
         <line num="19" type="stmt" count="0"/>
         <line num="22" type="method" name="setEventDispatcher" crap="2" count="0"/>
@@ -394,6 +607,7 @@
         <line num="43" type="method" name="addSubscriber" crap="1" count="1"/>
         <line num="45" type="stmt" count="1"/>
         <line num="47" type="stmt" count="1"/>
+        <line num="50" type="stmt" count="1"/>
         <metrics loc="49" ncloc="45" classes="1" methods="5" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="10" coveredstatements="6" elements="15" coveredelements="8"/>
       </file>
       <file name="/Users/travis/Code/Personal/steam/vendor/syntax/steam-api/vendor/guzzle/guzzle/src/Guzzle/Common/Collection.php">
@@ -534,6 +748,7 @@
         <line num="398" type="stmt" count="0"/>
         <line num="399" type="stmt" count="0"/>
         <line num="401" type="stmt" count="0"/>
+        <line num="404" type="stmt" count="1"/>
         <metrics loc="403" ncloc="245" classes="1" methods="27" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="107" coveredstatements="5" elements="134" coveredelements="8"/>
       </file>
       <file name="/Users/travis/Code/Personal/steam/vendor/syntax/steam-api/vendor/guzzle/guzzle/src/Guzzle/Common/Version.php">
@@ -545,20 +760,24 @@
         <line num="26" type="stmt" count="0"/>
         <line num="27" type="stmt" count="0"/>
         <line num="28" type="stmt" count="0"/>
+        <line num="30" type="stmt" count="1"/>
         <metrics loc="29" ncloc="17" classes="1" methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="4" coveredstatements="0" elements="5" coveredelements="0"/>
       </file>
     </package>
     <file name="/Users/travis/Code/Personal/steam/vendor/syntax/steam-api/vendor/guzzle/guzzle/src/Guzzle/Common/HasDispatcherInterface.php">
+      <line num="55" type="stmt" count="1"/>
       <metrics loc="54" ncloc="19" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
     </file>
     <file name="/Users/travis/Code/Personal/steam/vendor/syntax/steam-api/vendor/guzzle/guzzle/src/Guzzle/Common/ToArrayInterface.php">
+      <line num="17" type="stmt" count="1"/>
       <metrics loc="16" ncloc="8" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
     </file>
     <package name="Guzzle\Http">
       <file name="/Users/travis/Code/Personal/steam/vendor/syntax/steam-api/vendor/guzzle/guzzle/src/Guzzle/Http/Client.php">
         <class name="Client" namespace="Guzzle\Http">
-          <metrics methods="33" coveredmethods="4" conditionals="0" coveredconditionals="0" statements="184" coveredstatements="37" elements="217" coveredelements="41"/>
+          <metrics methods="33" coveredmethods="7" conditionals="0" coveredconditionals="0" statements="184" coveredstatements="37" elements="217" coveredelements="44"/>
         </class>
+        <line num="0" type="stmt" count="1"/>
         <line num="57" type="method" name="getAllEvents" crap="2" count="0"/>
         <line num="59" type="stmt" count="0"/>
         <line num="68" type="method" name="__construct" crap="4" count="1"/>
@@ -776,11 +995,12 @@
         <line num="518" type="stmt" count="0"/>
         <line num="520" type="stmt" count="0"/>
         <line num="522" type="stmt" count="0"/>
+        <line num="525" type="stmt" count="1"/>
         <metrics loc="524" ncloc="402" classes="1" methods="33" coveredmethods="4" conditionals="0" coveredconditionals="0" statements="184" coveredstatements="37" elements="217" coveredelements="41"/>
       </file>
       <file name="/Users/travis/Code/Personal/steam/vendor/syntax/steam-api/vendor/guzzle/guzzle/src/Guzzle/Http/RedirectPlugin.php">
         <class name="RedirectPlugin" namespace="Guzzle\Http">
-          <metrics methods="9" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="80" coveredstatements="3" elements="89" coveredelements="4"/>
+          <metrics methods="9" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="85" coveredstatements="3" elements="94" coveredelements="4"/>
         </class>
         <line num="32" type="method" name="getSubscribedEvents" crap="1" count="1"/>
         <line num="35" type="stmt" count="1"/>
@@ -867,16 +1087,17 @@
         <line num="239" type="method" name="throwTooManyRedirectsException" crap="2" count="0"/>
         <line num="241" type="stmt" count="0"/>
         <line num="242" type="stmt" count="0"/>
-        <line num="243" type="method" name="anonymous function" crap="2" count="0"/>
         <line num="244" type="stmt" count="0"/>
         <line num="245" type="stmt" count="0"/>
         <line num="246" type="stmt" count="0"/>
         <line num="248" type="stmt" count="0"/>
         <line num="249" type="stmt" count="0"/>
+        <line num="251" type="stmt" count="1"/>
         <metrics loc="250" ncloc="151" classes="1" methods="9" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="82" coveredstatements="3" elements="91" coveredelements="4"/>
       </file>
     </package>
     <file name="/Users/travis/Code/Personal/steam/vendor/syntax/steam-api/vendor/guzzle/guzzle/src/Guzzle/Http/ClientInterface.php">
+      <line num="224" type="stmt" count="1"/>
       <metrics loc="223" ncloc="52" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
     </file>
     <package name="Guzzle\Http\Curl">
@@ -897,6 +1118,7 @@
         <line num="60" type="method" name="get" crap="2" count="1"/>
         <line num="62" type="stmt" count="1"/>
         <line num="64" type="stmt" count="1"/>
+        <line num="67" type="stmt" count="1"/>
         <metrics loc="66" ncloc="37" classes="1" methods="3" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="10" coveredstatements="10" elements="13" coveredelements="13"/>
       </file>
     </package>
@@ -1105,10 +1327,12 @@
         <line num="355" type="stmt" count="0"/>
         <line num="356" type="stmt" count="0"/>
         <line num="358" type="stmt" count="0"/>
+        <line num="360" type="stmt" count="1"/>
         <metrics loc="359" ncloc="304" classes="1" methods="25" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="175" coveredstatements="3" elements="200" coveredelements="5"/>
       </file>
     </package>
     <file name="/Users/travis/Code/Personal/steam/vendor/syntax/steam-api/vendor/guzzle/guzzle/src/Guzzle/Http/Message/RequestFactoryInterface.php">
+      <line num="106" type="stmt" count="1"/>
       <metrics loc="105" ncloc="28" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
     </file>
     <file name="/Users/travis/Code/Personal/steam/vendor/syntax/steam-api/vendor/ircmaxell/password-compat/lib/password.php">
@@ -1270,29 +1494,32 @@
     <package name="Illuminate\Auth">
       <file name="/Users/travis/Code/Personal/steam/vendor/syntax/steam-api/vendor/laravel/framework/src/Illuminate/Auth/AuthServiceProvider.php">
         <class name="AuthServiceProvider" namespace="Illuminate\Auth">
-          <metrics methods="2" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="4" coveredstatements="1" elements="6" coveredelements="1"/>
+          <metrics methods="3" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="10" coveredstatements="5" elements="13" coveredelements="7"/>
         </class>
-        <line num="21" type="method" name="anonymous function" crap="1.30" count="1"/>
+        <line num="19" type="method" name="register" crap="1" count="1"/>
+        <line num="21" type="method" name="anonymous function" crap="1.12" count="1"/>
         <line num="26" type="stmt" count="0"/>
         <line num="28" type="stmt" count="0"/>
         <line num="29" type="stmt" count="1"/>
         <line num="30" type="stmt" count="1"/>
         <line num="37" type="method" name="provides" crap="2" count="0"/>
         <line num="39" type="stmt" count="0"/>
-        <metrics loc="42" ncloc="21" classes="1" methods="2" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="5" coveredstatements="2" elements="7" coveredelements="2"/>
+        <line num="43" type="stmt" count="1"/>
+        <metrics loc="42" ncloc="21" classes="1" methods="2" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="6" coveredstatements="3" elements="8" coveredelements="3"/>
       </file>
     </package>
     <package name="Illuminate\Auth\Reminders">
       <file name="/Users/travis/Code/Personal/steam/vendor/syntax/steam-api/vendor/laravel/framework/src/Illuminate/Auth/Reminders/ReminderServiceProvider.php">
         <class name="ReminderServiceProvider" namespace="Illuminate\Auth\Reminders">
-          <metrics methods="6" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="26" coveredstatements="11" elements="32" coveredelements="12"/>
+          <metrics methods="6" coveredmethods="5" conditionals="0" coveredconditionals="0" statements="38" coveredstatements="22" elements="44" coveredelements="27"/>
         </class>
         <line num="23" type="method" name="register" crap="1" count="1"/>
         <line num="25" type="stmt" count="1"/>
         <line num="27" type="stmt" count="1"/>
         <line num="29" type="stmt" count="1"/>
         <line num="30" type="stmt" count="1"/>
-        <line num="37" type="method" name="registerPasswordBroker" crap="1.42" count="1"/>
+        <line num="37" type="method" name="registerPasswordBroker" crap="1.30" count="1"/>
+        <line num="39" type="stmt" count="1"/>
         <line num="44" type="stmt" count="0"/>
         <line num="46" type="stmt" count="0"/>
         <line num="48" type="stmt" count="0"/>
@@ -1301,7 +1528,8 @@
         <line num="57" type="stmt" count="0"/>
         <line num="58" type="stmt" count="1"/>
         <line num="59" type="stmt" count="1"/>
-        <line num="66" type="method" name="registerReminderRepository" crap="1.36" count="1"/>
+        <line num="66" type="method" name="registerReminderRepository" crap="1.24" count="1"/>
+        <line num="68" type="stmt" count="1"/>
         <line num="70" type="stmt" count="0"/>
         <line num="75" type="stmt" count="0"/>
         <line num="77" type="stmt" count="0"/>
@@ -1309,12 +1537,14 @@
         <line num="81" type="stmt" count="0"/>
         <line num="82" type="stmt" count="1"/>
         <line num="83" type="stmt" count="1"/>
-        <line num="90" type="method" name="registerCommands" crap="1.12" count="1"/>
+        <line num="90" type="method" name="registerCommands" crap="1.04" count="1"/>
+        <line num="92" type="stmt" count="1"/>
         <line num="94" type="stmt" count="0"/>
         <line num="95" type="stmt" count="1"/>
+        <line num="97" type="stmt" count="1"/>
         <line num="99" type="stmt" count="0"/>
         <line num="100" type="stmt" count="1"/>
-        <line num="102" type="method" name="anonymous function" crap="1.12" count="1"/>
+        <line num="102" type="stmt" count="1"/>
         <line num="104" type="stmt" count="0"/>
         <line num="105" type="stmt" count="1"/>
         <line num="107" type="stmt" count="1"/>
@@ -1323,27 +1553,33 @@
         <line num="110" type="stmt" count="1"/>
         <line num="117" type="method" name="provides" crap="2" count="0"/>
         <line num="119" type="stmt" count="0"/>
-        <metrics loc="122" ncloc="74" classes="1" methods="6" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="30" coveredstatements="15" elements="36" coveredelements="16"/>
+        <line num="123" type="stmt" count="1"/>
+        <line num="143" type="stmt" count="1"/>
+        <metrics loc="122" ncloc="74" classes="1" methods="6" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="35" coveredstatements="20" elements="41" coveredelements="21"/>
       </file>
     </package>
     <package name="Illuminate\Cache">
       <file name="/Users/travis/Code/Personal/steam/vendor/syntax/steam-api/vendor/laravel/framework/src/Illuminate/Cache/CacheServiceProvider.php">
         <class name="CacheServiceProvider" namespace="Illuminate\Cache">
-          <metrics methods="4" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="14" coveredstatements="7" elements="18" coveredelements="7"/>
+          <metrics methods="4" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="24" coveredstatements="16" elements="28" coveredelements="19"/>
         </class>
-        <line num="19" type="method" name="register" crap="1.05" count="1"/>
+        <line num="19" type="method" name="register" crap="1.02" count="1"/>
+        <line num="21" type="stmt" count="1"/>
         <line num="23" type="stmt" count="0"/>
         <line num="24" type="stmt" count="1"/>
+        <line num="26" type="stmt" count="1"/>
         <line num="28" type="stmt" count="0"/>
         <line num="29" type="stmt" count="1"/>
+        <line num="31" type="stmt" count="1"/>
         <line num="33" type="stmt" count="0"/>
         <line num="34" type="stmt" count="1"/>
         <line num="36" type="stmt" count="1"/>
         <line num="37" type="stmt" count="1"/>
-        <line num="44" type="method" name="registerCommands" crap="1.12" count="1"/>
+        <line num="44" type="method" name="registerCommands" crap="1.04" count="1"/>
+        <line num="46" type="stmt" count="1"/>
         <line num="48" type="stmt" count="0"/>
         <line num="49" type="stmt" count="1"/>
-        <line num="51" type="method" name="anonymous function" crap="1.12" count="1"/>
+        <line num="51" type="stmt" count="1"/>
         <line num="53" type="stmt" count="0"/>
         <line num="54" type="stmt" count="1"/>
         <line num="56" type="stmt" count="1"/>
@@ -1351,13 +1587,15 @@
         <line num="64" type="method" name="provides" crap="2" count="0"/>
         <line num="67" type="stmt" count="0"/>
         <line num="68" type="stmt" count="0"/>
-        <metrics loc="71" ncloc="51" classes="1" methods="4" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="16" coveredstatements="9" elements="20" coveredelements="9"/>
+        <line num="72" type="stmt" count="1"/>
+        <line num="143" type="stmt" count="1"/>
+        <metrics loc="71" ncloc="51" classes="1" methods="4" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="21" coveredstatements="14" elements="25" coveredelements="14"/>
       </file>
     </package>
     <package name="Illuminate\Config">
       <file name="/Users/travis/Code/Personal/steam/vendor/syntax/steam-api/vendor/laravel/framework/src/Illuminate/Config/EnvironmentVariables.php">
         <class name="EnvironmentVariables" namespace="Illuminate\Config">
-          <metrics methods="2" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="8" coveredstatements="5" elements="10" coveredelements="6"/>
+          <metrics methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="8" coveredstatements="5" elements="10" coveredelements="7"/>
         </class>
         <line num="23" type="method" name="__construct" crap="1" count="1"/>
         <line num="25" type="stmt" count="1"/>
@@ -1369,11 +1607,12 @@
         <line num="41" type="stmt" count="0"/>
         <line num="42" type="stmt" count="1"/>
         <line num="43" type="stmt" count="1"/>
+        <line num="46" type="stmt" count="1"/>
         <metrics loc="45" ncloc="24" classes="1" methods="2" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="8" coveredstatements="5" elements="10" coveredelements="6"/>
       </file>
       <file name="/Users/travis/Code/Personal/steam/vendor/syntax/steam-api/vendor/laravel/framework/src/Illuminate/Config/FileEnvironmentVariablesLoader.php">
         <class name="FileEnvironmentVariablesLoader" namespace="Illuminate\Config">
-          <metrics methods="3" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="11" coveredstatements="9" elements="14" coveredelements="10"/>
+          <metrics methods="3" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="11" coveredstatements="9" elements="14" coveredelements="12"/>
         </class>
         <line num="28" type="method" name="__construct" crap="2" count="1"/>
         <line num="30" type="stmt" count="1"/>
@@ -1389,11 +1628,12 @@
         <line num="61" type="stmt" count="1"/>
         <line num="62" type="stmt" count="1"/>
         <line num="65" type="stmt" count="0"/>
+        <line num="69" type="stmt" count="1"/>
         <metrics loc="68" ncloc="39" classes="1" methods="3" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="11" coveredstatements="9" elements="14" coveredelements="10"/>
       </file>
       <file name="/Users/travis/Code/Personal/steam/vendor/syntax/steam-api/vendor/laravel/framework/src/Illuminate/Config/FileLoader.php">
         <class name="FileLoader" namespace="Illuminate\Config">
-          <metrics methods="11" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="59" coveredstatements="23" elements="70" coveredelements="25"/>
+          <metrics methods="11" coveredmethods="4" conditionals="0" coveredconditionals="0" statements="59" coveredstatements="23" elements="70" coveredelements="27"/>
         </class>
         <line num="42" type="method" name="__construct" crap="1" count="1"/>
         <line num="44" type="stmt" count="1"/>
@@ -1465,11 +1705,12 @@
         <line num="246" type="stmt" count="1"/>
         <line num="254" type="method" name="getFilesystem" crap="2" count="0"/>
         <line num="256" type="stmt" count="0"/>
+        <line num="260" type="stmt" count="1"/>
         <metrics loc="259" ncloc="115" classes="1" methods="11" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="59" coveredstatements="23" elements="70" coveredelements="25"/>
       </file>
       <file name="/Users/travis/Code/Personal/steam/vendor/syntax/steam-api/vendor/laravel/framework/src/Illuminate/Config/Repository.php">
         <class name="Repository" namespace="Illuminate\Config">
-          <metrics methods="25" coveredmethods="5" conditionals="0" coveredconditionals="0" statements="74" coveredstatements="32" elements="99" coveredelements="37"/>
+          <metrics methods="25" coveredmethods="8" conditionals="0" coveredconditionals="0" statements="79" coveredstatements="32" elements="104" coveredelements="40"/>
         </class>
         <line num="51" type="method" name="__construct" crap="1" count="1"/>
         <line num="53" type="stmt" count="1"/>
@@ -1527,7 +1768,6 @@
         <line num="234" type="stmt" count="0"/>
         <line num="236" type="stmt" count="0"/>
         <line num="241" type="stmt" count="0"/>
-        <line num="243" type="method" name="anonymous function" crap="2" count="0"/>
         <line num="245" type="stmt" count="0"/>
         <line num="247" type="stmt" count="0"/>
         <line num="249" type="stmt" count="0"/>
@@ -1571,20 +1811,24 @@
         <line num="410" type="method" name="offsetUnset" crap="2" count="0"/>
         <line num="412" type="stmt" count="0"/>
         <line num="413" type="stmt" count="0"/>
+        <line num="416" type="stmt" count="1"/>
         <metrics loc="415" ncloc="192" classes="1" methods="25" coveredmethods="5" conditionals="0" coveredconditionals="0" statements="75" coveredstatements="32" elements="100" coveredelements="37"/>
       </file>
     </package>
     <file name="/Users/travis/Code/Personal/steam/vendor/syntax/steam-api/vendor/laravel/framework/src/Illuminate/Config/EnvironmentVariablesLoaderInterface.php">
+      <line num="14" type="stmt" count="1"/>
       <metrics loc="13" ncloc="7" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
     </file>
     <file name="/Users/travis/Code/Personal/steam/vendor/syntax/steam-api/vendor/laravel/framework/src/Illuminate/Config/LoaderInterface.php">
+      <line num="53" type="stmt" count="1"/>
       <metrics loc="52" ncloc="15" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
     </file>
     <package name="Illuminate\Container">
       <file name="/Users/travis/Code/Personal/steam/vendor/syntax/steam-api/vendor/laravel/framework/src/Illuminate/Container/Container.php">
         <class name="Container" namespace="Illuminate\Container">
-          <metrics methods="45" coveredmethods="13" conditionals="0" coveredconditionals="0" statements="205" coveredstatements="88" elements="250" coveredelements="101"/>
+          <metrics methods="45" coveredmethods="23" conditionals="0" coveredconditionals="0" statements="210" coveredstatements="93" elements="255" coveredelements="116"/>
         </class>
+        <line num="0" type="stmt" count="1"/>
         <line num="65" type="method" name="resolvable" crap="6" count="0"/>
         <line num="67" type="stmt" count="0"/>
         <line num="76" type="method" name="bound" crap="2" count="1"/>
@@ -1824,7 +2068,6 @@
         <line num="816" type="method" name="offsetSet" crap="2" count="1"/>
         <line num="821" type="stmt" count="1"/>
         <line num="822" type="stmt" count="1"/>
-        <line num="823" type="method" name="anonymous function" crap="1" count="1"/>
         <line num="825" type="stmt" count="1"/>
         <line num="826" type="stmt" count="1"/>
         <line num="827" type="stmt" count="1"/>
@@ -1838,23 +2081,27 @@
         <line num="861" type="method" name="__set" crap="2" count="0"/>
         <line num="863" type="stmt" count="0"/>
         <line num="864" type="stmt" count="0"/>
+        <line num="867" type="stmt" count="1"/>
         <metrics loc="866" ncloc="424" classes="1" methods="45" coveredmethods="13" conditionals="0" coveredconditionals="0" statements="208" coveredstatements="91" elements="253" coveredelements="104"/>
       </file>
     </package>
     <package name="Illuminate\Cookie">
       <file name="/Users/travis/Code/Personal/steam/vendor/syntax/steam-api/vendor/laravel/framework/src/Illuminate/Cookie/CookieServiceProvider.php">
         <class name="CookieServiceProvider" namespace="Illuminate\Cookie">
-          <metrics methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="3" coveredstatements="1" elements="4" coveredelements="1"/>
+          <metrics methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="9" coveredstatements="5" elements="11" coveredelements="7"/>
         </class>
-        <line num="14" type="method" name="anonymous function" crap="1.30" count="1"/>
+        <line num="12" type="method" name="register" crap="1" count="1"/>
+        <line num="14" type="method" name="anonymous function" crap="1.12" count="1"/>
         <line num="16" type="stmt" count="0"/>
         <line num="18" type="stmt" count="0"/>
         <line num="19" type="stmt" count="1"/>
         <line num="20" type="stmt" count="1"/>
-        <metrics loc="22" ncloc="17" classes="1" methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="4" coveredstatements="2" elements="5" coveredelements="2"/>
+        <line num="23" type="stmt" count="1"/>
+        <metrics loc="22" ncloc="17" classes="1" methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="5" coveredstatements="3" elements="6" coveredelements="3"/>
       </file>
     </package>
     <file name="/Users/travis/Code/Personal/steam/vendor/syntax/steam-api/vendor/laravel/framework/src/Illuminate/Database/ConnectionResolverInterface.php">
+      <line num="29" type="stmt" count="1"/>
       <metrics loc="28" ncloc="11" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
     </file>
     <package name="Illuminate\Database\Connectors">
@@ -1926,13 +2173,14 @@
         <line num="223" type="stmt" count="0"/>
         <line num="224" type="stmt" count="0"/>
         <line num="227" type="stmt" count="0"/>
+        <line num="231" type="stmt" count="1"/>
         <metrics loc="230" ncloc="141" classes="1" methods="12" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="52" coveredstatements="2" elements="64" coveredelements="3"/>
       </file>
     </package>
     <package name="Illuminate\Database">
       <file name="/Users/travis/Code/Personal/steam/vendor/syntax/steam-api/vendor/laravel/framework/src/Illuminate/Database/DatabaseManager.php">
         <class name="DatabaseManager" namespace="Illuminate\Database">
-          <metrics methods="17" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="73" coveredstatements="3" elements="90" coveredelements="4"/>
+          <metrics methods="17" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="78" coveredstatements="3" elements="95" coveredelements="4"/>
         </class>
         <line num="43" type="method" name="__construct" crap="1" count="1"/>
         <line num="45" type="stmt" count="1"/>
@@ -2025,40 +2273,45 @@
         <line num="309" type="stmt" count="0"/>
         <line num="319" type="method" name="__call" crap="2" count="0"/>
         <line num="321" type="stmt" count="0"/>
-        <metrics loc="324" ncloc="162" classes="1" methods="17" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="74" coveredstatements="3" elements="91" coveredelements="4"/>
+        <line num="325" type="stmt" count="1"/>
+        <metrics loc="324" ncloc="162" classes="1" methods="17" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="75" coveredstatements="3" elements="92" coveredelements="4"/>
       </file>
       <file name="/Users/travis/Code/Personal/steam/vendor/syntax/steam-api/vendor/laravel/framework/src/Illuminate/Database/DatabaseServiceProvider.php">
         <class name="DatabaseServiceProvider" namespace="Illuminate\Database">
-          <metrics methods="3" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="7" coveredstatements="7" elements="10" coveredelements="10"/>
+          <metrics methods="3" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="13" coveredstatements="13" elements="16" coveredelements="16"/>
         </class>
         <line num="14" type="method" name="boot" crap="1" count="1"/>
         <line num="16" type="stmt" count="1"/>
         <line num="18" type="stmt" count="1"/>
         <line num="19" type="stmt" count="1"/>
         <line num="26" type="method" name="register" crap="1" count="1"/>
+        <line num="31" type="stmt" count="1"/>
         <line num="33" type="stmt" count="1"/>
         <line num="34" type="stmt" count="1"/>
         <line num="39" type="method" name="anonymous function" crap="1" count="1"/>
         <line num="41" type="stmt" count="1"/>
         <line num="42" type="stmt" count="1"/>
         <line num="43" type="stmt" count="1"/>
-        <metrics loc="45" ncloc="23" classes="1" methods="3" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="8" coveredstatements="8" elements="11" coveredelements="11"/>
+        <line num="46" type="stmt" count="1"/>
+        <metrics loc="45" ncloc="23" classes="1" methods="3" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="10" coveredstatements="10" elements="13" coveredelements="13"/>
       </file>
       <file name="/Users/travis/Code/Personal/steam/vendor/syntax/steam-api/vendor/laravel/framework/src/Illuminate/Database/MigrationServiceProvider.php">
         <class name="MigrationServiceProvider" namespace="Illuminate\Database">
-          <metrics methods="12" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="51" coveredstatements="32" elements="63" coveredelements="34"/>
+          <metrics methods="13" coveredmethods="12" conditionals="0" coveredconditionals="0" statements="64" coveredstatements="44" elements="77" coveredelements="56"/>
         </class>
         <line num="28" type="method" name="register" crap="1" count="1"/>
         <line num="30" type="stmt" count="1"/>
         <line num="35" type="stmt" count="1"/>
         <line num="37" type="stmt" count="1"/>
         <line num="38" type="stmt" count="1"/>
-        <line num="45" type="method" name="registerRepository" crap="1.12" count="1"/>
+        <line num="45" type="method" name="registerRepository" crap="1.06" count="1"/>
+        <line num="47" type="stmt" count="1"/>
         <line num="49" type="stmt" count="0"/>
         <line num="51" type="stmt" count="0"/>
         <line num="52" type="stmt" count="1"/>
         <line num="53" type="stmt" count="1"/>
-        <line num="60" type="method" name="registerMigrator" crap="1.12" count="1"/>
+        <line num="60" type="method" name="registerMigrator" crap="1.06" count="1"/>
+        <line num="65" type="stmt" count="1"/>
         <line num="67" type="stmt" count="0"/>
         <line num="69" type="stmt" count="0"/>
         <line num="70" type="stmt" count="1"/>
@@ -2074,35 +2327,42 @@
         <line num="96" type="stmt" count="1"/>
         <line num="97" type="stmt" count="1"/>
         <line num="98" type="stmt" count="1"/>
-        <line num="105" type="method" name="registerMigrateCommand" crap="1.12" count="1"/>
+        <line num="105" type="method" name="registerMigrateCommand" crap="1.06" count="1"/>
+        <line num="107" type="stmt" count="1"/>
         <line num="109" type="stmt" count="0"/>
         <line num="111" type="stmt" count="0"/>
         <line num="112" type="stmt" count="1"/>
         <line num="113" type="stmt" count="1"/>
-        <line num="120" type="method" name="registerRollbackCommand" crap="1.04" count="1"/>
+        <line num="120" type="method" name="registerRollbackCommand" crap="1.02" count="1"/>
+        <line num="122" type="stmt" count="1"/>
         <line num="124" type="stmt" count="0"/>
         <line num="125" type="stmt" count="1"/>
         <line num="126" type="stmt" count="1"/>
-        <line num="133" type="method" name="registerResetCommand" crap="1.04" count="1"/>
+        <line num="133" type="method" name="registerResetCommand" crap="1.02" count="1"/>
+        <line num="135" type="stmt" count="1"/>
         <line num="137" type="stmt" count="0"/>
         <line num="138" type="stmt" count="1"/>
         <line num="139" type="stmt" count="1"/>
-        <line num="146" type="method" name="registerRefreshCommand" crap="1.04" count="1"/>
+        <line num="146" type="method" name="registerRefreshCommand" crap="1.02" count="1"/>
+        <line num="148" type="stmt" count="1"/>
         <line num="150" type="stmt" count="0"/>
         <line num="151" type="stmt" count="1"/>
         <line num="152" type="stmt" count="1"/>
-        <line num="159" type="method" name="registerInstallCommand" crap="1.04" count="1"/>
+        <line num="159" type="method" name="registerInstallCommand" crap="1.02" count="1"/>
+        <line num="161" type="stmt" count="1"/>
         <line num="163" type="stmt" count="0"/>
         <line num="164" type="stmt" count="1"/>
         <line num="165" type="stmt" count="1"/>
-        <line num="172" type="method" name="registerMakeCommand" crap="1.12" count="1"/>
+        <line num="172" type="method" name="registerMakeCommand" crap="1.08" count="1"/>
         <line num="174" type="stmt" count="1"/>
+        <line num="176" type="stmt" count="1"/>
         <line num="181" type="stmt" count="0"/>
         <line num="183" type="stmt" count="0"/>
         <line num="185" type="stmt" count="0"/>
         <line num="186" type="stmt" count="1"/>
         <line num="187" type="stmt" count="1"/>
-        <line num="196" type="method" name="anonymous function" crap="1.12" count="1"/>
+        <line num="194" type="method" name="registerCreator" crap="1" count="1"/>
+        <line num="196" type="stmt" count="1"/>
         <line num="198" type="stmt" count="0"/>
         <line num="199" type="stmt" count="1"/>
         <line num="200" type="stmt" count="1"/>
@@ -2112,31 +2372,36 @@
         <line num="212" type="stmt" count="0"/>
         <line num="213" type="stmt" count="0"/>
         <line num="214" type="stmt" count="0"/>
-        <metrics loc="217" ncloc="122" classes="1" methods="12" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="52" coveredstatements="33" elements="64" coveredelements="35"/>
+        <line num="218" type="stmt" count="1"/>
+        <metrics loc="217" ncloc="122" classes="1" methods="12" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="61" coveredstatements="42" elements="73" coveredelements="44"/>
       </file>
       <file name="/Users/travis/Code/Personal/steam/vendor/syntax/steam-api/vendor/laravel/framework/src/Illuminate/Database/SeedServiceProvider.php">
         <class name="SeedServiceProvider" namespace="Illuminate\Database">
-          <metrics methods="3" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="8" coveredstatements="5" elements="11" coveredelements="5"/>
+          <metrics methods="4" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="14" coveredstatements="10" elements="18" coveredelements="13"/>
         </class>
-        <line num="20" type="method" name="register" crap="1.01" count="1"/>
+        <line num="20" type="method" name="register" crap="1.00" count="1"/>
         <line num="22" type="stmt" count="1"/>
+        <line num="24" type="stmt" count="1"/>
         <line num="26" type="stmt" count="0"/>
         <line num="27" type="stmt" count="1"/>
         <line num="29" type="stmt" count="1"/>
         <line num="30" type="stmt" count="1"/>
-        <line num="39" type="method" name="anonymous function" crap="1.12" count="1"/>
+        <line num="37" type="method" name="registerSeedCommand" crap="1" count="1"/>
+        <line num="39" type="stmt" count="1"/>
         <line num="41" type="stmt" count="0"/>
         <line num="42" type="stmt" count="1"/>
         <line num="43" type="stmt" count="1"/>
         <line num="50" type="method" name="provides" crap="2" count="0"/>
         <line num="52" type="stmt" count="0"/>
-        <metrics loc="55" ncloc="35" classes="1" methods="3" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="9" coveredstatements="6" elements="12" coveredelements="6"/>
+        <line num="56" type="stmt" count="1"/>
+        <line num="143" type="stmt" count="1"/>
+        <metrics loc="55" ncloc="35" classes="1" methods="3" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="11" coveredstatements="8" elements="14" coveredelements="8"/>
       </file>
     </package>
     <package name="Illuminate\Database\Eloquent">
       <file name="/Users/travis/Code/Personal/steam/vendor/syntax/steam-api/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php">
         <class name="Model" namespace="Illuminate\Database\Eloquent">
-          <metrics methods="182" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="662" coveredstatements="4" elements="844" coveredelements="6"/>
+          <metrics methods="182" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="666" coveredstatements="4" elements="848" coveredelements="6"/>
         </class>
         <line num="243" type="method" name="__construct" crap="2" count="0"/>
         <line num="245" type="stmt" count="0"/>
@@ -2376,7 +2641,6 @@
         <line num="1015" type="stmt" count="0"/>
         <line num="1023" type="method" name="getBelongsToManyCaller" crap="12" count="0"/>
         <line num="1025" type="stmt" count="0"/>
-        <line num="1027" type="method" name="anonymous function" crap="6" count="0"/>
         <line num="1029" type="stmt" count="0"/>
         <line num="1031" type="stmt" count="0"/>
         <line num="1032" type="stmt" count="0"/>
@@ -2983,15 +3247,17 @@
         <line num="3141" type="method" name="__wakeup" crap="2" count="0"/>
         <line num="3143" type="stmt" count="0"/>
         <line num="3144" type="stmt" count="0"/>
+        <line num="3147" type="stmt" count="1"/>
         <metrics loc="3146" ncloc="1535" classes="1" methods="182" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="663" coveredstatements="4" elements="845" coveredelements="6"/>
       </file>
     </package>
     <package name="Illuminate\Encryption">
       <file name="/Users/travis/Code/Personal/steam/vendor/syntax/steam-api/vendor/laravel/framework/src/Illuminate/Encryption/EncryptionServiceProvider.php">
         <class name="EncryptionServiceProvider" namespace="Illuminate\Encryption">
-          <metrics methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="7" coveredstatements="1" elements="8" coveredelements="1"/>
+          <metrics methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="17" coveredstatements="5" elements="19" coveredelements="7"/>
         </class>
-        <line num="14" type="method" name="anonymous function" crap="4.52" count="1"/>
+        <line num="12" type="method" name="register" crap="2" count="1"/>
+        <line num="14" type="method" name="anonymous function" crap="3.69" count="1"/>
         <line num="16" type="stmt" count="0"/>
         <line num="18" type="stmt" count="0"/>
         <line num="19" type="stmt" count="0"/>
@@ -3000,13 +3266,14 @@
         <line num="23" type="stmt" count="0"/>
         <line num="24" type="stmt" count="1"/>
         <line num="25" type="stmt" count="1"/>
-        <metrics loc="27" ncloc="22" classes="1" methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="8" coveredstatements="2" elements="9" coveredelements="2"/>
+        <line num="28" type="stmt" count="1"/>
+        <metrics loc="27" ncloc="22" classes="1" methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="9" coveredstatements="3" elements="10" coveredelements="3"/>
       </file>
     </package>
     <package name="Illuminate\Events">
       <file name="/Users/travis/Code/Personal/steam/vendor/syntax/steam-api/vendor/laravel/framework/src/Illuminate/Events/Dispatcher.php">
         <class name="Dispatcher" namespace="Illuminate\Events">
-          <metrics methods="19" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="78" coveredstatements="33" elements="97" coveredelements="35"/>
+          <metrics methods="19" coveredmethods="7" conditionals="0" coveredconditionals="0" statements="84" coveredstatements="33" elements="103" coveredelements="40"/>
         </class>
         <line num="48" type="method" name="__construct" crap="2" count="1"/>
         <line num="50" type="stmt" count="1"/>
@@ -3090,7 +3357,6 @@
         <line num="294" type="stmt" count="1"/>
         <line num="303" type="method" name="createClassListener" crap="6" count="0"/>
         <line num="305" type="stmt" count="0"/>
-        <line num="307" type="method" name="anonymous function" crap="6" count="0"/>
         <line num="312" type="stmt" count="0"/>
         <line num="314" type="stmt" count="0"/>
         <line num="316" type="stmt" count="0"/>
@@ -3105,26 +3371,30 @@
         <line num="347" type="stmt" count="0"/>
         <line num="348" type="stmt" count="0"/>
         <line num="349" type="stmt" count="0"/>
+        <line num="352" type="stmt" count="1"/>
         <metrics loc="351" ncloc="177" classes="1" methods="19" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="78" coveredstatements="33" elements="97" coveredelements="35"/>
       </file>
       <file name="/Users/travis/Code/Personal/steam/vendor/syntax/steam-api/vendor/laravel/framework/src/Illuminate/Events/EventServiceProvider.php">
         <class name="EventServiceProvider" namespace="Illuminate\Events">
-          <metrics methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="2" coveredstatements="2" elements="3" coveredelements="3"/>
+          <metrics methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="7" coveredstatements="7" elements="9" coveredelements="9"/>
         </class>
+        <line num="12" type="method" name="register" crap="1" count="1"/>
         <line num="14" type="method" name="anonymous function" crap="1" count="1"/>
         <line num="16" type="stmt" count="1"/>
         <line num="17" type="stmt" count="1"/>
         <line num="18" type="stmt" count="1"/>
-        <metrics loc="20" ncloc="15" classes="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="3" coveredstatements="3" elements="4" coveredelements="4"/>
+        <line num="21" type="stmt" count="1"/>
+        <metrics loc="20" ncloc="15" classes="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="4" coveredstatements="4" elements="5" coveredelements="5"/>
       </file>
     </package>
     <file name="/Users/travis/Code/Personal/steam/vendor/syntax/steam-api/vendor/laravel/framework/src/Illuminate/Exception/ExceptionDisplayerInterface.php">
+      <line num="15" type="stmt" count="1"/>
       <metrics loc="14" ncloc="9" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
     </file>
     <package name="Illuminate\Exception">
       <file name="/Users/travis/Code/Personal/steam/vendor/syntax/steam-api/vendor/laravel/framework/src/Illuminate/Exception/ExceptionServiceProvider.php">
         <class name="ExceptionServiceProvider" namespace="Illuminate\Exception">
-          <metrics methods="10" coveredmethods="6" conditionals="0" coveredconditionals="0" statements="37" coveredstatements="31" elements="47" coveredelements="37"/>
+          <metrics methods="11" coveredmethods="8" conditionals="0" coveredconditionals="0" statements="48" coveredstatements="36" elements="59" coveredelements="44"/>
         </class>
         <line num="15" type="method" name="register" crap="1" count="1"/>
         <line num="17" type="stmt" count="1"/>
@@ -3135,10 +3405,12 @@
         <line num="31" type="stmt" count="1"/>
         <line num="32" type="stmt" count="1"/>
         <line num="39" type="method" name="registerHandler" crap="1" count="1"/>
+        <line num="41" type="stmt" count="1"/>
         <line num="43" type="stmt" count="1"/>
         <line num="44" type="stmt" count="1"/>
         <line num="45" type="stmt" count="1"/>
-        <line num="52" type="method" name="registerPlainDisplayer" crap="2.02" count="1"/>
+        <line num="52" type="method" name="registerPlainDisplayer" crap="2.01" count="1"/>
+        <line num="54" type="stmt" count="1"/>
         <line num="59" type="stmt" count="1"/>
         <line num="60" type="stmt" count="1"/>
         <line num="61" type="stmt" count="1"/>
@@ -3147,11 +3419,13 @@
         <line num="68" type="stmt" count="1"/>
         <line num="75" type="method" name="registerDebugDisplayer" crap="1" count="1"/>
         <line num="77" type="stmt" count="1"/>
+        <line num="79" type="stmt" count="1"/>
         <line num="81" type="stmt" count="1"/>
         <line num="82" type="stmt" count="1"/>
         <line num="83" type="stmt" count="1"/>
         <line num="90" type="method" name="registerWhoops" crap="1" count="1"/>
         <line num="92" type="stmt" count="1"/>
+        <line num="94" type="stmt" count="1"/>
         <line num="99" type="stmt" count="1"/>
         <line num="101" type="stmt" count="1"/>
         <line num="103" type="stmt" count="1"/>
@@ -3160,6 +3434,7 @@
         <line num="112" type="method" name="registerWhoopsHandler" crap="2.01" count="1"/>
         <line num="114" type="stmt" count="1"/>
         <line num="115" type="stmt" count="1"/>
+        <line num="116" type="stmt" count="1"/>
         <line num="118" type="stmt" count="1"/>
         <line num="119" type="stmt" count="1"/>
         <line num="120" type="stmt" count="1"/>
@@ -3169,12 +3444,14 @@
         <line num="134" type="stmt" count="1"/>
         <line num="142" type="method" name="requestWantsJson" crap="6" count="0"/>
         <line num="144" type="stmt" count="0"/>
-        <line num="154" type="method" name="anonymous function" crap="2" count="0"/>
+        <line num="152" type="method" name="registerPrettyWhoopsHandler" crap="1" count="0"/>
+        <line num="154" type="stmt" count="0"/>
         <line num="156" type="stmt" count="0"/>
         <line num="158" type="stmt" count="0"/>
         <line num="159" type="stmt" count="0"/>
         <line num="160" type="stmt" count="0"/>
-        <metrics loc="162" ncloc="100" classes="1" methods="10" coveredmethods="6" conditionals="0" coveredconditionals="0" statements="38" coveredstatements="31" elements="48" coveredelements="37"/>
+        <line num="163" type="stmt" count="1"/>
+        <metrics loc="162" ncloc="100" classes="1" methods="10" coveredmethods="6" conditionals="0" coveredconditionals="0" statements="44" coveredstatements="36" elements="54" coveredelements="42"/>
       </file>
       <file name="/Users/travis/Code/Personal/steam/vendor/syntax/steam-api/vendor/laravel/framework/src/Illuminate/Exception/Handler.php">
         <class name="Handler" namespace="Illuminate\Exception">
@@ -3273,6 +3550,7 @@
         <line num="380" type="method" name="setDebug" crap="1" count="1"/>
         <line num="382" type="stmt" count="1"/>
         <line num="383" type="stmt" count="1"/>
+        <line num="386" type="stmt" count="1"/>
         <metrics loc="385" ncloc="181" classes="1" methods="21" coveredmethods="5" conditionals="0" coveredconditionals="0" statements="72" coveredstatements="15" elements="93" coveredelements="20"/>
       </file>
       <file name="/Users/travis/Code/Personal/steam/vendor/syntax/steam-api/vendor/laravel/framework/src/Illuminate/Exception/WhoopsDisplayer.php">
@@ -3287,13 +3565,14 @@
         <line num="45" type="stmt" count="0"/>
         <line num="47" type="stmt" count="0"/>
         <line num="49" type="stmt" count="0"/>
+        <line num="53" type="stmt" count="1"/>
         <metrics loc="52" ncloc="29" classes="1" methods="2" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="6" coveredstatements="3" elements="8" coveredelements="4"/>
       </file>
     </package>
     <package name="Illuminate\Filesystem">
       <file name="/Users/travis/Code/Personal/steam/vendor/syntax/steam-api/vendor/laravel/framework/src/Illuminate/Filesystem/Filesystem.php">
         <class name="Filesystem" namespace="Illuminate\Filesystem">
-          <metrics methods="27" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="70" coveredstatements="4" elements="97" coveredelements="6"/>
+          <metrics methods="27" coveredmethods="4" conditionals="0" coveredconditionals="0" statements="74" coveredstatements="4" elements="101" coveredelements="8"/>
         </class>
         <line num="14" type="method" name="exists" crap="1" count="1"/>
         <line num="16" type="stmt" count="1"/>
@@ -3392,21 +3671,26 @@
         <line num="398" type="stmt" count="0"/>
         <line num="407" type="method" name="cleanDirectory" crap="2" count="0"/>
         <line num="409" type="stmt" count="0"/>
-        <metrics loc="412" ncloc="201" classes="1" methods="27" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="70" coveredstatements="4" elements="97" coveredelements="6"/>
+        <line num="413" type="stmt" count="1"/>
+        <metrics loc="412" ncloc="201" classes="1" methods="27" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="71" coveredstatements="4" elements="98" coveredelements="6"/>
       </file>
       <file name="/Users/travis/Code/Personal/steam/vendor/syntax/steam-api/vendor/laravel/framework/src/Illuminate/Filesystem/FilesystemServiceProvider.php">
         <class name="FilesystemServiceProvider" namespace="Illuminate\Filesystem">
-          <metrics methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
+          <metrics methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="3" coveredstatements="3" elements="5" coveredelements="5"/>
         </class>
+        <line num="12" type="method" name="register" crap="1" count="1"/>
+        <line num="14" type="method" name="anonymous function" crap="1" count="1"/>
         <line num="15" type="stmt" count="1"/>
-        <metrics loc="17" ncloc="12" classes="1" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="1" coveredstatements="1" elements="1" coveredelements="1"/>
+        <line num="18" type="stmt" count="1"/>
+        <metrics loc="17" ncloc="12" classes="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="2" coveredstatements="2" elements="3" coveredelements="3"/>
       </file>
     </package>
     <package name="Illuminate\Foundation">
       <file name="/Users/travis/Code/Personal/steam/vendor/syntax/steam-api/vendor/laravel/framework/src/Illuminate/Foundation/AliasLoader.php">
         <class name="AliasLoader" namespace="Illuminate\Foundation">
-          <metrics methods="11" coveredmethods="4" conditionals="0" coveredconditionals="0" statements="28" coveredstatements="15" elements="39" coveredelements="19"/>
+          <metrics methods="11" coveredmethods="5" conditionals="0" coveredconditionals="0" statements="28" coveredstatements="15" elements="39" coveredelements="20"/>
         </class>
+        <line num="0" type="stmt" count="1"/>
         <line num="32" type="method" name="__construct" crap="1" count="1"/>
         <line num="34" type="stmt" count="1"/>
         <line num="35" type="stmt" count="1"/>
@@ -3446,12 +3730,14 @@
         <line num="153" type="method" name="setInstance" crap="2" count="0"/>
         <line num="155" type="stmt" count="0"/>
         <line num="156" type="stmt" count="0"/>
+        <line num="159" type="stmt" count="1"/>
         <metrics loc="158" ncloc="80" classes="1" methods="11" coveredmethods="4" conditionals="0" coveredconditionals="0" statements="28" coveredstatements="15" elements="39" coveredelements="19"/>
       </file>
       <file name="/Users/travis/Code/Personal/steam/vendor/syntax/steam-api/vendor/laravel/framework/src/Illuminate/Foundation/Application.php">
         <class name="Application" namespace="Illuminate\Foundation">
-          <metrics methods="70" coveredmethods="29" conditionals="0" coveredconditionals="0" statements="254" coveredstatements="127" elements="324" coveredelements="156"/>
+          <metrics methods="71" coveredmethods="33" conditionals="0" coveredconditionals="0" statements="258" coveredstatements="128" elements="329" coveredelements="161"/>
         </class>
+        <line num="0" type="stmt" count="1"/>
         <line num="109" type="method" name="__construct" crap="2" count="1"/>
         <line num="111" type="stmt" count="1"/>
         <line num="113" type="stmt" count="1"/>
@@ -3593,6 +3879,7 @@
         <line num="573" type="stmt" count="1"/>
         <line num="581" type="method" name="boot" crap="2" count="1"/>
         <line num="583" type="stmt" count="1"/>
+        <line num="585" type="stmt" count="1"/>
         <line num="587" type="stmt" count="1"/>
         <line num="588" type="stmt" count="1"/>
         <line num="595" type="method" name="bootApplication" crap="1" count="1"/>
@@ -3704,7 +3991,7 @@
         <line num="946" type="method" name="pushError" crap="2" count="0"/>
         <line num="948" type="stmt" count="0"/>
         <line num="949" type="stmt" count="0"/>
-        <line num="959" type="method" name="anonymous function" crap="2" count="0"/>
+        <line num="957" type="method" name="fatal" crap="1" count="0"/>
         <line num="961" type="stmt" count="0"/>
         <line num="962" type="stmt" count="0"/>
         <line num="963" type="stmt" count="0"/>
@@ -3777,12 +4064,14 @@
         <line num="1137" type="stmt" count="1"/>
         <line num="1138" type="stmt" count="1"/>
         <line num="1139" type="stmt" count="1"/>
-        <metrics loc="1141" ncloc="610" classes="1" methods="70" coveredmethods="29" conditionals="0" coveredconditionals="0" statements="255" coveredstatements="127" elements="325" coveredelements="156"/>
+        <line num="1142" type="stmt" count="1"/>
+        <metrics loc="1141" ncloc="610" classes="1" methods="70" coveredmethods="29" conditionals="0" coveredconditionals="0" statements="256" coveredstatements="128" elements="326" coveredelements="157"/>
       </file>
       <file name="/Users/travis/Code/Personal/steam/vendor/syntax/steam-api/vendor/laravel/framework/src/Illuminate/Foundation/EnvironmentDetector.php">
         <class name="EnvironmentDetector" namespace="Illuminate\Foundation">
-          <metrics methods="5" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="19" coveredstatements="16" elements="24" coveredelements="18"/>
+          <metrics methods="6" coveredmethods="6" conditionals="0" coveredconditionals="0" statements="23" coveredstatements="20" elements="29" coveredelements="26"/>
         </class>
+        <line num="0" type="stmt" count="1"/>
         <line num="14" type="method" name="detect" crap="2.15" count="1"/>
         <line num="17" type="stmt" count="1"/>
         <line num="18" type="stmt" count="1"/>
@@ -3802,17 +4091,22 @@
         <line num="67" type="stmt" count="1"/>
         <line num="68" type="stmt" count="0"/>
         <line num="71" type="stmt" count="1"/>
+        <line num="80" type="method" name="getEnvironmentArgument" crap="1" count="1"/>
         <line num="82" type="method" name="anonymous function" crap="1" count="1"/>
         <line num="84" type="stmt" count="1"/>
         <line num="85" type="stmt" count="1"/>
         <line num="94" type="method" name="isMachine" crap="1" count="1"/>
         <line num="96" type="stmt" count="1"/>
-        <metrics loc="99" ncloc="49" classes="1" methods="5" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="19" coveredstatements="16" elements="24" coveredelements="18"/>
+        <line num="100" type="stmt" count="1"/>
+        <line num="182" type="stmt" count="1"/>
+        <line num="776" type="stmt" count="1"/>
+        <metrics loc="99" ncloc="49" classes="1" methods="5" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="20" coveredstatements="17" elements="25" coveredelements="19"/>
       </file>
       <file name="/Users/travis/Code/Personal/steam/vendor/syntax/steam-api/vendor/laravel/framework/src/Illuminate/Foundation/ProviderRepository.php">
         <class name="ProviderRepository" namespace="Illuminate\Foundation">
-          <metrics methods="11" coveredmethods="4" conditionals="0" coveredconditionals="0" statements="50" coveredstatements="26" elements="61" coveredelements="30"/>
+          <metrics methods="11" coveredmethods="6" conditionals="0" coveredconditionals="0" statements="53" coveredstatements="26" elements="64" coveredelements="32"/>
         </class>
+        <line num="0" type="stmt" count="1"/>
         <line num="35" type="method" name="__construct" crap="1" count="1"/>
         <line num="37" type="stmt" count="1"/>
         <line num="38" type="stmt" count="1"/>
@@ -3837,7 +4131,6 @@
         <line num="85" type="stmt" count="1"/>
         <line num="95" type="method" name="registerLoadEvents" crap="2" count="1"/>
         <line num="97" type="stmt" count="1"/>
-        <line num="99" type="method" name="anonymous function" crap="2" count="0"/>
         <line num="101" type="stmt" count="0"/>
         <line num="102" type="stmt" count="0"/>
         <line num="103" type="stmt" count="0"/>
@@ -3875,35 +4168,42 @@
         <line num="217" type="stmt" count="0"/>
         <line num="225" type="method" name="getFilesystem" crap="2" count="0"/>
         <line num="227" type="stmt" count="0"/>
+        <line num="231" type="stmt" count="1"/>
         <metrics loc="230" ncloc="102" classes="1" methods="11" coveredmethods="4" conditionals="0" coveredconditionals="0" statements="51" coveredstatements="26" elements="62" coveredelements="30"/>
       </file>
     </package>
     <package name="Illuminate\Foundation\Providers">
       <file name="/Users/travis/Code/Personal/steam/vendor/syntax/steam-api/vendor/laravel/framework/src/Illuminate/Foundation/Providers/ArtisanServiceProvider.php">
         <class name="ArtisanServiceProvider" namespace="Illuminate\Foundation\Providers">
-          <metrics methods="3" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="9" coveredstatements="4" elements="12" coveredelements="4"/>
+          <metrics methods="3" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="18" coveredstatements="12" elements="21" coveredelements="14"/>
         </class>
-        <line num="23" type="method" name="register" crap="1.12" count="1"/>
+        <line num="23" type="method" name="register" crap="1.04" count="1"/>
+        <line num="25" type="stmt" count="1"/>
         <line num="27" type="stmt" count="0"/>
         <line num="28" type="stmt" count="1"/>
+        <line num="30" type="stmt" count="1"/>
         <line num="32" type="stmt" count="0"/>
         <line num="33" type="stmt" count="1"/>
+        <line num="35" type="stmt" count="1"/>
         <line num="37" type="stmt" count="0"/>
         <line num="38" type="stmt" count="1"/>
-        <line num="40" type="method" name="anonymous function" crap="1.12" count="1"/>
+        <line num="40" type="method" name="anonymous function" crap="1.04" count="1"/>
         <line num="42" type="stmt" count="0"/>
         <line num="43" type="stmt" count="1"/>
         <line num="45" type="stmt" count="1"/>
         <line num="46" type="stmt" count="1"/>
         <line num="53" type="method" name="provides" crap="2" count="0"/>
         <line num="55" type="stmt" count="0"/>
-        <metrics loc="58" ncloc="43" classes="1" methods="3" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="11" coveredstatements="6" elements="14" coveredelements="6"/>
+        <line num="59" type="stmt" count="1"/>
+        <line num="143" type="stmt" count="1"/>
+        <metrics loc="58" ncloc="43" classes="1" methods="3" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="15" coveredstatements="10" elements="18" coveredelements="10"/>
       </file>
       <file name="/Users/travis/Code/Personal/steam/vendor/syntax/steam-api/vendor/laravel/framework/src/Illuminate/Foundation/Providers/CommandCreatorServiceProvider.php">
         <class name="CommandCreatorServiceProvider" namespace="Illuminate\Foundation\Providers">
-          <metrics methods="2" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="4" coveredstatements="1" elements="6" coveredelements="1"/>
+          <metrics methods="3" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="10" coveredstatements="6" elements="13" coveredelements="8"/>
         </class>
-        <line num="22" type="method" name="anonymous function" crap="1.12" count="1"/>
+        <line num="20" type="method" name="register" crap="1" count="1"/>
+        <line num="22" type="method" name="anonymous function" crap="1.04" count="1"/>
         <line num="24" type="stmt" count="0"/>
         <line num="25" type="stmt" count="1"/>
         <line num="27" type="stmt" count="1"/>
@@ -3911,23 +4211,28 @@
         <line num="35" type="method" name="provides" crap="2" count="0"/>
         <line num="38" type="stmt" count="0"/>
         <line num="39" type="stmt" count="0"/>
-        <metrics loc="42" ncloc="27" classes="1" methods="2" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="6" coveredstatements="3" elements="8" coveredelements="3"/>
+        <line num="43" type="stmt" count="1"/>
+        <line num="143" type="stmt" count="1"/>
+        <metrics loc="42" ncloc="27" classes="1" methods="2" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="7" coveredstatements="4" elements="9" coveredelements="4"/>
       </file>
       <file name="/Users/travis/Code/Personal/steam/vendor/syntax/steam-api/vendor/laravel/framework/src/Illuminate/Foundation/Providers/ComposerServiceProvider.php">
         <class name="ComposerServiceProvider" namespace="Illuminate\Foundation\Providers">
-          <metrics methods="3" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="5" coveredstatements="2" elements="8" coveredelements="2"/>
+          <metrics methods="3" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="12" coveredstatements="8" elements="15" coveredelements="10"/>
         </class>
-        <line num="21" type="method" name="register" crap="1.12" count="1"/>
+        <line num="21" type="method" name="register" crap="1.04" count="1"/>
+        <line num="23" type="stmt" count="1"/>
         <line num="25" type="stmt" count="0"/>
         <line num="26" type="stmt" count="1"/>
-        <line num="28" type="method" name="anonymous function" crap="1.12" count="1"/>
+        <line num="28" type="method" name="anonymous function" crap="1.04" count="1"/>
         <line num="30" type="stmt" count="0"/>
         <line num="31" type="stmt" count="1"/>
         <line num="33" type="stmt" count="1"/>
         <line num="34" type="stmt" count="1"/>
         <line num="41" type="method" name="provides" crap="2" count="0"/>
         <line num="43" type="stmt" count="0"/>
-        <metrics loc="46" ncloc="31" classes="1" methods="3" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="7" coveredstatements="4" elements="10" coveredelements="4"/>
+        <line num="47" type="stmt" count="1"/>
+        <line num="143" type="stmt" count="1"/>
+        <metrics loc="46" ncloc="31" classes="1" methods="3" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="9" coveredstatements="6" elements="12" coveredelements="6"/>
       </file>
       <file name="/Users/travis/Code/Personal/steam/vendor/syntax/steam-api/vendor/laravel/framework/src/Illuminate/Foundation/Providers/ConsoleSupportServiceProvider.php">
         <class name="ConsoleSupportServiceProvider" namespace="Illuminate\Foundation\Providers">
@@ -3946,61 +4251,72 @@
         <line num="67" type="stmt" count="0"/>
         <line num="68" type="stmt" count="0"/>
         <line num="70" type="stmt" count="0"/>
+        <line num="74" type="stmt" count="1"/>
         <metrics loc="73" ncloc="48" classes="1" methods="2" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="11" coveredstatements="5" elements="13" coveredelements="6"/>
       </file>
       <file name="/Users/travis/Code/Personal/steam/vendor/syntax/steam-api/vendor/laravel/framework/src/Illuminate/Foundation/Providers/KeyGeneratorServiceProvider.php">
         <class name="KeyGeneratorServiceProvider" namespace="Illuminate\Foundation\Providers">
-          <metrics methods="2" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="3" coveredstatements="1" elements="5" coveredelements="1"/>
+          <metrics methods="3" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="9" coveredstatements="6" elements="12" coveredelements="8"/>
         </class>
-        <line num="22" type="method" name="anonymous function" crap="1.12" count="1"/>
+        <line num="20" type="method" name="register" crap="1" count="1"/>
+        <line num="22" type="method" name="anonymous function" crap="1.04" count="1"/>
         <line num="24" type="stmt" count="0"/>
         <line num="25" type="stmt" count="1"/>
         <line num="27" type="stmt" count="1"/>
         <line num="28" type="stmt" count="1"/>
         <line num="35" type="method" name="provides" crap="2" count="0"/>
         <line num="37" type="stmt" count="0"/>
-        <metrics loc="40" ncloc="25" classes="1" methods="2" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="5" coveredstatements="3" elements="7" coveredelements="3"/>
+        <line num="41" type="stmt" count="1"/>
+        <line num="143" type="stmt" count="1"/>
+        <metrics loc="40" ncloc="25" classes="1" methods="2" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="6" coveredstatements="4" elements="8" coveredelements="4"/>
       </file>
       <file name="/Users/travis/Code/Personal/steam/vendor/syntax/steam-api/vendor/laravel/framework/src/Illuminate/Foundation/Providers/MaintenanceServiceProvider.php">
         <class name="MaintenanceServiceProvider" namespace="Illuminate\Foundation\Providers">
-          <metrics methods="3" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="5" coveredstatements="2" elements="8" coveredelements="2"/>
+          <metrics methods="3" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="12" coveredstatements="8" elements="15" coveredelements="10"/>
         </class>
-        <line num="21" type="method" name="register" crap="1.12" count="1"/>
+        <line num="21" type="method" name="register" crap="1.04" count="1"/>
+        <line num="23" type="stmt" count="1"/>
         <line num="25" type="stmt" count="0"/>
         <line num="26" type="stmt" count="1"/>
-        <line num="28" type="method" name="anonymous function" crap="1.12" count="1"/>
+        <line num="28" type="method" name="anonymous function" crap="1.04" count="1"/>
         <line num="30" type="stmt" count="0"/>
         <line num="31" type="stmt" count="1"/>
         <line num="33" type="stmt" count="1"/>
         <line num="34" type="stmt" count="1"/>
         <line num="41" type="method" name="provides" crap="2" count="0"/>
         <line num="43" type="stmt" count="0"/>
-        <metrics loc="46" ncloc="31" classes="1" methods="3" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="7" coveredstatements="4" elements="10" coveredelements="4"/>
+        <line num="47" type="stmt" count="1"/>
+        <line num="143" type="stmt" count="1"/>
+        <metrics loc="46" ncloc="31" classes="1" methods="3" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="9" coveredstatements="6" elements="12" coveredelements="6"/>
       </file>
       <file name="/Users/travis/Code/Personal/steam/vendor/syntax/steam-api/vendor/laravel/framework/src/Illuminate/Foundation/Providers/OptimizeServiceProvider.php">
         <class name="OptimizeServiceProvider" namespace="Illuminate\Foundation\Providers">
-          <metrics methods="4" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="10" coveredstatements="7" elements="14" coveredelements="8"/>
+          <metrics methods="5" coveredmethods="4" conditionals="0" coveredconditionals="0" statements="16" coveredstatements="12" elements="21" coveredelements="16"/>
         </class>
         <line num="21" type="method" name="register" crap="1" count="1"/>
         <line num="23" type="stmt" count="1"/>
         <line num="25" type="stmt" count="1"/>
         <line num="27" type="stmt" count="1"/>
         <line num="28" type="stmt" count="1"/>
-        <line num="35" type="method" name="registerOptimizeCommand" crap="1.04" count="1"/>
+        <line num="35" type="method" name="registerOptimizeCommand" crap="1.02" count="1"/>
+        <line num="37" type="stmt" count="1"/>
         <line num="39" type="stmt" count="0"/>
         <line num="40" type="stmt" count="1"/>
         <line num="41" type="stmt" count="1"/>
-        <line num="50" type="method" name="anonymous function" crap="1.12" count="1"/>
+        <line num="48" type="method" name="registerClearCompiledCommand" crap="1" count="1"/>
+        <line num="50" type="stmt" count="1"/>
         <line num="52" type="stmt" count="0"/>
         <line num="53" type="stmt" count="1"/>
         <line num="54" type="stmt" count="1"/>
         <line num="61" type="method" name="provides" crap="2" count="0"/>
         <line num="63" type="stmt" count="0"/>
-        <metrics loc="66" ncloc="41" classes="1" methods="4" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="11" coveredstatements="8" elements="15" coveredelements="9"/>
+        <line num="67" type="stmt" count="1"/>
+        <line num="143" type="stmt" count="1"/>
+        <metrics loc="66" ncloc="41" classes="1" methods="4" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="13" coveredstatements="10" elements="17" coveredelements="11"/>
       </file>
       <file name="/Users/travis/Code/Personal/steam/vendor/syntax/steam-api/vendor/laravel/framework/src/Illuminate/Foundation/Providers/PublisherServiceProvider.php">
         <class name="PublisherServiceProvider" namespace="Illuminate\Foundation\Providers">
-          <metrics methods="10" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="54" coveredstatements="28" elements="64" coveredelements="29"/>
+          <metrics methods="11" coveredmethods="10" conditionals="0" coveredconditionals="0" statements="66" coveredstatements="39" elements="77" coveredelements="49"/>
         </class>
         <line num="27" type="method" name="register" crap="1" count="1"/>
         <line num="29" type="stmt" count="1"/>
@@ -4012,48 +4328,56 @@
         <line num="39" type="stmt" count="1"/>
         <line num="40" type="stmt" count="1"/>
         <line num="41" type="stmt" count="1"/>
-        <line num="48" type="method" name="registerAssetPublisher" crap="1.19" count="1"/>
+        <line num="48" type="method" name="registerAssetPublisher" crap="1.12" count="1"/>
         <line num="50" type="stmt" count="1"/>
+        <line num="52" type="stmt" count="1"/>
         <line num="54" type="stmt" count="0"/>
         <line num="59" type="stmt" count="0"/>
         <line num="61" type="stmt" count="0"/>
         <line num="63" type="stmt" count="0"/>
         <line num="64" type="stmt" count="1"/>
         <line num="65" type="stmt" count="1"/>
-        <line num="72" type="method" name="registerAssetPublishCommand" crap="1.04" count="1"/>
+        <line num="72" type="method" name="registerAssetPublishCommand" crap="1.02" count="1"/>
+        <line num="74" type="stmt" count="1"/>
         <line num="76" type="stmt" count="0"/>
         <line num="77" type="stmt" count="1"/>
         <line num="78" type="stmt" count="1"/>
-        <line num="85" type="method" name="registerConfigPublisher" crap="1.19" count="1"/>
+        <line num="85" type="method" name="registerConfigPublisher" crap="1.12" count="1"/>
         <line num="87" type="stmt" count="1"/>
+        <line num="89" type="stmt" count="1"/>
         <line num="91" type="stmt" count="0"/>
         <line num="96" type="stmt" count="0"/>
         <line num="98" type="stmt" count="0"/>
         <line num="100" type="stmt" count="0"/>
         <line num="101" type="stmt" count="1"/>
         <line num="102" type="stmt" count="1"/>
-        <line num="109" type="method" name="registerConfigPublishCommand" crap="1.04" count="1"/>
+        <line num="109" type="method" name="registerConfigPublishCommand" crap="1.02" count="1"/>
+        <line num="111" type="stmt" count="1"/>
         <line num="113" type="stmt" count="0"/>
         <line num="114" type="stmt" count="1"/>
         <line num="115" type="stmt" count="1"/>
-        <line num="122" type="method" name="registerViewPublisher" crap="1.19" count="1"/>
+        <line num="122" type="method" name="registerViewPublisher" crap="1.12" count="1"/>
         <line num="124" type="stmt" count="1"/>
+        <line num="126" type="stmt" count="1"/>
         <line num="128" type="stmt" count="0"/>
         <line num="133" type="stmt" count="0"/>
         <line num="135" type="stmt" count="0"/>
         <line num="137" type="stmt" count="0"/>
         <line num="138" type="stmt" count="1"/>
         <line num="139" type="stmt" count="1"/>
-        <line num="146" type="method" name="registerViewPublishCommand" crap="1.04" count="1"/>
+        <line num="146" type="method" name="registerViewPublishCommand" crap="1.02" count="1"/>
+        <line num="148" type="stmt" count="1"/>
         <line num="150" type="stmt" count="0"/>
         <line num="151" type="stmt" count="1"/>
         <line num="152" type="stmt" count="1"/>
-        <line num="159" type="method" name="registerMigrationPublisher" crap="1.02" count="1"/>
+        <line num="159" type="method" name="registerMigrationPublisher" crap="1.01" count="1"/>
         <line num="161" type="stmt" count="1"/>
+        <line num="163" type="stmt" count="1"/>
         <line num="165" type="stmt" count="0"/>
         <line num="166" type="stmt" count="1"/>
         <line num="167" type="stmt" count="1"/>
-        <line num="176" type="method" name="anonymous function" crap="1.12" count="1"/>
+        <line num="174" type="method" name="registerMigratePublishCommand" crap="1" count="1"/>
+        <line num="176" type="stmt" count="1"/>
         <line num="178" type="stmt" count="0"/>
         <line num="179" type="stmt" count="1"/>
         <line num="180" type="stmt" count="1"/>
@@ -4067,46 +4391,56 @@
         <line num="196" type="stmt" count="0"/>
         <line num="197" type="stmt" count="0"/>
         <line num="198" type="stmt" count="0"/>
-        <metrics loc="201" ncloc="128" classes="1" methods="10" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="55" coveredstatements="29" elements="65" coveredelements="30"/>
+        <line num="202" type="stmt" count="1"/>
+        <metrics loc="201" ncloc="128" classes="1" methods="10" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="63" coveredstatements="37" elements="73" coveredelements="38"/>
       </file>
       <file name="/Users/travis/Code/Personal/steam/vendor/syntax/steam-api/vendor/laravel/framework/src/Illuminate/Foundation/Providers/RouteListServiceProvider.php">
         <class name="RouteListServiceProvider" namespace="Illuminate\Foundation\Providers">
-          <metrics methods="2" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="3" coveredstatements="1" elements="5" coveredelements="1"/>
+          <metrics methods="3" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="9" coveredstatements="6" elements="12" coveredelements="8"/>
         </class>
-        <line num="22" type="method" name="anonymous function" crap="1.12" count="1"/>
+        <line num="20" type="method" name="register" crap="1" count="1"/>
+        <line num="22" type="method" name="anonymous function" crap="1.04" count="1"/>
         <line num="24" type="stmt" count="0"/>
         <line num="25" type="stmt" count="1"/>
         <line num="27" type="stmt" count="1"/>
         <line num="28" type="stmt" count="1"/>
         <line num="35" type="method" name="provides" crap="2" count="0"/>
         <line num="37" type="stmt" count="0"/>
-        <metrics loc="40" ncloc="25" classes="1" methods="2" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="5" coveredstatements="3" elements="7" coveredelements="3"/>
+        <line num="41" type="stmt" count="1"/>
+        <line num="143" type="stmt" count="1"/>
+        <metrics loc="40" ncloc="25" classes="1" methods="2" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="6" coveredstatements="4" elements="8" coveredelements="4"/>
       </file>
       <file name="/Users/travis/Code/Personal/steam/vendor/syntax/steam-api/vendor/laravel/framework/src/Illuminate/Foundation/Providers/ServerServiceProvider.php">
         <class name="ServerServiceProvider" namespace="Illuminate\Foundation\Providers">
-          <metrics methods="2" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="3" coveredstatements="1" elements="5" coveredelements="1"/>
+          <metrics methods="3" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="9" coveredstatements="6" elements="12" coveredelements="8"/>
         </class>
-        <line num="22" type="method" name="anonymous function" crap="1.12" count="1"/>
+        <line num="20" type="method" name="register" crap="1" count="1"/>
+        <line num="22" type="method" name="anonymous function" crap="1.04" count="1"/>
         <line num="24" type="stmt" count="0"/>
         <line num="25" type="stmt" count="1"/>
         <line num="27" type="stmt" count="1"/>
         <line num="28" type="stmt" count="1"/>
         <line num="35" type="method" name="provides" crap="2" count="0"/>
         <line num="37" type="stmt" count="0"/>
-        <metrics loc="40" ncloc="25" classes="1" methods="2" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="5" coveredstatements="3" elements="7" coveredelements="3"/>
+        <line num="41" type="stmt" count="1"/>
+        <line num="143" type="stmt" count="1"/>
+        <metrics loc="40" ncloc="25" classes="1" methods="2" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="6" coveredstatements="4" elements="8" coveredelements="4"/>
       </file>
       <file name="/Users/travis/Code/Personal/steam/vendor/syntax/steam-api/vendor/laravel/framework/src/Illuminate/Foundation/Providers/TinkerServiceProvider.php">
         <class name="TinkerServiceProvider" namespace="Illuminate\Foundation\Providers">
-          <metrics methods="2" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="3" coveredstatements="1" elements="5" coveredelements="1"/>
+          <metrics methods="3" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="9" coveredstatements="6" elements="12" coveredelements="8"/>
         </class>
-        <line num="22" type="method" name="anonymous function" crap="1.12" count="1"/>
+        <line num="20" type="method" name="register" crap="1" count="1"/>
+        <line num="22" type="method" name="anonymous function" crap="1.04" count="1"/>
         <line num="24" type="stmt" count="0"/>
         <line num="25" type="stmt" count="1"/>
         <line num="27" type="stmt" count="1"/>
         <line num="28" type="stmt" count="1"/>
         <line num="35" type="method" name="provides" crap="2" count="0"/>
         <line num="37" type="stmt" count="0"/>
-        <metrics loc="40" ncloc="25" classes="1" methods="2" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="5" coveredstatements="3" elements="7" coveredelements="3"/>
+        <line num="41" type="stmt" count="1"/>
+        <line num="143" type="stmt" count="1"/>
+        <metrics loc="40" ncloc="25" classes="1" methods="2" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="6" coveredstatements="4" elements="8" coveredelements="4"/>
       </file>
     </package>
     <package name="Illuminate\Foundation\Testing">
@@ -4122,47 +4456,54 @@
         <line num="33" type="stmt" count="0"/>
         <line num="34" type="stmt" count="0"/>
         <line num="35" type="stmt" count="0"/>
+        <line num="39" type="stmt" count="1"/>
         <metrics loc="38" ncloc="26" classes="1" methods="2" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="6" coveredstatements="0" elements="8" coveredelements="0"/>
       </file>
     </package>
     <package name="Illuminate\Hashing">
       <file name="/Users/travis/Code/Personal/steam/vendor/syntax/steam-api/vendor/laravel/framework/src/Illuminate/Hashing/HashServiceProvider.php">
         <class name="HashServiceProvider" namespace="Illuminate\Hashing">
-          <metrics methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="1" coveredstatements="0" elements="2" coveredelements="0"/>
+          <metrics methods="3" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="4" coveredstatements="3" elements="7" coveredelements="5"/>
         </class>
+        <line num="19" type="method" name="register" crap="1" count="1"/>
+        <line num="21" type="method" name="anonymous function" crap="1" count="1"/>
         <line num="22" type="stmt" count="1"/>
         <line num="29" type="method" name="provides" crap="2" count="0"/>
         <line num="31" type="stmt" count="0"/>
-        <metrics loc="34" ncloc="19" classes="1" methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="2" coveredstatements="1" elements="3" coveredelements="1"/>
+        <line num="35" type="stmt" count="1"/>
+        <metrics loc="34" ncloc="19" classes="1" methods="2" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="3" coveredstatements="2" elements="5" coveredelements="3"/>
       </file>
     </package>
     <package name="Illuminate\Html">
       <file name="/Users/travis/Code/Personal/steam/vendor/syntax/steam-api/vendor/laravel/framework/src/Illuminate/Html/HtmlServiceProvider.php">
         <class name="HtmlServiceProvider" namespace="Illuminate\Html">
-          <metrics methods="4" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="10" coveredstatements="6" elements="14" coveredelements="7"/>
+          <metrics methods="5" coveredmethods="4" conditionals="0" coveredconditionals="0" statements="17" coveredstatements="11" elements="22" coveredelements="15"/>
         </class>
         <line num="19" type="method" name="register" crap="1" count="1"/>
         <line num="21" type="stmt" count="1"/>
         <line num="23" type="stmt" count="1"/>
         <line num="24" type="stmt" count="1"/>
-        <line num="31" type="method" name="registerHtmlBuilder" crap="1.04" count="1"/>
+        <line num="31" type="method" name="registerHtmlBuilder" crap="1.02" count="1"/>
+        <line num="33" type="stmt" count="1"/>
         <line num="35" type="stmt" count="0"/>
         <line num="36" type="stmt" count="1"/>
         <line num="37" type="stmt" count="1"/>
-        <line num="46" type="method" name="anonymous function" crap="1.30" count="1"/>
+        <line num="44" type="method" name="registerFormBuilder" crap="1" count="1"/>
+        <line num="46" type="stmt" count="1"/>
         <line num="48" type="stmt" count="0"/>
         <line num="50" type="stmt" count="0"/>
         <line num="51" type="stmt" count="1"/>
         <line num="52" type="stmt" count="1"/>
         <line num="59" type="method" name="provides" crap="2" count="0"/>
         <line num="61" type="stmt" count="0"/>
-        <metrics loc="64" ncloc="39" classes="1" methods="4" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="11" coveredstatements="7" elements="15" coveredelements="8"/>
+        <line num="65" type="stmt" count="1"/>
+        <metrics loc="64" ncloc="39" classes="1" methods="4" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="13" coveredstatements="9" elements="17" coveredelements="10"/>
       </file>
     </package>
     <package name="Illuminate\Http">
       <file name="/Users/travis/Code/Personal/steam/vendor/syntax/steam-api/vendor/laravel/framework/src/Illuminate/Http/Request.php">
         <class name="Request" namespace="Illuminate\Http">
-          <metrics methods="44" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="102" coveredstatements="0" elements="146" coveredelements="0"/>
+          <metrics methods="45" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="104" coveredstatements="0" elements="149" coveredelements="0"/>
         </class>
         <line num="28" type="method" name="instance" crap="2" count="0"/>
         <line num="30" type="stmt" count="0"/>
@@ -4184,6 +4525,7 @@
         <line num="106" type="stmt" count="0"/>
         <line num="114" type="method" name="segments" crap="2" count="0"/>
         <line num="116" type="stmt" count="0"/>
+        <line num="118" type="method" name="anonymous function" crap="2" count="0"/>
         <line num="127" type="method" name="is" crap="12" count="0"/>
         <line num="129" type="stmt" count="0"/>
         <line num="131" type="stmt" count="0"/>
@@ -4310,20 +4652,21 @@
         <line num="593" type="stmt" count="0"/>
         <line num="594" type="stmt" count="0"/>
         <line num="597" type="stmt" count="0"/>
-        <metrics loc="600" ncloc="330" classes="1" methods="44" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="102" coveredstatements="0" elements="146" coveredelements="0"/>
+        <line num="601" type="stmt" count="1"/>
+        <metrics loc="600" ncloc="330" classes="1" methods="45" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="103" coveredstatements="0" elements="148" coveredelements="0"/>
       </file>
     </package>
     <package name="Illuminate\Log">
       <file name="/Users/travis/Code/Personal/steam/vendor/syntax/steam-api/vendor/laravel/framework/src/Illuminate/Log/LogServiceProvider.php">
         <class name="LogServiceProvider" namespace="Illuminate\Log">
-          <metrics methods="3" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="7" coveredstatements="5" elements="10" coveredelements="6"/>
+          <metrics methods="3" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="16" coveredstatements="11" elements="19" coveredelements="13"/>
         </class>
         <line num="20" type="method" name="register" crap="2" count="1"/>
         <line num="22" type="stmt" count="1"/>
         <line num="23" type="stmt" count="1"/>
         <line num="24" type="stmt" count="1"/>
         <line num="29" type="stmt" count="1"/>
-        <line num="31" type="method" name="anonymous function" crap="1.12" count="1"/>
+        <line num="31" type="method" name="anonymous function" crap="1.04" count="1"/>
         <line num="33" type="stmt" count="0"/>
         <line num="34" type="stmt" count="1"/>
         <line num="39" type="stmt" count="1"/>
@@ -4333,7 +4676,8 @@
         <line num="43" type="stmt" count="1"/>
         <line num="50" type="method" name="provides" crap="2" count="0"/>
         <line num="52" type="stmt" count="0"/>
-        <metrics loc="55" ncloc="28" classes="1" methods="3" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="12" coveredstatements="8" elements="15" coveredelements="9"/>
+        <line num="56" type="stmt" count="1"/>
+        <metrics loc="55" ncloc="28" classes="1" methods="3" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="13" coveredstatements="9" elements="16" coveredelements="10"/>
       </file>
       <file name="/Users/travis/Code/Personal/steam/vendor/syntax/steam-api/vendor/laravel/framework/src/Illuminate/Log/Writer.php">
         <class name="Writer" namespace="Illuminate\Log">
@@ -4434,13 +4778,14 @@
         <line num="307" type="stmt" count="0"/>
         <line num="308" type="stmt" count="0"/>
         <line num="309" type="stmt" count="0"/>
+        <line num="312" type="stmt" count="1"/>
         <metrics loc="311" ncloc="187" classes="1" methods="15" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="80" coveredstatements="6" elements="95" coveredelements="7"/>
       </file>
     </package>
     <package name="Illuminate\Mail">
       <file name="/Users/travis/Code/Personal/steam/vendor/syntax/steam-api/vendor/laravel/framework/src/Illuminate/Mail/MailServiceProvider.php">
         <class name="MailServiceProvider" namespace="Illuminate\Mail">
-          <metrics methods="11" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="78" coveredstatements="3" elements="89" coveredelements="3"/>
+          <metrics methods="12" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="85" coveredstatements="3" elements="97" coveredelements="4"/>
         </class>
         <line num="26" type="method" name="register" crap="7.83" count="1"/>
         <line num="28" type="stmt" count="1"/>
@@ -4473,6 +4818,7 @@
         <line num="91" type="method" name="registerSwiftMailer" crap="2" count="0"/>
         <line num="93" type="stmt" count="0"/>
         <line num="95" type="stmt" count="0"/>
+        <line num="100" type="stmt" count="0"/>
         <line num="102" type="stmt" count="0"/>
         <line num="103" type="stmt" count="0"/>
         <line num="104" type="stmt" count="0"/>
@@ -4513,6 +4859,7 @@
         <line num="188" type="stmt" count="0"/>
         <line num="189" type="stmt" count="0"/>
         <line num="197" type="method" name="registerMailTransport" crap="2" count="0"/>
+        <line num="199" type="stmt" count="0"/>
         <line num="201" type="stmt" count="0"/>
         <line num="202" type="stmt" count="0"/>
         <line num="203" type="stmt" count="0"/>
@@ -4526,21 +4873,24 @@
         <line num="233" type="stmt" count="0"/>
         <line num="234" type="stmt" count="0"/>
         <line num="235" type="stmt" count="0"/>
-        <line num="245" type="method" name="anonymous function" crap="2" count="0"/>
+        <line num="243" type="method" name="registerLogTransport" crap="1" count="0"/>
+        <line num="245" type="stmt" count="0"/>
         <line num="247" type="stmt" count="0"/>
         <line num="248" type="stmt" count="0"/>
         <line num="249" type="stmt" count="0"/>
         <line num="256" type="method" name="provides" crap="2" count="0"/>
         <line num="258" type="stmt" count="0"/>
-        <metrics loc="261" ncloc="154" classes="1" methods="11" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="79" coveredstatements="3" elements="90" coveredelements="3"/>
+        <line num="262" type="stmt" count="1"/>
+        <metrics loc="261" ncloc="154" classes="1" methods="11" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="82" coveredstatements="3" elements="93" coveredelements="3"/>
       </file>
     </package>
     <package name="Illuminate\Pagination">
       <file name="/Users/travis/Code/Personal/steam/vendor/syntax/steam-api/vendor/laravel/framework/src/Illuminate/Pagination/PaginationServiceProvider.php">
         <class name="PaginationServiceProvider" namespace="Illuminate\Pagination">
-          <metrics methods="2" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="6" coveredstatements="1" elements="8" coveredelements="1"/>
+          <metrics methods="3" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="14" coveredstatements="5" elements="17" coveredelements="7"/>
         </class>
-        <line num="21" type="method" name="anonymous function" crap="1.51" count="1"/>
+        <line num="19" type="method" name="register" crap="1" count="1"/>
+        <line num="21" type="method" name="anonymous function" crap="1.30" count="1"/>
         <line num="23" type="stmt" count="0"/>
         <line num="25" type="stmt" count="0"/>
         <line num="27" type="stmt" count="0"/>
@@ -4549,24 +4899,29 @@
         <line num="31" type="stmt" count="1"/>
         <line num="38" type="method" name="provides" crap="2" count="0"/>
         <line num="40" type="stmt" count="0"/>
-        <metrics loc="43" ncloc="28" classes="1" methods="2" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="7" coveredstatements="2" elements="9" coveredelements="2"/>
+        <line num="44" type="stmt" count="1"/>
+        <metrics loc="43" ncloc="28" classes="1" methods="2" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="8" coveredstatements="3" elements="10" coveredelements="3"/>
       </file>
     </package>
     <package name="Illuminate\Queue">
       <file name="/Users/travis/Code/Personal/steam/vendor/syntax/steam-api/vendor/laravel/framework/src/Illuminate/Queue/FailConsoleServiceProvider.php">
         <class name="FailConsoleServiceProvider" namespace="Illuminate\Queue">
-          <metrics methods="3" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="12" coveredstatements="5" elements="15" coveredelements="5"/>
+          <metrics methods="3" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="25" coveredstatements="17" elements="28" coveredelements="19"/>
         </class>
-        <line num="24" type="method" name="register" crap="1.12" count="1"/>
+        <line num="24" type="method" name="register" crap="1.04" count="1"/>
+        <line num="26" type="stmt" count="1"/>
         <line num="28" type="stmt" count="0"/>
         <line num="29" type="stmt" count="1"/>
+        <line num="31" type="stmt" count="1"/>
         <line num="33" type="stmt" count="0"/>
         <line num="34" type="stmt" count="1"/>
+        <line num="36" type="stmt" count="1"/>
         <line num="38" type="stmt" count="0"/>
         <line num="39" type="stmt" count="1"/>
+        <line num="41" type="stmt" count="1"/>
         <line num="43" type="stmt" count="0"/>
         <line num="44" type="stmt" count="1"/>
-        <line num="46" type="method" name="anonymous function" crap="1.12" count="1"/>
+        <line num="46" type="method" name="anonymous function" crap="1.04" count="1"/>
         <line num="48" type="stmt" count="0"/>
         <line num="49" type="stmt" count="1"/>
         <line num="51" type="stmt" count="1"/>
@@ -4577,11 +4932,13 @@
         <line num="62" type="method" name="provides" crap="2" count="0"/>
         <line num="65" type="stmt" count="0"/>
         <line num="66" type="stmt" count="0"/>
-        <metrics loc="69" ncloc="54" classes="1" methods="3" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="17" coveredstatements="10" elements="20" coveredelements="10"/>
+        <line num="70" type="stmt" count="1"/>
+        <line num="143" type="stmt" count="1"/>
+        <metrics loc="69" ncloc="54" classes="1" methods="3" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="22" coveredstatements="15" elements="25" coveredelements="15"/>
       </file>
       <file name="/Users/travis/Code/Personal/steam/vendor/syntax/steam-api/vendor/laravel/framework/src/Illuminate/Queue/QueueServiceProvider.php">
         <class name="QueueServiceProvider" namespace="Illuminate\Queue">
-          <metrics methods="18" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="75" coveredstatements="31" elements="93" coveredelements="32"/>
+          <metrics methods="19" coveredmethods="11" conditionals="0" coveredconditionals="0" statements="92" coveredstatements="43" elements="111" coveredelements="54"/>
         </class>
         <line num="30" type="method" name="register" crap="1" count="1"/>
         <line num="32" type="stmt" count="1"/>
@@ -4591,39 +4948,46 @@
         <line num="40" type="stmt" count="1"/>
         <line num="42" type="stmt" count="1"/>
         <line num="43" type="stmt" count="1"/>
-        <line num="50" type="method" name="registerManager" crap="1.22" count="1"/>
+        <line num="50" type="method" name="registerManager" crap="1.12" count="1"/>
+        <line num="52" type="stmt" count="1"/>
         <line num="57" type="stmt" count="0"/>
         <line num="59" type="stmt" count="0"/>
         <line num="61" type="stmt" count="0"/>
         <line num="62" type="stmt" count="1"/>
         <line num="63" type="stmt" count="1"/>
-        <line num="70" type="method" name="registerWorker" crap="1.01" count="1"/>
+        <line num="70" type="method" name="registerWorker" crap="1.00" count="1"/>
         <line num="72" type="stmt" count="1"/>
         <line num="74" type="stmt" count="1"/>
+        <line num="76" type="stmt" count="1"/>
         <line num="78" type="stmt" count="0"/>
         <line num="79" type="stmt" count="1"/>
         <line num="80" type="stmt" count="1"/>
-        <line num="87" type="method" name="registerWorkCommand" crap="1.02" count="1"/>
+        <line num="87" type="method" name="registerWorkCommand" crap="1.01" count="1"/>
+        <line num="89" type="stmt" count="1"/>
         <line num="91" type="stmt" count="0"/>
         <line num="92" type="stmt" count="1"/>
         <line num="94" type="stmt" count="1"/>
         <line num="95" type="stmt" count="1"/>
-        <line num="102" type="method" name="registerListener" crap="1.02" count="1"/>
+        <line num="102" type="method" name="registerListener" crap="1.01" count="1"/>
         <line num="104" type="stmt" count="1"/>
+        <line num="106" type="stmt" count="1"/>
         <line num="108" type="stmt" count="0"/>
         <line num="109" type="stmt" count="1"/>
         <line num="110" type="stmt" count="1"/>
-        <line num="117" type="method" name="registerListenCommand" crap="1.02" count="1"/>
+        <line num="117" type="method" name="registerListenCommand" crap="1.01" count="1"/>
+        <line num="119" type="stmt" count="1"/>
         <line num="121" type="stmt" count="0"/>
         <line num="122" type="stmt" count="1"/>
         <line num="124" type="stmt" count="1"/>
         <line num="125" type="stmt" count="1"/>
-        <line num="132" type="method" name="registerRestartCommand" crap="1.02" count="1"/>
+        <line num="132" type="method" name="registerRestartCommand" crap="1.01" count="1"/>
+        <line num="134" type="stmt" count="1"/>
         <line num="136" type="stmt" count="0"/>
         <line num="137" type="stmt" count="1"/>
         <line num="139" type="stmt" count="1"/>
         <line num="140" type="stmt" count="1"/>
-        <line num="147" type="method" name="registerSubscriber" crap="1.02" count="1"/>
+        <line num="147" type="method" name="registerSubscriber" crap="1.01" count="1"/>
+        <line num="149" type="stmt" count="1"/>
         <line num="151" type="stmt" count="0"/>
         <line num="152" type="stmt" count="1"/>
         <line num="154" type="stmt" count="1"/>
@@ -4634,10 +4998,12 @@
         <line num="168" type="stmt" count="0"/>
         <line num="169" type="stmt" count="0"/>
         <line num="177" type="method" name="registerSyncConnector" crap="2" count="0"/>
+        <line num="179" type="stmt" count="0"/>
         <line num="181" type="stmt" count="0"/>
         <line num="182" type="stmt" count="0"/>
         <line num="183" type="stmt" count="0"/>
         <line num="191" type="method" name="registerBeanstalkdConnector" crap="2" count="0"/>
+        <line num="193" type="stmt" count="0"/>
         <line num="195" type="stmt" count="0"/>
         <line num="196" type="stmt" count="0"/>
         <line num="197" type="stmt" count="0"/>
@@ -4647,6 +5013,7 @@
         <line num="212" type="stmt" count="0"/>
         <line num="213" type="stmt" count="0"/>
         <line num="221" type="method" name="registerSqsConnector" crap="2" count="0"/>
+        <line num="223" type="stmt" count="0"/>
         <line num="225" type="stmt" count="0"/>
         <line num="226" type="stmt" count="0"/>
         <line num="227" type="stmt" count="0"/>
@@ -4657,18 +5024,21 @@
         <line num="244" type="stmt" count="0"/>
         <line num="245" type="stmt" count="0"/>
         <line num="252" type="method" name="registerIronRequestBinder" crap="6" count="0"/>
+        <line num="254" type="stmt" count="0"/>
         <line num="256" type="stmt" count="0"/>
         <line num="257" type="stmt" count="0"/>
         <line num="258" type="stmt" count="0"/>
         <line num="259" type="stmt" count="0"/>
         <line num="260" type="stmt" count="0"/>
         <line num="261" type="stmt" count="0"/>
-        <line num="268" type="method" name="registerFailedJobServices" crap="1.12" count="1"/>
+        <line num="268" type="method" name="registerFailedJobServices" crap="1.06" count="1"/>
+        <line num="270" type="stmt" count="1"/>
         <line num="272" type="stmt" count="0"/>
         <line num="274" type="stmt" count="0"/>
         <line num="275" type="stmt" count="1"/>
         <line num="276" type="stmt" count="1"/>
-        <line num="285" type="method" name="anonymous function" crap="1.12" count="1"/>
+        <line num="283" type="method" name="registerQueueClosure" crap="1" count="1"/>
+        <line num="285" type="stmt" count="1"/>
         <line num="287" type="stmt" count="0"/>
         <line num="288" type="stmt" count="1"/>
         <line num="289" type="stmt" count="1"/>
@@ -4677,47 +5047,53 @@
         <line num="300" type="stmt" count="0"/>
         <line num="301" type="stmt" count="0"/>
         <line num="302" type="stmt" count="0"/>
-        <metrics loc="305" ncloc="198" classes="1" methods="18" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="76" coveredstatements="32" elements="94" coveredelements="33"/>
+        <line num="306" type="stmt" count="1"/>
+        <metrics loc="305" ncloc="198" classes="1" methods="18" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="89" coveredstatements="41" elements="107" coveredelements="42"/>
       </file>
     </package>
     <package name="Illuminate\Redis">
       <file name="/Users/travis/Code/Personal/steam/vendor/syntax/steam-api/vendor/laravel/framework/src/Illuminate/Redis/RedisServiceProvider.php">
         <class name="RedisServiceProvider" namespace="Illuminate\Redis">
-          <metrics methods="2" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="3" coveredstatements="1" elements="5" coveredelements="1"/>
+          <metrics methods="3" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="8" coveredstatements="5" elements="11" coveredelements="7"/>
         </class>
-        <line num="21" type="method" name="anonymous function" crap="1.12" count="1"/>
+        <line num="19" type="method" name="register" crap="1" count="1"/>
+        <line num="21" type="method" name="anonymous function" crap="1.04" count="1"/>
         <line num="23" type="stmt" count="0"/>
         <line num="24" type="stmt" count="1"/>
         <line num="25" type="stmt" count="1"/>
         <line num="32" type="method" name="provides" crap="2" count="0"/>
         <line num="34" type="stmt" count="0"/>
-        <metrics loc="37" ncloc="22" classes="1" methods="2" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="4" coveredstatements="2" elements="6" coveredelements="2"/>
+        <line num="38" type="stmt" count="1"/>
+        <metrics loc="37" ncloc="22" classes="1" methods="2" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="5" coveredstatements="3" elements="7" coveredelements="3"/>
       </file>
     </package>
     <package name="Illuminate\Remote">
       <file name="/Users/travis/Code/Personal/steam/vendor/syntax/steam-api/vendor/laravel/framework/src/Illuminate/Remote/RemoteServiceProvider.php">
         <class name="RemoteServiceProvider" namespace="Illuminate\Remote">
-          <metrics methods="2" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="3" coveredstatements="1" elements="5" coveredelements="1"/>
+          <metrics methods="3" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="8" coveredstatements="5" elements="11" coveredelements="7"/>
         </class>
-        <line num="21" type="method" name="anonymous function" crap="1.12" count="1"/>
+        <line num="19" type="method" name="register" crap="1" count="1"/>
+        <line num="21" type="method" name="anonymous function" crap="1.04" count="1"/>
         <line num="23" type="stmt" count="0"/>
         <line num="24" type="stmt" count="1"/>
         <line num="25" type="stmt" count="1"/>
         <line num="32" type="method" name="provides" crap="2" count="0"/>
         <line num="34" type="stmt" count="0"/>
-        <metrics loc="37" ncloc="22" classes="1" methods="2" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="4" coveredstatements="2" elements="6" coveredelements="2"/>
+        <line num="38" type="stmt" count="1"/>
+        <metrics loc="37" ncloc="22" classes="1" methods="2" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="5" coveredstatements="3" elements="7" coveredelements="3"/>
       </file>
     </package>
     <package name="Illuminate\Routing">
       <file name="/Users/travis/Code/Personal/steam/vendor/syntax/steam-api/vendor/laravel/framework/src/Illuminate/Routing/ControllerServiceProvider.php">
         <class name="ControllerServiceProvider" namespace="Illuminate\Routing">
-          <metrics methods="3" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="8" coveredstatements="4" elements="11" coveredelements="5"/>
+          <metrics methods="4" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="15" coveredstatements="8" elements="19" coveredelements="11"/>
         </class>
         <line num="21" type="method" name="register" crap="1" count="1"/>
         <line num="23" type="stmt" count="1"/>
         <line num="25" type="stmt" count="1"/>
         <line num="26" type="stmt" count="1"/>
-        <line num="35" type="method" name="anonymous function" crap="1.42" count="1"/>
+        <line num="33" type="method" name="registerGenerator" crap="1" count="1"/>
+        <line num="35" type="method" name="anonymous function" crap="1.22" count="1"/>
         <line num="40" type="stmt" count="0"/>
         <line num="42" type="stmt" count="0"/>
         <line num="44" type="stmt" count="0"/>
@@ -4725,18 +5101,21 @@
         <line num="46" type="stmt" count="1"/>
         <line num="53" type="method" name="provides" crap="2" count="0"/>
         <line num="57" type="stmt" count="0"/>
-        <metrics loc="60" ncloc="34" classes="1" methods="3" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="9" coveredstatements="5" elements="12" coveredelements="6"/>
+        <line num="61" type="stmt" count="1"/>
+        <line num="143" type="stmt" count="1"/>
+        <metrics loc="60" ncloc="34" classes="1" methods="3" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="10" coveredstatements="6" elements="13" coveredelements="7"/>
       </file>
       <file name="/Users/travis/Code/Personal/steam/vendor/syntax/steam-api/vendor/laravel/framework/src/Illuminate/Routing/RoutingServiceProvider.php">
         <class name="RoutingServiceProvider" namespace="Illuminate\Routing">
-          <metrics methods="4" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="24" coveredstatements="9" elements="28" coveredelements="10"/>
+          <metrics methods="5" coveredmethods="5" conditionals="0" coveredconditionals="0" statements="37" coveredstatements="15" elements="42" coveredelements="20"/>
         </class>
         <line num="12" type="method" name="register" crap="1" count="1"/>
         <line num="14" type="stmt" count="1"/>
         <line num="16" type="stmt" count="1"/>
         <line num="18" type="stmt" count="1"/>
         <line num="19" type="stmt" count="1"/>
-        <line num="26" type="method" name="registerRouter" crap="3.69" count="1"/>
+        <line num="26" type="method" name="registerRouter" crap="3.19" count="1"/>
+        <line num="28" type="stmt" count="1"/>
         <line num="30" type="stmt" count="0"/>
         <line num="35" type="stmt" count="0"/>
         <line num="36" type="stmt" count="0"/>
@@ -4745,13 +5124,16 @@
         <line num="40" type="stmt" count="0"/>
         <line num="41" type="stmt" count="1"/>
         <line num="42" type="stmt" count="1"/>
-        <line num="49" type="method" name="registerUrlGenerator" crap="1.22" count="1"/>
+        <line num="49" type="method" name="registerUrlGenerator" crap="1.19" count="1"/>
+        <line num="51" type="stmt" count="1"/>
         <line num="56" type="stmt" count="0"/>
+        <line num="58" type="stmt" count="0"/>
         <line num="60" type="stmt" count="0"/>
         <line num="61" type="stmt" count="0"/>
         <line num="62" type="stmt" count="1"/>
         <line num="63" type="stmt" count="1"/>
-        <line num="72" type="method" name="anonymous function" crap="4.52" count="1"/>
+        <line num="70" type="method" name="registerRedirector" crap="2" count="1"/>
+        <line num="72" type="stmt" count="1"/>
         <line num="74" type="stmt" count="0"/>
         <line num="79" type="stmt" count="0"/>
         <line num="80" type="stmt" count="0"/>
@@ -4760,27 +5142,32 @@
         <line num="84" type="stmt" count="0"/>
         <line num="85" type="stmt" count="1"/>
         <line num="86" type="stmt" count="1"/>
-        <metrics loc="88" ncloc="50" classes="1" methods="4" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="25" coveredstatements="10" elements="29" coveredelements="11"/>
+        <line num="89" type="stmt" count="1"/>
+        <metrics loc="88" ncloc="50" classes="1" methods="4" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="29" coveredstatements="13" elements="33" coveredelements="14"/>
       </file>
     </package>
     <package name="Illuminate\Session">
       <file name="/Users/travis/Code/Personal/steam/vendor/syntax/steam-api/vendor/laravel/framework/src/Illuminate/Session/CommandsServiceProvider.php">
         <class name="CommandsServiceProvider" namespace="Illuminate\Session">
-          <metrics methods="2" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="3" coveredstatements="1" elements="5" coveredelements="1"/>
+          <metrics methods="3" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="9" coveredstatements="6" elements="12" coveredelements="8"/>
         </class>
-        <line num="21" type="method" name="anonymous function" crap="1.12" count="1"/>
+        <line num="19" type="method" name="register" crap="1" count="1"/>
+        <line num="21" type="method" name="anonymous function" crap="1.04" count="1"/>
         <line num="23" type="stmt" count="0"/>
         <line num="24" type="stmt" count="1"/>
         <line num="26" type="stmt" count="1"/>
         <line num="27" type="stmt" count="1"/>
         <line num="34" type="method" name="provides" crap="2" count="0"/>
         <line num="36" type="stmt" count="0"/>
-        <metrics loc="39" ncloc="24" classes="1" methods="2" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="5" coveredstatements="3" elements="7" coveredelements="3"/>
+        <line num="40" type="stmt" count="1"/>
+        <line num="143" type="stmt" count="1"/>
+        <metrics loc="39" ncloc="24" classes="1" methods="2" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="6" coveredstatements="4" elements="8" coveredelements="4"/>
       </file>
       <file name="/Users/travis/Code/Personal/steam/vendor/syntax/steam-api/vendor/laravel/framework/src/Illuminate/Session/SessionManager.php">
         <class name="SessionManager" namespace="Illuminate\Session">
           <metrics methods="17" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="26" coveredstatements="2" elements="43" coveredelements="4"/>
         </class>
+        <line num="0" type="stmt" count="1"/>
         <line num="14" type="method" name="callCustomCreator" crap="2" count="0"/>
         <line num="16" type="stmt" count="0"/>
         <line num="24" type="method" name="createArrayDriver" crap="1" count="1"/>
@@ -4824,11 +5211,12 @@
         <line num="194" type="method" name="setDefaultDriver" crap="2" count="0"/>
         <line num="196" type="stmt" count="0"/>
         <line num="197" type="stmt" count="0"/>
+        <line num="200" type="stmt" count="1"/>
         <metrics loc="199" ncloc="109" classes="1" methods="17" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="26" coveredstatements="2" elements="43" coveredelements="4"/>
       </file>
       <file name="/Users/travis/Code/Personal/steam/vendor/syntax/steam-api/vendor/laravel/framework/src/Illuminate/Session/SessionServiceProvider.php">
         <class name="SessionServiceProvider" namespace="Illuminate\Session">
-          <metrics methods="4" coveredmethods="4" conditionals="0" coveredconditionals="0" statements="15" coveredstatements="15" elements="19" coveredelements="19"/>
+          <metrics methods="5" coveredmethods="5" conditionals="0" coveredconditionals="0" statements="22" coveredstatements="22" elements="27" coveredelements="27"/>
         </class>
         <line num="12" type="method" name="register" crap="1" count="1"/>
         <line num="14" type="stmt" count="1"/>
@@ -4842,19 +5230,22 @@
         <line num="31" type="stmt" count="1"/>
         <line num="32" type="stmt" count="1"/>
         <line num="39" type="method" name="registerSessionManager" crap="1" count="1"/>
+        <line num="41" type="stmt" count="1"/>
         <line num="43" type="stmt" count="1"/>
         <line num="44" type="stmt" count="1"/>
         <line num="45" type="stmt" count="1"/>
-        <line num="54" type="method" name="anonymous function" crap="1" count="1"/>
+        <line num="52" type="method" name="registerSessionDriver" crap="1" count="1"/>
+        <line num="54" type="stmt" count="1"/>
         <line num="59" type="stmt" count="1"/>
         <line num="61" type="stmt" count="1"/>
         <line num="62" type="stmt" count="1"/>
         <line num="63" type="stmt" count="1"/>
-        <metrics loc="65" ncloc="39" classes="1" methods="4" coveredmethods="4" conditionals="0" coveredconditionals="0" statements="16" coveredstatements="16" elements="20" coveredelements="20"/>
+        <line num="66" type="stmt" count="1"/>
+        <metrics loc="65" ncloc="39" classes="1" methods="4" coveredmethods="4" conditionals="0" coveredconditionals="0" statements="18" coveredstatements="18" elements="22" coveredelements="22"/>
       </file>
       <file name="/Users/travis/Code/Personal/steam/vendor/syntax/steam-api/vendor/laravel/framework/src/Illuminate/Session/Store.php">
         <class name="Store" namespace="Illuminate\Session">
-          <metrics methods="49" coveredmethods="6" conditionals="0" coveredconditionals="0" statements="124" coveredstatements="15" elements="173" coveredelements="21"/>
+          <metrics methods="50" coveredmethods="6" conditionals="0" coveredconditionals="0" statements="128" coveredstatements="15" elements="178" coveredelements="21"/>
         </class>
         <line num="74" type="method" name="__construct" crap="1" count="1"/>
         <line num="76" type="stmt" count="1"/>
@@ -4999,6 +5390,7 @@
         <line num="517" type="method" name="registerBag" crap="2" count="0"/>
         <line num="519" type="stmt" count="0"/>
         <line num="520" type="stmt" count="0"/>
+        <line num="525" type="method" name="getBag" crap="1" count="0"/>
         <line num="527" type="method" name="anonymous function" crap="2" count="0"/>
         <line num="529" type="stmt" count="0"/>
         <line num="530" type="stmt" count="0"/>
@@ -5029,16 +5421,18 @@
         <line num="626" type="stmt" count="0"/>
         <line num="627" type="stmt" count="0"/>
         <line num="628" type="stmt" count="0"/>
-        <metrics loc="630" ncloc="352" classes="1" methods="49" coveredmethods="6" conditionals="0" coveredconditionals="0" statements="124" coveredstatements="15" elements="173" coveredelements="21"/>
+        <line num="631" type="stmt" count="1"/>
+        <metrics loc="630" ncloc="352" classes="1" methods="49" coveredmethods="6" conditionals="0" coveredconditionals="0" statements="125" coveredstatements="15" elements="174" coveredelements="21"/>
       </file>
     </package>
     <file name="/Users/travis/Code/Personal/steam/vendor/syntax/steam-api/vendor/laravel/framework/src/Illuminate/Session/SessionInterface.php">
+      <line num="31" type="stmt" count="1"/>
       <metrics loc="30" ncloc="14" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
     </file>
     <package name="Illuminate\Support">
       <file name="/Users/travis/Code/Personal/steam/vendor/syntax/steam-api/vendor/laravel/framework/src/Illuminate/Support/Arr.php">
         <class name="Arr" namespace="Illuminate\Support">
-          <metrics methods="18" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="104" coveredstatements="16" elements="122" coveredelements="18"/>
+          <metrics methods="19" coveredmethods="4" conditionals="0" coveredconditionals="0" statements="105" coveredstatements="16" elements="124" coveredelements="20"/>
         </class>
         <line num="18" type="method" name="add" crap="6" count="0"/>
         <line num="20" type="stmt" count="0"/>
@@ -5163,15 +5557,18 @@
         <line num="380" type="stmt" count="0"/>
         <line num="381" type="stmt" count="0"/>
         <line num="383" type="stmt" count="0"/>
+        <line num="387" type="stmt" count="1"/>
         <metrics loc="386" ncloc="239" classes="1" methods="18" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="105" coveredstatements="16" elements="123" coveredelements="18"/>
       </file>
       <file name="/Users/travis/Code/Personal/steam/vendor/syntax/steam-api/vendor/laravel/framework/src/Illuminate/Support/Manager.php">
         <class name="Manager" namespace="Illuminate\Support">
-          <metrics methods="7" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="20" coveredstatements="13" elements="27" coveredelements="15"/>
+          <metrics methods="8" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="20" coveredstatements="13" elements="28" coveredelements="16"/>
         </class>
+        <line num="0" type="stmt" count="1"/>
         <line num="34" type="method" name="__construct" crap="1" count="1"/>
         <line num="36" type="stmt" count="1"/>
         <line num="37" type="stmt" count="1"/>
+        <line num="44" type="method" name="getDefaultDriver" crap="1" count="0"/>
         <line num="52" type="method" name="driver" crap="3" count="1"/>
         <line num="54" type="stmt" count="1"/>
         <line num="59" type="stmt" count="1"/>
@@ -5196,6 +5593,8 @@
         <line num="126" type="stmt" count="0"/>
         <line num="136" type="method" name="__call" crap="2" count="0"/>
         <line num="138" type="stmt" count="0"/>
+        <line num="142" type="stmt" count="1"/>
+        <line num="185" type="stmt" count="1"/>
         <metrics loc="141" ncloc="64" classes="1" methods="7" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="20" coveredstatements="13" elements="27" coveredelements="15"/>
       </file>
       <file name="/Users/travis/Code/Personal/steam/vendor/syntax/steam-api/vendor/laravel/framework/src/Illuminate/Support/NamespacedItemResolver.php">
@@ -5228,15 +5627,18 @@
         <line num="104" type="method" name="setParsedKey" crap="2" count="0"/>
         <line num="106" type="stmt" count="0"/>
         <line num="107" type="stmt" count="0"/>
+        <line num="110" type="stmt" count="1"/>
         <metrics loc="109" ncloc="43" classes="1" methods="4" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="22" coveredstatements="20" elements="26" coveredelements="23"/>
       </file>
       <file name="/Users/travis/Code/Personal/steam/vendor/syntax/steam-api/vendor/laravel/framework/src/Illuminate/Support/ServiceProvider.php">
         <class name="ServiceProvider" namespace="Illuminate\Support">
-          <metrics methods="10" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="40" coveredstatements="5" elements="50" coveredelements="7"/>
+          <metrics methods="12" coveredmethods="4" conditionals="0" coveredconditionals="0" statements="44" coveredstatements="8" elements="56" coveredelements="12"/>
         </class>
         <line num="27" type="method" name="__construct" crap="1" count="1"/>
         <line num="29" type="stmt" count="1"/>
         <line num="30" type="stmt" count="1"/>
+        <line num="37" type="method" name="boot" crap="1" count="1"/>
+        <line num="44" type="method" name="register" crap="1" count="0"/>
         <line num="54" type="method" name="package" crap="42" count="0"/>
         <line num="56" type="stmt" count="0"/>
         <line num="61" type="stmt" count="0"/>
@@ -5273,7 +5675,6 @@
         <line num="136" type="method" name="commands" crap="2" count="1"/>
         <line num="138" type="stmt" count="1"/>
         <line num="143" type="stmt" count="1"/>
-        <line num="145" type="method" name="anonymous function" crap="1.12" count="1"/>
         <line num="147" type="stmt" count="0"/>
         <line num="148" type="stmt" count="1"/>
         <line num="149" type="stmt" count="1"/>
@@ -5285,11 +5686,12 @@
         <line num="179" type="stmt" count="0"/>
         <line num="187" type="method" name="isDeferred" crap="2" count="0"/>
         <line num="189" type="stmt" count="0"/>
-        <metrics loc="192" ncloc="89" classes="1" methods="10" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="41" coveredstatements="6" elements="51" coveredelements="8"/>
+        <line num="193" type="stmt" count="1"/>
+        <metrics loc="192" ncloc="89" classes="1" methods="11" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="42" coveredstatements="7" elements="53" coveredelements="10"/>
       </file>
       <file name="/Users/travis/Code/Personal/steam/vendor/syntax/steam-api/vendor/laravel/framework/src/Illuminate/Support/Str.php">
         <class name="Str" namespace="Illuminate\Support">
-          <metrics methods="21" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="65" coveredstatements="18" elements="86" coveredelements="21"/>
+          <metrics methods="21" coveredmethods="4" conditionals="0" coveredconditionals="0" statements="65" coveredstatements="18" elements="86" coveredelements="22"/>
         </class>
         <line num="37" type="method" name="ascii" crap="2" count="0"/>
         <line num="39" type="stmt" count="0"/>
@@ -5377,6 +5779,7 @@
         <line num="354" type="stmt" count="0"/>
         <line num="357" type="stmt" count="0"/>
         <line num="359" type="stmt" count="0"/>
+        <line num="363" type="stmt" count="1"/>
         <metrics loc="362" ncloc="192" classes="1" methods="21" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="65" coveredstatements="18" elements="86" coveredelements="21"/>
       </file>
       <file name="/Users/travis/Code/Personal/steam/vendor/syntax/steam-api/vendor/laravel/framework/src/Illuminate/Support/ViewErrorBag.php">
@@ -5401,28 +5804,34 @@
         <line num="100" type="method" name="__set" crap="2" count="0"/>
         <line num="102" type="stmt" count="0"/>
         <line num="103" type="stmt" count="0"/>
+        <line num="106" type="stmt" count="1"/>
         <metrics loc="105" ncloc="51" classes="1" methods="8" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="10" coveredstatements="0" elements="18" coveredelements="0"/>
       </file>
     </package>
     <file name="/Users/travis/Code/Personal/steam/vendor/syntax/steam-api/vendor/laravel/framework/src/Illuminate/Support/Contracts/ArrayableInterface.php">
+      <line num="13" type="stmt" count="1"/>
       <metrics loc="12" ncloc="7" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
     </file>
     <file name="/Users/travis/Code/Personal/steam/vendor/syntax/steam-api/vendor/laravel/framework/src/Illuminate/Support/Contracts/JsonableInterface.php">
+      <line num="14" type="stmt" count="1"/>
       <metrics loc="13" ncloc="7" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
     </file>
     <file name="/Users/travis/Code/Personal/steam/vendor/syntax/steam-api/vendor/laravel/framework/src/Illuminate/Support/Contracts/ResponsePreparerInterface.php">
+      <line num="21" type="stmt" count="1"/>
       <metrics loc="20" ncloc="9" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
     </file>
     <package name="Illuminate\Support\Facades">
       <file name="/Users/travis/Code/Personal/steam/vendor/syntax/steam-api/vendor/laravel/framework/src/Illuminate/Support/Facades/Config.php">
         <class name="Config" namespace="Illuminate\Support\Facades">
-          <metrics methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
+          <metrics methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="1" coveredstatements="1" elements="2" coveredelements="2"/>
         </class>
-        <metrics loc="15" ncloc="7" classes="1" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
+        <line num="13" type="method" name="getFacadeAccessor" crap="1" count="1"/>
+        <line num="16" type="stmt" count="1"/>
+        <metrics loc="15" ncloc="7" classes="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="1" coveredstatements="1" elements="2" coveredelements="2"/>
       </file>
       <file name="/Users/travis/Code/Personal/steam/vendor/syntax/steam-api/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php">
         <class name="Facade" namespace="Illuminate\Support\Facades">
-          <metrics methods="14" coveredmethods="5" conditionals="0" coveredconditionals="0" statements="51" coveredstatements="17" elements="65" coveredelements="22"/>
+          <metrics methods="14" coveredmethods="7" conditionals="0" coveredconditionals="0" statements="51" coveredstatements="17" elements="65" coveredelements="24"/>
         </class>
         <line num="27" type="method" name="swap" crap="2" count="0"/>
         <line num="29" type="stmt" count="0"/>
@@ -5489,6 +5898,7 @@
         <line num="219" type="stmt" count="0"/>
         <line num="220" type="stmt" count="0"/>
         <line num="221" type="stmt" count="0"/>
+        <line num="225" type="stmt" count="1"/>
         <metrics loc="224" ncloc="133" classes="1" methods="14" coveredmethods="5" conditionals="0" coveredconditionals="0" statements="51" coveredstatements="17" elements="65" coveredelements="22"/>
       </file>
     </package>
@@ -5509,6 +5919,7 @@
         <line num="51" type="stmt" count="0"/>
         <line num="63" type="method" name="__call" crap="2" count="0"/>
         <line num="65" type="stmt" count="0"/>
+        <line num="69" type="stmt" count="1"/>
         <metrics loc="68" ncloc="32" classes="1" methods="4" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="8" coveredstatements="0" elements="12" coveredelements="0"/>
       </file>
     </package>
@@ -5579,6 +5990,7 @@
       <line num="495" type="stmt" count="0"/>
       <line num="497" type="stmt" count="0"/>
       <line num="499" type="stmt" count="0"/>
+      <line num="513" type="stmt" count="0"/>
       <line num="527" type="stmt" count="0"/>
       <line num="542" type="stmt" count="0"/>
       <line num="556" type="stmt" count="0"/>
@@ -5626,15 +6038,16 @@
       <line num="1003" type="stmt" count="0"/>
       <line num="1017" type="stmt" count="1"/>
       <line num="1031" type="stmt" count="1"/>
-      <metrics loc="1033" ncloc="589" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="113" coveredstatements="15" elements="113" coveredelements="15"/>
+      <metrics loc="1033" ncloc="589" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="114" coveredstatements="15" elements="114" coveredelements="15"/>
     </file>
     <package name="Illuminate\Translation">
       <file name="/Users/travis/Code/Personal/steam/vendor/syntax/steam-api/vendor/laravel/framework/src/Illuminate/Translation/TranslationServiceProvider.php">
         <class name="TranslationServiceProvider" namespace="Illuminate\Translation">
-          <metrics methods="3" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="11" coveredstatements="4" elements="14" coveredelements="4"/>
+          <metrics methods="4" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="17" coveredstatements="9" elements="21" coveredelements="12"/>
         </class>
-        <line num="19" type="method" name="register" crap="1.24" count="1"/>
+        <line num="19" type="method" name="register" crap="1.17" count="1"/>
         <line num="21" type="stmt" count="1"/>
+        <line num="23" type="stmt" count="1"/>
         <line num="25" type="stmt" count="0"/>
         <line num="30" type="stmt" count="0"/>
         <line num="32" type="stmt" count="0"/>
@@ -5642,22 +6055,25 @@
         <line num="36" type="stmt" count="0"/>
         <line num="37" type="stmt" count="1"/>
         <line num="38" type="stmt" count="1"/>
-        <line num="47" type="method" name="anonymous function" crap="1.12" count="1"/>
+        <line num="45" type="method" name="registerLoader" crap="1" count="1"/>
+        <line num="47" type="stmt" count="1"/>
         <line num="49" type="stmt" count="0"/>
         <line num="50" type="stmt" count="1"/>
         <line num="51" type="stmt" count="1"/>
         <line num="58" type="method" name="provides" crap="2" count="0"/>
         <line num="60" type="stmt" count="0"/>
-        <metrics loc="63" ncloc="37" classes="1" methods="3" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="12" coveredstatements="5" elements="15" coveredelements="5"/>
+        <line num="64" type="stmt" count="1"/>
+        <metrics loc="63" ncloc="37" classes="1" methods="3" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="14" coveredstatements="7" elements="17" coveredelements="7"/>
       </file>
     </package>
     <package name="Illuminate\Validation">
       <file name="/Users/travis/Code/Personal/steam/vendor/syntax/steam-api/vendor/laravel/framework/src/Illuminate/Validation/ValidationServiceProvider.php">
         <class name="ValidationServiceProvider" namespace="Illuminate\Validation">
-          <metrics methods="3" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="12" coveredstatements="4" elements="15" coveredelements="4"/>
+          <metrics methods="4" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="18" coveredstatements="9" elements="22" coveredelements="12"/>
         </class>
-        <line num="19" type="method" name="register" crap="3.19" count="1"/>
+        <line num="19" type="method" name="register" crap="2.86" count="1"/>
         <line num="21" type="stmt" count="1"/>
+        <line num="23" type="stmt" count="1"/>
         <line num="25" type="stmt" count="0"/>
         <line num="30" type="stmt" count="0"/>
         <line num="31" type="stmt" count="0"/>
@@ -5666,13 +6082,15 @@
         <line num="35" type="stmt" count="0"/>
         <line num="36" type="stmt" count="1"/>
         <line num="37" type="stmt" count="1"/>
-        <line num="46" type="method" name="anonymous function" crap="1.12" count="1"/>
+        <line num="44" type="method" name="registerPresenceVerifier" crap="1" count="1"/>
+        <line num="46" type="stmt" count="1"/>
         <line num="48" type="stmt" count="0"/>
         <line num="49" type="stmt" count="1"/>
         <line num="50" type="stmt" count="1"/>
         <line num="57" type="method" name="provides" crap="2" count="0"/>
         <line num="59" type="stmt" count="0"/>
-        <metrics loc="62" ncloc="36" classes="1" methods="3" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="13" coveredstatements="5" elements="16" coveredelements="5"/>
+        <line num="63" type="stmt" count="1"/>
+        <metrics loc="62" ncloc="36" classes="1" methods="3" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="15" coveredstatements="7" elements="18" coveredelements="7"/>
       </file>
     </package>
     <package name="Illuminate\View\Engines">
@@ -5691,13 +6109,14 @@
         <line num="50" type="stmt" count="0"/>
         <line num="51" type="stmt" count="0"/>
         <line num="54" type="stmt" count="0"/>
+        <line num="58" type="stmt" count="1"/>
         <metrics loc="57" ncloc="31" classes="1" methods="2" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="9" coveredstatements="2" elements="11" coveredelements="3"/>
       </file>
     </package>
     <package name="Illuminate\View">
       <file name="/Users/travis/Code/Personal/steam/vendor/syntax/steam-api/vendor/laravel/framework/src/Illuminate/View/Factory.php">
         <class name="Factory" namespace="Illuminate\View">
-          <metrics methods="50" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="168" coveredstatements="8" elements="218" coveredelements="10"/>
+          <metrics methods="50" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="171" coveredstatements="8" elements="221" coveredelements="11"/>
         </class>
         <line num="103" type="method" name="__construct" crap="1" count="1"/>
         <line num="105" type="stmt" count="1"/>
@@ -5798,7 +6217,6 @@
         <line num="427" type="method" name="buildClassEventCallback" crap="2" count="0"/>
         <line num="429" type="stmt" count="0"/>
         <line num="431" type="stmt" count="0"/>
-        <line num="436" type="method" name="anonymous function" crap="2" count="0"/>
         <line num="438" type="stmt" count="0"/>
         <line num="440" type="stmt" count="0"/>
         <line num="441" type="stmt" count="0"/>
@@ -5917,11 +6335,12 @@
         <line num="829" type="stmt" count="0"/>
         <line num="837" type="method" name="getNames" crap="2" count="0"/>
         <line num="839" type="stmt" count="0"/>
+        <line num="843" type="stmt" count="1"/>
         <metrics loc="842" ncloc="444" classes="1" methods="50" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="168" coveredstatements="8" elements="218" coveredelements="10"/>
       </file>
       <file name="/Users/travis/Code/Personal/steam/vendor/syntax/steam-api/vendor/laravel/framework/src/Illuminate/View/FileViewFinder.php">
         <class name="FileViewFinder" namespace="Illuminate\View">
-          <metrics methods="15" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="59" coveredstatements="5" elements="74" coveredelements="5"/>
+          <metrics methods="16" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="61" coveredstatements="5" elements="77" coveredelements="6"/>
         </class>
         <line num="57" type="method" name="__construct" crap="2.09" count="1"/>
         <line num="59" type="stmt" count="1"/>
@@ -5958,7 +6377,7 @@
         <line num="143" type="stmt" count="0"/>
         <line num="144" type="stmt" count="0"/>
         <line num="146" type="stmt" count="0"/>
-        <line num="157" type="method" name="anonymous function" crap="2" count="0"/>
+        <line num="155" type="method" name="getPossibleViewFiles" crap="1" count="0"/>
         <line num="159" type="stmt" count="0"/>
         <line num="161" type="stmt" count="0"/>
         <line num="170" type="method" name="addLocation" crap="2" count="0"/>
@@ -5997,11 +6416,12 @@
         <line num="267" type="stmt" count="0"/>
         <line num="275" type="method" name="getExtensions" crap="2" count="0"/>
         <line num="277" type="stmt" count="0"/>
+        <line num="281" type="stmt" count="1"/>
         <metrics loc="280" ncloc="155" classes="1" methods="15" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="59" coveredstatements="5" elements="74" coveredelements="5"/>
       </file>
       <file name="/Users/travis/Code/Personal/steam/vendor/syntax/steam-api/vendor/laravel/framework/src/Illuminate/View/ViewServiceProvider.php">
         <class name="ViewServiceProvider" namespace="Illuminate\View">
-          <metrics methods="9" coveredmethods="6" conditionals="0" coveredconditionals="0" statements="45" coveredstatements="38" elements="54" coveredelements="44"/>
+          <metrics methods="9" coveredmethods="9" conditionals="0" coveredconditionals="0" statements="58" coveredstatements="48" elements="67" coveredelements="57"/>
         </class>
         <line num="17" type="method" name="register" crap="1" count="1"/>
         <line num="19" type="stmt" count="1"/>
@@ -6010,6 +6430,7 @@
         <line num="28" type="stmt" count="1"/>
         <line num="29" type="stmt" count="1"/>
         <line num="36" type="method" name="registerEngineResolver" crap="2" count="1"/>
+        <line num="38" type="stmt" count="1"/>
         <line num="40" type="stmt" count="1"/>
         <line num="45" type="stmt" count="1"/>
         <line num="47" type="stmt" count="1"/>
@@ -6018,9 +6439,11 @@
         <line num="51" type="stmt" count="1"/>
         <line num="52" type="stmt" count="1"/>
         <line num="60" type="method" name="registerPhpEngine" crap="1" count="1"/>
+        <line num="62" type="stmt" count="1"/>
         <line num="63" type="stmt" count="1"/>
-        <line num="71" type="method" name="registerBladeEngine" crap="1.08" count="1"/>
+        <line num="71" type="method" name="registerBladeEngine" crap="1.05" count="1"/>
         <line num="73" type="stmt" count="1"/>
+        <line num="78" type="stmt" count="1"/>
         <line num="80" type="stmt" count="0"/>
         <line num="82" type="stmt" count="0"/>
         <line num="83" type="stmt" count="1"/>
@@ -6028,11 +6451,13 @@
         <line num="88" type="stmt" count="1"/>
         <line num="89" type="stmt" count="1"/>
         <line num="96" type="method" name="registerViewFinder" crap="1" count="1"/>
+        <line num="98" type="stmt" count="1"/>
         <line num="100" type="stmt" count="1"/>
         <line num="102" type="stmt" count="1"/>
         <line num="103" type="stmt" count="1"/>
         <line num="104" type="stmt" count="1"/>
         <line num="111" type="method" name="registerFactory" crap="1" count="1"/>
+        <line num="113" type="stmt" count="1"/>
         <line num="118" type="stmt" count="1"/>
         <line num="120" type="stmt" count="1"/>
         <line num="122" type="stmt" count="1"/>
@@ -6043,7 +6468,6 @@
         <line num="133" type="stmt" count="1"/>
         <line num="140" type="method" name="registerSessionBinder" crap="2" count="1"/>
         <line num="142" type="stmt" count="1"/>
-        <line num="144" type="method" name="anonymous function" crap="2.31" count="1"/>
         <line num="149" type="stmt" count="1"/>
         <line num="150" type="stmt" count="1"/>
         <line num="151" type="stmt" count="0"/>
@@ -6058,10 +6482,12 @@
         <line num="177" type="stmt" count="1"/>
         <line num="178" type="stmt" count="1"/>
         <line num="180" type="stmt" count="0"/>
-        <metrics loc="182" ncloc="97" classes="1" methods="9" coveredmethods="6" conditionals="0" coveredconditionals="0" statements="46" coveredstatements="39" elements="55" coveredelements="45"/>
+        <line num="183" type="stmt" count="1"/>
+        <metrics loc="182" ncloc="97" classes="1" methods="9" coveredmethods="6" conditionals="0" coveredconditionals="0" statements="51" coveredstatements="44" elements="60" coveredelements="50"/>
       </file>
     </package>
     <file name="/Users/travis/Code/Personal/steam/vendor/syntax/steam-api/vendor/laravel/framework/src/Illuminate/View/ViewFinderInterface.php">
+      <line num="48" type="stmt" count="1"/>
       <metrics loc="47" ncloc="15" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
     </file>
     <package name="Monolog">
@@ -6191,14 +6617,16 @@
         <line num="599" type="stmt" count="0"/>
         <line num="611" type="method" name="emergency" crap="2" count="0"/>
         <line num="613" type="stmt" count="0"/>
+        <line num="616" type="stmt" count="1"/>
         <metrics loc="615" ncloc="293" classes="1" methods="34" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="88" coveredstatements="4" elements="122" coveredelements="5"/>
       </file>
     </package>
     <package name="Orchestra\Testbench\Traits">
       <file name="/Users/travis/Code/Personal/steam/vendor/syntax/steam-api/vendor/orchestra/testbench/src/Testbench/Traits/ApplicationClientTrait.php">
         <class name="ApplicationClientTrait" namespace="Orchestra\Testbench\Traits">
-          <metrics methods="11" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="31" coveredstatements="8" elements="42" coveredelements="10"/>
+          <metrics methods="11" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="31" coveredstatements="8" elements="42" coveredelements="11"/>
         </class>
+        <line num="0" type="stmt" count="1"/>
         <line num="27" type="method" name="refreshApplication" crap="1" count="1"/>
         <line num="29" type="stmt" count="1"/>
         <line num="31" type="stmt" count="1"/>
@@ -6241,12 +6669,14 @@
         <line num="194" type="stmt" count="0"/>
         <line num="202" type="method" name="createClient" crap="1" count="1"/>
         <line num="204" type="stmt" count="1"/>
+        <line num="1049" type="stmt" count="1"/>
         <metrics loc="206" ncloc="106" classes="1" methods="11" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="31" coveredstatements="8" elements="42" coveredelements="10"/>
       </file>
       <file name="/Users/travis/Code/Personal/steam/vendor/syntax/steam-api/vendor/orchestra/testbench/src/Testbench/Traits/ApplicationTrait.php">
         <class name="ApplicationTrait" namespace="Orchestra\Testbench\Traits">
           <metrics methods="7" coveredmethods="7" conditionals="0" coveredconditionals="0" statements="94" coveredstatements="94" elements="101" coveredelements="101"/>
         </class>
+        <line num="0" type="stmt" count="1"/>
         <line num="17" type="method" name="getApplicationTimezone" crap="1" count="1"/>
         <line num="19" type="stmt" count="1"/>
         <line num="27" type="method" name="getApplicationAliases" crap="1" count="1"/>
@@ -6348,6 +6778,13 @@
         <line num="182" type="stmt" count="1"/>
         <line num="184" type="stmt" count="1"/>
         <line num="186" type="stmt" count="1"/>
+        <line num="220" type="stmt" count="1"/>
+        <line num="222" type="stmt" count="1"/>
+        <line num="261" type="stmt" count="1"/>
+        <line num="972" type="stmt" count="1"/>
+        <line num="982" type="stmt" count="1"/>
+        <line num="992" type="stmt" count="1"/>
+        <line num="994" type="stmt" count="1"/>
         <metrics loc="188" ncloc="151" classes="1" methods="7" coveredmethods="7" conditionals="0" coveredconditionals="0" statements="94" coveredstatements="94" elements="101" coveredelements="101"/>
       </file>
       <file name="/Users/travis/Code/Personal/steam/vendor/syntax/steam-api/vendor/orchestra/testbench/src/Testbench/Traits/PHPUnitAssertionsTrait.php">
@@ -6587,6 +7024,7 @@
       <metrics loc="300" ncloc="86" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="122" coveredstatements="0" elements="122" coveredelements="0"/>
     </file>
     <file name="/Users/travis/Code/Personal/steam/vendor/syntax/steam-api/vendor/psr/log/Psr/Log/LoggerInterface.php">
+      <line num="115" type="stmt" count="1"/>
       <metrics loc="114" ncloc="24" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
     </file>
     <file name="/Users/travis/Code/Personal/steam/vendor/syntax/steam-api/vendor/swiftmailer/swiftmailer/lib/classes/Swift.php">
@@ -6626,7 +7064,7 @@
     <package name="Symfony\Component\BrowserKit">
       <file name="/Users/travis/Code/Personal/steam/vendor/syntax/steam-api/vendor/symfony/browser-kit/Symfony/Component/BrowserKit/Client.php">
         <class name="Client" namespace="Symfony\Component\BrowserKit">
-          <metrics methods="31" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="144" coveredstatements="9" elements="175" coveredelements="11"/>
+          <metrics methods="32" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="144" coveredstatements="9" elements="176" coveredelements="11"/>
         </class>
         <line num="58" type="method" name="__construct" crap="3" count="1"/>
         <line num="60" type="stmt" count="1"/>
@@ -6720,6 +7158,7 @@
         <line num="364" type="stmt" count="0"/>
         <line num="365" type="stmt" count="0"/>
         <line num="368" type="stmt" count="0"/>
+        <line num="378" type="method" name="doRequest" crap="1" count="0"/>
         <line num="387" type="method" name="getScript" crap="2" count="0"/>
         <line num="389" type="stmt" count="0"/>
         <line num="399" type="method" name="filterRequest" crap="2" count="0"/>
@@ -6803,6 +7242,7 @@
         <line num="613" type="stmt" count="0"/>
         <line num="614" type="stmt" count="0"/>
         <line num="617" type="stmt" count="0"/>
+        <line num="620" type="stmt" count="1"/>
         <metrics loc="619" ncloc="345" classes="1" methods="31" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="144" coveredstatements="9" elements="175" coveredelements="11"/>
       </file>
       <file name="/Users/travis/Code/Personal/steam/vendor/syntax/steam-api/vendor/symfony/browser-kit/Symfony/Component/BrowserKit/CookieJar.php">
@@ -6918,6 +7358,7 @@
         <line num="262" type="stmt" count="0"/>
         <line num="263" type="stmt" count="0"/>
         <line num="264" type="stmt" count="0"/>
+        <line num="266" type="stmt" count="1"/>
         <metrics loc="265" ncloc="166" classes="1" methods="10" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="99" coveredstatements="0" elements="109" coveredelements="0"/>
       </file>
       <file name="/Users/travis/Code/Personal/steam/vendor/syntax/steam-api/vendor/symfony/browser-kit/Symfony/Component/BrowserKit/History.php">
@@ -6947,13 +7388,14 @@
         <line num="96" type="stmt" count="0"/>
         <line num="97" type="stmt" count="0"/>
         <line num="100" type="stmt" count="0"/>
+        <line num="103" type="stmt" count="1"/>
         <metrics loc="102" ncloc="55" classes="1" methods="6" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="17" coveredstatements="0" elements="23" coveredelements="0"/>
       </file>
     </package>
     <package name="Symfony\Component\EventDispatcher">
       <file name="/Users/travis/Code/Personal/steam/vendor/syntax/steam-api/vendor/symfony/event-dispatcher/Symfony/Component/EventDispatcher/EventDispatcher.php">
         <class name="EventDispatcher" namespace="Symfony\Component\EventDispatcher">
-          <metrics methods="9" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="64" coveredstatements="11" elements="73" coveredelements="12"/>
+          <metrics methods="9" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="64" coveredstatements="11" elements="73" coveredelements="13"/>
         </class>
         <line num="40" type="method" name="dispatch" crap="12" count="0"/>
         <line num="42" type="stmt" count="0"/>
@@ -7028,19 +7470,22 @@
         <line num="182" type="stmt" count="0"/>
         <line num="183" type="stmt" count="0"/>
         <line num="184" type="stmt" count="0"/>
+        <line num="186" type="stmt" count="1"/>
         <metrics loc="185" ncloc="119" classes="1" methods="9" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="64" coveredstatements="11" elements="73" coveredelements="12"/>
       </file>
     </package>
     <file name="/Users/travis/Code/Personal/steam/vendor/syntax/steam-api/vendor/symfony/event-dispatcher/Symfony/Component/EventDispatcher/EventDispatcherInterface.php">
+      <line num="97" type="stmt" count="1"/>
       <metrics loc="96" ncloc="21" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
     </file>
     <file name="/Users/travis/Code/Personal/steam/vendor/syntax/steam-api/vendor/symfony/event-dispatcher/Symfony/Component/EventDispatcher/EventSubscriberInterface.php">
+      <line num="51" type="stmt" count="1"/>
       <metrics loc="50" ncloc="9" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
     </file>
     <package name="Symfony\Component\HttpFoundation">
       <file name="/Users/travis/Code/Personal/steam/vendor/syntax/steam-api/vendor/symfony/http-foundation/Symfony/Component/HttpFoundation/FileBag.php">
         <class name="FileBag" namespace="Symfony\Component\HttpFoundation">
-          <metrics methods="6" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="48" coveredstatements="8" elements="54" coveredelements="10"/>
+          <metrics methods="6" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="48" coveredstatements="8" elements="54" coveredelements="11"/>
         </class>
         <line num="35" type="method" name="__construct" crap="1" count="1"/>
         <line num="37" type="stmt" count="1"/>
@@ -7096,11 +7541,12 @@
         <line num="150" type="stmt" count="0"/>
         <line num="151" type="stmt" count="0"/>
         <line num="153" type="stmt" count="0"/>
+        <line num="156" type="stmt" count="1"/>
         <metrics loc="155" ncloc="94" classes="1" methods="6" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="48" coveredstatements="8" elements="54" coveredelements="10"/>
       </file>
       <file name="/Users/travis/Code/Personal/steam/vendor/syntax/steam-api/vendor/symfony/http-foundation/Symfony/Component/HttpFoundation/HeaderBag.php">
         <class name="HeaderBag" namespace="Symfony\Component\HttpFoundation">
-          <metrics methods="20" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="84" coveredstatements="15" elements="104" coveredelements="16"/>
+          <metrics methods="20" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="84" coveredstatements="15" elements="104" coveredelements="18"/>
         </class>
         <line num="33" type="method" name="__construct" crap="2" count="1"/>
         <line num="35" type="stmt" count="1"/>
@@ -7206,6 +7652,7 @@
         <line num="343" type="stmt" count="0"/>
         <line num="344" type="stmt" count="0"/>
         <line num="346" type="stmt" count="0"/>
+        <line num="349" type="stmt" count="1"/>
         <metrics loc="348" ncloc="193" classes="1" methods="20" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="84" coveredstatements="15" elements="104" coveredelements="16"/>
       </file>
       <file name="/Users/travis/Code/Personal/steam/vendor/syntax/steam-api/vendor/symfony/http-foundation/Symfony/Component/HttpFoundation/ParameterBag.php">
@@ -7283,12 +7730,14 @@
         <line num="293" type="stmt" count="0"/>
         <line num="301" type="method" name="count" crap="2" count="0"/>
         <line num="303" type="stmt" count="0"/>
+        <line num="306" type="stmt" count="1"/>
         <metrics loc="305" ncloc="140" classes="1" methods="16" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="55" coveredstatements="2" elements="71" coveredelements="3"/>
       </file>
       <file name="/Users/travis/Code/Personal/steam/vendor/syntax/steam-api/vendor/symfony/http-foundation/Symfony/Component/HttpFoundation/Request.php">
         <class name="Request" namespace="Symfony\Component\HttpFoundation">
-          <metrics methods="74" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="552" coveredstatements="80" elements="626" coveredelements="83"/>
+          <metrics methods="75" coveredmethods="6" conditionals="0" coveredconditionals="0" statements="558" coveredstatements="80" elements="633" coveredelements="86"/>
         </class>
+        <line num="0" type="stmt" count="1"/>
         <line num="219" type="method" name="__construct" crap="1" count="1"/>
         <line num="221" type="stmt" count="1"/>
         <line num="222" type="stmt" count="1"/>
@@ -7484,6 +7933,7 @@
         <line num="557" type="stmt" count="0"/>
         <line num="564" type="method" name="getTrustedProxies" crap="2" count="0"/>
         <line num="566" type="stmt" count="0"/>
+        <line num="576" type="method" name="setTrustedHosts" crap="1" count="0"/>
         <line num="578" type="method" name="anonymous function" crap="2" count="0"/>
         <line num="579" type="stmt" count="0"/>
         <line num="580" type="stmt" count="0"/>
@@ -7917,11 +8367,12 @@
         <line num="1900" type="stmt" count="0"/>
         <line num="1903" type="stmt" count="0"/>
         <line num="1906" type="stmt" count="1"/>
-        <metrics loc="1908" ncloc="1026" classes="1" methods="74" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="554" coveredstatements="80" elements="628" coveredelements="83"/>
+        <line num="1909" type="stmt" count="1"/>
+        <metrics loc="1908" ncloc="1026" classes="1" methods="74" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="555" coveredstatements="80" elements="629" coveredelements="83"/>
       </file>
       <file name="/Users/travis/Code/Personal/steam/vendor/syntax/steam-api/vendor/symfony/http-foundation/Symfony/Component/HttpFoundation/ServerBag.php">
         <class name="ServerBag" namespace="Symfony\Component\HttpFoundation">
-          <metrics methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="37" coveredstatements="16" elements="38" coveredelements="16"/>
+          <metrics methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="37" coveredstatements="16" elements="38" coveredelements="17"/>
         </class>
         <line num="28" type="method" name="getHeaders" crap="56.14" count="1"/>
         <line num="30" type="stmt" count="1"/>
@@ -7961,13 +8412,16 @@
         <line num="86" type="stmt" count="0"/>
         <line num="87" type="stmt" count="0"/>
         <line num="89" type="stmt" count="1"/>
+        <line num="92" type="stmt" count="1"/>
         <metrics loc="91" ncloc="50" classes="1" methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="37" coveredstatements="16" elements="38" coveredelements="16"/>
       </file>
     </package>
     <file name="/Users/travis/Code/Personal/steam/vendor/syntax/steam-api/vendor/symfony/http-foundation/Symfony/Component/HttpFoundation/Session/SessionBagInterface.php">
+      <line num="49" type="stmt" count="1"/>
       <metrics loc="48" ncloc="15" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
     </file>
     <file name="/Users/travis/Code/Personal/steam/vendor/syntax/steam-api/vendor/symfony/http-foundation/Symfony/Component/HttpFoundation/Session/SessionInterface.php">
+      <line num="209" type="stmt" count="1"/>
       <metrics loc="208" ncloc="47" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
     </file>
     <package name="Symfony\Component\HttpFoundation\Session\Storage\Handler">
@@ -7987,6 +8441,7 @@
         <line num="62" type="stmt" count="0"/>
         <line num="68" type="method" name="gc" crap="2" count="0"/>
         <line num="70" type="stmt" count="0"/>
+        <line num="73" type="stmt" count="1"/>
         <metrics loc="72" ncloc="37" classes="1" methods="6" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="6" coveredstatements="0" elements="12" coveredelements="0"/>
       </file>
     </package>
@@ -8033,6 +8488,7 @@
         <line num="167" type="stmt" count="0"/>
         <line num="168" type="stmt" count="0"/>
         <line num="169" type="stmt" count="0"/>
+        <line num="171" type="stmt" count="1"/>
         <metrics loc="170" ncloc="90" classes="1" methods="11" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="27" coveredstatements="3" elements="38" coveredelements="4"/>
       </file>
     </package>
@@ -8041,6 +8497,7 @@
         <class name="Client" namespace="Symfony\Component\HttpKernel">
           <metrics methods="9" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="65" coveredstatements="4" elements="74" coveredelements="5"/>
         </class>
+        <line num="0" type="stmt" count="1"/>
         <line num="43" type="method" name="__construct" crap="1" count="1"/>
         <line num="46" type="stmt" count="1"/>
         <line num="47" type="stmt" count="1"/>
@@ -8115,15 +8572,18 @@
         <line num="223" type="stmt" count="0"/>
         <line num="224" type="stmt" count="0"/>
         <line num="226" type="stmt" count="0"/>
+        <line num="229" type="stmt" count="1"/>
         <metrics loc="228" ncloc="148" classes="1" methods="9" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="65" coveredstatements="4" elements="74" coveredelements="5"/>
       </file>
     </package>
     <file name="/Users/travis/Code/Personal/steam/vendor/syntax/steam-api/vendor/symfony/http-kernel/Symfony/Component/HttpKernel/HttpKernelInterface.php">
+      <line num="48" type="stmt" count="1"/>
       <metrics loc="47" ncloc="15" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
     </file>
     <file name="/Users/travis/Code/Personal/steam/vendor/syntax/steam-api/vendor/symfony/http-kernel/Symfony/Component/HttpKernel/TerminableInterface.php">
+      <line num="40" type="stmt" count="1"/>
       <metrics loc="39" ncloc="12" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
     </file>
-    <metrics files="128" loc="27266" ncloc="14723" classes="100" methods="1310" coveredmethods="177" conditionals="0" coveredconditionals="0" statements="6031" coveredstatements="1276" elements="7341" coveredelements="1453"/>
+    <metrics files="130" loc="27712" ncloc="15022" classes="102" methods="1334" coveredmethods="182" conditionals="0" coveredconditionals="0" statements="6317" coveredstatements="1410" elements="7651" coveredelements="1592"/>
   </project>
 </coverage>
