@@ -5,21 +5,21 @@ abstract class BaseContainer {
     /**
      * @param        $app
      * @param string $field
-     * @param string $value
+     * @param mixed  $value
      *
-     * @return null|string
+     * @return mixed
      */
     protected function checkIsNullField($app, $field, $value = null)
     {
-        return !is_null($app->$field) ? $app->$field : $value;
+        return ! is_null($app->$field) ? $app->$field : $value;
     }
 
     /**
      * @param        $app
      * @param string $field
-     * @param string $value
+     * @param mixed  $value
      *
-     * @return null|string
+     * @return mixed
      */
     protected function checkIssetField($app, $field, $value = null)
     {
@@ -29,9 +29,9 @@ abstract class BaseContainer {
     /**
      * @param        $app
      * @param string $field
-     * @param string $value
+     * @param mixed  $value
      *
-     * @return null|string
+     * @return mixed
      */
     protected function checkIssetCollection($app, $field, $value = null)
     {
