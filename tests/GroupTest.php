@@ -15,6 +15,18 @@ class GroupTest extends BaseTester {
         $this->checkClasses($group);
     }
 
+    /** @test */
+    public function it_gets_a_summary_of_a_group_by_name()
+    {
+        $group = $this->steamClient->group()->GetGroupSummary($this->groupName);
+
+        $this->checkMainSummaryProperties($group);
+        $this->checkGroupDetailProperties($group);
+        $this->checkGroupMemberProperties($group);
+        $this->checkMemberProperties($group);
+        $this->checkClasses($group);
+    }
+
     /**
      * @param $group
      */
