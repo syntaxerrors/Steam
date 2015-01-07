@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1420609683">
-  <project timestamp="1420609683">
+<coverage generated="1420609763">
+  <project timestamp="1420609763">
     <package name="Syntax\SteamApi">
       <file name="/Users/travis/Code/Personal/steam/vendor/syntax/steam-api/src/Syntax/SteamApi/Client.php">
         <class name="Client" namespace="Syntax\SteamApi">
