@@ -1,5 +1,6 @@
 <?php
 
+/** @group Id */
 class IdTest extends BaseTester {
 
     /** @test */

@@ -1,5 +1,6 @@
 <?php
 
+/** @group News */
 class NewsTest extends BaseTester {
 
     /** @test */
