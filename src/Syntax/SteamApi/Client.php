@@ -248,8 +248,6 @@ protected function setApiDetails($method, $version)
         }
         if (is_null($apiKey) || $apiKey == '' || $apiKey == []) {
             $apiKey = getenv('apiKey');
-
-            return $apiKey;
         }
 
         return $apiKey;
