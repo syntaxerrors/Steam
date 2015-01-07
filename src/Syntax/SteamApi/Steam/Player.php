@@ -23,10 +23,9 @@ class Player extends Client {
 
         // Set up the arguments
         $arguments = ['steamId' => $this->steamId];
-        $arguments = json_encode($arguments);
 
         // Get the client
-        $client = $this->setUpService($arguments)->response;
+        $client = $this->getServiceResponse($arguments);
 
         return $client->player_level;
     }
@@ -48,10 +47,9 @@ class Player extends Client {
 
         // Set up the arguments
         $arguments = ['steamId' => $this->steamId];
-        $arguments = json_encode($arguments);
 
         // Get the client
-        $client = $this->setUpService($arguments)->response;
+        $client = $this->getServiceResponse($arguments);
 
         return $client;
     }
@@ -67,10 +65,9 @@ class Player extends Client {
         if ($badgeId != null) {
             $arguments['badgeid'] = $badgeId;
         }
-        $arguments = json_encode($arguments);
 
         // Get the client
-        $client = $this->setUpService($arguments)->response;
+        $client = $this->getServiceResponse($arguments);
 
         return $client;
     }
@@ -92,10 +89,9 @@ class Player extends Client {
         if (count($appIdsFilter) > 0) {
             $arguments['appids_filter'] = $appIdsFilter;
         }
-        $arguments = json_encode($arguments);
 
         // Get the client
-        $client = $this->setUpService($arguments)->response;
+        $client = $this->getServiceResponse($arguments);
 
         // Clean up the games
         $games = $this->convertToObjects($client->games);
@@ -114,10 +110,9 @@ class Player extends Client {
         if (! is_null($count)) {
             $arguments['count'] = $count;
         }
-        $arguments = json_encode($arguments);
 
         // Get the client
-        $client = $this->setUpService($arguments)->response;
+        $client = $this->getServiceResponse($arguments);
 
         if ($client->total_count > 0) {
             // Clean up the games
