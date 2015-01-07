@@ -1,5 +1,7 @@
 <?php namespace Syntax\SteamApi\Containers;
 
+use Syntax\SteamApi\Collection;
+
 abstract class BaseContainer {
 
     /**

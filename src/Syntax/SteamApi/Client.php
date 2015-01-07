@@ -47,6 +47,8 @@ class Client {
 
         if ($apiKey == 'YOUR-API-KEY') {
             throw new Exceptions\InvalidApiKeyException();
+        } elseif (is_null($apiKey) || $apiKey == '' || $apiKey == []) {
+            $apiKey = getenv('apiKey');
         }
 
         $this->client = new GuzzleClient($this->url);
@@ -65,6 +67,11 @@ class Client {
 
     /**
      * @param string $arguments
+     *
+     * @return string
+     *
+     * @throws ApiArgumentRequired
+     * @throws ApiCallFailedException
      */
     protected function setUpService($arguments = null)
     {
@@ -83,8 +90,6 @@ class Client {
 
         // Build the query string
         $parameters = http_build_query($parameters);
-
-        //ppd($steamUrl . '?' . $parameters);
 
         // Send the request and get the results
         $request  = $this->client->get($steamUrl . '?' . $parameters);
@@ -105,7 +110,7 @@ class Client {
         ];
 
         if (! empty($arguments)) {
-            $parameters = array_merge($parameters, $arguments);
+            $parameters = array_merge($arguments, $parameters);
         }
 
         // Build the query string

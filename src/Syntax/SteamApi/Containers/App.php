@@ -54,7 +54,7 @@ class App extends BaseContainer {
 		$this->platforms          = $app->platforms;
 		$this->metacritic         = $this->checkIssetField($app, 'metacritic', $this->getFakeMetacriticObject());
 		$this->categories         = $this->checkIssetCollection($app, 'categories');
-		$this->genres             = $this->checkIssetField($app, 'genres');
+		$this->genres             = $this->checkIssetCollection($app, 'genres');
 		$this->release            = $app->release_date;
 	}
 

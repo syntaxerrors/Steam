@@ -30,4 +30,19 @@ class BaseTester extends TestCase {
     {
     }
 
+    protected function assertObjectHasAttributes($attributes, $object)
+    {
+        foreach ($attributes as $attribute) {
+            $this->assertObjectHasAttribute($attribute, $object);
+        }
+    }
+
+    protected function checkSteamIdsProperties($steamId)
+    {
+        $attributes = [
+            'id32', 'id64', 'id3', 'communityId', 'steamId'
+        ];
+        $this->assertObjectHasAttributes($attributes, $steamId);
+    }
+
 }
