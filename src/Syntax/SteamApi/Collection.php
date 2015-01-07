@@ -91,28 +91,11 @@ class Collection extends \Illuminate\Database\Eloquent\Collection {
         foreach ($this->items as $key => $item) {
 
             if (strstr($column, '->')) {
-                $objectToSearch = $this->tapThroughObjects($column, $item);
-
-                $continueFlag = $this->removeCollectionItem($key, $value, $objectToSearch);
-
-                if ($continueFlag) {
-                    continue;
-                }
-
-                $continueFlag = $this->removeItem($key, $value, $objectToSearch);
-
-                if ($continueFlag) {
+                if ($this->handleMultiTap($key, $item, $column, $value)) {
                     continue;
                 }
             } else {
-                if (! $item->$column) {
-                    $this->forget($key);
-                    continue;
-                }
-
-                $continueFlag = $this->removeItem($key, $value, $item->$column);
-
-                if ($continueFlag) {
+                if ($this->handleSingle($key, $item, $column, $value)) {
                     continue;
                 }
             }
@@ -122,12 +105,57 @@ class Collection extends \Illuminate\Database\Eloquent\Collection {
     }
 
     /**
+     * @param $key
+     * @param $item
+     * @param $column
+     * @param $value
+     *
+     * @return bool
+     */
+    private function handleMultiTap($key, $item, $column, $value)
+    {
+        $objectToSearch = $this->tapThroughObjects($column, $item);
+
+        if ($this->removeCollectionItem($key, $value, $objectToSearch)) {
+            return true;
+        }
+
+        if ($this->removeItem($key, $value, $objectToSearch)) {
+            return true;
+        }
+
+        return false;
+    }
+
+    /**
+     * @param $key
+     * @param $item
+     * @param $column
+     * @param $value
+     *
+     * @return bool
+     */
+    private function handleSingle($key, $item, $column, $value)
+    {
+        if (! $item->$column) {
+            $this->forget($key);
+            return true;
+        }
+
+        if ($this->removeItem($key, $value, $item->$column)) {
+            return true;
+        }
+
+        return false;
+    }
+
+    /**
      * @param $column
      * @param $item
      *
      * @return mixed
      */
-    protected function tapThroughObjects($column, $item)
+    private function tapThroughObjects($column, $item)
     {
         $taps = explode('->', $column);
 
@@ -141,6 +169,13 @@ class Collection extends \Illuminate\Database\Eloquent\Collection {
         return $objectToSearch;
     }
 
+    /**
+     * @param $key
+     * @param $value
+     * @param $objectToSearch
+     *
+     * @return bool
+     */
     private function removeCollectionItem($key, $value, $objectToSearch)
     {
         if ($objectToSearch instanceof Collection) {
@@ -153,6 +188,13 @@ class Collection extends \Illuminate\Database\Eloquent\Collection {
         return false;
     }
 
+    /**
+     * @param $key
+     * @param $value
+     * @param $objectToSearch
+     *
+     * @return bool
+     */
     private function removeItem($key, $value, $objectToSearch)
     {
         if ($objectToSearch != $value) {
