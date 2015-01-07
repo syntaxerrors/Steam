@@ -1,6 +1,6 @@
 <?php namespace Syntax\SteamApi\Containers;
 
-class Player {
+class Player extends BaseContainer {
 
 	public $steamId;
 
@@ -63,26 +63,13 @@ class Player {
 		$this->avatarFullUrl            = $player->avatarfull;
 		$this->personaState             = $this->convertPersonaState($player->personastate);
 		$this->personaStateId           = $player->personastate;
-		$this->realName                 = $this->checkIsset($player, 'realName');
-		$this->primaryClanId            = $this->checkIsset($player, 'primaryClanId');
-		$this->timecreated              = $this->checkIsset($player, 'timecreated');
-		$this->personaStateFlags        = $this->checkIsset($player, 'personaStateFlags');
-		$this->locCountryCode           = $this->checkIsset($player, 'locCountryCode');
-		$this->locStateCode             = $this->checkIsset($player, 'locStateCode');
-		$this->locCityId                = $this->checkIsset($player, 'locCityId');
-	}
-
-	/**
-	 * @param string $field
-	 */
-	protected function checkIsset($player, $field)
-	{
-		return isset($player->$field) ? $player->$field : null;
-	}
-
-	protected function getImageForAvatar($image)
-	{
-		return \HTML::image($image);
+		$this->realName                 = $this->checkIssetField($player, 'realName');
+		$this->primaryClanId            = $this->checkIssetField($player, 'primaryClanId');
+		$this->timecreated              = $this->checkIssetField($player, 'timecreated');
+		$this->personaStateFlags        = $this->checkIssetField($player, 'personaStateFlags');
+		$this->locCountryCode           = $this->checkIssetField($player, 'locCountryCode');
+		$this->locStateCode             = $this->checkIssetField($player, 'locStateCode');
+		$this->locCityId                = $this->checkIssetField($player, 'locCityId');
 	}
 
 	protected function convertPersonaState($personaState)

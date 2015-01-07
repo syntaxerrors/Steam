@@ -1,6 +1,8 @@
 <?php namespace Syntax\SteamApi\Containers\Group;
 
-class Details {
+use Syntax\SteamApi\Containers\BaseContainer;
+
+class Details extends BaseContainer {
 
 	public $name;
 
@@ -34,14 +36,6 @@ class Details {
 		$this->avatarIconUrl   = (string)$details->avatarIcon;
 		$this->avatarMediumUrl = (string)$details->avatarMedium;
 		$this->avatarFullUrl   = (string)$details->avatarFull;
-	}
-
-	/**
-	 * @param string $image
-	 */
-	protected function getImageForAvatar($image)
-	{
-		return \HTML::image($image);
 	}
 
 }
