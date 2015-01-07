@@ -16,7 +16,13 @@ trait SteamId {
 
 	private static $id64Base = '76561197960265728';
 
-	public function convertId($id, $format = null)
+	/**
+	 * @param string|int  $id
+	 * @param string|null $format
+	 *
+	 * @return mixed
+     */
+    public function convertId($id, $format = null)
 	{
 		$this->convertToAll($id);
 
