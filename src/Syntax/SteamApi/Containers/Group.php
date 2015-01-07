@@ -17,6 +17,9 @@ class Group {
 
 	public $members;
 
+	/**
+	 * @param \SimpleXMLElement $group
+	 */
 	function __construct($group)
 	{
 		$this->groupID64      = (string)$group->groupID64;

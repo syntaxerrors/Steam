@@ -14,6 +14,9 @@ class Id {
 
 	public $steamId;
 
+	/**
+	 * @param integer $id
+	 */
 	function __construct($id)
 	{
 		$client = new Client;
