@@ -9,6 +9,14 @@ use Guzzle\Http\Exception\ServerErrorResponseException;
 use Syntax\SteamApi\Exceptions\ApiCallFailedException;
 use Syntax\SteamApi\Exceptions\ClassNotFoundException;
 
+/**
+ * @method news()
+ * @method player($steamId)
+ * @method user($steamId)
+ * @method userStats($steamId)
+ * @method app()
+ * @method group()
+ */
 class Client {
 
     use SteamId;
