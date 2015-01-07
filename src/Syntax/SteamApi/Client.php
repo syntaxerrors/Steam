@@ -43,13 +43,7 @@ class Client {
 
     public function __construct()
     {
-        $apiKey = \Config::get('steam-api::steamApiKey');
-
-        if ($apiKey == 'YOUR-API-KEY') {
-            throw new Exceptions\InvalidApiKeyException();
-        } elseif (is_null($apiKey) || $apiKey == '' || $apiKey == []) {
-            $apiKey = getenv('apiKey');
-        }
+        $apiKey = $this->getApiKey();
 
         $this->client = new GuzzleClient($this->url);
         $this->apiKey = $apiKey;
@@ -239,5 +233,25 @@ protected function setApiDetails($method, $version)
         $client = $this->setUpService($arguments)->response;
 
         return $client;
+    }
+
+    /**
+     * @return string
+     * @throws Exceptions\InvalidApiKeyException
+     */
+    protected function getApiKey()
+    {
+        $apiKey = \Config::get('steam-api::steamApiKey');
+
+        if ($apiKey == 'YOUR-API-KEY') {
+            throw new Exceptions\InvalidApiKeyException();
+        }
+        if (is_null($apiKey) || $apiKey == '' || $apiKey == []) {
+            $apiKey = getenv('apiKey');
+
+            return $apiKey;
+        }
+
+        return $apiKey;
     }
 }
