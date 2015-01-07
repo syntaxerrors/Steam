@@ -1,7 +1,5 @@
 <?php namespace Syntax\SteamApi\Containers;
 
-use Syntax\SteamApi\Client;
-
 class Player {
 
 	public $steamId;
@@ -74,6 +72,9 @@ class Player {
 		$this->locCityId                = $this->checkIsset($player, 'locCityId');
 	}
 
+	/**
+	 * @param string $field
+	 */
 	protected function checkIsset($player, $field)
 	{
 		return isset($player->$field) ? $player->$field : null;

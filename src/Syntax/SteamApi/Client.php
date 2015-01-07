@@ -54,6 +54,9 @@ class Client {
         return $this;
     }
 
+    /**
+     * @param string $arguments
+     */
     protected function setUpService($arguments = null)
     {
         // Services have a different url syntax
@@ -119,7 +122,7 @@ class Client {
     }
 
     /**
-     * @param $request
+     * @param \Guzzle\Http\Message\RequestInterface $request
      *
      * @throws ApiCallFailedException
      * @return stdClass
@@ -194,14 +197,21 @@ class Client {
         throw new ClassNotFoundException($name);
     }
 
-    protected function sortObjects($objects)
+    /**
+ * @param Collection $objects
+ */
+protected function sortObjects($objects)
     {
         return $objects->sortBy(function ($object) {
             return $object->name;
         });
     }
 
-    protected function setApiDetails($method, $version)
+    /**
+ * @param string $method
+ * @param string $version
+ */
+protected function setApiDetails($method, $version)
     {
         $this->method  = $method;
         $this->version = $version;

@@ -6,7 +6,7 @@ class Collection extends \Illuminate\Database\Eloquent\Collection {
 	 * Dynamically retrieve attributes on the model.
 	 *
 	 * @param  string  $key
-	 * @return mixed
+	 * @return Collection
 	 */
 	public function __get($key)
 	{
