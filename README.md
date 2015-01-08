@@ -247,7 +247,7 @@ Name | Type | Description | Required | Default
 appId| int | The id of the game you want the user's achievements in | Yes |
 
 
-> Example Output: [GetGlobalAchievementPercentagesForApp](./examples/user/stats/GetGlobalAchievementPercentagesForApp.txt)
+> Example Output: [GetGlobalAchievementPercentagesForApp](./examples/user/stats/GetGlobalAchievementPercentageForApp.txt)
 
 #### GetUserStatsForGame
 Returns a list of achievements for this user by app id.

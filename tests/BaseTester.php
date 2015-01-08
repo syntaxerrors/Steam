@@ -72,6 +72,14 @@ class BaseTester extends TestCase {
         $this->checkSteamIdsProperties($friendsList[0]->steamIds);
     }
 
+    protected function checkAchievementProperties($achievement)
+    {
+        $attributes = [
+            'apiName', 'achieved', 'name', 'description'
+        ];
+        $this->assertObjectHasAttributes($attributes, $achievement);
+    }
+
     protected function checkAppProperties($app)
     {
         $this->checkMainAppProperties($app);

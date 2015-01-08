@@ -38,6 +38,17 @@ class PlayerTest extends BaseTester {
     }
 
     /** @test */
+    public function it_gets_the_badge_progress_by_user_id()
+    {
+        $progress = $this->steamClient->player($this->id64)->GetCommunityBadgeProgress();
+
+        $this->assertObjectHasAttribute('quests', $progress);
+
+        $attributes = ['questid', 'completed'];
+        $this->assertObjectHasAttributes($attributes, $progress->quests[0]);
+    }
+
+    /** @test */
     public function it_gets_the_owned_games_by_user_id()
     {
         $games = $this->steamClient->player($this->id64)->GetOwnedGames();
