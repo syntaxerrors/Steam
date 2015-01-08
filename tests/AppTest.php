@@ -14,9 +14,7 @@ class AppTest extends BaseTester {
 
         $detail = $details->first();
 
-        $this->checkMainProperties($detail);
-        $this->checkGeneralProperties($detail);
-        $this->checkNestedProperties($detail);
+        $this->checkAppProperties($detail);
         $this->checkClasses($detail);
     }
 
@@ -27,45 +25,6 @@ class AppTest extends BaseTester {
 
         $this->assertGreaterThan(0, $apps);
         $this->assertObjectHasAttributes(['appid', 'name'], $apps[0]);
-    }
-
-    /**
-     * @param $detail
-     */
-    private function checkMainProperties($detail)
-    {
-        $attributes = [
-            'id', 'name', 'controllerSupport', 'description', 'about', 'header', 'website'
-        ];
-        $this->assertObjectHasAttributes($attributes, $detail);
-    }
-
-    /**
-     * @param $detail
-     */
-    private function checkGeneralProperties($detail)
-    {
-        $attributes = [
-            'pcRequirements', 'legal', 'developers', 'publishers', 'price', 'platforms', 'metacritic', 'categories', 'genres', 'release'
-        ];
-        $this->assertObjectHasAttributes($attributes, $detail);
-    }
-
-    /**
-     * @param $detail
-     */
-    private function checkNestedProperties($detail)
-    {
-        $this->assertObjectHasAttribute('minimum', $detail->pcRequirements);
-
-        $attributes = ['currency', 'initial', 'final', 'discount_percent'];
-        $this->assertObjectHasAttributes($attributes, $detail->price);
-
-        $attributes = ['windows', 'mac', 'linux'];
-        $this->assertObjectHasAttributes($attributes, $detail->platforms);
-
-        $attributes = ['score', 'url'];
-        $this->assertObjectHasAttributes($attributes, $detail->metacritic);
     }
 
     /**

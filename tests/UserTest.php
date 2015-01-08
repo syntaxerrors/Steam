@@ -4,14 +4,35 @@
 class UserTest extends BaseTester {
 
     /** @test */
+    public function it_gets_the_base_users_player_summary()
+    {
+        $friendsList = $this->steamClient->user($this->id64)->GetPlayerSummaries();
+
+        $this->assertCount(1, $friendsList);
+        $this->checkPlayerProperties($friendsList);
+        $this->checkPlayerClasses($friendsList);
+    }
+
+    /** @test */
+    public function it_gets_the_supplied_users_player_summary()
+    {
+        $friendsList = $this->steamClient->user($this->id64)->GetPlayerSummaries($this->altId64);
+
+        $this->assertCount(1, $friendsList);
+        $this->checkPlayerProperties($friendsList);
+        $this->checkPlayerClasses($friendsList);
+
+        $this->assertNotEquals($friendsList[0]->steamId, $this->id64);
+    }
+
+    /** @test */
     public function it_gets_all_users_in_friend_list()
     {
         $friendsList = $this->steamClient->user($this->id64)->GetFriendList('all');
 
         $this->assertGreaterThan(0, $friendsList);
 
-        $this->checkMainProperties($friendsList);
-        $this->checkSteamIdsProperties($friendsList[0]->steamIds);
+        $this->checkPlayerProperties($friendsList);
         $this->checkPlayerClasses($friendsList);
     }
 
@@ -22,8 +43,7 @@ class UserTest extends BaseTester {
 
         $this->assertGreaterThan(0, $friendsList);
 
-        $this->checkMainProperties($friendsList);
-        $this->checkSteamIdsProperties($friendsList[0]->steamIds);
+        $this->checkPlayerProperties($friendsList);
         $this->checkPlayerClasses($friendsList);
     }
 
@@ -35,27 +55,28 @@ class UserTest extends BaseTester {
         $this->steamClient->user($this->id64)->GetFriendList('nonFriend');
     }
 
-    private function checkMainProperties($friendsList)
+    /** @test */
+    public function it_gets_the_bans_for_the_base_user()
     {
-        $attributes = [
-            'steamId', 'steamIds', 'communityVisibilityState', 'profileState', 'lastLogoff', 'profileUrl', 'realName', 'primaryClanId', 'timecreated'
-        ];
-        $this->assertObjectHasAttributes($attributes, $friendsList[0]);
+        $bans = $this->steamClient->user($this->id64)->GetPlayerBans();
 
-        $attributes = [
-            'avatar', 'avatarMedium', 'avatarFull', 'avatarUrl', 'avatarMediumUrl', 'avatarFullUrl',
-        ];
-        $this->assertObjectHasAttributes($attributes, $friendsList[0]);
+        $this->assertCount(1, $bans);
 
-        $attributes = [
-            'personaName', 'personaState', 'personaStateId', 'personaStateFlags'
-        ];
-        $this->assertObjectHasAttributes($attributes, $friendsList[0]);
+        $attributes = ['SteamId', 'CommunityBanned', 'VACBanned', 'NumberOfVACBans', 'DaysSinceLastBan', 'EconomyBan'];
+        $this->assertObjectHasAttributes($attributes, $bans[0]);
+    }
 
-        $attributes = [
-            'locCountryCode', 'locStateCode', 'locCityId'
-        ];
-        $this->assertObjectHasAttributes($attributes, $friendsList[0]);
+    /** @test */
+    public function it_gets_the_bans_for_the_supplied_user()
+    {
+        $bans = $this->steamClient->user($this->id64)->GetPlayerBans($this->altId64);
+
+        $this->assertCount(1, $bans);
+
+        $attributes = ['SteamId', 'CommunityBanned', 'VACBanned', 'NumberOfVACBans', 'DaysSinceLastBan', 'EconomyBan'];
+        $this->assertObjectHasAttributes($attributes, $bans[0]);
+
+        $this->assertNotEquals($bans[0]->SteamId, $this->id64);
     }
 
     private function checkPlayerClasses($friendsList)

@@ -11,7 +11,7 @@ class Level {
 
 	public $currentLevelFloor;
 
-	public $currentLevelCeieling;
+	public $currentLevelCeiling;
 
 	public $percentThroughLevel;
 
@@ -23,9 +23,9 @@ class Level {
 		$this->xpForCurrentLevel = $levelDetails->player_xp_needed_current_level;
 
 		$this->currentLevelFloor    = $this->xpForCurrentLevel;
-		$this->currentLevelCeieling = $this->playerXp + $this->xpToLevelUp;
+		$this->currentLevelCeiling = $this->playerXp + $this->xpToLevelUp;
 
-		$levelRange = $this->currentLevelCeieling - $this->currentLevelFloor;
+		$levelRange = $this->currentLevelCeiling - $this->currentLevelFloor;
 
 		$this->percentThroughLevel = $this->percent($this->xpToLevelUp, $levelRange);
 	}

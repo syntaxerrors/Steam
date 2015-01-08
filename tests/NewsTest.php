@@ -13,15 +13,10 @@ class NewsTest extends BaseTester {
         $this->assertObjectHasAttribute('newsitems', $newsArticle);
         $this->assertGreaterThan(0, count($newsArticle->newsitems));
 
-        $this->assertObjectHasAttribute('gid', $newsArticle->newsitems[0]);
-        $this->assertObjectHasAttribute('title', $newsArticle->newsitems[0]);
-        $this->assertObjectHasAttribute('url', $newsArticle->newsitems[0]);
-        $this->assertObjectHasAttribute('is_external_url', $newsArticle->newsitems[0]);
-        $this->assertObjectHasAttribute('author', $newsArticle->newsitems[0]);
-        $this->assertObjectHasAttribute('contents', $newsArticle->newsitems[0]);
-        $this->assertObjectHasAttribute('feedlabel', $newsArticle->newsitems[0]);
-        $this->assertObjectHasAttribute('date', $newsArticle->newsitems[0]);
-        $this->assertObjectHasAttribute('feedname', $newsArticle->newsitems[0]);
+        $attributes = [
+            'gid', 'title', 'url', 'is_external_url', 'author', 'contents', 'feedlabel', 'date', 'feedname'
+        ];
+        $this->assertObjectHasAttributes($attributes, $newsArticle->newsitems[0]);
 
         $this->assertEquals(23, strlen(strip_tags($newsArticle->newsitems[0]->contents)));
     }
