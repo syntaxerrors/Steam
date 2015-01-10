@@ -179,7 +179,7 @@ class Client {
         if (! empty($arguments) && count($arguments) == 1) {
             $this->steamId = $arguments[0];
 
-            if (strpos(':', $this->steamId) !== false) {
+            if (strpos($this->steamId, ':') !== false) {
                 // Convert the id to all types and grab the 64 bit version
                 $this->steamId = $this->convertToAll($this->steamId)[2];
             }
