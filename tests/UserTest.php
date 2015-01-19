@@ -4,6 +4,17 @@
 class UserTest extends BaseTester {
 
     /** @test */
+    public function it_accepts_an_array_of_steam_ids()
+    {
+        $steamIds = [$this->id32, $this->altId64];
+
+        $userService = $this->steamClient->user($steamIds);
+
+        $this->assertCount(2, $userService->getSteamId());
+        $this->assertEquals($this->id64, $userService->getSteamId()[0]);
+    }
+
+    /** @test */
     public function it_gets_the_base_users_player_summary()
     {
         $friendsList = $this->steamClient->user($this->id64)->GetPlayerSummaries();

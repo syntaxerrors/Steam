@@ -57,6 +57,11 @@ class Client {
         return $this;
     }
 
+    public function getSteamId()
+    {
+        return $this->steamId;
+    }
+
     /**
      * @param string $arguments
      *
@@ -253,15 +258,15 @@ class Client {
     private function convertSteamIdTo64()
     {
         if (is_array($this->steamId)) {
-            $this->steamId = array_walk($this->steamId, function (&$id, $key) {
+            array_walk($this->steamId, function (&$id, $key) {
                 if (strpos($id, ':') !== false) {
                     // Convert the id to all types and grab the 64 bit version
-                    return $this->convertToAll($this->steamId)[2];
+                    $id = $this->convertToAll($id)->id64;
                 }
             });
         } elseif (strpos(':', $this->steamId) !== false) {
             // Convert the id to all types and grab the 64 bit version
-            $this->steamId = $this->convertToAll($this->steamId)[2];
+            $this->steamId = $this->convertToAll($this->steamId)->id64;
         }
     }
 }
