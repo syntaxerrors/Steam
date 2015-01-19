@@ -29,8 +29,10 @@ class User extends Client {
         $this->version = 'v0002';
 
         if ($steamId == null) {
-            $steamId = $this->steamId;
+            $steamId = (array) $this->steamId;
         }
+
+        $steamId = implode(',', $steamId);
 
         $chunks  = array_chunk(explode(',', $steamId), 100);
 
@@ -76,12 +78,12 @@ class User extends Client {
         $this->version = 'v1';
 
         if ($steamId == null) {
-            $steamId = $this->steamId;
+            $steamId = (array) $this->steamId;
         }
 
         // Set up the arguments
         $arguments = [
-            'steamids' => $steamId
+            'steamids' => implode(',', $steamId)
         ];
 
         // Get the client
