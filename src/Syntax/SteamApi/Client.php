@@ -50,8 +50,6 @@ class Client {
 
         // Set up the Ids
         $this->setUpFormatted();
-
-        return $this;
     }
 
     public function get()
@@ -179,10 +177,7 @@ class Client {
         if (! empty($arguments) && count($arguments) == 1) {
             $this->steamId = $arguments[0];
 
-            if (strpos(':', $this->steamId) !== false) {
-                // Convert the id to all types and grab the 64 bit version
-                $this->steamId = $this->convertToAll($this->steamId)[2];
-            }
+            $this->convertSteamIdTo64();
         }
 
         // Inside the root steam directory
@@ -206,9 +201,11 @@ class Client {
     }
 
     /**
- * @param Collection $objects
- */
-protected function sortObjects($objects)
+     * @param Collection $objects
+     *
+     * @return $this
+     */
+    protected function sortObjects($objects)
     {
         return $objects->sortBy(function ($object) {
             return $object->name;
@@ -216,10 +213,10 @@ protected function sortObjects($objects)
     }
 
     /**
- * @param string $method
- * @param string $version
- */
-protected function setApiDetails($method, $version)
+     * @param string $method
+     * @param string $version
+     */
+    protected function setApiDetails($method, $version)
     {
         $this->method  = $method;
         $this->version = $version;
@@ -251,5 +248,20 @@ protected function setApiDetails($method, $version)
         }
 
         return $apiKey;
+    }
+
+    private function convertSteamIdTo64()
+    {
+        if (is_array($this->steamId)) {
+            $this->steamId = array_walk($this->steamId, function (&$id, $key) {
+                if (strpos($id, ':') !== false) {
+                    // Convert the id to all types and grab the 64 bit version
+                    return $this->convertToAll($this->steamId)[2];
+                }
+            });
+        } elseif (strpos(':', $this->steamId) !== false) {
+            // Convert the id to all types and grab the 64 bit version
+            $this->steamId = $this->convertToAll($this->steamId)[2];
+        }
     }
 }
