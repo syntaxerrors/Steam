@@ -258,7 +258,7 @@ class Client {
     private function convertSteamIdTo64()
     {
         if (is_array($this->steamId)) {
-            array_walk($this->steamId, function (&$id, $key) {
+            array_walk($this->steamId, function (&$id) {
                 if (strpos($id, ':') !== false) {
                     // Convert the id to all types and grab the 64 bit version
                     $id = $this->convertToAll($id)->id64;
