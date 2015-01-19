@@ -90,7 +90,7 @@ class Player extends Client {
         $client = $this->getServiceResponse($arguments);
 
         // Clean up the games
-        $games = $this->convertToObjects($client->games);
+        $games = $this->convertToObjects(isset($client->games) ? $client->games : array());
 
         return $games;
     }
