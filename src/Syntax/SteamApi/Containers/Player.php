@@ -51,7 +51,7 @@ class Player extends BaseContainer {
 		$this->steamId                  = $player->steamid;
 		$this->steamIds                 = (new Id((int)$this->steamId));
 		$this->communityVisibilityState = $player->communityvisibilitystate;
-		$this->profileState             = $player->profilestate;
+		$this->profileState             = $this->checkIssetField($player, 'profilestate');
 		$this->personaName              = $player->personaname;
 		$this->lastLogoff               = date('F jS, Y h:ia', $player->lastlogoff);
 		$this->profileUrl               = $player->profileurl;
