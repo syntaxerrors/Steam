@@ -5,6 +5,9 @@ php:
   - 5.4
   - hhvm
 
+notifications:
+  slack: nukacode:HyFrc2QLi5PC5fPxadm07O5v
+
 matrix:
   allow_failures:
     - php: hhvm
