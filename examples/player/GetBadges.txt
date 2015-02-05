@@ -1,0 +1,47 @@
+stdClass Object
+(
+    [badges] => Array
+        (
+            [0] => stdClass Object
+                (
+                    [badgeid] => 16
+                    [level] => 1
+                    [completion_time] => 1404061200
+                    [xp] => 150
+                    [scarcity] => 877623
+                )
+
+            [1] => stdClass Object
+                (
+                    [badgeid] => 2
+                    [level] => 2
+                    [completion_time] => 1394212133
+                    [xp] => 200
+                    [scarcity] => 1990152
+                )
+
+            [2] => stdClass Object
+                (
+                    [badgeid] => 13
+                    [level] => 124
+                    [completion_time] => 1268659900
+                    [xp] => 353
+                    [scarcity] => 1243165
+                )
+
+            [3] => stdClass Object
+                (
+                    [badgeid] => 1
+                    [level] => 4
+                    [completion_time] => 1268659900
+                    [xp] => 200
+                    [scarcity] => 46831294
+                )
+
+        )
+
+    [player_xp] => 903
+    [player_level] => 9
+    [player_xp_needed_to_level_up] => 97
+    [player_xp_needed_current_level] => 900
+)

@@ -1,0 +1,21 @@
+Array
+(
+    [0] => stdClass Object
+        (
+            [name] => explosive_exit
+            [achieved] => 1
+        )
+
+    [1] => stdClass Object
+        (
+            [name] => suddenly_skewered
+            [achieved] => 1
+        )
+
+    [2] => stdClass Object
+        (
+            [name] => the_undeath_of_khamun
+            [achieved] => 1
+        )
+
+)

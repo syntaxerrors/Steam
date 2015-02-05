@@ -1,0 +1,22 @@
+language: php
+
+php: 
+  - 5.5
+  - 5.4
+  - hhvm
+
+notifications:
+  slack: nukacode:HyFrc2QLi5PC5fPxadm07O5v
+
+matrix:
+  allow_failures:
+    - php: hhvm
+  fast_finish: true
+
+before_script:
+  - composer install
+
+script:
+  - phpunit --coverage-clover=coverage.clover
+  - wget https://scrutinizer-ci.com/ocular.phar
+  - php ocular.phar code-coverage:upload  --format=php-clover coverage.clover

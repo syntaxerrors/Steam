@@ -1,0 +1,10 @@
+Syntax\SteamApi\Containers\Player\Level Object
+(
+    [playerXp] => 903
+    [playerLevel] => 9
+    [xpToLevelUp] => 97
+    [xpForCurrentLevel] => 900
+    [currentLevelFloor] => 900
+    [currentLevelCeieling] => 1000
+    [percentThroughLevel] => 97
+)

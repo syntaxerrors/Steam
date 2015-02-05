@@ -1,0 +1,567 @@
+Array
+(
+    [0] => stdClass Object
+        (
+            [name] => explosive_exit
+            [percent] => 60.344631195068
+        )
+
+    [1] => stdClass Object
+        (
+            [name] => suddenly_skewered
+            [percent] => 42.981929779053
+        )
+
+    [2] => stdClass Object
+        (
+            [name] => precision_strike
+            [percent] => 40.083293914795
+        )
+
+    [3] => stdClass Object
+        (
+            [name] => the_undeath_of_khamun
+            [percent] => 38.004730224609
+        )
+
+    [4] => stdClass Object
+        (
+            [name] => as_luck_would_have_it
+            [percent] => 33.594764709473
+        )
+
+    [5] => stdClass Object
+        (
+            [name] => besting_the_beast_of_orox
+            [percent] => 23.76727104187
+        )
+
+    [6] => stdClass Object
+        (
+            [name] => icy_tomb
+            [percent] => 22.661437988281
+        )
+
+    [7] => stdClass Object
+        (
+            [name] => eye_for_an_eye
+            [percent] => 15.825128555298
+        )
+
+    [8] => stdClass Object
+        (
+            [name] => furious_charge
+            [percent] => 15.571806907654
+        )
+
+    [9] => stdClass Object
+        (
+            [name] => morak_defeated
+            [percent] => 13.494199752808
+        )
+
+    [10] => stdClass Object
+        (
+            [name] => deader_than_dead
+            [percent] => 10.665216445923
+        )
+
+    [11] => stdClass Object
+        (
+            [name] => embracing_the_end
+            [percent] => 8.6481952667236
+        )
+
+    [12] => stdClass Object
+        (
+            [name] => seriously_severed
+            [percent] => 8.6143236160278
+        )
+
+    [13] => stdClass Object
+        (
+            [name] => heroic_hunger
+            [percent] => 7.664014339447
+        )
+
+    [14] => stdClass Object
+        (
+            [name] => dying_for_a_living
+            [percent] => 4.6241703033447
+        )
+
+    [15] => stdClass Object
+        (
+            [name] => dropper_of_treasure
+            [percent] => 2.8013129234314
+        )
+
+    [16] => stdClass Object
+        (
+            [name] => scarred_veteran
+            [percent] => 1.8548201322556
+        )
+
+    [17] => stdClass Object
+        (
+            [name] => hardened_champion
+            [percent] => 1.7990039587021
+        )
+
+    [18] => stdClass Object
+        (
+            [name] => pyromancer
+            [percent] => 1.5619037151337
+        )
+
+    [19] => stdClass Object
+        (
+            [name] => crypt_kicker
+            [percent] => 1.5447294712067
+        )
+
+    [20] => stdClass Object
+        (
+            [name] => formidable_fortune
+            [percent] => 1.2575376033783
+        )
+
+    [21] => stdClass Object
+        (
+            [name] => artful_dodger
+            [percent] => 1.0457216501236
+        )
+
+    [22] => stdClass Object
+        (
+            [name] => cave_crusher
+            [percent] => 0.87016260623932
+        )
+
+    [23] => stdClass Object
+        (
+            [name] => mummy_slayer
+            [percent] => 0.86586904525757
+        )
+
+    [24] => stdClass Object
+        (
+            [name] => stormcaller
+            [percent] => 0.62972295284271
+        )
+
+    [25] => stdClass Object
+        (
+            [name] => accomplished_master
+            [percent] => 0.61684221029282
+        )
+
+    [26] => stdClass Object
+        (
+            [name] => bombardier
+            [percent] => 0.53097093105316
+        )
+
+    [27] => stdClass Object
+        (
+            [name] => whirling_death
+            [percent] => 0.5056865811348
+        )
+
+    [28] => stdClass Object
+        (
+            [name] => slayer
+            [percent] => 0.36065948009491
+        )
+
+    [29] => stdClass Object
+        (
+            [name] => temple_toppler
+            [percent] => 0.33060455322266
+        )
+
+    [30] => stdClass Object
+        (
+            [name] => the_captains_special
+            [percent] => 0.27383404970169
+        )
+
+    [31] => stdClass Object
+        (
+            [name] => eating_off_the_floor
+            [percent] => 0.18128387629986
+        )
+
+    [32] => stdClass Object
+        (
+            [name] => lich_slayer
+            [percent] => 0.1602931022644
+        )
+
+    [33] => stdClass Object
+        (
+            [name] => frostweaver
+            [percent] => 0.14884360134602
+        )
+
+    [34] => stdClass Object
+        (
+            [name] => giant_spider_slayer
+            [percent] => 0.1264216452837
+        )
+
+    [35] => stdClass Object
+        (
+            [name] => skeleton_slayer
+            [percent] => 0.12594458460808
+        )
+
+    [36] => stdClass Object
+        (
+            [name] => grunt_slayer
+            [percent] => 0.097797878086567
+        )
+
+    [37] => stdClass Object
+        (
+            [name] => cultist_slayer
+            [percent] => 0.095889627933502
+        )
+
+    [38] => stdClass Object
+        (
+            [name] => orc_slayer
+            [percent] => 0.078238300979137
+        )
+
+    [39] => stdClass Object
+        (
+            [name] => demon_slayer
+            [percent] => 0.076330050826073
+        )
+
+    [40] => stdClass Object
+        (
+            [name] => as_luck_would_have_it_1
+            [percent] => 0.020036637783051
+        )
+
+    [41] => stdClass Object
+        (
+            [name] => burned_alive
+            [percent] => 0.020036637783051
+        )
+
+    [42] => stdClass Object
+        (
+            [name] => as_luck_would_have_it_3
+            [percent] => 0.018128387629986
+        )
+
+    [43] => stdClass Object
+        (
+            [name] => slayer_1
+            [percent] => 0.016697200015187
+        )
+
+    [44] => stdClass Object
+        (
+            [name] => faithful_customer
+            [percent] => 0.012403633445501
+        )
+
+    [45] => stdClass Object
+        (
+            [name] => mummy_slayer_3
+            [percent] => 0.012403633445501
+        )
+
+    [46] => stdClass Object
+        (
+            [name] => slayer_2
+            [percent] => 0.010495381429791
+        )
+
+    [47] => stdClass Object
+        (
+            [name] => heroic_hunger_3
+            [percent] => 0.010018318891525
+        )
+
+    [48] => stdClass Object
+        (
+            [name] => dying_for_a_living_3
+            [percent] => 0.0090641938149929
+        )
+
+    [49] => stdClass Object
+        (
+            [name] => skeleton_slayer_3
+            [percent] => 0.008110067807138
+        )
+
+    [50] => stdClass Object
+        (
+            [name] => faithful_customer_3
+            [percent] => 0.008110067807138
+        )
+
+    [51] => stdClass Object
+        (
+            [name] => riddles_of_the_grave_3
+            [percent] => 0.0076330048032105
+        )
+
+    [52] => stdClass Object
+        (
+            [name] => formidable_fortune_3
+            [percent] => 0.0071559422649443
+        )
+
+    [53] => stdClass Object
+        (
+            [name] => dropper_of_treasure_3
+            [percent] => 0.0066788792610168
+        )
+
+    [54] => stdClass Object
+        (
+            [name] => cultist_slayer_3
+            [percent] => 0.0062018167227507
+        )
+
+    [55] => stdClass Object
+        (
+            [name] => eating_off_the_floor_3
+            [percent] => 0.0057247541844845
+        )
+
+    [56] => stdClass Object
+        (
+            [name] => goblin_slayer_3
+            [percent] => 0.0057247541844845
+        )
+
+    [57] => stdClass Object
+        (
+            [name] => secrets_of_the_flame_3
+            [percent] => 0.0057247541844845
+        )
+
+    [58] => stdClass Object
+        (
+            [name] => mysteries_in_the_dark
+            [percent] => 0.0042935656383634
+        )
+
+    [59] => stdClass Object
+        (
+            [name] => riddles_of_the_grave
+            [percent] => 0.0042935656383634
+        )
+
+    [60] => stdClass Object
+        (
+            [name] => deader_than_dead_3
+            [percent] => 0.0042935656383634
+        )
+
+    [61] => stdClass Object
+        (
+            [name] => secrets_of_the_flame
+            [percent] => 0.0038165024016052
+        )
+
+    [62] => stdClass Object
+        (
+            [name] => rude_interruption
+            [percent] => 0.0038165024016052
+        )
+
+    [63] => stdClass Object
+        (
+            [name] => slayer_3
+            [percent] => 0.0038165024016052
+        )
+
+    [64] => stdClass Object
+        (
+            [name] => orc_slayer_3
+            [percent] => 0.0038165024016052
+        )
+
+    [65] => stdClass Object
+        (
+            [name] => lich_slayer_3
+            [percent] => 0.0028623770922422
+        )
+
+    [66] => stdClass Object
+        (
+            [name] => giant_spider_slayer_3
+            [percent] => 0.0028623770922422
+        )
+
+    [67] => stdClass Object
+        (
+            [name] => whirling_death_3
+            [percent] => 0.0023853140883148
+        )
+
+    [68] => stdClass Object
+        (
+            [name] => hardened_champion_3
+            [percent] => 0.0023853140883148
+        )
+
+    [69] => stdClass Object
+        (
+            [name] => frostweaver_3
+            [percent] => 0.0023853140883148
+        )
+
+    [70] => stdClass Object
+        (
+            [name] => cold_hearted_3
+            [percent] => 0.0023853140883148
+        )
+
+    [71] => stdClass Object
+        (
+            [name] => generous_3
+            [percent] => 0.0023853140883148
+        )
+
+    [72] => stdClass Object
+        (
+            [name] => cave_crusher_3
+            [percent] => 0.0019082512008026
+        )
+
+    [73] => stdClass Object
+        (
+            [name] => stormcaller_3
+            [percent] => 0.0019082512008026
+        )
+
+    [74] => stdClass Object
+        (
+            [name] => bombardier_3
+            [percent] => 0.0019082512008026
+        )
+
+    [75] => stdClass Object
+        (
+            [name] => blessed_by_the_gods_3
+            [percent] => 0.0019082512008026
+        )
+
+    [76] => stdClass Object
+        (
+            [name] => blessed_by_the_gods
+            [percent] => 0.0019082512008026
+        )
+
+    [77] => stdClass Object
+        (
+            [name] => artful_dodger_3
+            [percent] => 0.0019082512008026
+        )
+
+    [78] => stdClass Object
+        (
+            [name] => trailblazer_3
+            [percent] => 0.0019082512008026
+        )
+
+    [79] => stdClass Object
+        (
+            [name] => unruly_3
+            [percent] => 0.0019082512008026
+        )
+
+    [80] => stdClass Object
+        (
+            [name] => accomplished_master_3
+            [percent] => 0.0019082512008026
+        )
+
+    [81] => stdClass Object
+        (
+            [name] => temple_toppler_3
+            [percent] => 0.0019082512008026
+        )
+
+    [82] => stdClass Object
+        (
+            [name] => pyromancer_3
+            [percent] => 0.0019082512008026
+        )
+
+    [83] => stdClass Object
+        (
+            [name] => mysteries_in_the_dark_3
+            [percent] => 0.0019082512008026
+        )
+
+    [84] => stdClass Object
+        (
+            [name] => light_footed_3
+            [percent] => 0.0019082512008026
+        )
+
+    [85] => stdClass Object
+        (
+            [name] => scarred_veteran_3
+            [percent] => 0.0019082512008026
+        )
+
+    [86] => stdClass Object
+        (
+            [name] => heedless_3
+            [percent] => 0.0019082512008026
+        )
+
+    [87] => stdClass Object
+        (
+            [name] => crypt_kicker_3
+            [percent] => 0.0019082512008026
+        )
+
+    [88] => stdClass Object
+        (
+            [name] => dragon_slayer_3
+            [percent] => 0.0014311885461211
+        )
+
+    [89] => stdClass Object
+        (
+            [name] => daemon_slayer_3
+            [percent] => 0.0014311885461211
+        )
+
+    [90] => stdClass Object
+        (
+            [name] => dragon_slayer
+            [percent] => 0.0014311885461211
+        )
+
+    [91] => stdClass Object
+        (
+            [name] => schizofrenic_3
+            [percent] => 0.00047706280020066
+        )
+
+    [92] => stdClass Object
+        (
+            [name] =>
+            [percent] => 0
+        )
+
+    [93] => stdClass Object
+        (
+            [name] => generous
+            [percent] => 0
+        )
+
+)

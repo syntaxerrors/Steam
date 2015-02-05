@@ -1,0 +1,36 @@
+Array
+(
+    [0] => Syntax\SteamApi\Containers\Player Object
+        (
+            [steamId] => 76561198022436617
+            [steamIds] => Syntax\SteamApi\Containers\Id Object
+                (
+                    [id32] => STEAM_1:1:31085444
+                    [id64] => 76561198022436617
+                    [id3] => [U:1:62170889]
+                    [communityId] => STEAM_1:1:31085444
+                    [steamId] => 76561198022436617
+                )
+            [communityVisibilityState] => 3
+            [profileState] => 1
+            [personaName] => Stygian
+            [lastLogoff] => October 8th, 2014 10:50am
+            [profileUrl] => http://steamcommunity.com/id/stygiansabyss/
+            [avatar] => <img src="http://media.steampowered.com/steamcommunity/public/images/avatars/3a/3a718856298ce108a71dfd5b0bc5eb913a8ff650.jpg" />
+            [avatarMedium] => <img src="http://media.steampowered.com/steamcommunity/public/images/avatars/3a/3a718856298ce108a71dfd5b0bc5eb913a8ff650_medium.jpg" />
+            [avatarFull] => <img src="http://media.steampowered.com/steamcommunity/public/images/avatars/3a/3a718856298ce108a71dfd5b0bc5eb913a8ff650_full.jpg" />
+            [avatarUrl] => http://media.steampowered.com/steamcommunity/public/images/avatars/3a/3a718856298ce108a71dfd5b0bc5eb913a8ff650.jpg
+            [avatarMediumUrl] => http://media.steampowered.com/steamcommunity/public/images/avatars/3a/3a718856298ce108a71dfd5b0bc5eb913a8ff650_medium.jpg
+            [avatarFullUrl] => http://media.steampowered.com/steamcommunity/public/images/avatars/3a/3a718856298ce108a71dfd5b0bc5eb913a8ff650_full.jpg
+            [personaState] => Online
+            [personaStateId] => 3
+            [realName] => Joe Smith
+            [primaryClanId] => 103582791435113986
+            [timecreated] => March 15th, 2010 01:31pm
+            [personaStateFlags] => 0
+            [locCountryCode] => US
+            [locStateCode] => TX
+            [locCityId] => 3620
+        )
+
+)
