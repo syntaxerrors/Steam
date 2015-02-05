@@ -1,5 +1,6 @@
 <?php namespace Syntax\SteamApi\Containers;
 
+use Illuminate\Html\HtmlFacade;
 use Syntax\SteamApi\Collection;
 
 abstract class BaseContainer {
@@ -47,7 +48,7 @@ abstract class BaseContainer {
      */
     protected function getImageForAvatar($image)
     {
-        return \HTML::image($image);
+        return HTML::image($image);
     }
 
 }
