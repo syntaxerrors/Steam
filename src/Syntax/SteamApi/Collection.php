@@ -86,7 +86,7 @@ class Collection extends \Illuminate\Database\Eloquent\Collection {
      *
      * @return $this
      */
-    public function where($column, $value = null)
+    public function where($column, $value = null, $strict = true)
     {
         foreach ($this->items as $key => $item) {
 
