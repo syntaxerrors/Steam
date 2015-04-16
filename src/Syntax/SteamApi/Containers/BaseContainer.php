@@ -1,6 +1,6 @@
 <?php namespace Syntax\SteamApi\Containers;
 
-use Illuminate\Html\HtmlFacade;
+use Illuminate\Support\Facades\HTML;
 use Syntax\SteamApi\Collection;
 
 abstract class BaseContainer {
