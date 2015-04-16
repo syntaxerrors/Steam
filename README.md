@@ -8,6 +8,7 @@
 [![Total Downloads](https://poser.pugx.org/syntax/steam-api/downloads.svg)](https://packagist.org/packages/syntax/steam-api)
 [![License](https://poser.pugx.org/syntax/steam-api/license.svg)](https://packagist.org/packages/syntax/steam-api)
 
+**For Laravel 4, checkout the documentation on the [Laravel 4 branch](https://github.com/syntaxerrors/Steam/tree/Laravel4).**
 
 This package provides an easy way to get details from the steam api service.  The services it can access are:
 
@@ -24,7 +25,7 @@ Begin by installing this package with composer.
 	"require": {
 		"syntax/steam-api": "2.0.*"
 	}
-
+	
 Next, update composer from the terminal.
 
 	composer update syntax/steam-api
