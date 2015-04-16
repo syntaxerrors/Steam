@@ -2,141 +2,159 @@
 
 use Syntax\SteamApi\Client;
 use Syntax\SteamApi\Containers\Player as PlayerContainer;
+use Syntax\SteamApi\Exceptions\UnrecognizedId;
 
-class User extends Client {
+class User extends Client
+{
 
-	private $friendRelationships = [
-		'all',
-		'friend',
-	];
+    private $friendRelationships = [
+        'all',
+        'friend',
+    ];
 
-	public function __construct($steamId) {
-		parent::__construct();
-		$this->interface = 'ISteamUser';
-		$this->steamId = $steamId;
-	}
+    public function __construct($steamId)
+    {
+        parent::__construct();
+        $this->interface = 'ISteamUser';
+        $this->steamId   = $steamId;
+    }
 
-	/* Get the user_id (64bits) from steam.
-	 * @vanityurl: custom name / id from steam profile link.
-	 */
-	public function ResolveVanityURL($vanityurl = null) {
-		// Set up the api details
-		$this->method = __FUNCTION__;
-		$this->version = 'v0001';
-		if ($vanityurl == null) {
-			$vanityurl = $this->steamId;
-		}
-		return $this->setUpClient(array('vanityurl' => $vanityurl))->response;
-	}
+    /* Get the user_id (64bits) from steam.
+     * @vanityurl: custom name / id from steam profile link.
+     */
+    public function ResolveVanityURL($displayName = null)
+    {
+        if ($displayName == null) {
+            throw new UnrecognizedId('You must pass a username for this call.');
+        }
 
-	/**
-	 * @param string $steamId
-	 *
-	 * @return array
-	 */
-	public function GetPlayerSummaries($steamId = null) {
-		// Set up the api details
-		$this->method = __FUNCTION__;
-		$this->version = 'v0002';
+        // Set up the api details
+        $this->method  = __FUNCTION__;
+        $this->version = 'v0001';
 
-		if ($steamId == null) {
-			$steamId = $this->steamId;
-		}
+        $results = $this->setUpClient(['vanityurl' => $displayName])->response;
 
-		$steamId = implode(',', (array) $steamId);
+        if (isset($results->message)) {
+            return $results->message;
+        }
 
-		$chunks = array_chunk(explode(',', $steamId), 100);
+        return $this->convertId($results->steamid);
+    }
 
-		$map = array_map([$this, 'getChunkedPlayerSummaries'], $chunks);
+    /**
+     * @param string $steamId
+     *
+     * @return array
+     */
+    public function GetPlayerSummaries($steamId = null)
+    {
+        // Set up the api details
+        $this->method  = __FUNCTION__;
+        $this->version = 'v0002';
 
-		$players = $this->compressPlayerSummaries($map);
+        if ($steamId == null) {
+            $steamId = $this->steamId;
+        }
 
-		return $players;
-	}
+        $steamId = implode(',', (array)$steamId);
 
-	private function getChunkedPlayerSummaries($chunk) {
-		// Set up the arguments
-		$arguments = [
-			'steamids' => implode(',', $chunk),
-		];
+        $chunks = array_chunk(explode(',', $steamId), 100);
 
-		// Get the client
-		$client = $this->setUpClient($arguments)->response;
+        $map = array_map([$this, 'getChunkedPlayerSummaries'], $chunks);
 
-		// Clean up the games
-		$players = $this->convertToObjects($client->players);
+        $players = $this->compressPlayerSummaries($map);
 
-		return $players;
-	}
+        return $players;
+    }
 
-	private function compressPlayerSummaries($summaries) {
-		$result = [];
-		$keys = array_keys($summaries);
+    private function getChunkedPlayerSummaries($chunk)
+    {
+        // Set up the arguments
+        $arguments = [
+            'steamids' => implode(',', $chunk),
+        ];
 
-		foreach ($keys as $key) {
-			$result = array_merge($result, $summaries[$key]);
-		}
+        // Get the client
+        $client = $this->setUpClient($arguments)->response;
 
-		return $result;
-	}
+        // Clean up the games
+        $players = $this->convertToObjects($client->players);
 
-	public function GetPlayerBans($steamId = null) {
-		// Set up the api details
-		$this->method = __FUNCTION__;
-		$this->version = 'v1';
+        return $players;
+    }
 
-		if ($steamId == null) {
-			$steamId = $this->steamId;
-		}
+    private function compressPlayerSummaries($summaries)
+    {
+        $result = [];
+        $keys   = array_keys($summaries);
 
-		// Set up the arguments
-		$arguments = [
-			'steamids' => implode(',', (array) $steamId),
-		];
+        foreach ($keys as $key) {
+            $result = array_merge($result, $summaries[$key]);
+        }
 
-		// Get the client
-		$client = $this->setUpClient($arguments);
+        return $result;
+    }
 
-		return $client->players;
-	}
+    public function GetPlayerBans($steamId = null)
+    {
+        // Set up the api details
+        $this->method  = __FUNCTION__;
+        $this->version = 'v1';
 
-	public function GetFriendList($relationship = 'all') {
-		// Set up the api details
-		$this->method = __FUNCTION__;
-		$this->version = 'v0001';
+        if ($steamId == null) {
+            $steamId = $this->steamId;
+        }
 
-		if (!in_array($relationship, $this->friendRelationships)) {
-			throw new \InvalidArgumentException('Provided relationship [' . $relationship . '] is not valid.  Please select from: ' . implode(', ', $this->friendRelationships));
-		}
+        // Set up the arguments
+        $arguments = [
+            'steamids' => implode(',', (array)$steamId),
+        ];
 
-		// Set up the arguments
-		$arguments = [
-			'steamid' => $this->steamId,
-			'relationship' => $relationship,
-		];
+        // Get the client
+        $client = $this->setUpClient($arguments);
 
-		// Get the client
-		$client = $this->setUpClient($arguments)->friendslist;
+        return $client->players;
+    }
 
-		// Clean up the games
-		$steamIds = [];
+    public function GetFriendList($relationship = 'all')
+    {
+        // Set up the api details
+        $this->method  = __FUNCTION__;
+        $this->version = 'v0001';
 
-		foreach ($client->friends as $friend) {
-			$steamIds[] = $friend->steamid;
-		}
+        if (! in_array($relationship, $this->friendRelationships)) {
+            throw new \InvalidArgumentException('Provided relationship [' . $relationship . '] is not valid.  Please select from: ' . implode(', ', $this->friendRelationships));
+        }
 
-		$friends = $this->GetPlayerSummaries(implode(',', $steamIds));
+        // Set up the arguments
+        $arguments = [
+            'steamid'      => $this->steamId,
+            'relationship' => $relationship,
+        ];
 
-		return $friends;
-	}
+        // Get the client
+        $client = $this->setUpClient($arguments)->friendslist;
 
-	protected function convertToObjects($players) {
-		$cleanedPlayers = [];
+        // Clean up the games
+        $steamIds = [];
 
-		foreach ($players as $player) {
-			$cleanedPlayers[] = new PlayerContainer($player);
-		}
+        foreach ($client->friends as $friend) {
+            $steamIds[] = $friend->steamid;
+        }
 
-		return $cleanedPlayers;
-	}
+        $friends = $this->GetPlayerSummaries(implode(',', $steamIds));
+
+        return $friends;
+    }
+
+    protected function convertToObjects($players)
+    {
+        $cleanedPlayers = [];
+
+        foreach ($players as $player) {
+            $cleanedPlayers[] = new PlayerContainer($player);
+        }
+
+        return $cleanedPlayers;
+    }
 }
