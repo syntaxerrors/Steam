@@ -3,84 +3,95 @@
 use Syntax\SteamApi\Client;
 use Syntax\SteamApi\Containers\Achievement;
 
-class Stats extends Client {
+class Stats extends Client
+{
 
-	public function __construct($steamId) {
-		parent::__construct();
-		$this->interface = 'ISteamUserStats';
-		$this->steamId = $steamId;
-	}
+    public function __construct($steamId)
+    {
+        parent::__construct();
+        $this->interface = 'ISteamUserStats';
+        $this->steamId   = $steamId;
+    }
 
-	public function GetPlayerAchievements($appId) {
-		// Set up the api details
-		$this->method = __FUNCTION__;
-		$this->version = 'v0001';
+    public function GetPlayerAchievements($appId)
+    {
+        // Set up the api details
+        $this->method  = __FUNCTION__;
+        $this->version = 'v0001';
 
-		// Set up the arguments
-		$arguments = [
-			'steamid' => $this->steamId,
-			'appid' => $appId,
-			'l' => 'english',
-		];
+        // Set up the arguments
+        $arguments = [
+            'steamid' => $this->steamId,
+            'appid'   => $appId,
+            'l'       => 'english',
+        ];
 
-		// Get the client
-		$client = $this->setUpClient($arguments)->playerstats;
+        // Get the client
+        $client = $this->setUpClient($arguments)->playerstats;
 
-		// Clean up the games
-		$achievements = $this->convertToObjects($client->achievements);
+        // Clean up the games
+        $achievements = $this->convertToObjects($client->achievements);
 
-		return $achievements;
-	}
+        return $achievements;
+    }
 
-	public function GetGlobalAchievementPercentagesForApp($gameId) {
-		// Set up the api details
-		$this->method = __FUNCTION__;
-		$this->version = 'v0002';
+    public function GetGlobalAchievementPercentagesForApp($gameId)
+    {
+        // Set up the api details
+        $this->method  = __FUNCTION__;
+        $this->version = 'v0002';
 
-		// Set up the arguments
-		$arguments = [
-			'gameid' => $gameId,
-			'l' => 'english',
-		];
+        // Set up the arguments
+        $arguments = [
+            'gameid' => $gameId,
+            'l'      => 'english',
+        ];
 
-		// Get the client
-		$client = $this->setUpClient($arguments)->achievementpercentages;
+        // Get the client
+        $client = $this->setUpClient($arguments)->achievementpercentages;
 
-		return $client->achievements;
-	}
-	/*
-	 * @param boolean $all (return stats and not only achievements)
-	 */
+        return $client->achievements;
+    }
 
-	public function GetUserStatsForGame($appId, $all = false) {
-		// Set up the api details
-		$this->method = __FUNCTION__;
-		$this->version = 'v0002';
+    /**
+     * @param $appId int Steam 64 id
+     * @param $all   bool Return all stats when true and only achievements when false
+     *
+     * @return mixed
+     */
 
-		// Set up the arguments
-		$arguments = [
-			'steamid' => $this->steamId,
-			'appid' => $appId,
-			'l' => 'english',
-		];
+    public function GetUserStatsForGame($appId, $all = false)
+    {
+        // Set up the api details
+        $this->method  = __FUNCTION__;
+        $this->version = 'v0002';
 
-		// Get the client
-		$client = $this->setUpClient($arguments)->playerstats;
+        // Set up the arguments
+        $arguments = [
+            'steamid' => $this->steamId,
+            'appid'   => $appId,
+            'l'       => 'english',
+        ];
 
-		// Do you want also stats and not only achievements? Like CSGO or Dota2 stats
-		if ($all) {
-			return $client;
-		}
-		return $client->achievements;
-	}
+        // Get the client
+        $client = $this->setUpClient($arguments)->playerstats;
 
-	protected function convertToObjects($achievements) {
-		$cleanedAchievements = array();
+        // Games like DOTA and CS:GO have additional stats here.  Return everything if they are wanted.
+        if ($all === true) {
+            return $client;
+        }
 
-		foreach ($achievements as $achievement) {
-			$cleanedAchievements[] = new Achievement($achievement);
-		}
+        return $client->achievements;
+    }
 
-		return $cleanedAchievements;
-	}
+    protected function convertToObjects($achievements)
+    {
+        $cleanedAchievements = [];
+
+        foreach ($achievements as $achievement) {
+            $cleanedAchievements[] = new Achievement($achievement);
+        }
+
+        return $cleanedAchievements;
+    }
 }
