@@ -177,6 +177,21 @@ When instantiating the user class, you are required to pass a steamId or steam c
 Steam::user($steamId)
 ```
 
+#### ResolveVanityURL
+This will return details on the user from their display name.
+
+##### Arguments
+
+Name | Type | Description | Required | Default
+-----|------|-------------|----------|---------
+displayName| string  | The display name to get the steam ID for.  In `http://steamcommunity.com/id/gabelogannewell` it would be `gabelogannewell`.  | Yes | NULL
+
+```php
+	$player = Steam::user($steamId)->ResolveVanityURL('gabelogannewell');
+```
+
+> Example Output: [ResolveVanityURL](./examples/user/ResolveVanityURL.txt)
+
 #### GetPlayerSummaries
 This will return details on the user.
 
