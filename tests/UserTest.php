@@ -14,6 +14,17 @@ class UserTest extends BaseTester {
         $this->assertEquals($this->id64, $userService->getSteamId()[0]);
     }
 
+	/**
+	 * @test
+	 */
+    public function it_throws_an_exception_when_no_display_name_is_provided()
+    {
+		$this->setExpectedException('Syntax\SteamApi\Exceptions\UnrecognizedId');
+        $steamObject = $this->steamClient->user($this->id64)->ResolveVanityURL();
+
+        $this->assertEquals('No match', $steamObject);
+    }
+
     /** @test */
     public function it_returns_no_match_from_an_invalid_display_name()
     {

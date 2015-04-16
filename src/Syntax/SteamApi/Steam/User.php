@@ -2,6 +2,7 @@
 
 use Syntax\SteamApi\Client;
 use Syntax\SteamApi\Containers\Player as PlayerContainer;
+use Syntax\SteamApi\Exceptions\UnrecognizedId;
 
 class User extends Client {
 
