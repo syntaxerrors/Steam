@@ -274,9 +274,10 @@ Returns a list of achievements for this user by app id.
 Name | Type | Description | Required | Default
 -----|------|-------------|----------|---------
 appId| int | The id of the game you want the user's achievements in | Yes |
+all| boolean | If you want all stats and not just the achievements set to true.| No | FALSE
 
 
-> Example Output: [GetUserStatsForGame](./examples/user/stats/GetUserStatsForGame.txt)
+> Example Output: [GetUserStatsForGame](./examples/user/stats/GetUserStatsForGame.txt) | [GetUserStatsForGame (all)](./examples/user/stats/GetUserStatsForGameAll.txt)
 
 ### App
 This area will get details for games.
