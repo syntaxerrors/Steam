@@ -1,6 +1,6 @@
 {
   "name": "syntax/steam-api",
-  "description": "A steam-api client for Laravel 4.",
+  "description": "A steam-api client for Laravel 5.",
   "license": "MIT",
   "authors": [
     {

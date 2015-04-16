@@ -15,6 +15,22 @@ class UserTest extends BaseTester {
     }
 
     /** @test */
+    public function it_returns_no_match_from_an_invalid_display_name()
+    {
+        $steamObject = $this->steamClient->user($this->id64)->ResolveVanityURL('stygiansabyssINVALID');
+
+        $this->assertEquals('No match', $steamObject);
+    }
+
+    /** @test */
+    public function it_gets_the_steam_id_from_a_display_name()
+    {
+        $steamObject = $this->steamClient->user($this->id64)->ResolveVanityURL('stygiansabyss');
+
+        $this->assertEquals($this->id64, $steamObject->id64);
+    }
+
+    /** @test */
     public function it_gets_the_base_users_player_summary()
     {
         $friendsList = $this->steamClient->user($this->id64)->GetPlayerSummaries();
