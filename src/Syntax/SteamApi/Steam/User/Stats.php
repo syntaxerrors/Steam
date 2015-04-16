@@ -3,7 +3,8 @@
 use Syntax\SteamApi\Client;
 use Syntax\SteamApi\Containers\Achievement;
 
-class Stats extends Client {
+class Stats extends Client
+{
 
 	public function __construct($steamId)
 	{
@@ -22,7 +23,7 @@ class Stats extends Client {
 		$arguments = [
 			'steamid' => $this->steamId,
 			'appid'   => $appId,
-			'l'       => 'english'
+			'l'       => 'english',
 		];
 
 		// Get the client
@@ -43,7 +44,7 @@ class Stats extends Client {
 		// Set up the arguments
 		$arguments = [
 			'gameid' => $gameId,
-			'l'      => 'english'
+			'l'      => 'english',
 		];
 
 		// Get the client
@@ -52,7 +53,14 @@ class Stats extends Client {
 		return $client->achievements;
 	}
 
-	public function GetUserStatsForGame($appId)
+	/**
+	 * @param $appId int Steam 64 id
+	 * @param $all   bool Return all stats when true and only achievements when false
+	 *
+	 * @return mixed
+	 */
+
+	public function GetUserStatsForGame($appId, $all = false)
 	{
 		// Set up the api details
 		$this->method  = __FUNCTION__;
@@ -62,18 +70,23 @@ class Stats extends Client {
 		$arguments = [
 			'steamid' => $this->steamId,
 			'appid'   => $appId,
-			'l'       => 'english'
+			'l'       => 'english',
 		];
 
 		// Get the client
 		$client = $this->setUpClient($arguments)->playerstats;
+
+		// Games like DOTA and CS:GO have additional stats here.  Return everything if they are wanted.
+		if ($all === true) {
+			return $client;
+		}
 
 		return $client->achievements;
 	}
 
 	protected function convertToObjects($achievements)
 	{
-		$cleanedAchievements = array();
+		$cleanedAchievements = [];
 
 		foreach ($achievements as $achievement) {
 			$cleanedAchievements[] = new Achievement($achievement);

@@ -1,11 +1,14 @@
 # Steam
 
-[![Build Status](https://travis-ci.org/syntaxerrors/Steam.svg)](https://travis-ci.org/syntaxerrors/Steam)
-[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/syntaxerrors/Steam/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/syntaxerrors/Steam/?branch=master)
+[![Join the chat at https://gitter.im/syntaxerrors/Steam](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/syntaxerrors/Steam?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
+[![Build Status](https://travis-ci.org/syntaxerrors/Steam.svg?branch=Laravel4)](https://travis-ci.org/syntaxerrors/Steam)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/syntaxerrors/Steam/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/syntaxerrors/Steam/?branch=Laravel4)
 [![Latest Stable Version](https://poser.pugx.org/syntax/steam-api/v/stable.svg)](https://packagist.org/packages/syntax/steam-api)
 [![Total Downloads](https://poser.pugx.org/syntax/steam-api/downloads.svg)](https://packagist.org/packages/syntax/steam-api)
 [![License](https://poser.pugx.org/syntax/steam-api/license.svg)](https://packagist.org/packages/syntax/steam-api)
 
+**For Laravel 5, checkout the documentation on the [Laravel 5 branch](https://github.com/syntaxerrors/Steam).**
 
 This package provides an easy way to get details from the steam api service.  The services it can access are:
 
@@ -20,16 +23,16 @@ This package provides an easy way to get details from the steam api service.  Th
 Begin by installing this package with composer.
 
 	"require": {
-		"syntax/steam-api": "dev-master"
+		"syntax/steam-api": "1.2.*"
 	}
-
+	
 Next, update composer from the terminal.
 
 	composer update syntax/steam-api
 
 > Alternately, you can run "composer require syntax/steam-api:dev-master" from the command line.
 
-Once that is finished, add the service provider to `app/config/app.php`
+Once that is finished, add the service provider to `config/app.php`
 
 	'Syntax\SteamApi\SteamApiServiceProvider',
 
@@ -175,6 +178,21 @@ When instantiating the user class, you are required to pass a steamId or steam c
 Steam::user($steamId)
 ```
 
+#### ResolveVanityURL
+This will return details on the user from their display name.
+
+##### Arguments
+
+Name | Type | Description | Required | Default
+-----|------|-------------|----------|---------
+displayName| string  | The display name to get the steam ID for.  In `http://steamcommunity.com/id/gabelogannewell` it would be `gabelogannewell`.  | Yes | NULL
+
+```php
+	$player = Steam::user($steamId)->ResolveVanityURL('gabelogannewell');
+```
+
+> Example Output: [ResolveVanityURL](./examples/user/ResolveVanityURL.txt)
+
 #### GetPlayerSummaries
 This will return details on the user.
 
@@ -257,9 +275,10 @@ Returns a list of achievements for this user by app id.
 Name | Type | Description | Required | Default
 -----|------|-------------|----------|---------
 appId| int | The id of the game you want the user's achievements in | Yes |
+all| boolean | If you want all stats and not just the achievements set to true.| No | FALSE
 
 
-> Example Output: [GetUserStatsForGame](./examples/user/stats/GetUserStatsForGame.txt)
+> Example Output: [GetUserStatsForGame](./examples/user/stats/GetUserStatsForGame.txt) | [GetUserStatsForGame (all)](./examples/user/stats/GetUserStatsForGameAll.txt)
 
 ### App
 This area will get details for games.

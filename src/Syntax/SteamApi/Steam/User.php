@@ -17,6 +17,37 @@ class User extends Client {
         $this->steamId   = $steamId;
     }
 
+	/**
+	 * Get the user_ids for a display name.
+	 *
+	 * @param null $displayName Custom name from steam profile link.
+	 *
+	 * @return mixed
+	 *
+	 * @throws UnrecognizedId
+	 */
+	public function ResolveVanityURL($displayName = null)
+	{
+		// This only works with a display name.  Make sure we have one.
+		if ($displayName == null) {
+			throw new UnrecognizedId('You must pass a display name for this call.');
+		}
+
+		// Set up the api details
+		$this->method  = __FUNCTION__;
+		$this->version = 'v0001';
+
+		$results = $this->setUpClient(['vanityurl' => $displayName])->response;
+
+		// The message key is used when something goes wrong.  If it exists, return it.
+		if (isset($results->message)) {
+			return $results->message;
+		}
+
+		// Return the full steam ID object for the display name.
+		return $this->convertId($results->steamid);
+	}
+
     /**
      * @param string $steamId
      *
