@@ -25,22 +25,8 @@ class Level {
 		$this->currentLevelFloor    = $this->xpForCurrentLevel;
 		$this->currentLevelCeiling = $this->playerXp + $this->xpToLevelUp;
 
-		$levelRange = $this->currentLevelCeiling - $this->currentLevelFloor;
-
-		$this->percentThroughLevel = $this->percent($this->xpToLevelUp, $levelRange);
-	}
-
-	private function percent ($num_amount, $num_total)
-	{
-		if($num_amount == 0 || $num_total == 0){
-			return 0;
-		}
-		else {
-			$count1 = $num_amount / $num_total;
-			$count2 = $count1 * 100;
-			$count = number_format($count2, 0);
-			return $count;
-		}
+		// arbitrary range formula. n = value in the middle ( n - min ) / ( max - min ) * 100
+		$this->percentThroughLevel = ( $this->playerXp - $this->currentLevelFloor ) / ( $this->currentLevelCeiling - $this->currentLevelFloor ) * 100;		
 	}
 
 }
