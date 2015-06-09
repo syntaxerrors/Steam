@@ -18,7 +18,7 @@ class NewsTest extends BaseTester {
         ];
         $this->assertObjectHasAttributes($attributes, $newsArticle->newsitems[0]);
 
-        $this->assertEquals(23, strlen(strip_tags($newsArticle->newsitems[0]->contents)));
+        $this->assertTrue(strlen(strip_tags($newsArticle->newsitems[0]->contents)) <= 23);
     }
 
     /** @test */
@@ -40,7 +40,11 @@ class NewsTest extends BaseTester {
      */
     public function it_has_full_news_article_by_app_id($defaultNewsCall)
     {
-        $this->assertGreaterThan(23, strlen(strip_tags($defaultNewsCall->newsitems[0]->contents)));
+        foreach ($defaultNewsCall->newsitems as $newsItem) {
+            if (strlen(strip_tags($newsItem->contents)) > 0) {
+                $this->assertGreaterThan(23, strlen(strip_tags($newsItem->contents)));
+            }
+        }
     }
 
 }
