@@ -333,3 +333,12 @@ group| string or int  | The id or the name of the group. | Yes
 ```
 
 > Example Output: [GetGroupSummary](./examples/group/GetGroupSummary.txt)
+
+## Contributors
+- [Stygiansabyss](https://github.com/stygiansabyss)
+- [nicekiwi](https://github.com/nicekiwi)
+- [rannmann](https://github.com/rannmann)
+- [Amegatron](https://github.com/Amegatron)
+- [martinmarianetti](https://github.com/martinmarianetti)
+- [MaartenStaa](https://github.com/MaartenStaa)
+- [JRizzle88](https://github.com/JRizzle88)
