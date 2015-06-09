@@ -10,7 +10,7 @@
 
 **For Laravel 4, checkout the documentation on the [Laravel 4 branch](https://github.com/syntaxerrors/Steam/tree/Laravel4).**
 
-- [Installation](#install)
+- [Installation](#installation)
 - [Usage](#usage)
 - [Contributors](#contributors)
 
