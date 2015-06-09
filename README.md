@@ -10,6 +10,10 @@
 
 **For Laravel 4, checkout the documentation on the [Laravel 4 branch](https://github.com/syntaxerrors/Steam/tree/Laravel4).**
 
+- [Installation](#install)
+- [Usage](#usage)
+- [Contributors](#contributors)
+
 This package provides an easy way to get details from the steam api service.  The services it can access are:
 
 - `ISteamNews`
