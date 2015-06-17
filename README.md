@@ -10,6 +10,10 @@
 
 **For Laravel 5, checkout the documentation on the [Laravel 5 branch](https://github.com/syntaxerrors/Steam).**
 
+- [Installation](#installation)
+- [Usage](#usage)
+- [Contributors](#contributors)
+
 This package provides an easy way to get details from the steam api service.  The services it can access are:
 
 - `ISteamNews`
@@ -329,3 +333,14 @@ group| string or int  | The id or the name of the group. | Yes
 ```
 
 > Example Output: [GetGroupSummary](./examples/group/GetGroupSummary.txt)
+
+
+## Contributors
+
+- [Stygiansabyss](https://github.com/stygiansabyss)
+- [nicekiwi](https://github.com/nicekiwi)
+- [rannmann](https://github.com/rannmann)
+- [Amegatron](https://github.com/Amegatron)
+- [martinmarianetti](https://github.com/martinmarianetti)
+- [MaartenStaa](https://github.com/MaartenStaa)
+- [JRizzle88](https://github.com/JRizzle88)
