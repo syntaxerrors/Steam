@@ -46,6 +46,8 @@ class Player extends BaseContainer {
 
 	public $locCityId;
 
+	public $location;
+
 	public function __construct($player)
 	{
 		$this->steamId                  = $player->steamid;
@@ -63,13 +65,36 @@ class Player extends BaseContainer {
 		$this->avatarFullUrl            = $player->avatarfull;
 		$this->personaState             = $this->convertPersonaState($player->personastate);
 		$this->personaStateId           = $player->personastate;
-		$this->realName                 = $this->checkIssetField($player, 'realName');
-		$this->primaryClanId            = $this->checkIssetField($player, 'primaryClanId');
+		$this->realName                 = $this->checkIssetField($player, 'realname');
+		$this->primaryClanId            = $this->checkIssetField($player, 'primaryclanid');
 		$this->timecreated              = $this->checkIssetField($player, 'timecreated');
-		$this->personaStateFlags        = $this->checkIssetField($player, 'personaStateFlags');
-		$this->locCountryCode           = $this->checkIssetField($player, 'locCountryCode');
-		$this->locStateCode             = $this->checkIssetField($player, 'locStateCode');
-		$this->locCityId                = $this->checkIssetField($player, 'locCityId');
+		$this->personaStateFlags        = $this->checkIssetField($player, 'personastateflags');
+		$this->locCountryCode           = $this->checkIssetField($player, 'loccountrycode');
+		$this->locStateCode             = $this->checkIssetField($player, 'locstatecode');
+		$this->locCityId                = $this->checkIssetField($player, 'loccityid');
+		$this->location                 = $this->getLocation();
+	}
+
+	protected function getLocation()
+	{
+		$countriesFile = json_decode(\file_get_contents(__DIR__ . '/../Resources/countries.json'));
+		$result        = new \stdClass;
+
+		if ($this->locCountryCode != null) {
+			$result->country = $countriesFile->{$this->locCountryCode}->name;
+		}
+
+		if ($this->locCountryCode != null && $this->locStateCode != null) {
+			$result->state = $countriesFile->{$this->locCountryCode}->states->{$this->locStateCode}->name;
+		}
+
+		if ($this->locCountryCode != null && $this->locStateCode != null && $this->locCityId != null) {
+			if (! empty($countriesFile->{$this->locCountryCode}->states->{$this->locStateCode}->cities)) {
+				$result->city = $countriesFile->{$this->locCountryCode}->states->{$this->locStateCode}->cities->{$this->locCityId}->name;
+			}
+		}
+
+		return $result;
 	}
 
 	protected function convertPersonaState($personaState)
