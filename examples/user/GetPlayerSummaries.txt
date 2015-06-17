@@ -31,6 +31,12 @@ Array
             [locCountryCode] => US
             [locStateCode] => TX
             [locCityId] => 3620
+            [location] => stdClass Object
+                (
+                    [country] => United States
+                    [state] => Texas
+                    [city] => Dallas
+                )
         )
 
 )

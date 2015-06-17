@@ -65,7 +65,7 @@ class BaseTester extends TestCase {
         $this->assertObjectHasAttributes($attributes, $friendsList[0]);
 
         $attributes = [
-            'locCountryCode', 'locStateCode', 'locCityId'
+            'locCountryCode', 'locStateCode', 'locCityId', 'location'
         ];
         $this->assertObjectHasAttributes($attributes, $friendsList[0]);
 
