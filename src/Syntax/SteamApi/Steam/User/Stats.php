@@ -28,9 +28,10 @@ class Stats extends Client
 
         // Get the client
         $client = $this->setUpClient($arguments)->playerstats;
+        $stats  = $this->GetSchemaForGame($appId)->game->availableGameStats->achievements;
 
         // Clean up the games
-        $achievements = $this->convertToObjects($client->achievements);
+        $achievements = $this->convertToObjects($client->achievements, $stats);
 
         return $achievements;
     }
@@ -59,7 +60,6 @@ class Stats extends Client
      *
      * @return mixed
      */
-
     public function GetUserStatsForGame($appId, $all = false)
     {
         // Set up the api details
@@ -84,12 +84,37 @@ class Stats extends Client
         return $client->achievements;
     }
 
-    protected function convertToObjects($achievements)
+    /**
+     * @param $appId
+     *
+     * @link https://wiki.teamfortress.com/wiki/WebAPI/GetSchemaForGame
+     *
+     * @return mixed
+     */
+    public function GetSchemaForGame($appId)
+    {
+        // Set up the api details
+        $this->method  = __FUNCTION__;
+        $this->version = 'v0002';
+
+        // Set up the arguments
+        $arguments = [
+            'appid' => $appId,
+            'l'     => 'english',
+        ];
+
+        // Get the client
+        $client = $this->setUpClient($arguments);
+
+        return $client;
+    }
+
+    protected function convertToObjects($achievements, $stats)
     {
         $cleanedAchievements = [];
 
         foreach ($achievements as $achievement) {
-            $cleanedAchievements[] = new Achievement($achievement);
+            $cleanedAchievements[] = new Achievement($achievement, $stats);
         }
 
         return $cleanedAchievements;

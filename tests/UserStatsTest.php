@@ -48,4 +48,15 @@ class UserStatsTest extends BaseTester {
         $this->assertObjectHasAttributes($attributes, $stats->stats[0]);
     }
 
+    /** @test */
+    public function it_gets_all_the_stats_for_a_game()
+    {
+        $stats = $this->steamClient->userStats(76561198159417876)->GetSchemaForGame(730, true);
+
+        $this->assertTrue(is_object($stats));
+
+        $attributes = ['gameName', 'gameVersion', 'availableGameStats'];
+        $this->assertObjectHasAttributes($attributes, $stats->game);
+    }
+
 }

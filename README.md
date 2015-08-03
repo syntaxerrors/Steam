@@ -284,6 +284,18 @@ all| boolean | If you want all stats and not just the achievements set to true.|
 
 > Example Output: [GetUserStatsForGame](./examples/user/stats/GetUserStatsForGame.txt) | [GetUserStatsForGame (all)](./examples/user/stats/GetUserStatsForGameAll.txt)
 
+#### GetSchemaForGame
+Returns a list of game details including achievements and stats.
+
+##### Arguments
+
+Name | Type | Description | Required | Default
+-----|------|-------------|----------|---------
+appId| int | The id of the game you want the details for. | Yes |
+
+
+> Example Output: [GetSchemaForGame](./examples/user/stats/GetSchemaForGame.txt)
+
 ### App
 This area will get details for games.
 
