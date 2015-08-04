@@ -7,6 +7,12 @@ php:
 
 notifications:
   slack: nukacode:HyFrc2QLi5PC5fPxadm07O5v
+  webhooks:
+      urls:
+        - https://webhooks.gitter.im/e/213257627c4e40ffc03c
+      on_success: always  # options: [always|never|change] default: always
+      on_failure: always  # options: [always|never|change] default: always
+      on_start: false     # default: false
 
 matrix:
   allow_failures:
