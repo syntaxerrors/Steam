@@ -4,10 +4,17 @@
 class UserStatsTest extends BaseTester {
 
     /** @test */
+    public function it_returns_null_when_there_are_no_achievements_for_a_game()
+    {
+        $achievements = $this->steamClient->userStats($this->id64)->GetPlayerAchievements(42690);
+
+        $this->assertNull($achievements);
+    }
+
+    /** @test */
     public function it_gets_the_users_achievements_for_a_game()
     {
-        $this->markTestSkipped('Steam XML is showing as error in tests only.');
-        $achievements = $this->steamClient->userStats($this->id64)->GetPlayerAchievements($this->appId);
+        $achievements = $this->steamClient->userStats($this->id64)->GetPlayerAchievements(252950);
 
         $this->assertInstanceOf('Syntax\SteamApi\Containers\Achievement', $achievements[0]);
         $this->checkAchievementProperties($achievements[0]);

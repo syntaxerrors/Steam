@@ -14,8 +14,6 @@ class Stats extends Client
     }
 
     /**
-     * @deprecated
-     *
      * @param $appId
      *
      * @return array
@@ -23,7 +21,7 @@ class Stats extends Client
     public function GetPlayerAchievementsAPI($appId)
     {
         // Set up the api details
-        $this->method  = __FUNCTION__;
+        $this->method  = 'GetPlayerAchievementsAPI';
         $this->version = 'v0001';
 
         // Set up the arguments
@@ -34,8 +32,15 @@ class Stats extends Client
         ];
 
         // Get the client
+        $stats = $this->GetSchemaForGame($appId);
+
+        // Make sure the game has achievements
+        if ($stats == null || $stats->game->availableGameStats->achievements == null) {
+            return null;
+        }
+
         $client = $this->setUpClient($arguments)->playerstats;
-        $stats  = $this->GetSchemaForGame($appId)->game->availableGameStats->achievements;
+        $stats  = $stats->game->availableGameStats->achievements;
 
         // Clean up the games
         $achievements = $this->convertToObjects($client->achievements, $stats);
@@ -55,20 +60,33 @@ class Stats extends Client
             $this->url = 'http://steamcommunity.com/id/';
         }
 
-        $this->url = $this->url . $this->steamId .'/stats/'. $appId;
+        $this->url = $this->url . $this->steamId . '/stats/' . $appId;
 
         // Set up the arguments
         $arguments = [
             'xml' => 1
         ];
 
-        // Get the client
-        $client = $this->setUpXml($arguments);
+        try {
+            // Get the client
+            $client = $this->setUpXml($arguments);
 
-        // Clean up the games
-        $achievements = $this->convertToObjects($client->achievements->achievement);
+            // Clean up the games
+            $achievements = $this->convertToObjects($client->achievements->achievement);
 
-        return $achievements;
+            return $achievements;
+        } catch (\Exception $e) {
+            // In rare cases, games can force the use of a simplified name instead of an app ID
+            // In these cases, try again with the name, then fall back to the basic api calls.
+            if (is_int($appId)) {
+                $app     = $this->app()->appDetails($appId);
+                $appName = str_replace(' ', '', $app->first()->name);
+
+                return $this->GetPlayerAchievements($appName);
+            }
+
+            return $this->GetPlayerAchievementsAPI($appId);
+        }
     }
 
     public function GetGlobalAchievementPercentagesForApp($gameId)
