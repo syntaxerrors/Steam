@@ -13,7 +13,14 @@ class Stats extends Client
         $this->steamId   = $steamId;
     }
 
-    public function GetPlayerAchievements($appId)
+    /**
+     * @deprecated
+     *
+     * @param $appId
+     *
+     * @return array
+     */
+    public function GetPlayerAchievementsAPI($appId)
     {
         // Set up the api details
         $this->method  = __FUNCTION__;
@@ -32,6 +39,34 @@ class Stats extends Client
 
         // Clean up the games
         $achievements = $this->convertToObjects($client->achievements, $stats);
+
+        return $achievements;
+    }
+
+    public function GetPlayerAchievements($appId)
+    {
+        // Set up the api details
+        $this->interface = null;
+        $this->method    = 'achievements';
+
+        if (is_numeric($this->steamId)) {
+            $this->url = 'http://steamcommunity.com/profiles/';
+        } else {
+            $this->url = 'http://steamcommunity.com/id/';
+        }
+
+        $this->url = $this->url . $this->steamId .'/stats/'. $appId;
+
+        // Set up the arguments
+        $arguments = [
+            'xml' => 1
+        ];
+
+        // Get the client
+        $client = $this->setUpXml($arguments);
+
+        // Clean up the games
+        $achievements = $this->convertToObjects($client->achievements->achievement);
 
         return $achievements;
     }
@@ -109,12 +144,12 @@ class Stats extends Client
         return $client;
     }
 
-    protected function convertToObjects($achievements, $stats)
+    protected function convertToObjects($achievements)
     {
         $cleanedAchievements = [];
 
         foreach ($achievements as $achievement) {
-            $cleanedAchievements[] = new Achievement($achievement, $stats);
+            $cleanedAchievements[] = new Achievement($achievement);
         }
 
         return $cleanedAchievements;

@@ -14,23 +14,17 @@ class Achievement
 
     public $iconGray;
 
-    public function __construct($achievement, $stats)
+    public $unlockTimestamp;
+
+    public function __construct($achievement)
     {
-        $this->apiName     = $achievement->apiname;
-        $this->achieved    = $achievement->achieved;
-        $this->name        = $achievement->name;
-        $this->description = $achievement->description;
-
-        $stat = array_where($stats, function ($key, $value) use ($achievement) {
-            return $value->name == $achievement->apiname;
-        });
-
-        if (count($stat) > 0) {
-            $stat = array_shift($stat);
-
-            $this->icon     = $stat->icon;
-            $this->iconGray = $stat->icongray;
-        }
+        $this->apiName         = (string) $achievement->apiname;
+        $this->achieved        = (int)(string) $achievement['closed'];
+        $this->name            = (string) $achievement->name;
+        $this->description     = (string) $achievement->description;
+        $this->icon            = (string) $achievement->iconClosed;
+        $this->iconGray        = (string) $achievement->iconOpen;
+        $this->unlockTimestamp = isset($achievement->unlockTimestamp) ? (int)(string) $achievement->unlockTimestamp : null;
     }
 
 }
