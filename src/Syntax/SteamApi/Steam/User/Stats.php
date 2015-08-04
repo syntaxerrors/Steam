@@ -14,6 +14,8 @@ class Stats extends Client
     }
 
     /**
+     * @deprecated
+     *
      * @param $appId
      *
      * @return array
@@ -77,7 +79,7 @@ class Stats extends Client
             return $achievements;
         } catch (\Exception $e) {
             // In rare cases, games can force the use of a simplified name instead of an app ID
-            // In these cases, try again with the name, then fall back to the basic api calls.
+            // In these cases, try again with the name.
             if (is_int($appId)) {
                 $app     = $this->app()->appDetails($appId);
                 $appName = str_replace(' ', '', $app->first()->name);
@@ -85,7 +87,8 @@ class Stats extends Client
                 return $this->GetPlayerAchievements($appName);
             }
 
-            return $this->GetPlayerAchievementsAPI($appId);
+            // If the name and ID fail, return null.
+            return null;
         }
     }
 
