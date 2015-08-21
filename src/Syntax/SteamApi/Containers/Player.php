@@ -49,6 +49,8 @@ class Player extends BaseContainer
 
     public $location;
 
+    public $commentPermission;
+
     public function __construct($player)
     {
         $this->steamId                  = $player->steamid;
@@ -74,6 +76,7 @@ class Player extends BaseContainer
         $this->locStateCode             = $this->checkIssetField($player, 'locstatecode');
         $this->locCityId                = $this->checkIssetField($player, 'loccityid');
         $this->location                 = $this->getLocation();
+        $this->commentPermission        = $this->checkIssetField($player,'commentpermission');
     }
 
     protected function getLocation()

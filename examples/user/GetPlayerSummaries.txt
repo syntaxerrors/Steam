@@ -37,6 +37,7 @@ Array
                     [state] => Texas
                     [city] => Dallas
                 )
+            [commentPermission]=> 1
         )
 
 )
