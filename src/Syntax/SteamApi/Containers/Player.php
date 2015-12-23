@@ -84,20 +84,21 @@ class Player extends BaseContainer
         $countriesFile = json_decode(\file_get_contents(__DIR__ . '/../Resources/countries.json'));
         $result        = new \stdClass;
 
-        if ($this->locCountryCode != null) {
+        if ($this->locCountryCode != null && isset($countriesFile->{$this->locCountryCode})) {
             $result->country = $countriesFile->{$this->locCountryCode}->name;
-        }
 
-        if ($this->locCountryCode != null && $this->locStateCode != null) {
-            $result->state = $countriesFile->{$this->locCountryCode}->states->{$this->locStateCode}->name;
-        }
+            if ($this->locStateCode != null && isset($countriesFile->{$this->locCountryCode}->states->{$this->locStateCode})) {
+                $result->state = $countriesFile->{$this->locCountryCode}->states->{$this->locStateCode}->name;
+            }
 
-        if ($this->locCountryCode != null && $this->locStateCode != null && $this->locCityId != null) {
-            if (! empty($countriesFile->{$this->locCountryCode}->states->{$this->locStateCode}->cities)) {
-                $result->city = $countriesFile->{$this->locCountryCode}->states->{$this->locStateCode}->cities->{$this->locCityId}->name;
+            if ($this->locCityId != null && isset($countriesFile->{$this->locCountryCode}->states->{$this->locStateCode}) && ! empty($countriesFile->{$this->locCountryCode}->states->{$this->locStateCode}->cities)) {
+                if (isset($countriesFile->{$this->locCountryCode}->states->{$this->locStateCode}->cities->{$this->locCityId}))
+                {
+                    $result->city = $countriesFile->{$this->locCountryCode}->states->{$this->locStateCode}->cities->{$this->locCityId}->name;
+                }
             }
         }
-
+        
         return $result;
     }
 
