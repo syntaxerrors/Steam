@@ -78,7 +78,7 @@ trait SteamId {
 	private function convertToID64()
 	{
 		$formatted                      = bcadd($this->rawValue, self::$id64Base, 0);
-		$this->formatted->{self::$ID64} = (int) $formatted;
+		$this->formatted->{self::$ID64} = $formatted;
 	}
 
 	private function convertToID3()
