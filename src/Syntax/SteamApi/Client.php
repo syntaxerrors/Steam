@@ -1,7 +1,8 @@
 <?php namespace Syntax\SteamApi;
 
 use stdClass;
-use Guzzle\Http\Client as GuzzleClient;
+use GuzzleHttp\Client as GuzzleClient;
+use GuzzleHttp\Psr7\Request;
 use Exception;
 use Illuminate\Support\Facades\Config;
 use Guzzle\Http\Exception\ClientErrorResponseException;
@@ -45,7 +46,7 @@ class Client {
     {
         $apiKey = $this->getApiKey();
 
-        $this->client = new GuzzleClient($this->url);
+        $this->client = new GuzzleClient();
         $this->apiKey = $apiKey;
 
         // Set up the Ids
@@ -89,7 +90,7 @@ class Client {
         $parameters = http_build_query($parameters);
 
         // Send the request and get the results
-        $request  = $this->client->get($steamUrl . '?' . $parameters);
+        $request  = new Request('GET', $steamUrl . '?' . $parameters);
         $response = $this->sendRequest($request);
 
         // Pass the results back
