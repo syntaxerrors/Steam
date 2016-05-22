@@ -115,7 +115,7 @@ class Client {
         $parameters = http_build_query($parameters);
 
         // Send the request and get the results
-        $request  = $this->client->get($steamUrl . '?' . $parameters);
+        $request  = new Request('GET', $steamUrl . '?' . $parameters);
         $response = $this->sendRequest($request);
 
         // Pass the results back
