@@ -5,8 +5,8 @@ use GuzzleHttp\Client as GuzzleClient;
 use GuzzleHttp\Psr7\Request;
 use Exception;
 use Illuminate\Support\Facades\Config;
-use Guzzle\Http\Exception\ClientErrorResponseException;
-use Guzzle\Http\Exception\ServerErrorResponseException;
+use GuzzleHttp\Exception\ClientErrorResponseException;
+use GuzzleHttp\Exception\ServerErrorResponseException;
 use Syntax\SteamApi\Exceptions\ApiCallFailedException;
 use Syntax\SteamApi\Exceptions\ClassNotFoundException;
 
