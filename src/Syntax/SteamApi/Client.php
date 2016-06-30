@@ -1,12 +1,10 @@
 <?php namespace Syntax\SteamApi;
 
-use stdClass;
-use GuzzleHttp\Client as GuzzleClient;
-use GuzzleHttp\Psr7\Request;
 use Exception;
-use Illuminate\Support\Facades\Config;
-use GuzzleHttp\Exception\ClientErrorResponseException;
-use GuzzleHttp\Exception\ServerErrorResponseException;
+use Guzzle\Http\Exception\ClientErrorResponseException;
+use Guzzle\Http\Exception\ServerErrorResponseException;
+use GuzzleHttp\Client as GuzzleClient;
+use stdClass;
 use Syntax\SteamApi\Exceptions\ApiCallFailedException;
 use Syntax\SteamApi\Exceptions\ClassNotFoundException;
 
@@ -18,13 +16,14 @@ use Syntax\SteamApi\Exceptions\ClassNotFoundException;
  * @method app()
  * @method group()
  */
-class Client {
+class Client
+{
 
     use SteamId;
 
-    public    $validFormats = ['json', 'xml', 'vdf'];
+    public $validFormats = ['json', 'xml', 'vdf'];
 
-    protected $url          = 'http://api.steampowered.com/';
+    protected $url = 'http://api.steampowered.com/';
 
     protected $client;
 
@@ -32,21 +31,22 @@ class Client {
 
     protected $method;
 
-    protected $version      = 'v0002';
+    protected $version = 'v0002';
 
     protected $apiKey;
 
-    protected $apiFormat    = 'json';
+    protected $apiFormat = 'json';
 
     protected $steamId;
 
-    protected $isService    = false;
+    protected $isService = false;
 
     public function __construct()
     {
         $apiKey = $this->getApiKey();
 
-        $this->client = new GuzzleClient();
+        $this->client = new GuzzleClient(['base_uri' => $this->url]);
+
         $this->apiKey = $apiKey;
 
         // Set up the Ids
@@ -90,7 +90,7 @@ class Client {
         $parameters = http_build_query($parameters);
 
         // Send the request and get the results
-        $request  = new Request('GET', $steamUrl . '?' . $parameters);
+        $request = $this->client->get($steamUrl . '?' . $parameters);
         $response = $this->sendRequest($request);
 
         // Pass the results back
@@ -99,15 +99,15 @@ class Client {
 
     protected function setUpClient(array $arguments = [])
     {
-        $versionFlag = ! is_null($this->version);
-        $steamUrl    = $this->buildUrl($versionFlag);
+        $versionFlag = !is_null($this->version);
+        $steamUrl = $this->buildUrl($versionFlag);
 
         $parameters = [
             'key'    => $this->apiKey,
             'format' => $this->apiFormat
         ];
 
-        if (! empty($arguments)) {
+        if (!empty($arguments)) {
             $parameters = array_merge($arguments, $parameters);
         }
 
@@ -115,7 +115,7 @@ class Client {
         $parameters = http_build_query($parameters);
 
         // Send the request and get the results
-        $request  = new Request('GET', $steamUrl . '?' . $parameters);
+        $request = $this->client->get($steamUrl . '?' . $parameters);
         $response = $this->sendRequest($request);
 
         // Pass the results back
@@ -145,7 +145,7 @@ class Client {
         try {
             $response = $this->client->send($request);
 
-            $result       = new stdClass();
+            $result = new stdClass();
             $result->code = $response->getStatusCode();
             $result->body = json_decode($response->getBody(true));
 
@@ -153,7 +153,8 @@ class Client {
             throw new ApiCallFailedException($e->getMessage(), $e->getResponse()->getStatusCode(), $e);
 
         } catch (ServerErrorResponseException $e) {
-            throw new ApiCallFailedException('Api call failed to complete due to a server error.', $e->getResponse()->getStatusCode(), $e);
+            throw new ApiCallFailedException('Api call failed to complete due to a server error.',
+                $e->getResponse()->getStatusCode(), $e);
 
         } catch (Exception $e) {
             throw new ApiCallFailedException($e->getMessage(), $e->getCode(), $e);
@@ -180,14 +181,14 @@ class Client {
     public function __call($name, $arguments)
     {
         // Handle a steamId being passed
-        if (! empty($arguments) && count($arguments) == 1) {
+        if (!empty($arguments) && count($arguments) == 1) {
             $this->steamId = $arguments[0];
 
             $this->convertSteamIdTo64();
         }
 
         // Inside the root steam directory
-        $class      = ucfirst($name);
+        $class = ucfirst($name);
         $steamClass = '\Syntax\SteamApi\Steam\\' . $class;
 
         if (class_exists($steamClass)) {
@@ -195,7 +196,7 @@ class Client {
         }
 
         // Inside a nested directory
-        $class      = implode('\\', preg_split('/(?=[A-Z])/', $class, -1, PREG_SPLIT_NO_EMPTY));
+        $class = implode('\\', preg_split('/(?=[A-Z])/', $class, -1, PREG_SPLIT_NO_EMPTY));
         $steamClass = '\Syntax\SteamApi\Steam\\' . $class;
 
         if (class_exists($steamClass)) {
@@ -224,7 +225,7 @@ class Client {
      */
     protected function setApiDetails($method, $version)
     {
-        $this->method  = $method;
+        $this->method = $method;
         $this->version = $version;
     }
 
