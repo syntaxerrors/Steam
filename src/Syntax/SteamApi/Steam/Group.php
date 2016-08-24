@@ -1,40 +1,36 @@
-<?php namespace Syntax\SteamApi\Steam;
+<?php
+
+namespace Syntax\SteamApi\Steam;
 
 use Syntax\SteamApi\Client;
 use Syntax\SteamApi\Containers\Group as GroupContainer;
 
-class Group extends Client {
+class Group extends Client
+{
+    public function GetGroupSummary($group)
+    {
+        // Set up the api details
+        $this->method = 'memberslistxml';
 
-	public function __construct()
-	{
-		parent::__construct();
-	}
+        if (is_numeric($group)) {
+            $this->url = 'http://steamcommunity.com/gid/';
+        } else {
+            $this->url = 'http://steamcommunity.com/groups/';
+        }
 
-	public function GetGroupSummary($group)
-	{
-		// Set up the api details
-		$this->method  = 'memberslistxml';
+        $this->url = $this->url . $group;
 
-		if (is_numeric($group)) {
-			$this->url = 'http://steamcommunity.com/gid/';
-		} else {
-			$this->url = 'http://steamcommunity.com/groups/';
-		}
+        // Set up the arguments
+        $arguments = [
+            'xml' => 1,
+        ];
 
-		$this->url = $this->url . $group;
+        // Get the client
+        $client = $this->setUpXml($arguments);
 
-		// Set up the arguments
-		$arguments = [
-			'xml' => 1
-		];
+        // Clean up the games
+        $group = new GroupContainer($client);
 
-		// Get the client
-		$client = $this->setUpXml($arguments);
-
-		// Clean up the games
-		$group = new GroupContainer($client);
-
-		return $group;
-	}
-
+        return $group;
+    }
 }

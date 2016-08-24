@@ -1,8 +1,9 @@
-<?php namespace Syntax\SteamApi\Containers;
+<?php
+
+namespace Syntax\SteamApi\Containers;
 
 class Player extends BaseContainer
 {
-
     public $steamId;
 
     public $steamIds;
@@ -76,7 +77,7 @@ class Player extends BaseContainer
         $this->locStateCode             = $this->checkIssetField($player, 'locstatecode');
         $this->locCityId                = $this->checkIssetField($player, 'loccityid');
         $this->location                 = $this->getLocation();
-        $this->commentPermission        = $this->checkIssetField($player,'commentpermission');
+        $this->commentPermission        = $this->checkIssetField($player, 'commentpermission');
     }
 
     protected function getLocation()
@@ -92,13 +93,12 @@ class Player extends BaseContainer
             }
 
             if ($this->locCityId != null && isset($countriesFile->{$this->locCountryCode}->states->{$this->locStateCode}) && ! empty($countriesFile->{$this->locCountryCode}->states->{$this->locStateCode}->cities)) {
-                if (isset($countriesFile->{$this->locCountryCode}->states->{$this->locStateCode}->cities->{$this->locCityId}))
-                {
+                if (isset($countriesFile->{$this->locCountryCode}->states->{$this->locStateCode}->cities->{$this->locCityId})) {
                     $result->city = $countriesFile->{$this->locCountryCode}->states->{$this->locStateCode}->cities->{$this->locCityId}->name;
                 }
             }
         }
-        
+
         return $result;
     }
 

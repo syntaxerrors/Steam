@@ -1,4 +1,6 @@
-<?php namespace Syntax\SteamApi\Containers;
+<?php
+
+namespace Syntax\SteamApi\Containers;
 
 class Achievement
 {
@@ -26,5 +28,4 @@ class Achievement
         $this->iconGray        = (string) $achievement->iconOpen;
         $this->unlockTimestamp = isset($achievement->unlockTimestamp) ? (int)(string) $achievement->unlockTimestamp : null;
     }
-
 }

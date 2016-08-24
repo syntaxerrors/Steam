@@ -1,12 +1,14 @@
-<?php namespace Syntax\SteamApi\Steam;
+<?php
+
+namespace Syntax\SteamApi\Steam;
 
 use Syntax\SteamApi\Client;
-use Syntax\SteamApi\Collection;
+use NukaCode\Database\Collection;
 use Syntax\SteamApi\Containers\Game;
 use Syntax\SteamApi\Containers\Player\Level;
 
-class Player extends Client {
-
+class Player extends Client
+{
     public function __construct($steamId)
     {
         parent::__construct();
@@ -83,14 +85,14 @@ class Player extends Client {
             $arguments['include_played_free_games'] = $includePlayedFreeGames;
         }
         if (count($appIdsFilter) > 0) {
-            $arguments['appids_filter'] = (array) $appIdsFilter;
+            $arguments['appids_filter'] = (array)$appIdsFilter;
         }
 
         // Get the client
         $client = $this->getServiceResponse($arguments);
 
         // Clean up the games
-        $games = $this->convertToObjects(isset($client->games) ? $client->games : array());
+        $games = $this->convertToObjects(isset($client->games) ? $client->games : []);
 
         return $games;
     }
@@ -127,7 +129,7 @@ class Player extends Client {
         // Set up the arguments
         $arguments = [
             'steamId'       => $this->steamId,
-            'appid_playing' => $appIdPlaying
+            'appid_playing' => $appIdPlaying,
         ];
 
         // Get the client

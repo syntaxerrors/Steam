@@ -1,9 +1,11 @@
-<?php namespace Syntax\SteamApi\Exceptions;
+<?php
 
-class ClassNotFoundException extends \Exception {
+namespace Syntax\SteamApi\Exceptions;
 
-	public function __construct($class)
-	{
-		parent::__construct(sprintf('The called class ['. $class .'] does not exist.'));
-	}
+class ClassNotFoundException extends \Exception
+{
+    public function __construct($class)
+    {
+        parent::__construct(sprintf('The called class [' . $class . '] does not exist.'));
+    }
 }

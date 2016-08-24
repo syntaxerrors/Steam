@@ -1,21 +1,22 @@
-<?php namespace Syntax\SteamApi\Containers\Group;
+<?php
 
-class MemberDetails {
+namespace Syntax\SteamApi\Containers\Group;
 
-	public $count;
+class MemberDetails
+{
+    public $count;
 
-	public $inChat;
+    public $inChat;
 
-	public $inGame;
+    public $inGame;
 
-	public $online;
+    public $online;
 
-	function __construct($details)
-	{
-		$this->count  = (int)(string)$details->memberCount;
-		$this->inChat = (int)(string)$details->membersInChat;
-		$this->inGame = (int)(string)$details->membersInGame;
-		$this->online = (int)(string)$details->membersOnline;
-	}
-
+    function __construct($details)
+    {
+        $this->count  = (int)(string)$details->memberCount;
+        $this->inChat = (int)(string)$details->membersInChat;
+        $this->inGame = (int)(string)$details->membersInGame;
+        $this->online = (int)(string)$details->membersOnline;
+    }
 }

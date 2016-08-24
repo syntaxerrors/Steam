@@ -1,4 +1,6 @@
-<?php namespace Syntax\SteamApi\Steam;
+<?php
+
+namespace Syntax\SteamApi\Steam;
 
 use Syntax\SteamApi\Client;
 use Syntax\SteamApi\Containers\Player as PlayerContainer;
@@ -6,7 +8,6 @@ use Syntax\SteamApi\Exceptions\UnrecognizedId;
 
 class User extends Client
 {
-
     private $friendRelationships = [
         'all',
         'friend',

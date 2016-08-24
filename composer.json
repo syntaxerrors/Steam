@@ -10,8 +10,12 @@
   ],
   "require": {
     "php": ">=5.5.0",
-    "laravel/framework": "~5.0",
-    "guzzlehttp/guzzle": "^6.0"
+    "laravel/framework": "5.0|5.1|5.2|5.3",
+    "guzzlehttp/guzzle": "^6.0",
+    "nukacode/database": "^1.0"
+  },
+  "suggest": {
+    "ext-gmp": "Install the GMP (GNU Multiple Precision) extension in order to have Steam ID 64 show as integers instead of strings."
   },
   "require-dev": {
     "phpunit/phpunit": "~3.0",

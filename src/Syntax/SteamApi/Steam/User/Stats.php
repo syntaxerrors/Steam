@@ -1,11 +1,12 @@
-<?php namespace Syntax\SteamApi\Steam\User;
+<?php
+
+namespace Syntax\SteamApi\Steam\User;
 
 use Syntax\SteamApi\Client;
 use Syntax\SteamApi\Containers\Achievement;
 
 class Stats extends Client
 {
-
     public function __construct($steamId)
     {
         parent::__construct();
@@ -66,7 +67,7 @@ class Stats extends Client
 
         // Set up the arguments
         $arguments = [
-            'xml' => 1
+            'xml' => 1,
         ];
 
         try {

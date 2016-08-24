@@ -2,7 +2,7 @@
 
 namespace Syntax\SteamApi\Containers;
 
-class Game extends BaseContainer
+class Item extends BaseContainer
 {
     public $appId;
 

@@ -1,12 +1,14 @@
-<?php namespace Syntax\SteamApi\Exceptions;
+<?php
 
-class UnrecognizedId extends \Exception {
+namespace Syntax\SteamApi\Exceptions;
 
-	/**
-	 * @param string $message
-	 */
-	public function __construct($message, $code = 0, $previous = null)
-	{
-		parent::__construct($message, $code, $previous);
-	}
+class UnrecognizedId extends \Exception
+{
+    /**
+     * @param string $message
+     */
+    public function __construct($message, $code = 0, $previous = null)
+    {
+        parent::__construct($message, $code, $previous);
+    }
 } 

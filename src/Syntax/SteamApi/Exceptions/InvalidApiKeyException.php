@@ -1,9 +1,11 @@
-<?php namespace Syntax\SteamApi\Exceptions;
+<?php
 
-class InvalidApiKeyException extends \Exception {
+namespace Syntax\SteamApi\Exceptions;
 
-	public function __construct()
-	{
-		parent::__construct(sprintf('You must use a valid API key to connect to steam.'));
-	}
+class InvalidApiKeyException extends \Exception
+{
+    public function __construct()
+    {
+        parent::__construct(sprintf('You must use a valid API key to connect to steam.'));
+    }
 }

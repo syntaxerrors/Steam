@@ -1,9 +1,11 @@
-<?php namespace Syntax\SteamApi\Containers;
+<?php
 
-use Syntax\SteamApi\Collection;
+namespace Syntax\SteamApi\Containers;
 
-abstract class BaseContainer {
+use NukaCode\Database\Collection;
 
+abstract class BaseContainer
+{
     /**
      * @param        $app
      * @param string $field
@@ -49,5 +51,4 @@ abstract class BaseContainer {
     {
         return '<img src="' . $image . '" />';
     }
-
 }

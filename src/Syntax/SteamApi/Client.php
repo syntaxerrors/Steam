@@ -1,30 +1,32 @@
-<?php namespace Syntax\SteamApi;
+<?php
+
+namespace Syntax\SteamApi;
 
 use stdClass;
 use GuzzleHttp\Client as GuzzleClient;
 use GuzzleHttp\Psr7\Request;
 use Exception;
-use Illuminate\Support\Facades\Config;
 use GuzzleHttp\Exception\ClientErrorResponseException;
 use GuzzleHttp\Exception\ServerErrorResponseException;
 use Syntax\SteamApi\Exceptions\ApiCallFailedException;
 use Syntax\SteamApi\Exceptions\ClassNotFoundException;
 
 /**
- * @method news()
- * @method player($steamId)
- * @method user($steamId)
- * @method userStats($steamId)
- * @method app()
- * @method group()
+ * @method \Syntax\SteamApi\Steam\News       news()
+ * @method \Syntax\SteamApi\Steam\Player     player($steamId)
+ * @method \Syntax\SteamApi\Steam\User       user($steamId)
+ * @method \Syntax\SteamApi\Steam\User\Stats userStats($steamId)
+ * @method \Syntax\SteamApi\Steam\App        app()
+ * @method \Syntax\SteamApi\Steam\Group      group()
+ * @method \Syntax\SteamApi\Steam\Item       item($appId)
  */
-class Client {
-
+class Client
+{
     use SteamId;
 
-    public    $validFormats = ['json', 'xml', 'vdf'];
+    public $validFormats = ['json', 'xml', 'vdf'];
 
-    protected $url          = 'http://api.steampowered.com/';
+    protected $url = 'http://api.steampowered.com/';
 
     protected $client;
 
@@ -32,15 +34,15 @@ class Client {
 
     protected $method;
 
-    protected $version      = 'v0002';
+    protected $version = 'v0002';
 
     protected $apiKey;
 
-    protected $apiFormat    = 'json';
+    protected $apiFormat = 'json';
 
     protected $steamId;
 
-    protected $isService    = false;
+    protected $isService = false;
 
     public function __construct()
     {
@@ -104,7 +106,7 @@ class Client {
 
         $parameters = [
             'key'    => $this->apiKey,
-            'format' => $this->apiFormat
+            'format' => $this->apiFormat,
         ];
 
         if (! empty($arguments)) {
@@ -148,16 +150,12 @@ class Client {
             $result       = new stdClass();
             $result->code = $response->getStatusCode();
             $result->body = json_decode($response->getBody(true));
-
         } catch (ClientErrorResponseException $e) {
             throw new ApiCallFailedException($e->getMessage(), $e->getResponse()->getStatusCode(), $e);
-
         } catch (ServerErrorResponseException $e) {
             throw new ApiCallFailedException('Api call failed to complete due to a server error.', $e->getResponse()->getStatusCode(), $e);
-
         } catch (Exception $e) {
             throw new ApiCallFailedException($e->getMessage(), $e->getCode(), $e);
-
         }
 
         // If all worked out, return the result
