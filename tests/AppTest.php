@@ -33,9 +33,9 @@ class AppTest extends BaseTester {
     private function checkClasses($detail)
     {
         $this->assertInstanceOf('Syntax\SteamApi\Containers\App', $detail);
-        $this->assertInstanceOf('Syntax\SteamApi\Collection', $detail->developers);
-        $this->assertInstanceOf('Syntax\SteamApi\Collection', $detail->publishers);
-        $this->assertInstanceOf('Syntax\SteamApi\Collection', $detail->categories);
-        $this->assertInstanceOf('Syntax\SteamApi\Collection', $detail->genres);
+        $this->assertInstanceOf('NukaCode\Database\Collection', $detail->developers);
+        $this->assertInstanceOf('NukaCode\Database\Collection', $detail->publishers);
+        $this->assertInstanceOf('NukaCode\Database\Collection', $detail->categories);
+        $this->assertInstanceOf('NukaCode\Database\Collection', $detail->genres);
     }
 }
