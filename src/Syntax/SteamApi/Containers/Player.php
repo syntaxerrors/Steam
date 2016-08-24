@@ -55,7 +55,7 @@ class Player extends BaseContainer {
 		$this->communityVisibilityState = $player->communityvisibilitystate;
 		$this->profileState             = $this->checkIssetField($player, 'profilestate');
 		$this->personaName              = $player->personaname;
-		$this->lastLogoff               = date('F jS, Y h:ia', $player->lastlogoff);
+		$this->lastLogoff               = date('F jS, Y h:ia', $this->checkIssetField($player, 'lastlogoff'));
 		$this->profileUrl               = $player->profileurl;
 		$this->avatar                   = $this->getImageForAvatar($player->avatar);
 		$this->avatarMedium             = $this->getImageForAvatar($player->avatarmedium);
