@@ -258,12 +258,10 @@ class Client
     {
         if (is_array($this->steamId)) {
             array_walk($this->steamId, function (&$id) {
-                if (strpos($id, ':') !== false) {
-                    // Convert the id to all types and grab the 64 bit version
-                    $id = $this->convertToAll($id)->id64;
-                }
+                // Convert the id to all types and grab the 64 bit version
+                $id = $this->convertToAll($id)->id64;
             });
-        } elseif (strpos(':', $this->steamId) !== false) {
+        } else {
             // Convert the id to all types and grab the 64 bit version
             $this->steamId = $this->convertToAll($this->steamId)->id64;
         }
