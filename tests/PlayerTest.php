@@ -57,7 +57,7 @@ class PlayerTest extends BaseTester {
         $this->assertInstanceOf('Syntax\SteamApi\Containers\Game', $games->first());
 
         $attributes = [
-            'appId', 'name', 'playtimeTwoWeeks', 'playtimeForever', 'playtimeForeverReadable',
+            'appId', 'name', 'playtimeTwoWeeks', 'playtimeTwoWeeksReadable', 'playtimeForever', 'playtimeForeverReadable',
             'icon', 'logo', 'header', 'hasCommunityVisibleStats'
         ];
         $this->assertObjectHasAttributes($attributes, $games->first());
@@ -72,7 +72,7 @@ class PlayerTest extends BaseTester {
         $this->assertInstanceOf('Syntax\SteamApi\Containers\Game', $games->first());
 
         $attributes = [
-            'appId', 'name', 'playtimeTwoWeeks', 'playtimeForever', 'playtimeForeverReadable',
+            'appId', 'name', 'playtimeTwoWeeks', 'playtimeTwoWeeksReadable', 'playtimeForever', 'playtimeForeverReadable',
             'icon', 'logo', 'header', 'hasCommunityVisibleStats'
         ];
         $this->assertObjectHasAttributes($attributes, $games->first());
@@ -92,7 +92,7 @@ class PlayerTest extends BaseTester {
         $this->assertEquals(1, $games->count());
 
         $attributes = [
-            'appId', 'name', 'playtimeTwoWeeks', 'playtimeForever', 'playtimeForeverReadable',
+            'appId', 'name', 'playtimeTwoWeeks', 'playtimeTwoWeeksReadable', 'playtimeForever', 'playtimeForeverReadable',
             'icon', 'logo', 'header', 'hasCommunityVisibleStats'
         ];
         $this->assertObjectHasAttributes($attributes, $games->first());
@@ -107,7 +107,7 @@ class PlayerTest extends BaseTester {
         $this->assertInstanceOf('Syntax\SteamApi\Containers\Game', $games->first());
 
         $attributes = [
-            'appId', 'name', 'playtimeTwoWeeks', 'playtimeForever', 'playtimeForeverReadable',
+            'appId', 'name', 'playtimeTwoWeeks', 'playtimeTwoWeeksReadable', 'playtimeForever', 'playtimeForeverReadable',
             'icon', 'logo', 'header', 'hasCommunityVisibleStats'
         ];
         $this->assertObjectHasAttributes($attributes, $games->first());
@@ -123,7 +123,7 @@ class PlayerTest extends BaseTester {
         $this->assertEquals(1, $games->count());
 
         $attributes = [
-            'appId', 'name', 'playtimeTwoWeeks', 'playtimeForever', 'playtimeForeverReadable',
+            'appId', 'name', 'playtimeTwoWeeks', 'playtimeTwoWeeksReadable', 'playtimeForever', 'playtimeForeverReadable',
             'icon', 'logo', 'header', 'hasCommunityVisibleStats'
         ];
         $this->assertObjectHasAttributes($attributes, $games->first());

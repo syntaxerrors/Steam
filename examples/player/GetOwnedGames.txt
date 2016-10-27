@@ -6,7 +6,8 @@ Syntax\SteamApi\Collection Object
                 (
                     [appId] => 251570
                     [name] => 7 Days to Die
-                    [playtimeTwoWeeks] => 0 minutes
+                    [playtimeTwoWeeks] => 0
+                    [playtimeTwoWeeksReadable] => 0 minutes
                     [playtimeForever] => 12
                     [playtimeForeverReadable] => 12 minutes
                     [icon] => http://media.steampowered.com/steamcommunity/public/images/apps/251570/c8f826b116770525b68e7b4e37ad83ca044ae760.jpg
@@ -19,7 +20,8 @@ Syntax\SteamApi\Collection Object
                 (
                     [appId] => 22650
                     [name] => Alien Breed 2: Assault
-                    [playtimeTwoWeeks] => 0 minutes
+                    [playtimeTwoWeeks] => 0
+                    [playtimeTwoWeeksReadable] => 0 minutes
                     [playtimeForever] => 0
                     [playtimeForeverReadable] => 0 minutes
                     [icon] => http://media.steampowered.com/steamcommunity/public/images/apps/22650/a10e00aa5fc77cc14deb38f7da48e5da40b18503.jpg
@@ -32,7 +34,8 @@ Syntax\SteamApi\Collection Object
                 (
                     [appId] => 22670
                     [name] => Alien Breed 3: Descent
-                    [playtimeTwoWeeks] => 0 minutes
+                    [playtimeTwoWeeks] => 0
+                    [playtimeTwoWeeksReadable] => 0 minutes
                     [playtimeForever] => 0
                     [playtimeForeverReadable] => 0 minutes
                     [icon] => http://media.steampowered.com/steamcommunity/public/images/apps/22670/276d9c54a181c2baf809c53c6172a5475866e693.jpg
@@ -45,7 +48,8 @@ Syntax\SteamApi\Collection Object
                 (
                     [appId] => 22610
                     [name] => Alien Breed: Impact
-                    [playtimeTwoWeeks] => 0 minutes
+                    [playtimeTwoWeeks] => 0
+                    [playtimeTwoWeeksReadable] => 0 minutes
                     [playtimeForever] => 0
                     [playtimeForeverReadable] => 0 minutes
                     [icon] => http://media.steampowered.com/steamcommunity/public/images/apps/22610/963d4d2b346f7258940a9bb9c8a5e319ec1bc781.jpg

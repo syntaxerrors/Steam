@@ -6,7 +6,8 @@ Syntax\SteamApi\Collection Object
                 (
                     [appId] => 214490
                     [name] => Alien: Isolation
-                    [playtimeTwoWeeks] => 1 hours 13 minutes
+                    [playtimeTwoWeeks] => 73
+                    [playtimeTwoWeeksReadable] => 1 hours 13 minutes
                     [playtimeForever] => 73
                     [playtimeForeverReadable] => 1 hours 13 minutes
                     [icon] => http://media.steampowered.com/steamcommunity/public/images/apps/214490/7bf964858835da75630a43ac0ddbf0f66a40902f.jpg
@@ -19,7 +20,8 @@ Syntax\SteamApi\Collection Object
                 (
                     [appId] => 258970
                     [name] => Gauntletâ„¢
-                    [playtimeTwoWeeks] => 2 hours 28 minutes
+                    [playtimeTwoWeeks] => 148
+                    [playtimeTwoWeeksReadable] => 2 hours 28 minutes
                     [playtimeForever] => 148
                     [playtimeForeverReadable] => 2 hours 28 minutes
                     [icon] => http://media.steampowered.com/steamcommunity/public/images/apps/258970/76e95a57a669c30984c9dcd32879536746d75de9.jpg
@@ -32,7 +34,8 @@ Syntax\SteamApi\Collection Object
                 (
                     [appId] => 249130
                     [name] => LEGO MARVEL Super Heroes
-                    [playtimeTwoWeeks] => 46 minutes
+                    [playtimeTwoWeeks] => 46
+                    [playtimeTwoWeeksReadable] => 46 minutes
                     [playtimeForever] => 46
                     [playtimeForeverReadable] => 46 minutes
                     [icon] => http://media.steampowered.com/steamcommunity/public/images/apps/249130/8462ed9e1004624c7109233eafd7098211da9f86.jpg
@@ -45,7 +48,8 @@ Syntax\SteamApi\Collection Object
                 (
                     [appId] => 241930
                     [name] => Middle-earth: Shadow of Mordor
-                    [playtimeTwoWeeks] => 1 hours 21 minutes
+                    [playtimeTwoWeeks] => 71
+                    [playtimeTwoWeeksReadable] => 1 hours 21 minutes
                     [playtimeForever] => 81
                     [playtimeForeverReadable] => 1 hours 21 minutes
                     [icon] => http://media.steampowered.com/steamcommunity/public/images/apps/241930/161afab3c9f725f593635723cc64a7fbeb324ead.jpg
@@ -58,7 +62,8 @@ Syntax\SteamApi\Collection Object
                 (
                     [appId] => 221680
                     [name] => Rocksmith 2014
-                    [playtimeTwoWeeks] => 2 hours 30 minutes
+                    [playtimeTwoWeeks] => 150
+                    [playtimeTwoWeeksReadable] => 2 hours 30 minutes
                     [playtimeForever] => 753
                     [playtimeForeverReadable] => 12 hours 33 minutes
                     [icon] => http://media.steampowered.com/steamcommunity/public/images/apps/221680/26c3d3ad45c9386e909613e5d115e73955501844.jpg
