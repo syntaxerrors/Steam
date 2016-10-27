@@ -10,6 +10,8 @@ class Item extends BaseContainer
 
     public $playtimeTwoWeeks;
 
+    public $playtimeTwoWeeksReadable;
+
     public $playtimeForever;
 
     public $playtimeForeverReadable;
@@ -26,7 +28,8 @@ class Item extends BaseContainer
     {
         $this->appId                    = $app->appid;
         $this->name                     = $this->checkIssetField($app, 'name');
-        $this->playtimeTwoWeeks         = isset($app->playtime_2weeks) ? $this->convertFromMinutes($app->playtime_2weeks) : '0 minutes';
+        $this->playtimeTwoWeeks         = $this->checkIssetField($app, 'playtime_2weeks', 0);
+        $this->playtimeTwoWeeksReadable = $this->convertFromMinutes($this->playtimeTwoWeeks);
         $this->playtimeForever          = $this->checkIssetField($app, 'playtime_forever', 0);
         $this->playtimeForeverReadable  = $this->convertFromMinutes($this->playtimeForever);
         $this->icon                     = $this->checkIssetImage($app, 'img_icon_url');
