@@ -83,9 +83,12 @@ class Stats extends Client
             // In these cases, try again with the name.
             if (is_int($appId)) {
                 $app     = $this->app()->appDetails($appId);
-                $appName = str_replace(' ', '', $app->first()->name);
 
-                return $this->GetPlayerAchievements($appName);
+                if (isset($app->first()->name)) {
+                    $appName = str_replace(' ', '', $app->first()->name);
+
+                    return $this->GetPlayerAchievements($appName);
+                }
             }
 
             // If the name and ID fail, return null.
