@@ -135,26 +135,13 @@ class Client
         return simplexml_load_file($steamUrl . '?' . $parameters);
     }
 
-    public function getRedirectUrl()
-    {
-        $ch = curl_init();
-        curl_setopt($ch, CURLOPT_URL, $this->url);
-        curl_setopt($ch, CURLOPT_HEADER, true);
-        curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-
-        curl_exec($ch);
-        $this->url = curl_getinfo($ch, CURLINFO_EFFECTIVE_URL);
-        curl_close($ch);
-    }
-
     /**
-     * @param \GuzzleHttp\Psr7\Request $request
+     * @param \Guzzle\Http\Message\RequestInterface $request
      *
-     * @return \stdClass
-     * @throws \Syntax\SteamApi\Exceptions\ApiCallFailedException
+     * @throws ApiCallFailedException
+     * @return stdClass
      */
-    protected function sendRequest(Request $request)
+    protected function sendRequest($request)
     {
         // Try to get the result.  Handle the possible exceptions that can arise
         try {
