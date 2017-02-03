@@ -80,15 +80,17 @@ class Stats extends Client
             return $achievements;
         } catch (\Exception $e) {
             // In rare cases, games can force the use of a simplified name instead of an app ID
-            // In these cases, try again with the name.
+            // In these cases, try again by grabbing the redirected url.
             if (is_int($appId)) {
-                $app     = $this->app()->appDetails($appId);
+                $this->getRedirectUrl();
 
-                if (isset($app->first()->name)) {
-                    $appName = str_replace(' ', '', $app->first()->name);
+                // Get the client
+                $client = $this->setUpXml($arguments);
 
-                    return $this->GetPlayerAchievements($appName);
-                }
+                // Clean up the games
+                $achievements = $this->convertToObjects($client->achievements->achievement);
+
+                return $achievements;
             }
 
             // If the name and ID fail, return null.
