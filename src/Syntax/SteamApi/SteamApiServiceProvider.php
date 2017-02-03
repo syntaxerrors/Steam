@@ -32,9 +32,9 @@ class SteamApiServiceProvider extends ServiceProvider
     public function register()
     {
         $this->registerAlias();
-
-        $this->app['steam-api'] = $this->app->share(function () {
-            return new Client;
+        
+        $this->app->bind('steam-api', function ($app) {
+        	return new Client;
         });
     }
 
