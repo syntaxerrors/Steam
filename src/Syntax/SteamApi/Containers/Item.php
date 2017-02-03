@@ -4,58 +4,53 @@ namespace Syntax\SteamApi\Containers;
 
 class Item extends BaseContainer
 {
-    public $appId;
+    public $id;
 
-    public $name;
+    public $originalId;
 
-    public $playtimeTwoWeeks;
+    public $defIndex;
 
-    public $playtimeTwoWeeksReadable;
+    public $level;
 
-    public $playtimeForever;
+    public $quality;
 
-    public $playtimeForeverReadable;
+    public $quantity;
 
-    public $icon;
+    public $inventory;
 
-    public $logo;
+    public $origin;
 
-    public $header;
+    public $flags;
 
-    public $hasCommunityVisibleStats;
+    public $containedItem;
 
-    public function __construct($app)
+    public $style;
+
+    public $attributes;
+
+    public $custom;
+
+    public function __construct($item)
     {
-        $this->appId                    = $app->appid;
-        $this->name                     = $this->checkIssetField($app, 'name');
-        $this->playtimeTwoWeeks         = $this->checkIssetField($app, 'playtime_2weeks', 0);
-        $this->playtimeTwoWeeksReadable = $this->convertFromMinutes($this->playtimeTwoWeeks);
-        $this->playtimeForever          = $this->checkIssetField($app, 'playtime_forever', 0);
-        $this->playtimeForeverReadable  = $this->convertFromMinutes($this->playtimeForever);
-        $this->icon                     = $this->checkIssetImage($app, 'img_icon_url');
-        $this->logo                     = $this->checkIssetImage($app, 'img_logo_url');
-        $this->header                   = 'http://cdn.steampowered.com/v/gfx/apps/' . $this->appId . '/header.jpg';
-        $this->hasCommunityVisibleStats = $this->checkIssetField($app, 'has_community_visible_stats', 0);
-    }
+        $this->id            = $item->id;
+        $this->originalId    = $item->original_id;
+        $this->defIndex      = $item->defindex;
+        $this->level         = $item->level;
+        $this->quality       = $item->quality;
+        $this->quantity      = $item->quantity;
+        $this->inventory     = $item->inventory;
+        $this->origin        = $this->checkIssetField($item, 'origin');
+        $this->containedItem = $this->checkIssetField($item, 'contained_item');
+        $this->style         = $this->checkIssetField($item, 'style');
+        $this->attributes    = $this->checkIssetField($item, 'attributes');
 
-    /**
-     * @param        $app
-     * @param string $field
-     * @param string $value
-     *
-     * @return null|string
-     */
-    protected function checkIssetImage($app, $field, $value = null)
-    {
-        return isset($app->$field) ? $this->getImageForGame($app->appid, $app->$field) : $value;
-    }
-
-    protected function getImageForGame($appId, $hash)
-    {
-        if ($hash != null) {
-            return 'http://media.steampowered.com/steamcommunity/public/images/apps/' . $appId . '/' . $hash . '.jpg';
-        }
-
-        return null;
+        $this->flags  = [
+            'trade' => (boolean)! $this->checkIssetField($item, 'flag_cannot_trade', false),
+            'craft' => (boolean)! $this->checkIssetField($item, 'flag_cannot_craft', false),
+        ];
+        $this->custom = [
+            'name'        => $this->checkIssetField($item, 'custom_name'),
+            'description' => $this->checkIssetField($item, 'custom_desc'),
+        ];
     }
 }

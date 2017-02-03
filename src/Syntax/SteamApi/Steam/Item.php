@@ -5,6 +5,8 @@ namespace Syntax\SteamApi\Steam;
 use Syntax\SteamApi\Client;
 use NukaCode\Database\Collection;
 use Syntax\SteamApi\Containers\Item as ItemContainer;
+use Syntax\SteamApi\Exceptions\ApiCallFailedException;
+use Syntax\SteamApi\Inventory;
 
 class Item extends Client
 {
@@ -26,23 +28,24 @@ class Item extends Client
 
         $arguments = ['steamId' => $steamId];
 
-        // Get the client
-        $client = $this->setUpClient($arguments);
-        dd($client);
+        try {
+            // Get the client
+            $client = $this->setUpClient($arguments);
+        } catch (ApiCallFailedException $exception) {
+            // No items exist for this game.
+            return null;
+        }
 
         // Clean up the items
-        $items = $this->convertToObjects($client->result->items, $client->result->qualities);
+        $items = $this->convertToObjects($client->result->items);
 
-        return $items;
+        // Return a full inventory
+        return new Inventory($client->result->num_backpack_slots, $items);
     }
 
-    protected function convertToObjects($items, $qualities)
+    protected function convertToObjects($items)
     {
-        $convertedItems = $this->convertGames($items, $qualities);
-
-        $items = $this->sortObjects($convertedItems);
-
-        return $items;
+        return $this->convertItems($items);
     }
 
     /**
@@ -50,14 +53,12 @@ class Item extends Client
      *
      * @return Collection
      */
-    protected function convertItems($items, $qualities)
+    protected function convertItems($items)
     {
         $convertedItems = new Collection();
 
         foreach ($items as $item) {
-            if (isset($item->data)) {
-                $convertedItems->add(new ItemContainer($item->data, $qualities));
-            }
+            $convertedItems->add(new ItemContainer($item));
         }
 
         return $convertedItems;
