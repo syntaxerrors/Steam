@@ -38,6 +38,13 @@ Array
                     [city] => Dallas
                 )
             [commentPermission]=> 1
+            [gameDetails] =>  stdClass Object
+                (
+                    [gameId] => 252950
+                    [serverIp] => null
+                    [serverSteamId] => null
+                    [extraInfo] => Rocket League
+                )
         )
 
 )

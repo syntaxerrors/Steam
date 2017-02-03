@@ -42,14 +42,6 @@ class Player extends BaseContainer
 
     public $personaStateFlags;
 
-    public $gameServerIp;
-
-    public $gameServerSteamId;
-
-    public $gameExtraInfo;
-    
-    public $gameId;
-
     public $locCountryCode;
 
     public $locStateCode;
@@ -59,6 +51,8 @@ class Player extends BaseContainer
     public $location;
 
     public $commentPermission;
+
+    public $gameDetails = null;
 
     public function __construct($player)
     {
@@ -81,15 +75,23 @@ class Player extends BaseContainer
         $this->primaryClanId            = $this->checkIssetField($player, 'primaryclanid');
         $this->timecreated              = $this->checkIssetField($player, 'timecreated');
         $this->personaStateFlags        = $this->checkIssetField($player, 'personastateflags');
-        $this->gameServerIp             = $this->checkIssetField($player, 'gameserverip');
-        $this->gameServerSteamId        = $this->checkIssetField($player, 'gameserversteamid');
-        $this->gameExtraInfo            = $this->checkIssetField($player, 'gameextrainfo');
-        $this->gameId                   = $this->checkIssetField($player, 'gameid');
         $this->locCountryCode           = $this->checkIssetField($player, 'loccountrycode');
         $this->locStateCode             = $this->checkIssetField($player, 'locstatecode');
         $this->locCityId                = $this->checkIssetField($player, 'loccityid');
         $this->location                 = $this->getLocation();
         $this->commentPermission        = $this->checkIssetField($player, 'commentpermission');
+
+        $gameDetails = [
+            'gameServerIp'      => $this->checkIssetField($player, 'gameserverip'),
+            'gameServerSteamId' => $this->checkIssetField($player, 'gameserversteamid'),
+            'gameExtraInfo'     => $this->checkIssetField($player, 'gameextrainfo'),
+            'gameId'            => $this->checkIssetField($player, 'gameid'),
+        ];
+
+        if (! empty(array_filter($gameDetails)))
+        {
+            $this->gameDetails = (new GameDetails($player));
+        }
     }
 
     protected function getLocation()
