@@ -51,4 +51,64 @@ abstract class BaseContainer
     {
         return '<img src="' . $image . '" />';
     }
+
+    /**
+     * Very simple pluralize helper for days, hours, minutes.
+     * This is not an end all solution to pluralization.
+     *
+     * @param $word
+     * @param $count
+     *
+     * @return string
+     */
+    protected function pluralize($word, $count)
+    {
+        if ($count === 1) {
+            return $word;
+        }
+
+        return $word .'s';
+    }
+
+    /**
+     * Convert a value from pure minutes into something easily digestible.
+     *
+     * @param $minutes
+     *
+     * @return string
+     */
+    protected function convertFromMinutes($minutes)
+    {
+        $seconds = $minutes * 60;
+
+        $secondsInAMinute = 60;
+        $secondsInAnHour  = 60 * $secondsInAMinute;
+        $secondsInADay    = 24 * $secondsInAnHour;
+
+        // extract days
+        $days = floor($seconds / $secondsInADay);
+
+        // extract hours
+        $hourSeconds = $seconds % $secondsInADay;
+        $hours       = floor($hourSeconds / $secondsInAnHour);
+
+        // extract minutes
+        $minuteSeconds = $hourSeconds % $secondsInAnHour;
+        $minutes       = floor($minuteSeconds / $secondsInAMinute);
+
+        // return the final string
+        $output = '';
+
+        if ($days > 0) {
+            $output .= $days . ' ' . $this->pluralize('day', $days);
+        }
+
+        if ($hours > 0) {
+            $output .= $hours . ' ' . $this->pluralize('hour', $hours);
+        }
+
+        $output .= $minutes . ' ' . $this->pluralize('minute', $minutes);
+
+        return $output;
+    }
 }

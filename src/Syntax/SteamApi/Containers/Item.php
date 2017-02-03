@@ -58,39 +58,4 @@ class Item extends BaseContainer
 
         return null;
     }
-
-    protected function convertFromMinutes($minutes)
-    {
-        $seconds = $minutes * 60;
-
-        $secondsInAMinute = 60;
-        $secondsInAnHour  = 60 * $secondsInAMinute;
-        $secondsInADay    = 24 * $secondsInAnHour;
-
-        // extract days
-        $days = floor($seconds / $secondsInADay);
-
-        // extract hours
-        $hourSeconds = $seconds % $secondsInADay;
-        $hours       = floor($hourSeconds / $secondsInAnHour);
-
-        // extract minutes
-        $minuteSeconds = $hourSeconds % $secondsInAnHour;
-        $minutes       = floor($minuteSeconds / $secondsInAMinute);
-
-        // return the final string
-        $output = '';
-
-        if ($days > 0) {
-            $output .= $days . ($days > 1 ? ' days ' : ' day ');
-        }
-
-        if ($hours > 0) {
-            $output .= $hours . ($hours > 1 ? ' hours ' : ' hour ');
-        }
-
-        $output .= $minutes . ($minutes > 1 ? ' minutes' : ' minute');
-
-        return $output;
-    }
 }
