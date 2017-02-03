@@ -82,13 +82,14 @@ class Item extends BaseContainer
         $output = '';
 
         if ($days > 0) {
-            $output .= $days . ' days ';
-        }
-        if ($hours > 0) {
-            $output .= $hours . ' hours ';
+            $output .= $days . ($days > 1 ? ' days ' : ' day ');
         }
 
-        $output .= $minutes . ' minutes';
+        if ($hours > 0) {
+            $output .= $hours . ($hours > 1 ? ' hours ' : ' hour ');
+        }
+
+        $output .= $minutes . ($minutes > 1 ? ' minutes' : ' minute');
 
         return $output;
     }
