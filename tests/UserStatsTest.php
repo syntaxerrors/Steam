@@ -6,7 +6,7 @@ class UserStatsTest extends BaseTester {
     /** @test */
     public function it_returns_null_when_there_are_no_achievements_for_a_game()
     {
-        $achievements = $this->steamClient->userStats($this->id64)->GetPlayerAchievements(42690);
+        $achievements = $this->steamClient->userStats($this->id64)->GetPlayerAchievements(359320);
 
         $this->assertNull($achievements);
     }

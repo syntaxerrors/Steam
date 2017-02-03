@@ -84,13 +84,17 @@ class Stats extends Client
             if (is_int($appId)) {
                 $this->getRedirectUrl();
 
-                // Get the client
-                $client = $this->setUpXml($arguments);
+                try {
+                    // Get the client
+                    $client = $this->setUpXml($arguments);
 
-                // Clean up the games
-                $achievements = $this->convertToObjects($client->achievements->achievement);
+                    // Clean up the games
+                    $achievements = $this->convertToObjects($client->achievements->achievement);
 
-                return $achievements;
+                    return $achievements;
+                } catch (\Exception $exception) {
+                    return null;
+                }
             }
 
             // If the name and ID fail, return null.

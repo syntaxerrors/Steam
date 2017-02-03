@@ -133,6 +133,14 @@ class Client
 
         // Pass the results back
         return simplexml_load_file($steamUrl . '?' . $parameters);
+        libxml_use_internal_errors(true);
+        $result = simplexml_load_file($steamUrl . '?' . $parameters);
+
+        if (! $result) {
+            return null;
+        }
+
+        return $result;
     }
 
     public function getRedirectUrl()
