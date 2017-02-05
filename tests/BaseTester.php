@@ -101,7 +101,7 @@ class BaseTester extends TestCase {
     private function checkMainAppProperties($app)
     {
         $attributes = [
-            'id', 'name', 'controllerSupport', 'description', 'about', 'header', 'website'
+            'id', 'type', 'name', 'controllerSupport', 'description', 'about', 'fullgame', 'header', 'website'
         ];
         $this->assertObjectHasAttributes($attributes, $app);
     }
