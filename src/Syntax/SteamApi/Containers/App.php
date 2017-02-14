@@ -8,6 +8,8 @@ class App extends BaseContainer
 {
     public $id;
 
+    public $type;
+
     public $name;
 
     public $controllerSupport;
@@ -15,6 +17,8 @@ class App extends BaseContainer
     public $description;
 
     public $about;
+
+    public $fullgame;
 
     public $header;
 
@@ -43,10 +47,12 @@ class App extends BaseContainer
     public function __construct($app)
     {
         $this->id                = $app->steam_appid;
+        $this->type              = $app->type;
         $this->name              = $app->name;
         $this->controllerSupport = $this->checkIssetField($app, 'controller_support', 'None');
         $this->description       = $app->detailed_description;
         $this->about             = $app->about_the_game;
+        $this->fullgame          = $this->checkIssetField($app, 'fullgame', $this->getFakeFullgameObject());
         $this->header            = $app->header_image;
         $this->website           = $this->checkIsNullField($app, 'website', 'None');
         $this->pcRequirements    = $app->pc_requirements;
@@ -76,5 +82,12 @@ class App extends BaseContainer
         $object->final = 'No price found';
 
         return $object;
+    }
+
+    protected function getFakeFullgameObject()
+    {
+        $object = new \stdClass();
+        $object->appid = null;
+        $object->name = 'No parent game found';
     }
 }
