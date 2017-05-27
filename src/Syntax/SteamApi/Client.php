@@ -2,6 +2,8 @@
 
 namespace Syntax\SteamApi;
 
+use Illuminate\Support\Collection;
+use Illuminate\Support\Facades\Config;
 use stdClass;
 use GuzzleHttp\Client as GuzzleClient;
 use GuzzleHttp\Psr7\Request;
@@ -228,7 +230,7 @@ class Client
     /**
      * @param Collection $objects
      *
-     * @return $this
+     * @return Collection
      */
     protected function sortObjects($objects)
     {
@@ -263,7 +265,7 @@ class Client
      */
     protected function getApiKey()
     {
-        $apiKey = \Config::get('steam-api.steamApiKey');
+        $apiKey = Config::get('steam-api.steamApiKey');
 
         if ($apiKey == 'YOUR-API-KEY') {
             throw new Exceptions\InvalidApiKeyException();

@@ -10,19 +10,26 @@
   ],
   "require": {
     "php": ">=5.5.0",
-    "laravel/framework": "^5.0",
     "guzzlehttp/guzzle": "^6.0",
+    "illuminate/console": "^5.0",
+    "illuminate/support": "^5.0",
     "nukacode/database": "^1.0"
   },
   "require-dev": {
-    "phpunit/phpunit": "~3.0",
     "mockery/mockery": "0.9.3",
-    "orchestra/testbench": "~3.0"
+    "orchestra/testbench": "~3.0",
+    "phpunit/phpunit": "~5.0"
   },
   "autoload": {
+    "files": [
+      "src/helpers.php"
+    ],
     "psr-4": {
       "Syntax\\SteamApi\\": "src/Syntax/SteamApi"
     }
   },
-  "minimum-stability": "stable"
+  "minimum-stability": "stable",
+  "scripts": {
+    "test": "phpunit"
+  }
 }

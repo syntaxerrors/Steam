@@ -1,5 +1,11 @@
 /vendor
-composer.phar
 .DS_Store
 ocular.phar
 uploadTests.sh
+
+# Composer
+composer.phar
+composer.lock
+
+# IDEs
+.idea
