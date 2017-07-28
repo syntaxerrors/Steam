@@ -9,6 +9,8 @@ class GameDetails extends BaseContainer
     public $serverIp;
 
     public $serverSteamId;
+    
+    public $lobbyId;
 
     public $extraInfo;
 
@@ -19,6 +21,7 @@ class GameDetails extends BaseContainer
         $this->serverIp      = $this->checkIssetField($gameDetails, 'gameserverip');
         $this->serverSteamId = $this->checkIssetField($gameDetails, 'gameserversteamid');
         $this->extraInfo     = $this->checkIssetField($gameDetails, 'gameextrainfo');
+        $this->lobbyId       = $this->checkIssetField($gameDetails, 'lobbysteamid');
         $this->gameId        = is_null($gameId) ? null : (int)$gameId;
     }
 }
