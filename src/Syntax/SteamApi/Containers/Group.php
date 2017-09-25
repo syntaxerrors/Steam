@@ -32,7 +32,7 @@ class Group
         $this->members = new Collection;
 
         foreach ($group->members->steamID64 as $member) {
-            $this->members->add((new Client)->convertId((int)(string)$member));
+            $this->members->add((new Client)->convertId((string)$member));
         }
     }
 }
