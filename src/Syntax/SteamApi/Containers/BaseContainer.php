@@ -67,7 +67,7 @@ abstract class BaseContainer
             return $word;
         }
 
-        return $word .'s';
+        return $word .'s ';
     }
 
     /**
