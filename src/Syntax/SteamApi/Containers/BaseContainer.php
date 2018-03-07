@@ -63,11 +63,11 @@ abstract class BaseContainer
      */
     protected function pluralize($word, $count)
     {
-        if ($count === 1) {
-            return $word;
+        if ((int) $count === 1) {
+            return $word .' ';
         }
 
-        return $word .'s';
+        return $word .'s ';
     }
 
     /**
