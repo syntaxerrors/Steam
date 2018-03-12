@@ -34,7 +34,7 @@ class Game extends BaseContainer
         $this->playtimeForeverReadable  = $this->convertFromMinutes($this->playtimeForever);
         $this->icon                     = $this->checkIssetImage($app, 'img_icon_url');
         $this->logo                     = $this->checkIssetImage($app, 'img_logo_url');
-        $this->header                   = 'http://cdn.steampowered.com/v/gfx/apps/' . $this->appId . '/header.jpg';
+        $this->header                   = 'http://cdn.akamai.steamstatic.com/steam/apps/' . $this->appId . '/header.jpg';
         $this->hasCommunityVisibleStats = $this->checkIssetField($app, 'has_community_visible_stats', 0);
     }
 
