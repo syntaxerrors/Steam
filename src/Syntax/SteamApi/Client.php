@@ -107,7 +107,6 @@ class Client
         $parameters = [
             'key'    => $this->apiKey,
             'format' => $this->apiFormat,
-            'l' => \Config::get('steam-api.steamLang')
         ];
 
         if (! empty($arguments)) {
