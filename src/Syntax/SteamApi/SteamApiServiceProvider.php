@@ -2,7 +2,6 @@
 
 namespace Syntax\SteamApi;
 
-use Illuminate\Foundation\AliasLoader;
 use Illuminate\Support\ServiceProvider;
 
 class SteamApiServiceProvider extends ServiceProvider
@@ -45,10 +44,12 @@ class SteamApiServiceProvider extends ServiceProvider
      */
     protected function registerAlias()
     {
-        $this->app->booting(function () {
-            $loader = AliasLoader::getInstance();
-            $loader->alias('Steam', 'Syntax\SteamApi\Facades\SteamApi');
-        });
+        if (class_exists('Illuminate\Foundation\AliasLoader')) {
+            $this->app->booting(function () {
+                $loader = \Illuminate\Foundation\AliasLoader::getInstance();
+                $loader->alias('Steam', 'Syntax\SteamApi\Facades\SteamApi');
+            });
+        }
     }
 
     /**
