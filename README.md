@@ -176,7 +176,7 @@ appId| int  | The game to check for  | Yes |
 ### User
 The [User](https://developer.valvesoftware.com/wiki/Steam_Web_API#GetFriendList_.28v0001.29) WebAPI call is used to get details about the user specifically.
 
-When instantiating the user class, you are required to pass a steamID or Steam community ID.
+When instantiating the user class, you are required to pass at least one steamId or steam community ID.
 
 ```php
 Steam::user($steamId)
@@ -198,7 +198,7 @@ displayName| string  | The display name to get the steam ID for.  In `http://ste
 > Example Output: [ResolveVanityURL](./examples/user/ResolveVanityURL.txt)
 
 #### GetPlayerSummaries
-This will return details on the user.
+This will return details on one or more users.
 
 ##### Arguments
 
@@ -207,7 +207,13 @@ Name | Type | Description | Required | Default
 steamId| int[]  | An array of (or singular) steam ID(s) to get details for  | No | Steam ID passed to user()
 
 ```php
+	// One user
+	$steamId = 76561197960287930;
 	$player = Steam::user($steamId)->GetPlayerSummaries()[0];
+	
+	// Several users
+	$steamIds [76561197960287930, 76561197968575517]
+	$players = Steam::user($steamIds)->GetPlayerSummaries();
 ```
 
 > Example Output: [GetPlayerSummaries](./examples/user/GetPlayerSummaries.txt)
