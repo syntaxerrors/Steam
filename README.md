@@ -56,6 +56,7 @@ Each service from the Steam API has its own methods you can use.
 - [User](#user)
 - [User Stats](#user-stats)
 - [App](#app)
+- [Package](#package)
 - [Group](#group)
 
 ### Global
@@ -310,13 +311,15 @@ Steam::app()
 ```
 
 #### appDetails
-This gets all the details for a game.  This is most of the infomation from the store page of a game.
+This gets all the details for a game.  This is most of the information from the store page of a game.
 
 ##### Arguments
 
 Name | Type | Description | Required | Default
 -----|------|-------------|----------|---------
 appIds| int[] | The ids of the games you want details for | Yes |
+cc | string | The cc is the country code, you can get appropriate currency values according to [ISO 3166-1](https://wikipedia.org/wiki/ISO_3166-1) | No |
+l | string | The l is the language parameter, you can get the appropriate language according to [ISO 639-1](https://wikipedia.org/wiki/ISO_639-1) (If there is one) | No |
 
 
 > Example Output: [appDetails](./examples/app/appDetails.txt)
@@ -325,6 +328,27 @@ appIds| int[] | The ids of the games you want details for | Yes |
 This method will return an array of app objects directly from Steam.  It includes the appID and the app name.
 
 > Example Output: [GetAppList](./examples/app/GetAppList.txt)
+
+### Package
+This method will get details for packages.
+
+```php
+Steam::package()
+```
+
+#### packageDetails
+This gets all the details for a package. This is most of the information from the store page of a package.
+
+##### Arguments
+
+Name | Type | Description | Required | Default
+-----|------|-------------|----------|---------
+packIds| int[] | The ids of the packages you want details for | Yes |
+cc | string | The cc is the country code, you can get appropriate currency values according to [ISO 3166-1](https://wikipedia.org/wiki/ISO_3166-1) | No |
+l | string | The l is the language parameter, you can get the appropriate language according to [ISO 639-1](https://wikipedia.org/wiki/ISO_639-1) (If there is one) | No |
+
+
+> Example Output: [packageDetails](./examples/package/packageDetails.txt)
 
 ### Group
 This service is used to get details on a Steam group.

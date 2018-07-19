@@ -1,0 +1,47 @@
+Array
+(
+    [0] => stdClass Object
+        (
+            [id] => 76710
+            [name] => Just Cause 3 XL
+            [page_image] => https: //steamcdn-a.akamaihd.net/steam/subs/76710/header.jpg?t=1449600260
+            [header] => https: //steamcdn-a.akamaihd.net/steam/subs/76710/header_ratio.jpg?t=1449600260
+            [small_logo] => https: //steamcdn-a.akamaihd.net/steam/subs/76710/capsule_231x87.jpg?t=1449600260
+            [apps] => Array(
+                [0] => stdClass Object(
+                    [id] => 225540
+                    [name] => Just Cause™ 3
+                )
+
+                [1] => stdClass Object(
+                    [id] => 401850
+                    [name] => Just Cause™ 3 DLC: Air, Land & Sea Expansion Pass
+                )
+
+            )
+
+            [page_content] => none[price] => stdClass Object(
+                [currency] => USD
+                [initial] => 4499
+                [final] => 4499
+                [discount_percent] => 0
+                [individual] => 4498
+            )
+
+            [platforms] => stdClass Object(
+                [windows] => 1
+                [mac] => 
+                [linux] =>
+            )
+
+            [release] => stdClass Object(
+                [coming_soon] => 
+                [date] =>
+            )
+
+            [controller] => stdClass Object(
+                [full_gamepad] => 1
+            )
+
+        )
+)

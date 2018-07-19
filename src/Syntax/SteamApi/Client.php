@@ -17,6 +17,7 @@ use Syntax\SteamApi\Exceptions\ClassNotFoundException;
  * @method \Syntax\SteamApi\Steam\User       user($steamId)
  * @method \Syntax\SteamApi\Steam\User\Stats userStats($steamId)
  * @method \Syntax\SteamApi\Steam\App        app()
+ * @method \Syntax\Steamapi\Steam\Package    package()
  * @method \Syntax\SteamApi\Steam\Group      group()
  * @method \Syntax\SteamApi\Steam\Item       item($appId)
  */

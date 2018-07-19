@@ -7,4 +7,5 @@ return array(
 	 * Once you get your key, add it here.
 	*/
 	'steamApiKey' => env('STEAM_API_KEY'),
+
 );
