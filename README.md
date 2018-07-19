@@ -14,7 +14,7 @@
 - [Usage](#usage)
 - [Contributors](#contributors)
 
-This package provides an easy way to get details from the steam api service.  The services it can access are:
+This package provides an easy way to get details from the Steam API service.  The services it can access are:
 
 - `ISteamNews`
 - `IPlayerService`
@@ -42,13 +42,13 @@ Once that is finished, add the service provider to `config/app.php`
 
 > The alias to Steam is already handled by the package.
 
-Lastly, publish the config file.  You can get your API key from [Steam](http://steamcommunity.com/dev/apikey)
+Lastly, publish the config file.  You can get your API key from [Steam](http://steamcommunity.com/dev/apikey).
 
 	php artisan vendor:publish
 
 ## Usage
 
-Each service from the steam api has it's own methods you can use.
+Each service from the Steam API has its own methods you can use.
 
 - [Global](#global)
 - [News](#news)
@@ -59,7 +59,7 @@ Each service from the steam api has it's own methods you can use.
 - [Group](#group)
 
 ### Global
-These are methods that are available to each service
+These are methods that are available to each service.
 
 #### convertId
 This will convert the given steam ID to each type of steam ID (64 bit, 32 bit and steam ID3).
@@ -89,7 +89,7 @@ Steam::news()
 ```
 
 #### GetNewsForApp
-This method will get the news articles for a given app id.  It has three parameters.
+This method will get the news articles for a given app ID.  It has three parameters.
 
 ##### Arguments
 
@@ -112,14 +112,14 @@ maxlength | int | The maximum number of characters to return | No | null
 ### Player
 The [Player Service](https://developer.valvesoftware.com/wiki/Steam_Web_API#GetOwnedGames_.28v0001.29) is used to get details on players.
 
-When instantiating the player class, you are required to pass a steamId or steam community ID.
+When instantiating the player class, you are required to pass a steamId or Steam community ID.
 
 ```php
 Steam::player($steamId)
 ```
 
 #### GetSteamLevel
-This method will return the level of the steam user given.  It simply returns the integer of their current level.
+This method will return the level of the Steam user given.  It simply returns the integer of their current level.
 
 
 > Example Output: [GetSteamLevel](./examples/player/GetSteamLevel.txt)
@@ -131,13 +131,13 @@ This will return a Syntax\Containers\Player_Level object with full details for t
 > Example Output: [GetPlayerLevelDetails](./examples/player/GetPlayerLevelDetails.txt)
 
 #### GetBadges
-This call will give you a list of the badges that the player currently has.  There is currently no schema for badges so all you will get is the id and details.
+This call will give you a list of the badges that the player currently has. There is currently no schema for badges, so all you will get is the ID and details.
 
 
 > Example Output: [GetBadges](./examples/player/GetBadges.txt)
 
 #### GetOwnedGames
-GetOwnedGames returns a list of games a player owns along with some playtime information, if the profile is publicly visible. Private, friends-only, and other privacy settings are not supported unless you are asking for your own personal details (ie the WebAPI key you are using is linked to the steamid you are requesting).
+GetOwnedGames returns a list of games a player owns along with some playtime information, if the profile is publicly visible. Private, friends-only, and other privacy settings are not supported unless you are asking for your own personal details (i.e. the WebAPI key you are using is linked to the steamID you are requesting).
 
 ##### Arguments
 
@@ -151,7 +151,7 @@ appIdsFilter | array | An array of appIds.  These will be the only ones returned
 > Example Output: [GetOwnedGames](./examples/player/GetOwnedGames.txt)
 
 #### GetRecentlyPlayedGames
-GetRecentlyPlayedGames returns a list of games a player has played in the last two weeks, if the profile is publicly visible. Private, friends-only, and other privacy settings are not supported unless you are asking for your own personal details (ie the WebAPI key you are using is linked to the steamid you are requesting).
+GetRecentlyPlayedGames returns a list of games a player has played in the last two weeks, if the profile is publicly visible. Private, friends-only, and other privacy settings are not supported unless you are asking for your own personal details (i.e. the WebAPI key you are using is linked to the steamID you are requesting).
 
 ##### Arguments
 
@@ -176,7 +176,7 @@ appId| int  | The game to check for  | Yes |
 ### User
 The [User](https://developer.valvesoftware.com/wiki/Steam_Web_API#GetFriendList_.28v0001.29) WebAPI call is used to get details about the user specifically.
 
-When instantiating the user class, you are required to pass a steamId or steam community ID.
+When instantiating the user class, you are required to pass a steamID or Steam community ID.
 
 ```php
 Steam::user($steamId)
@@ -204,7 +204,7 @@ This will return details on the user.
 
 Name | Type | Description | Required | Default
 -----|------|-------------|----------|---------
-steamId| int[]  | An array of (or singular) steam id(s) to get details for  | No | Steam id passed to user()
+steamId| int[]  | An array of (or singular) steam ID(s) to get details for  | No | Steam ID passed to user()
 
 ```php
 	$player = Steam::user($steamId)->GetPlayerSummaries()[0];
@@ -241,14 +241,14 @@ steamId| int[]  | An array of (or singular) steam id(s) to get details for  | No
 ### User Stats
 The [User Stats](https://developer.valvesoftware.com/wiki/Steam_Web_API#GetPlayerAchievements_.28v0001.29) WebAPI call is used to get details about a user's gaming.
 
-When instantiating the user stats class, you are required to pass a steamId or steam community ID.
+When instantiating the user stats class, you are required to pass a steamID or Steam community ID.
 
 ```php
 Steam::userStats($steamId)
 ```
 
 #### GetPlayerAchievements
-Returns a list of achievements for this user by app id.
+Returns a list of achievements for this user by app ID.
 
 ##### Arguments
 
@@ -260,38 +260,38 @@ appId| int | The id of the game you want the user's achievements in | Yes |
 > Example Output: [GetPlayerAchievements](./examples/user/stats/GetPlayerAchievements.txt)
 
 #### GetGlobalAchievementPercentagesForApp
-This method will return a list of all chievements for the specified game and the percentage that each achievement has been unlocked.
+This method will return a list of all achievements for the specified game and the percentage of all users that have unlocked each achievement.
 
 ##### Arguments
 
 Name | Type | Description | Required | Default
 -----|------|-------------|----------|---------
-appId| int | The id of the game you want the user's achievements in | Yes |
+appId| int | The ID of the game you want the user's achievements in | Yes |
 
 
 > Example Output: [GetGlobalAchievementPercentagesForApp](./examples/user/stats/GetGlobalAchievementPercentageForApp.txt)
 
 #### GetUserStatsForGame
-Returns a list of achievements for this user by app id.
+Returns a list of achievements for this user by app ID.
 
 ##### Arguments
 
 Name | Type | Description | Required | Default
 -----|------|-------------|----------|---------
-appId| int | The id of the game you want the user's achievements in | Yes |
+appId| int | The ID of the game you want the user's achievements in | Yes |
 all| boolean | If you want all stats and not just the achievements set to true.| No | FALSE
 
 
 > Example Output: [GetUserStatsForGame](./examples/user/stats/GetUserStatsForGame.txt) | [GetUserStatsForGame (all)](./examples/user/stats/GetUserStatsForGameAll.txt)
 
 #### GetSchemaForGame
-Returns a list of game details including achievements and stats.
+Returns a list of game details, including achievements and stats.
 
 ##### Arguments
 
 Name | Type | Description | Required | Default
 -----|------|-------------|----------|---------
-appId| int | The id of the game you want the details for. | Yes |
+appId| int | The ID of the game you want the details for. | Yes |
 
 
 > Example Output: [GetSchemaForGame](./examples/user/stats/GetSchemaForGame.txt)
@@ -316,12 +316,12 @@ appIds| int[] | The ids of the games you want details for | Yes |
 > Example Output: [appDetails](./examples/app/appDetails.txt)
 
 #### GetAppList
-This method will return an array of app objects directly from steam.  It includes the appId and the app name.
+This method will return an array of app objects directly from Steam.  It includes the appID and the app name.
 
 > Example Output: [GetAppList](./examples/app/GetAppList.txt)
 
 ### Group
-This service is used to get details on a steam group.
+This service is used to get details on a Steam group.
 
 ```php
 Steam::group()
@@ -334,7 +334,7 @@ This method will get the details for a group.
 
 Name | Type | Description | Required | Default
 -----|------|-------------|----------|---------
-group| string or int  | The id or the name of the group. | Yes
+group| string or int  | The ID or the name of the group. | Yes
 
 ##### Example usage
 
