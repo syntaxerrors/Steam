@@ -384,3 +384,5 @@ group| string or int  | The ID or the name of the group. | Yes
 - [mjmarianetti](https://github.com/mjmarianetti)
 - [MaartenStaa](https://github.com/MaartenStaa)
 - [JRizzle88](https://github.com/JRizzle88)
+- [jastend](https://github.com/jastend)
+- [2er7](https://github.com/2er7)
