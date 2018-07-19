@@ -15,7 +15,7 @@ class App extends Client
         $this->interface = 'api';
     }
 
-    public function appDetails($appIds, $language = 'english')
+    public function appDetails($appIds, $country = null, $language = null)
     {
         // Set up the api details
         $this->method  = 'appdetails';
@@ -24,6 +24,7 @@ class App extends Client
         // Set up the arguments
         $arguments = [
             'appids' => $appIds,
+            'cc' => $country,
             'l' => $language,
         ];
 
