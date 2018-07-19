@@ -15,6 +15,8 @@ class BaseTester extends TestCase {
 
     protected $appId     = 620;
 
+    protected $packageId = 76710;
+
     protected $groupId   = 103582791429521412;
 
     protected $groupName = 'Valve';
@@ -87,6 +89,11 @@ class BaseTester extends TestCase {
         $this->checkNestedAppProperties($app);
     }
 
+    protected function checkPackageProperties($package)
+    {
+        $this->checkNestedPackageProperties($package);
+    }
+
     protected function checkGroupProperties($group)
     {
         $this->checkGroupMainSummaryProperties($group);
@@ -132,6 +139,18 @@ class BaseTester extends TestCase {
 
         $attributes = ['score', 'url'];
         $this->assertObjectHasAttributes($attributes, $app->metacritic);
+    }
+
+    /**
+     * @param $packahe
+     */
+    private function checkNestedPackageProperties($packahe)
+    {
+        $attributes = ['currency', 'initial', 'final', 'discount_percent', 'individual'];
+        $this->assertObjectHasAttributes($attributes, $packahe->price);
+
+        $attributes = ['windows', 'mac', 'linux'];
+        $this->assertObjectHasAttributes($attributes, $packahe->platforms);
     }
 
     /**
