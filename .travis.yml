@@ -1,9 +1,9 @@
 language: php
 
 php:
+  - 7.2
+  - 7.1
   - 7.0
-  - 5.6
-  - 5.5
 
 notifications:
   slack: nukacode:HyFrc2QLi5PC5fPxadm07O5v
