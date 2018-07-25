@@ -17,6 +17,8 @@ class BaseTester extends TestCase {
 
     protected $packageId = 76710;
 
+    protected $itemid = 440;
+
     protected $groupId   = 103582791429521412;
 
     protected $groupName = 'Valve';
@@ -151,6 +153,15 @@ class BaseTester extends TestCase {
 
         $attributes = ['windows', 'mac', 'linux'];
         $this->assertObjectHasAttributes($attributes, $packahe->platforms);
+    }
+
+    /**
+     * @param $item
+     */
+    private function checkItemProperties($item)
+    {
+        $attributes = ['id', 'originalId', 'level', 'quality', 'quantity'];
+        $this->assertObjectHasAttributes($attributes, $item->item);
     }
 
     /**
