@@ -40,7 +40,7 @@ class Item extends Client
         $items = $this->convertToObjects($client->result->items);
 
         // Return a full inventory
-        return new Inventory($client->result->num_backpack_slots, $items);
+        return (array) new Inventory($client->result->num_backpack_slots, $items);
     }
 
     protected function convertToObjects($items)
