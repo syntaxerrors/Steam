@@ -84,9 +84,9 @@ class App extends BaseContainer
         $this->isFree             = $app->is_free;
         $this->shortDescription   = $app->short_description;
         $this->supportedLanguages = $app->supported_languages;
-        $this->recommendations    = $app->recommendations;
-        $this->achievements       = $app->achievements;
-        $this->dlc                = $this->checkIssetCollection($app, 'dlc');
+        $this->recommendations    = $this->checkIssetField($app, 'recommendations', $this->getFakeRecommendationsObject());
+        $this->achievements       = $this->checkIssetField($app, 'achievements', $this->getFakeAchievementsObject());
+        $this->dlc                = $this->checkIssetCollection($app, 'dlc', new Collection());
 
     }
 
@@ -110,5 +110,20 @@ class App extends BaseContainer
         $object        = new \stdClass();
         $object->appid = null;
         $object->name  = 'No parent game found';
+        return $object;
+    }
+
+    protected function getFakeRecommendationsObject()
+    {
+        $object        = new \stdClass();
+        $object->total = 0;
+        return $object;
+    }
+
+    protected function getFakeAchievementsObject()
+    {
+        $object        = new \stdClass();
+        $object->total = 0;
+        return $object;
     }
 }
