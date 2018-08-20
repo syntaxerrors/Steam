@@ -108,7 +108,7 @@ class BaseTester extends TestCase {
     private function checkMainAppProperties($app)
     {
         $attributes = [
-            'id', 'type', 'name', 'controllerSupport', 'description', 'about', 'fullgame', 'header', 'website'
+            'id', 'type', 'name', 'controllerSupport', 'description', 'about', 'fullgame', 'header', 'website', 'shortDescription'
         ];
         $this->assertObjectHasAttributes($attributes, $app);
     }
@@ -119,7 +119,7 @@ class BaseTester extends TestCase {
     private function checkGeneralAppProperties($app)
     {
         $attributes = [
-            'pcRequirements', 'legal', 'developers', 'publishers', 'price', 'platforms', 'metacritic', 'categories', 'genres', 'release'
+            'pcRequirements', 'legal', 'developers', 'publishers', 'price', 'platforms', 'metacritic', 'categories', 'genres', 'release', 'requiredAge', 'isFree', 'supportedLanguages', 'recommendations'
         ];
         $this->assertObjectHasAttributes($attributes, $app);
     }
@@ -139,6 +139,12 @@ class BaseTester extends TestCase {
 
         $attributes = ['score', 'url'];
         $this->assertObjectHasAttributes($attributes, $app->metacritic);
+
+        $attributes = ['total'];
+        $this->assertObjectHasAttributes($attributes, $app->recommendations);
+
+        $attributes = ['total'];
+        $this->assertObjectHasAttributes($attributes, $app->achievements);
     }
 
     /**
