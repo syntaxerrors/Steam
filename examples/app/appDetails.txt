@@ -1,159 +1,253 @@
 Array
+(
+    [0] => Syntax\SteamApi\Containers\App Object
         (
-            [0] => Syntax\SteamApi\Containers\App Object
+            [id] => 620
+            [type] => game
+            [name] => Portal 2
+            [controllerSupport] => full
+            [description] => Portal 2 draws from the award-winning formula of innovative gameplay, story, and music that earned the original Portal over 70 industry accolades and created a cult following.<br><br>                                        The single-player portion of Portal 2 introduces a cast of dynamic new characters, a host of fresh puzzle elements, and a much larger set of devious test chambers. Players will explore never-before-seen areas of the Aperture Science Labs and be reunited with GLaDOS, the occasionally murderous computer companion who guided them through the original game.<br>                                     <br>                                        The game’s two-player cooperative mode features its own entirely separate campaign with a unique story, test chambers, and two new player characters. This new mode forces players to reconsider everything they thought they knew about portals. Success will require them to not just act cooperatively, but to think cooperatively.<br>                                      <br>                                        <strong>Product Features</strong><br>                                       <ul class="bb_ul"><li><strong>Extensive single player:</strong> Featuring next generation gameplay and a wildly-engrossing story.<br>                                       </li><li><strong>Complete two-person co-op:</strong> Multiplayer game featuring its own dedicated story, characters, and gameplay.<br>                                      </li><li><strong>Advanced physics:</strong> Allows for the creation of a whole new range of interesting challenges, producing a much larger but not harder game.<br>                                        </li><li><strong>Original music.</strong><br>                                       </li><li><strong>Massive sequel:</strong> The original Portal was named 2007's Game of the Year by over 30 publications worldwide. <br>                                     </li><li><strong>Editing Tools:</strong> Portal 2 editing tools will be included.<br>                                       </li></ul>
+            [about] => Portal 2 draws from the award-winning formula of innovative gameplay, story, and music that earned the original Portal over 70 industry accolades and created a cult following.<br><br>                                      The single-player portion of Portal 2 introduces a cast of dynamic new characters, a host of fresh puzzle elements, and a much larger set of devious test chambers. Players will explore never-before-seen areas of the Aperture Science Labs and be reunited with GLaDOS, the occasionally murderous computer companion who guided them through the original game.<br>                                     <br>                                        The game’s two-player cooperative mode features its own entirely separate campaign with a unique story, test chambers, and two new player characters. This new mode forces players to reconsider everything they thought they knew about portals. Success will require them to not just act cooperatively, but to think cooperatively.<br>                                      <br>                                        <strong>Product Features</strong><br>                                       <ul class="bb_ul"><li><strong>Extensive single player:</strong> Featuring next generation gameplay and a wildly-engrossing story.<br>                                       </li><li><strong>Complete two-person co-op:</strong> Multiplayer game featuring its own dedicated story, characters, and gameplay.<br>                                      </li><li><strong>Advanced physics:</strong> Allows for the creation of a whole new range of interesting challenges, producing a much larger but not harder game.<br>                                        </li><li><strong>Original music.</strong><br>                                       </li><li><strong>Massive sequel:</strong> The original Portal was named 2007's Game of the Year by over 30 publications worldwide. <br>                                     </li><li><strong>Editing Tools:</strong> Portal 2 editing tools will be included.<br>                                       </li></ul>
+            [fullgame] => stdClass Object
                 (
-                    [id] => 620
-                    [name] => Portal 2
-                    [controllerSupport] => full
-                    [description] => "<h1>Steam Big Picture</h1><p><a target="_blank" href="http://store.steampowered.com/bigpicture/" ><img src="http://storefront.steampowered.com/v/gfx/apps/220440/extras/controller_support.png"></a></p><br><h1>Perpetual Testing Initiative</h1><p><img src="http://storefront.steampowered.com/v/gfx/apps/620/extras/coop_banner.png"> <br> <br> <br>The &quot;Perpetual Testing Initiative&quot; has just been expanded to allow users to design co-op puzzles in Portal 2! This update also introduces a “Quick Play” feature, giving you quick access to the top-rated maps in various categories.</p><br><h1>About the Game</h1>Portal 2 draws from the award-winning formula of innovative gameplay, story, and music that earned the original Portal over 70 industry accolades and created a cult following. <br> <br>	The single-player portion of Portal 2 introduces a cast of dynamic new characters, a host of fresh puzzle elements, and a much larger set of devious test chambers. Players will explore never-before-seen areas of the Aperture Science Labs and be reunited with GLaDOS, the occasionally murderous computer companion who guided them through the original game. <br>	<br>	The game’s two-player cooperative mode features its own entirely separate campaign with a unique story, test chambers, and two new player characters. This new mode forces players to reconsider everything they thought they knew about portals. Success will require them to not just act cooperatively, but to think cooperatively. <br>	<br>	<strong>Product Features</strong> <br>	<ul class="bb_ul"><li><strong>Extensive single player:</strong> Featuring next generation gameplay and a wildly-engrossing story. <br>	</li><li><strong>Complete two-person co-op:</strong> Multiplayer game featuring its own dedicated story, characters, and gameplay. <br>	</li><li><strong>Advanced physics:</strong> Allows for the creation of a whole new range of interesting challenges, producing a much larger but not harder game. <br>	</li><li><strong>Original music.</strong> <br>	</li><li><strong>Massive sequel:</strong> The original Portal was named 2007's Game of the Year by over 30 publications worldwide. <br>	</li><li><strong>Editing Tools:</strong> Portal 2 editing tools will be included. <br>	</li></ul>"
-                    [about] => "Portal 2 draws from the award-winning formula of innovative gameplay, story, and music that earned the original Portal over 70 industry accolades and created a cult following. <br> <br>	The single-player portion of Portal 2 introduces a cast of dynamic new characters, a host of fresh puzzle elements, and a much larger set of devious test chambers. Players will explore never-before-seen areas of the Aperture Science Labs and be reunited with GLaDOS, the occasionally murderous computer companion who guided them through the original game. <br>	<br>	The game’s two-player cooperative mode features its own entirely separate campaign with a unique story, test chambers, and two new player characters. This new mode forces players to reconsider everything they thought they knew about portals. Success will require them to not just act cooperatively, but to think cooperatively. <br>	<br>	<strong>Product Features</strong> <br>	<ul class="bb_ul"><li><strong>Extensive single player:</strong> Featuring next generation gameplay and a wildly-engrossing story. <br>	</li><li><strong>Complete two-person co-op:</strong> Multiplayer game featuring its own dedicated story, characters, and gameplay. <br>	</li><li><strong>Advanced physics:</strong> Allows for the creation of a whole new range of interesting challenges, producing a much larger but not harder game. <br>	</li><li><strong>Original music.</strong> <br>	</li><li><strong>Massive sequel:</strong> The original Portal was named 2007's Game of the Year by over 30 publications worldwide. <br>	</li><li><strong>Editing Tools:</strong> Portal 2 editing tools will be included. <br>	</li></ul>"
-                    [header] => http://cdn.akamai.steamstatic.com/steam/apps/620/header.jpg?t=1412276258
-                    [website] => http://www.thinkwithportals.com/
-                    [pcRequirements] => stdClass Object
+                    [appid] => 
+                    [name] => No parent game found
+                )
+
+            [header] => https://steamcdn-a.akamaihd.net/steam/apps/620/header.jpg?t=1512411524
+            [website] => http://www.thinkwithportals.com/
+            [pcRequirements] => stdClass Object
+                (
+                    [minimum] => <strong>Minimum:</strong><br><ul class="bb_ul"><li><strong>OS:</strong> Windows 7 / Vista / XP<br></li><li><strong>Processor:</strong> 3.0 GHz P4, Dual Core 2.0 (or higher) or AMD64X2 (or higher)<br></li><li><strong>Memory:</strong> 2 GB RAM<br></li><li><strong>Graphics:</strong> Video card must be 128 MB or more and with support for Pixel Shader 2.0b (ATI Radeon X800 or higher / NVIDIA GeForce 7600 or higher / Intel HD Graphics 2000 or higher).<br></li><li><strong>DirectX:</strong> Version 9.0c<br></li><li><strong>Storage:</strong> 8 GB available space<br></li><li><strong>Sound Card:</strong> DirectX 9.0c compatible</li></ul>
+                )
+
+            [legal] => None
+            [developers] => NukaCode\Database\Collection Object
+                (
+                    [items:protected] => Array
                         (
-                            [minimum] => "<strong>Minimum:</strong> <br><ul class="bb_ul"><li><strong>OS:</strong> Windows 7 / Vista / XP <br></li><li><strong>Processor:</strong> 3.0 GHz P4, Dual Core 2.0 (or higher) or AMD64X2 (or higher) <br></li><li><strong>Memory:</strong> 2 GB RAM <br></li><li><strong>Graphics:</strong> Video card must be 128 MB or more and with support for Pixel Shader 2.0b (ATI Radeon X800 or higher / NVIDIA GeForce 7600 or higher / Intel HD Graphics 2000 or higher). <br></li><li><strong>DirectX:</strong> Version 9.0c <br></li><li><strong>Hard Drive:</strong> 8 GB available space <br></li><li><strong>Sound Card:</strong> DirectX 9.0c compatible </li></ul>"
+                            [0] => Valve
                         )
 
-                    [legal] => None
-                    [developers] => Syntax\SteamApi\Collection Object
+                )
+
+            [publishers] => NukaCode\Database\Collection Object
+                (
+                    [items:protected] => Array
                         (
-                            [items:protected] => Array
+                            [0] => Valve
+                        )
+
+                )
+
+            [price] => stdClass Object
+                (
+                    [currency] => CHF
+                    [initial] => 1050
+                    [final] => 1050
+                    [discount_percent] => 0
+                )
+
+            [platforms] => stdClass Object
+                (
+                    [windows] => 1
+                    [mac] => 1
+                    [linux] => 1
+                )
+
+            [metacritic] => stdClass Object
+                (
+                    [score] => 95
+                    [url] => http://www.metacritic.com/game/pc/portal-2?ftag=MCD-06-10aaa1f
+                )
+
+            [categories] => NukaCode\Database\Collection Object
+                (
+                    [items:protected] => Array
+                        (
+                            [0] => stdClass Object
                                 (
-                                    [0] => Valve
+                                    [id] => 2
+                                    [description] => Single-player
+                                )
+
+                            [1] => stdClass Object
+                                (
+                                    [id] => 9
+                                    [description] => Co-op
+                                )
+
+                            [2] => stdClass Object
+                                (
+                                    [id] => 22
+                                    [description] => Steam Achievements
+                                )
+
+                            [3] => stdClass Object
+                                (
+                                    [id] => 28
+                                    [description] => Full controller support
+                                )
+
+                            [4] => stdClass Object
+                                (
+                                    [id] => 29
+                                    [description] => Steam Trading Cards
+                                )
+
+                            [5] => stdClass Object
+                                (
+                                    [id] => 13
+                                    [description] => Captions available
+                                )
+
+                            [6] => stdClass Object
+                                (
+                                    [id] => 30
+                                    [description] => Steam Workshop
+                                )
+
+                            [7] => stdClass Object
+                                (
+                                    [id] => 23
+                                    [description] => Steam Cloud
+                                )
+
+                            [8] => stdClass Object
+                                (
+                                    [id] => 15
+                                    [description] => Stats
+                                )
+
+                            [9] => stdClass Object
+                                (
+                                    [id] => 17
+                                    [description] => Includes level editor
+                                )
+
+                            [10] => stdClass Object
+                                (
+                                    [id] => 14
+                                    [description] => Commentary available
                                 )
 
                         )
 
-                    [publishers] => Syntax\SteamApi\Collection Object
+                )
+
+            [genres] => NukaCode\Database\Collection Object
+                (
+                    [items:protected] => Array
                         (
-                            [items:protected] => Array
+                            [0] => stdClass Object
                                 (
-                                    [0] => Valve
+                                    [id] => 1
+                                    [description] => Action
+                                )
+
+                            [1] => stdClass Object
+                                (
+                                    [id] => 25
+                                    [description] => Adventure
                                 )
 
                         )
 
-                    [price] => stdClass Object
-                        (
-                            [currency] => USD
-                            [initial] => 1999
-                            [final] => 1999
-                            [discount_percent] => 0
-                        )
+                )
 
-                    [platforms] => stdClass Object
-                        (
-                            [windows] => 1
-                            [mac] => 1
-                            [linux] => 1
-                        )
+            [release] => stdClass Object
+                (
+                    [coming_soon] => 
+                    [date] => 18 Apr, 2011
+                )
 
-                    [metacritic] => stdClass Object
-                        (
-                            [score] => 95
-                            [url] => http://www.metacritic.com/game/pc/portal-2
-                        )
+            [requiredAge] => 0
+            [isFree] => 
+            [shortDescription] => The &quot;Perpetual Testing Initiative&quot; has been expanded to allow you to design co-op puzzles for you and your friends!
+            [supportedLanguages] => English<strong>*</strong>, French<strong>*</strong>, German<strong>*</strong>, Spanish<strong>*</strong>, Czech, Danish, Dutch, Finnish, Hungarian, Italian, Japanese, Korean, Norwegian, Polish, Portuguese, Romanian, Russian<strong>*</strong>, Simplified Chinese, Swedish, Thai, Traditional Chinese, Turkish<br><strong>*</strong>languages with full audio support
+            [recommendations] => stdClass Object
+                (
+                    [total] => 126510
+                )
 
-                    [categories] => Syntax\SteamApi\Collection Object
+            [achievements] => stdClass Object
+                (
+                    [total] => 51
+                    [highlighted] => Array
                         (
-                            [items:protected] => Array
+                            [0] => stdClass Object
                                 (
-                                    [0] => stdClass Object
-                                        (
-                                            [id] => 2
-                                            [description] => Single-player
-                                        )
+                                    [name] => Wake Up Call
+                                    [path] => https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/620/SURVIVE_CONTAINER_RIDE.jpg
+                                )
 
-                                    [1] => stdClass Object
-                                        (
-                                            [id] => 9
-                                            [description] => Co-op
-                                        )
+                            [1] => stdClass Object
+                                (
+                                    [name] => You Monster
+                                    [path] => https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/620/WAKE_UP.jpg
+                                )
 
-                                    [2] => stdClass Object
-                                        (
-                                            [id] => 22
-                                            [description] => Steam Achievements
-                                        )
+                            [2] => stdClass Object
+                                (
+                                    [name] => Undiscouraged
+                                    [path] => https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/620/LASER.jpg
+                                )
 
-                                    [3] => stdClass Object
-                                        (
-                                            [id] => 23
-                                            [description] => Steam Cloud
-                                        )
+                            [3] => stdClass Object
+                                (
+                                    [name] => Bridge Over Troubling Water
+                                    [path] => https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/620/BRIDGE.jpg
+                                )
 
-                                    [4] => stdClass Object
-                                        (
-                                            [id] => 14
-                                            [description] => Commentary available
-                                        )
+                            [4] => stdClass Object
+                                (
+                                    [name] => SaBOTour
+                                    [path] => https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/620/BREAK_OUT.jpg
+                                )
 
-                                    [5] => stdClass Object
-                                        (
-                                            [id] => 13
-                                            [description] => Captions available
-                                        )
+                            [5] => stdClass Object
+                                (
+                                    [name] => Stalemate Associate
+                                    [path] => https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/620/STALEMATE_ASSOCIATE.jpg
+                                )
 
-                                    [6] => stdClass Object
-                                        (
-                                            [id] => 15
-                                            [description] => Stats
-                                        )
+                            [6] => stdClass Object
+                                (
+                                    [name] => Tater Tote
+                                    [path] => https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/620/ADDICTED_TO_SPUDS.jpg
+                                )
 
-                                    [7] => stdClass Object
-                                        (
-                                            [id] => 28
-                                            [description] => Full controller support
-                                        )
+                            [7] => stdClass Object
+                                (
+                                    [name] => Vertically Unchallenged
+                                    [path] => https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/620/BLUE_GEL.jpg
+                                )
 
-                                    [8] => stdClass Object
-                                        (
-                                            [id] => 17
-                                            [description] => Includes level editor
-                                        )
+                            [8] => stdClass Object
+                                (
+                                    [name] => Stranger Than Friction
+                                    [path] => https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/620/ORANGE_GEL.jpg
+                                )
 
-                                    [9] => stdClass Object
-                                        (
-                                            [id] => 29
-                                            [description] => Steam Trading Cards
-                                        )
-
-                                    [10] => stdClass Object
-                                        (
-                                            [id] => 30
-                                            [description] => Steam Workshop
-                                        )
-
+                            [9] => stdClass Object
+                                (
+                                    [name] => White Out
+                                    [path] => https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/620/WHITE_GEL.jpg
                                 )
 
                         )
 
-                    [genres] => Syntax\SteamApi\Collection Object
+                )
+
+            [dlc] => NukaCode\Database\Collection Object
+                (
+                    [items:protected] => Array
                         (
-                            [items:protected] => Array
-                                (
-                                    [0] => stdClass Object
-                                        (
-                                            [id] => 1
-                                            [description] => Action
-                                        )
-
-                                    [1] => stdClass Object
-                                        (
-                                            [id] => 25
-                                            [description] => Adventure
-                                        )
-
-                                )
-
-                        )
-
-                    [release] => stdClass Object
-                        (
-                            [coming_soon] =>
-                            [date] => Apr 18, 2011
+                            [0] => 323180
                         )
 
                 )
 
         )
+
+)
