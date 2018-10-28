@@ -24,5 +24,12 @@
       "Syntax\\SteamApi\\": "src/Syntax/SteamApi"
     }
   },
+   "extra": {
+       "laravel": {
+           "providers": [
+               "Syntax\\SteamApi\\SteamApiServiceProvider"
+           ]
+       }
+   },
   "minimum-stability": "stable"
 }
