@@ -36,6 +36,8 @@ Next, update composer from the terminal.
 
 > Alternately, you can run "composer require syntax/steam-api:dev-master" from the command line.
 
+> **Note**: If you are using Laravel 5.5, the next steps are unnecessary. This package supports Laravel [Package Discovery](https://laravel.com/docs/5.5/packages#package-discovery).
+
 Once that is finished, add the service provider to `config/app.php`
 
 	'Syntax\SteamApi\SteamApiServiceProvider',
