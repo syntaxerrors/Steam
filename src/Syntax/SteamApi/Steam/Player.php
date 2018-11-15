@@ -111,7 +111,7 @@ class Player extends Client
         // Get the client
         $client = $this->getServiceResponse($arguments);
 
-        if ($client->total_count > 0) {
+        if (isset($client->total_count) && $client->total_count > 0) {
             // Clean up the games
             $games = $this->convertToObjects($client->games);
 
