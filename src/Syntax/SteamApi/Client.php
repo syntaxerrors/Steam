@@ -117,8 +117,15 @@ class Client
         // Build the query string
         $parameters = http_build_query($parameters);
 
+        $headers = [];
+        if (array_key_exists('l', $arguments)) {
+            $headers = [
+                'Accept-Language' => $arguments['l'],
+            ];
+        }
+
         // Send the request and get the results
-        $request  = new Request('GET', $steamUrl . '?' . $parameters);
+        $request  = new Request('GET', $steamUrl . '?' . $parameters, $headers);
         $response = $this->sendRequest($request);
 
         // Pass the results back
