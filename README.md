@@ -320,8 +320,8 @@ This gets all the details for a game.  This is most of the information from the 
 Name | Type | Description | Required | Default
 -----|------|-------------|----------|---------
 appIds| int[] | The ids of the games you want details for | Yes |
-cc | string | The cc is the country code, you can get appropriate currency values according to [ISO 3166-1](https://wikipedia.org/wiki/ISO_3166-1) | No |
-l | string | The l is the language parameter, you can get the appropriate language according to [ISO 639-1](https://wikipedia.org/wiki/ISO_639-1) (If there is one) | No |
+cc | string | The cc is the country code, you can get appropriate currency values according to [ISO 3166-1](https://wikipedia.org/wiki/ISO_3166-1_alpha-2#Officially_assigned_code_elements) | No |
+l | string | The l is the language parameter, you can get the appropriate language according to [ISO 639-1](https://wikipedia.org/wiki/List_of_ISO_639-1_codes) | No |
 
 
 > Example Output: [appDetails](./examples/app/appDetails.txt)
@@ -387,4 +387,4 @@ group| string or int  | The ID or the name of the group. | Yes
 - [MaartenStaa](https://github.com/MaartenStaa)
 - [JRizzle88](https://github.com/JRizzle88)
 - [jastend](https://github.com/jastend)
-- [2er7](https://github.com/2er7)
+- [Teakowa](https://github.com/Teakowa)
