@@ -229,8 +229,9 @@ Returns the friend list of any Steam user, provided his Steam Community profile 
 Name | Type | Description | Required | Default
 -----|------|-------------|----------|---------
 relationship| string (all or friend)  | The type of friends to get | No | all
+summaries| bool (true or false)  | To return the friend player summaries, or only steamIds | No | true
 
-Once the list of friends is gathered, it is passed through [GetPlayerSummaries](#GetPlayerSummaries).  This allows you to get back a collection of Player objects.
+Once the list of friends is gathered, if `summaries` is not set to `false`; it is passed through [GetPlayerSummaries](#GetPlayerSummaries).  This allows you to get back a collection of Player objects.
 
 
 > Example Output: [GetFriendList](./examples/user/GetFriendList.txt)
