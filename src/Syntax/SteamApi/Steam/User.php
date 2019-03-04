@@ -166,7 +166,9 @@ class User extends Client
         $cleanedPlayers = [];
 
         foreach ($players as $player) {
-            $cleanedPlayers[] = new PlayerContainer($player);
+            if(property_exists($player, 'steamid')) {
+                $cleanedPlayers[] = new PlayerContainer($player);
+            }
         }
 
         return $cleanedPlayers;
