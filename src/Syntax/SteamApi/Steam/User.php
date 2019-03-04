@@ -126,7 +126,7 @@ class User extends Client
         return $client->players;
     }
 
-    public function GetFriendList($relationship = 'all')
+    public function GetFriendList($relationship = 'all', $summaries = true)
     {
         // Set up the api details
         $this->method  = __FUNCTION__;
@@ -152,7 +152,11 @@ class User extends Client
             $steamIds[] = $friend->steamid;
         }
 
-        $friends = $this->GetPlayerSummaries(implode(',', $steamIds));
+        if($summaries) {
+            $friends = $this->GetPlayerSummaries(implode(',', $steamIds));
+        } else {
+            $friends = $steamIds;
+        }
 
         return $friends;
     }
