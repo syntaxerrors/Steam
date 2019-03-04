@@ -215,7 +215,7 @@ steamId| int[]  | An array of (or singular) steam ID(s) to get details for  | No
 	$player = Steam::user($steamId)->GetPlayerSummaries()[0];
 	
 	// Several users
-	$steamIds [76561197960287930, 76561197968575517]
+	$steamIds = [76561197960287930, 76561197968575517]
 	$players = Steam::user($steamIds)->GetPlayerSummaries();
 ```
 
