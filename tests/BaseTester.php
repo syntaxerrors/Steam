@@ -148,15 +148,15 @@ class BaseTester extends TestCase {
     }
 
     /**
-     * @param $packahe
+     * @param $package
      */
-    private function checkNestedPackageProperties($packahe)
+    private function checkNestedPackageProperties($package)
     {
         $attributes = ['currency', 'initial', 'final', 'discount_percent', 'individual'];
-        $this->assertObjectHasAttributes($attributes, $packahe->price);
+        $this->assertObjectHasAttributes($attributes, $package->price);
 
         $attributes = ['windows', 'mac', 'linux'];
-        $this->assertObjectHasAttributes($attributes, $packahe->platforms);
+        $this->assertObjectHasAttributes($attributes, $package->platforms);
     }
 
     /**
