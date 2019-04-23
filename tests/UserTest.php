@@ -19,7 +19,12 @@ class UserTest extends BaseTester {
      */
     public function it_throws_an_exception_when_no_display_name_is_provided()
     {
-        $this->setExpectedException('Syntax\SteamApi\Exceptions\UnrecognizedId');
+        if (\method_exists($this, 'setExpectedException')) {
+            $this->setExpectedException('Syntax\SteamApi\Exceptions\UnrecognizedId');
+        } else {
+            $this->expectException('Syntax\SteamApi\Exceptions\UnrecognizedId');
+        }
+        
         $steamObject = $this->steamClient->user($this->id64)->ResolveVanityURL();
 
         $this->assertEquals('No match', $steamObject);
@@ -88,7 +93,14 @@ class UserTest extends BaseTester {
     /** @test */
     public function it_throws_exception_to_invalid_relationship_types()
     {
-        $this->setExpectedException('InvalidArgumentException', 'Provided relationship [nonFriend] is not valid.  Please select from: all, friend');
+        $expectedMessage = 'Provided relationship [nonFriend] is not valid.  Please select from: all, friend';
+        
+        if (\method_exists($this, 'setExpectedException')) {
+            $this->setExpectedException('InvalidArgumentException', $expectedMessage);
+        } else {
+            $this->expectException('InvalidArgumentException');
+            $this->expectExceptionMessage($expectedMessage);
+        }
 
         $this->steamClient->user($this->id64)->GetFriendList('nonFriend');
     }
