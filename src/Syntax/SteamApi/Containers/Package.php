@@ -24,9 +24,16 @@ class Package extends BaseContainer
         $this->header = $this->checkIssetField($package, 'header_image', 'none');
         $this->small_logo = $this->checkIssetField($package, 'small_logo', 'none');
         $this->page_image = $this->checkIssetField($package, 'page_image', 'none');
-        $this->price = $this->formatPriceObject($package, 'price');
+        $this->price = $this->checkIssetField($package, 'price', $this->getFakePriceObject());
         $this->platforms = $package->platforms;
         $this->controller = $package->controller;
         $this->release = $package->release_date;
+    }
+
+    protected function getFakePriceObject()
+    {
+        $object        = new \stdClass();
+        $object->final = 'No price found';
+        return $object;
     }
 }
