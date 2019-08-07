@@ -83,7 +83,7 @@ class App extends BaseContainer
         $this->requiredAge        = (int)$app->required_age;
         $this->isFree             = $app->is_free;
         $this->shortDescription   = $app->short_description;
-        $this->supportedLanguages = $app->supported_languages;
+        $this->supportedLanguages = $this->checkIssetField($app, 'supported_languages', 'None');
         $this->recommendations    = $this->checkIssetField($app, 'recommendations', $this->getFakeRecommendationsObject());
         $this->achievements       = $this->checkIssetField($app, 'achievements', $this->getFakeAchievementsObject());
         $this->dlc                = $this->checkIssetCollection($app, 'dlc', new Collection());
