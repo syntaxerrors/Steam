@@ -57,6 +57,8 @@ class App extends BaseContainer
     public $achievements;
 
     public $dlc;
+    
+    public $movies;
 
     public function __construct($app)
     {
@@ -87,6 +89,7 @@ class App extends BaseContainer
         $this->recommendations    = $this->checkIssetField($app, 'recommendations', $this->getFakeRecommendationsObject());
         $this->achievements       = $this->checkIssetField($app, 'achievements', $this->getFakeAchievementsObject());
         $this->dlc                = $this->checkIssetCollection($app, 'dlc', new Collection());
+        $this->movies             = $this->checkIssetCollection($app, 'movies', new Collection());
 
     }
 
