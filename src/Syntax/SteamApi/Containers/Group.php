@@ -3,7 +3,7 @@
 namespace Syntax\SteamApi\Containers;
 
 use Syntax\SteamApi\Client;
-use NukaCode\Database\Collection;
+use Illuminate\Support\Collection;
 use Syntax\SteamApi\Containers\Group\Details;
 use Syntax\SteamApi\Containers\Group\MemberDetails;
 

@@ -29,7 +29,7 @@ class GroupTest extends BaseTester {
         $this->assertInstanceOf('Syntax\SteamApi\Containers\Group', $group);
         $this->assertInstanceOf('Syntax\SteamApi\Containers\Group\Details', $group->groupDetails);
         $this->assertInstanceOf('Syntax\SteamApi\Containers\Group\MemberDetails', $group->memberDetails);
-        $this->assertInstanceOf('NukaCode\Database\Collection', $group->members);
+        $this->assertInstanceOf('Illuminate\Support\Collection', $group->members);
     }
 
 }

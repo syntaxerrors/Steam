@@ -22,7 +22,7 @@ Array
                 )
 
             [legal] => None
-            [developers] => NukaCode\Database\Collection Object
+            [developers] => Illuminate\Support\Collection Object
                 (
                     [items:protected] => Array
                         (
@@ -31,7 +31,7 @@ Array
 
                 )
 
-            [publishers] => NukaCode\Database\Collection Object
+            [publishers] => Illuminate\Support\Collection Object
                 (
                     [items:protected] => Array
                         (
@@ -61,7 +61,7 @@ Array
                     [url] => http://www.metacritic.com/game/pc/portal-2?ftag=MCD-06-10aaa1f
                 )
 
-            [categories] => NukaCode\Database\Collection Object
+            [categories] => Illuminate\Support\Collection Object
                 (
                     [items:protected] => Array
                         (
@@ -135,7 +135,7 @@ Array
 
                 )
 
-            [genres] => NukaCode\Database\Collection Object
+            [genres] => Illuminate\Support\Collection Object
                 (
                     [items:protected] => Array
                         (
@@ -239,7 +239,7 @@ Array
 
                 )
 
-            [dlc] => NukaCode\Database\Collection Object
+            [dlc] => Illuminate\Support\Collection Object
                 (
                     [items:protected] => Array
                         (
