@@ -10,7 +10,7 @@
 
 **Version Support**  
 `Laravel >= 5.8.0`  
-`PHP >= 7.1.0`  
+`PHP >= 7.2.0`  
 
 - [Installation](#installation)
 - [Usage](#usage)
