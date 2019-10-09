@@ -8,7 +8,11 @@ class PlayerTest extends BaseTester {
     {
         $steamLevel = $this->steamClient->player($this->id64)->GetSteamLevel();
 
-        $this->assertInternalType('int', $steamLevel);
+        if (\method_exists($this, 'assertIsInt')) {
+            $this->assertIsInt($steamLevel);
+        } else {
+            $this->assertInternalType('int', $steamLevel);
+        }
     }
 
     /** @test */

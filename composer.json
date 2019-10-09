@@ -1,7 +1,7 @@
 {
   "name": "syntax/steam-api",
-  "description": "A steam-api client for Laravel 5.",
-  "version": "2.0.16",
+  "description": "A steam-api client for Laravel 5.8+",
+  "version": "2.1.0",
   "license": "MIT",
   "authors": [
     {
@@ -10,15 +10,14 @@
     }
   ],
   "require": {
-    "php": ">=5.5.0",
-    "laravel/framework": "^5.0",
+    "php": "^7.2.0",
+    "laravel/framework": ">=5.8.0",
     "guzzlehttp/guzzle": "^6.0",
     "nukacode/database": "^1.0"
   },
   "require-dev": {
-    "phpunit/phpunit": "~3.0",
-    "mockery/mockery": "0.9.3",
-    "orchestra/testbench": "~3.0"
+    "phpunit/phpunit": "^8.0",
+    "orchestra/testbench": "^3.0"
   },
   "autoload": {
     "psr-4": {

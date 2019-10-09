@@ -23,7 +23,7 @@ class BaseTester extends TestCase {
 
     protected $steamClient;
 
-    public function setUp()
+    protected function setUp(): void
     {
         parent::setUp();
         $this->steamClient = new Client();
@@ -32,6 +32,7 @@ class BaseTester extends TestCase {
     /** @test */
     public function empty_test()
     {
+        $this->assertTrue(true);
     }
 
     protected function assertObjectHasAttributes($attributes, $object)
