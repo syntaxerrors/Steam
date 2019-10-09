@@ -3,3 +3,5 @@ composer.phar
 .DS_Store
 ocular.phar
 uploadTests.sh
+.env
+.phpunit.*

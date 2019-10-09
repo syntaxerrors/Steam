@@ -2,6 +2,7 @@
 
 use Orchestra\Testbench\TestCase;
 use Syntax\SteamApi\Client;
+use Dotenv\Dotenv;
 
 class BaseTester extends TestCase {
 
@@ -28,6 +29,15 @@ class BaseTester extends TestCase {
     protected function setUp(): void
     {
         parent::setUp();
+
+        $root = dirname(__DIR__, 1);
+
+        // Use .env when available
+        if (file_exists($root . '/.env')) {
+            $dotenv = Dotenv::create($root);
+            $dotenv->load();
+        }
+
         $this->steamClient = new Client();
     }
 
