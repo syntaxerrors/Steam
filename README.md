@@ -8,7 +8,9 @@
 [![Total Downloads](https://poser.pugx.org/syntax/steam-api/downloads.svg)](https://packagist.org/packages/syntax/steam-api)
 [![License](https://poser.pugx.org/syntax/steam-api/license.svg)](https://packagist.org/packages/syntax/steam-api)
 
-**For Laravel 4, checkout the documentation on the [Laravel 4 branch](https://github.com/syntaxerrors/Steam/tree/Laravel4).**
+**Version Support**  
+`Laravel >= 5.8.0`  
+`PHP >= 7.1.0`  
 
 - [Installation](#installation)
 - [Usage](#usage)
@@ -27,7 +29,7 @@ This package provides an easy way to get details from the Steam API service.  Th
 Begin by installing this package with composer.
 
 	"require": {
-		"syntax/steam-api": "2.0.*"
+		"syntax/steam-api": "2.1.*"
 	}
 	
 Next, update composer from the terminal.
@@ -35,14 +37,6 @@ Next, update composer from the terminal.
 	composer update syntax/steam-api
 
 > Alternately, you can run "composer require syntax/steam-api:dev-master" from the command line.
-
-> **Note**: If you are using Laravel 5.5, the next steps are unnecessary. This package supports Laravel [Package Discovery](https://laravel.com/docs/5.5/packages#package-discovery).
-
-Once that is finished, add the service provider to `config/app.php`
-
-	'Syntax\SteamApi\SteamApiServiceProvider',
-
-> The alias to Steam is already handled by the package.
 
 Lastly, publish the config file.  You can get your API key from [Steam](http://steamcommunity.com/dev/apikey).
 
