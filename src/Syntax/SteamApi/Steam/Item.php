@@ -3,7 +3,7 @@
 namespace Syntax\SteamApi\Steam;
 
 use Syntax\SteamApi\Client;
-use NukaCode\Database\Collection;
+use Illuminate\Support\Collection;
 use Syntax\SteamApi\Containers\Item as ItemContainer;
 use Syntax\SteamApi\Exceptions\ApiCallFailedException;
 use Syntax\SteamApi\Inventory;

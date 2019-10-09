@@ -2,7 +2,7 @@
 
 namespace Syntax\SteamApi\Containers;
 
-use NukaCode\Database\Collection;
+use Illuminate\Support\Collection;
 
 abstract class BaseContainer
 {

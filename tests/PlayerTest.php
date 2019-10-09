@@ -57,7 +57,7 @@ class PlayerTest extends BaseTester {
     {
         $games = $this->steamClient->player($this->id64)->GetOwnedGames();
 
-        $this->assertInstanceOf('NukaCode\Database\Collection', $games);
+        $this->assertInstanceOf('Illuminate\Support\Collection', $games);
         $this->assertInstanceOf('Syntax\SteamApi\Containers\Game', $games->first());
 
         $attributes = [
@@ -72,7 +72,7 @@ class PlayerTest extends BaseTester {
     {
         $games = $this->steamClient->player($this->id64)->GetOwnedGames(false);
 
-        $this->assertInstanceOf('NukaCode\Database\Collection', $games);
+        $this->assertInstanceOf('Illuminate\Support\Collection', $games);
         $this->assertInstanceOf('Syntax\SteamApi\Containers\Game', $games->first());
 
         $attributes = [
@@ -91,7 +91,7 @@ class PlayerTest extends BaseTester {
     {
         $games = $this->steamClient->player($this->id64)->GetOwnedGames(true, false, $this->appId);
 
-        $this->assertInstanceOf('NukaCode\Database\Collection', $games);
+        $this->assertInstanceOf('Illuminate\Support\Collection', $games);
         $this->assertInstanceOf('Syntax\SteamApi\Containers\Game', $games->first());
         $this->assertEquals(1, $games->count());
 
@@ -107,7 +107,7 @@ class PlayerTest extends BaseTester {
     {
         $games = $this->steamClient->player($this->id64)->GetRecentlyPlayedGames();
 
-        $this->assertInstanceOf('NukaCode\Database\Collection', $games);
+        $this->assertInstanceOf('Illuminate\Support\Collection', $games);
         $this->assertInstanceOf('Syntax\SteamApi\Containers\Game', $games->first());
 
         $attributes = [
@@ -122,7 +122,7 @@ class PlayerTest extends BaseTester {
     {
         $games = $this->steamClient->player($this->id64)->GetRecentlyPlayedGames(1);
 
-        $this->assertInstanceOf('NukaCode\Database\Collection', $games);
+        $this->assertInstanceOf('Illuminate\Support\Collection', $games);
         $this->assertInstanceOf('Syntax\SteamApi\Containers\Game', $games->first());
         $this->assertEquals(1, $games->count());
 
