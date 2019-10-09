@@ -53,6 +53,7 @@ Each service from the Steam API has its own methods you can use.
 - [User Stats](#user-stats)
 - [App](#app)
 - [Package](#package)
+- [Item](#item)
 - [Group](#group)
 
 ### Global
@@ -346,6 +347,27 @@ l | string | The l is the language parameter, you can get the appropriate langua
 
 
 > Example Output: [packageDetails](./examples/package/packageDetails.txt)
+
+### Item
+This method will get user inventory for item.
+
+```php
+Steam::item()
+```
+
+#### GetPlayerItems
+This gets all the item for a user inventory.
+
+##### Arguments
+
+Name | Type | Description | Required | Default
+-----|------|-------------|----------|---------
+appId| int  | The appid of the game you want for | Yes |
+steamid | int | The steamid of the Steam user you want for | Yes |
+
+⚠️ **Now known to supports**:`440`, `570`, `620`, `730`, `205790`, `221540`, `238460`
+
+> Example Output: [GetPlayerItems](./examples/item/GetPlayerItems.txt)
 
 ### Group
 This service is used to get details on a Steam group.
