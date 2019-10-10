@@ -1,6 +1,6 @@
 <?php
 
-require_once 'BaseTester.php';
+require_once('BaseTester.php');
 
 /** @group Item */
 class ItemTest extends BaseTester

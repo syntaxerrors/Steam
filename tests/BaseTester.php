@@ -116,6 +116,15 @@ class BaseTester extends TestCase {
     }
 
     /**
+     * @param $item
+     */
+    protected function checkItemProperties($item)
+    {
+        $attributes = ['id', 'originalId', 'level', 'quality', 'quantity'];
+        $this->assertObjectHasAttributes($attributes, $item);
+    }
+
+    /**
      * @param $app
      */
     private function checkMainAppProperties($app)
