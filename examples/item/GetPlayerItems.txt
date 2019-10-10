@@ -1,7 +1,7 @@
 Array
 (
     [numberOfBackpackSlots] => 50
-    [items] => NukaCode\Database\Collection Object
+    [items] => Illuminate\Support\Collection Object
         (
             [items:protected] => Array
                 (

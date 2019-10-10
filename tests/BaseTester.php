@@ -18,7 +18,7 @@ class BaseTester extends TestCase {
 
     protected $packageId = 32848;
 
-    protected $itemid = 440;
+    protected $itemAppId = 440;
 
     protected $groupId   = 103582791429521412;
 

@@ -6,13 +6,13 @@ require_once 'BaseTester.php';
 class ItemTest extends BaseTester
 {
     /** @test */
-    public function it_gets_items_for_an_by_user_id()
+    public function it_gets_items_for_an_app_by_user_id()
     {
-        $items = $this->steamClient->item()->GetPlayerItems($this->itemid, $this->id64);
+        $inventory = $this->steamClient->item()->GetPlayerItems($this->appId, $this->id64);
 
-        $this->assertCount(1, $items);
+        $this->assertCount(3, $inventory->items);
 
-        $item = $items->first();
+        $item = $inventory->items->first();
 
         $this->checkItemProperties($item);
     }
