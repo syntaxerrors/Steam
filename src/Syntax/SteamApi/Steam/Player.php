@@ -84,8 +84,11 @@ class Player extends Client
         if ($includePlayedFreeGames) {
             $arguments['include_played_free_games'] = $includePlayedFreeGames;
         }
+
+        $appIdsFilter = (array) $appIdsFilter;
+
         if (count($appIdsFilter) > 0) {
-            $arguments['appids_filter'] = (array)$appIdsFilter;
+            $arguments['appids_filter'] = $appIdsFilter;
         }
 
         // Get the client
