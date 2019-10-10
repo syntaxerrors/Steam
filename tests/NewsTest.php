@@ -1,5 +1,7 @@
 <?php
 
+require_once('BaseTester.php');
+
 /** @group News */
 class NewsTest extends BaseTester {
 

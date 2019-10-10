@@ -1,5 +1,7 @@
 <?php
 
+require_once('BaseTester.php');
+
 /** @group Group */
 class GroupTest extends BaseTester {
 
