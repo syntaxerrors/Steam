@@ -11,14 +11,12 @@ class App extends Client
     /**
      * @var bool
      */
-    private $collection;
 
-    public function __construct($collection = false)
+    public function __construct()
     {
         parent::__construct();
         $this->url       = 'http://store.steampowered.com/';
         $this->interface = 'api';
-        $this->collection = $collection;
     }
 
     /**

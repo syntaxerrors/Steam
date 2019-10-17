@@ -57,15 +57,12 @@ class Client
 
     protected $isService = false;
 
-    protected $responseBody;
-
     public function __construct()
     {
         $apiKey = $this->getApiKey();
 
         $this->client = new GuzzleClient();
         $this->apiKey = $apiKey;
-        $this->responseBody = null;
 
         // Set up the Ids
         $this->setUpFormatted();
