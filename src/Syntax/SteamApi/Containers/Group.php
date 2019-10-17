@@ -2,6 +2,7 @@
 
 namespace Syntax\SteamApi\Containers;
 
+use SimpleXMLElement;
 use Syntax\SteamApi\Client;
 use Illuminate\Support\Collection;
 use Syntax\SteamApi\Containers\Group\Details;
@@ -20,7 +21,7 @@ class Group
     public $members;
 
     /**
-     * @param \SimpleXMLElement $group
+     * @param SimpleXMLElement $group
      */
     function __construct($group)
     {

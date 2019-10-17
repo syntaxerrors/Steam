@@ -5,7 +5,8 @@ namespace Syntax\SteamApi\Exceptions;
 class ApiCallFailedException extends \Exception
 {
     /**
-     * @param string     $message
+     * @param string $message
+     * @param $code
      * @param \Exception $previous
      */
     public function __construct($message, $code, $previous = null)

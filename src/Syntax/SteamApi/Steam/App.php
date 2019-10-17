@@ -8,6 +8,10 @@ use Syntax\SteamApi\Containers\App as AppContainer;
 
 class App extends Client
 {
+    /**
+     * @var bool
+     */
+
     public function __construct()
     {
         parent::__construct();
@@ -15,6 +19,12 @@ class App extends Client
         $this->interface = 'api';
     }
 
+    /**
+     * @param $appIds
+     * @param null $country
+     * @param null $language
+     * @return Collection
+     */
     public function appDetails($appIds, $country = null, $language = null)
     {
         // Set up the api details
@@ -30,9 +40,8 @@ class App extends Client
 
         // Get the client
         $client = $this->setUpClient($arguments);
-        $apps   = $this->convertToObjects($client);
 
-        return $apps;
+        return $this->convertToObjects($client);
     }
 
     public function GetAppList()

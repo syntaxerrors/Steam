@@ -28,13 +28,7 @@ class Item extends Client
 
         $arguments = ['steamId' => $steamId];
 
-        try {
-            // Get the client
-            $client = $this->setUpClient($arguments);
-        } catch (ApiCallFailedException $exception) {
-            // No items exist for this game.
-            return null;
-        }
+        $client = $this->setUpClient($arguments);
 
         // Clean up the items
         $items = $this->convertToObjects($client->result->items);

@@ -2,24 +2,36 @@
 
 namespace Syntax\SteamApi;
 
+use GuzzleHttp\Exception\GuzzleException;
+use Illuminate\Support\Collection;
+use Illuminate\Support\Facades\Config;
 use stdClass;
 use GuzzleHttp\Client as GuzzleClient;
 use GuzzleHttp\Psr7\Request;
 use Exception;
-use GuzzleHttp\Exception\ClientErrorResponseException;
-use GuzzleHttp\Exception\ServerErrorResponseException;
+use GuzzleHttp\Exception\ClientException;
+use GuzzleHttp\Exception\ServerException;
+use Syntax\SteamApi\Exceptions\ApiArgumentRequired;
 use Syntax\SteamApi\Exceptions\ApiCallFailedException;
 use Syntax\SteamApi\Exceptions\ClassNotFoundException;
+use Syntax\SteamApi\Steam\App;
+use Syntax\SteamApi\Steam\Group;
+use Syntax\SteamApi\Steam\Item;
+use Syntax\SteamApi\Steam\News;
+use Syntax\Steamapi\Steam\Package;
+use Syntax\SteamApi\Steam\Player;
+use Syntax\SteamApi\Steam\User;
+use Syntax\SteamApi\Steam\User\Stats;
 
 /**
- * @method \Syntax\SteamApi\Steam\News       news()
- * @method \Syntax\SteamApi\Steam\Player     player($steamId)
- * @method \Syntax\SteamApi\Steam\User       user($steamId)
- * @method \Syntax\SteamApi\Steam\User\Stats userStats($steamId)
- * @method \Syntax\SteamApi\Steam\App        app()
- * @method \Syntax\Steamapi\Steam\Package    package()
- * @method \Syntax\SteamApi\Steam\Group      group()
- * @method \Syntax\SteamApi\Steam\Item       item($appId)
+ * @method News       news()
+ * @method Player     player($steamId)
+ * @method User       user($steamId)
+ * @method Stats      userStats($steamId)
+ * @method App        app()
+ * @method Package    package()
+ * @method Group      group()
+ * @method Item       item($appId)
  */
 class Client
 {
@@ -73,6 +85,7 @@ class Client
      *
      * @throws ApiArgumentRequired
      * @throws ApiCallFailedException
+     * @throws GuzzleException
      */
     protected function setUpService($arguments = null)
     {
@@ -140,7 +153,6 @@ class Client
         $parameters = http_build_query($arguments);
 
         // Pass the results back
-        return simplexml_load_file($steamUrl . '?' . $parameters);
         libxml_use_internal_errors(true);
         $result = simplexml_load_file($steamUrl . '?' . $parameters);
 
@@ -165,10 +177,11 @@ class Client
     }
 
     /**
-     * @param \GuzzleHttp\Psr7\Request $request
+     * @param Request $request
      *
-     * @return \stdClass
-     * @throws \Syntax\SteamApi\Exceptions\ApiCallFailedException
+     * @return stdClass
+     * @throws ApiCallFailedException
+     * @throws GuzzleException
      */
     protected function sendRequest(Request $request)
     {
@@ -179,9 +192,9 @@ class Client
             $result       = new stdClass();
             $result->code = $response->getStatusCode();
             $result->body = json_decode($response->getBody(true));
-        } catch (ClientErrorResponseException $e) {
+        } catch (ClientException $e) {
             throw new ApiCallFailedException($e->getMessage(), $e->getResponse()->getStatusCode(), $e);
-        } catch (ServerErrorResponseException $e) {
+        } catch (ServerException $e) {
             throw new ApiCallFailedException('Api call failed to complete due to a server error.', $e->getResponse()->getStatusCode(), $e);
         } catch (Exception $e) {
             throw new ApiCallFailedException($e->getMessage(), $e->getCode(), $e);
@@ -236,7 +249,7 @@ class Client
     /**
      * @param Collection $objects
      *
-     * @return $this
+     * @return Collection
      */
     protected function sortObjects($objects)
     {
@@ -260,9 +273,7 @@ class Client
         $arguments = json_encode($arguments);
 
         // Get the client
-        $client = $this->setUpService($arguments)->response;
-
-        return $client;
+        return $this->setUpService($arguments)->response;
     }
 
     /**
@@ -271,7 +282,7 @@ class Client
      */
     protected function getApiKey()
     {
-        $apiKey = \Config::get('steam-api.steamApiKey');
+        $apiKey = Config::get('steam-api.steamApiKey');
 
         if ($apiKey == 'YOUR-API-KEY') {
             throw new Exceptions\InvalidApiKeyException();

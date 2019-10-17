@@ -120,19 +120,30 @@ class Player extends BaseContainer
     {
         switch ($personaState) {
             case 0:
-                return '<span class="text-error">Offline</span>';
+                $state = '<span class="text-error">Offline</span>';
+                break;
             case 1:
-                return '<span class="text-success">Online</span>';
+                $state = '<span class="text-success">Online</span>';
+                break;
             case 2:
-                return '<span class="text-warning">Busy</span>';
+                $state = '<span class="text-warning">Busy</span>';
+                break;
             case 3:
-                return '<span class="text-warning">Away</span>';
+                $state = '<span class="text-warning">Away</span>';
+                break;
             case 4:
-                return '<span class="text-warning">Snooze</span>';
+                $state = '<span class="text-warning">Snooze</span>';
+                break;
             case 5:
-                return 'Looking to Trade';
+                $state = 'Looking to Trade';
+                break;
             case 6:
-                return 'Looking to Play';
+                $state = 'Looking to Play';
+                break;
+            default:
+                $state = 'Unknown';
         }
+
+        return $state;
     }
 }

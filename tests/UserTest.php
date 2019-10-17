@@ -1,5 +1,7 @@
 <?php
 
+use Syntax\SteamApi\Exceptions\UnrecognizedId;
+
 require_once('BaseTester.php');
 
 /** @group User */
@@ -18,10 +20,11 @@ class UserTest extends BaseTester {
 
     /**
      * @test
+     * @throws UnrecognizedId
      */
     public function it_throws_an_exception_when_no_display_name_is_provided()
     {
-        if (\method_exists($this, 'setExpectedException')) {
+        if (method_exists($this, 'setExpectedException')) {
             $this->setExpectedException('Syntax\SteamApi\Exceptions\UnrecognizedId');
         } else {
             $this->expectException('Syntax\SteamApi\Exceptions\UnrecognizedId');
@@ -32,7 +35,9 @@ class UserTest extends BaseTester {
         $this->assertEquals('No match', $steamObject);
     }
 
-    /** @test */
+    /** @test
+     * @throws UnrecognizedId
+     */
     public function it_returns_no_match_from_an_invalid_display_name()
     {
         $steamObject = $this->steamClient->user($this->id64)->ResolveVanityURL('stygiansabyssINVALID');
@@ -40,7 +45,9 @@ class UserTest extends BaseTester {
         $this->assertEquals('No match', $steamObject);
     }
 
-    /** @test */
+    /** @test
+     * @throws UnrecognizedId
+     */
     public function it_gets_the_steam_id_from_a_display_name()
     {
         $steamObject = $this->steamClient->user($this->id64)->ResolveVanityURL('stygiansabyss');
@@ -97,7 +104,7 @@ class UserTest extends BaseTester {
     {
         $expectedMessage = 'Provided relationship [nonFriend] is not valid.  Please select from: all, friend';
         
-        if (\method_exists($this, 'setExpectedException')) {
+        if (method_exists($this, 'setExpectedException')) {
             $this->setExpectedException('InvalidArgumentException', $expectedMessage);
         } else {
             $this->expectException('InvalidArgumentException');
