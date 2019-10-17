@@ -23,6 +23,7 @@ class News extends Client
             'appid' => $appId,
             'count' => $count,
         ];
+
         if (! is_null($maxLength)) {
             $arguments['maxlength'] = $maxLength;
         }

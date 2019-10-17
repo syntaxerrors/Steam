@@ -3,6 +3,7 @@
 namespace Syntax\SteamApi\Containers;
 
 use Illuminate\Support\Collection;
+use stdClass;
 
 class App extends BaseContainer
 {
@@ -95,7 +96,7 @@ class App extends BaseContainer
 
     protected function getFakeMetacriticObject()
     {
-        $object        = new \stdClass();
+        $object        = new stdClass();
         $object->url   = null;
         $object->score = 'No Score';
         return $object;
@@ -103,14 +104,14 @@ class App extends BaseContainer
 
     protected function getFakePriceObject()
     {
-        $object        = new \stdClass();
+        $object        = new stdClass();
         $object->final = 'No price found';
         return $object;
     }
 
     protected function getFakeFullgameObject()
     {
-        $object        = new \stdClass();
+        $object        = new stdClass();
         $object->appid = null;
         $object->name  = 'No parent game found';
         return $object;
@@ -118,14 +119,14 @@ class App extends BaseContainer
 
     protected function getFakeRecommendationsObject()
     {
-        $object        = new \stdClass();
+        $object        = new stdClass();
         $object->total = 0;
         return $object;
     }
 
     protected function getFakeAchievementsObject()
     {
-        $object        = new \stdClass();
+        $object        = new stdClass();
         $object->total = 0;
         return $object;
     }

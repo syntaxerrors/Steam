@@ -8,13 +8,25 @@ use Syntax\SteamApi\Containers\App as AppContainer;
 
 class App extends Client
 {
-    public function __construct()
+    /**
+     * @var bool
+     */
+    private $collection;
+
+    public function __construct($collection = false)
     {
         parent::__construct();
         $this->url       = 'http://store.steampowered.com/';
         $this->interface = 'api';
+        $this->collection = $collection;
     }
 
+    /**
+     * @param $appIds
+     * @param null $country
+     * @param null $language
+     * @return Collection
+     */
     public function appDetails($appIds, $country = null, $language = null)
     {
         // Set up the api details
@@ -30,9 +42,8 @@ class App extends Client
 
         // Get the client
         $client = $this->setUpClient($arguments);
-        $apps   = $this->convertToObjects($client);
 
-        return $apps;
+        return $this->convertToObjects($client);
     }
 
     public function GetAppList()

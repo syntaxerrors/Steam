@@ -2,6 +2,7 @@
 
 namespace Syntax\SteamApi\Steam\User;
 
+use Exception;
 use Syntax\SteamApi\Client;
 use Syntax\SteamApi\Containers\Achievement;
 
@@ -46,9 +47,7 @@ class Stats extends Client
         $stats  = $stats->game->availableGameStats->achievements;
 
         // Clean up the games
-        $achievements = $this->convertToObjects($client->achievements, $stats);
-
-        return $achievements;
+        return $this->convertToObjects($client->achievements, $stats);
     }
 
     public function GetPlayerAchievements($appId)
@@ -75,10 +74,8 @@ class Stats extends Client
             $client = $this->setUpXml($arguments);
 
             // Clean up the games
-            $achievements = $this->convertToObjects($client->achievements->achievement);
-
-            return $achievements;
-        } catch (\Exception $e) {
+            return $this->convertToObjects($client->achievements->achievement);
+        } catch (Exception $e) {
             // In rare cases, games can force the use of a simplified name instead of an app ID
             // In these cases, try again by grabbing the redirected url.
             if (is_int($appId)) {
@@ -89,10 +86,8 @@ class Stats extends Client
                     $client = $this->setUpXml($arguments);
 
                     // Clean up the games
-                    $achievements = $this->convertToObjects($client->achievements->achievement);
-
-                    return $achievements;
-                } catch (\Exception $exception) {
+                    return $this->convertToObjects($client->achievements->achievement);
+                } catch (Exception $exception) {
                     return null;
                 }
             }
@@ -170,9 +165,7 @@ class Stats extends Client
         ];
 
         // Get the client
-        $client = $this->setUpClient($arguments);
-
-        return $client;
+        return $this->setUpClient($arguments);
     }
 
     protected function convertToObjects($achievements)

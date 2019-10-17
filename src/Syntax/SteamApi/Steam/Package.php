@@ -28,9 +28,8 @@ class Package extends Client
         ];
         // Get the client
         $client = $this->setUpClient($arguments);
-        $packs = $this->convertToObjects($client, $packIds);
 
-        return $packs;
+        return $this->convertToObjects($client, $packIds);
     }
 
     protected function convertToObjects($package, $packIds)
@@ -42,8 +41,8 @@ class Package extends Client
     }
 
     /**
-     * @param $packs
-     *
+     * @param $packages
+     * @param $packIds
      * @return Collection
      */
     protected function convertPacks($packages, $packIds)

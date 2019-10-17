@@ -2,6 +2,7 @@
 
 namespace Syntax\SteamApi\Steam;
 
+use InvalidArgumentException;
 use Syntax\SteamApi\Client;
 use Syntax\SteamApi\Containers\Player as PlayerContainer;
 use Syntax\SteamApi\Exceptions\UnrecognizedId;
@@ -72,9 +73,7 @@ class User extends Client
 
         $map = array_map([$this, 'getChunkedPlayerSummaries'], $chunks);
 
-        $players = $this->compressPlayerSummaries($map);
-
-        return $players;
+        return $this->compressPlayerSummaries($map);
     }
 
     private function getChunkedPlayerSummaries($chunk)
@@ -88,9 +87,7 @@ class User extends Client
         $client = $this->setUpClient($arguments)->response;
 
         // Clean up the games
-        $players = $this->convertToObjects($client->players);
-
-        return $players;
+        return $this->convertToObjects($client->players);
     }
 
     private function compressPlayerSummaries($summaries)
@@ -133,7 +130,7 @@ class User extends Client
         $this->version = 'v0001';
 
         if (! in_array($relationship, $this->friendRelationships)) {
-            throw new \InvalidArgumentException('Provided relationship [' . $relationship . '] is not valid.  Please select from: ' . implode(', ', $this->friendRelationships));
+            throw new InvalidArgumentException('Provided relationship [' . $relationship . '] is not valid.  Please select from: ' . implode(', ', $this->friendRelationships));
         }
 
         // Set up the arguments

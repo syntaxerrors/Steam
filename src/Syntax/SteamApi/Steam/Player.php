@@ -49,9 +49,7 @@ class Player extends Client
         $arguments = ['steamId' => $this->steamId];
 
         // Get the client
-        $client = $this->getServiceResponse($arguments);
-
-        return $client;
+        return $this->getServiceResponse($arguments);
     }
 
     public function GetCommunityBadgeProgress($badgeId = null)
@@ -66,9 +64,7 @@ class Player extends Client
         }
 
         // Get the client
-        $client = $this->getServiceResponse($arguments);
-
-        return $client;
+        return $this->getServiceResponse($arguments);
     }
 
     public function GetOwnedGames($includeAppInfo = true, $includePlayedFreeGames = false, $appIdsFilter = [])
@@ -95,9 +91,7 @@ class Player extends Client
         $client = $this->getServiceResponse($arguments);
 
         // Clean up the games
-        $games = $this->convertToObjects(isset($client->games) ? $client->games : []);
-
-        return $games;
+        return $this->convertToObjects(isset($client->games) ? $client->games : []);
     }
 
     public function GetRecentlyPlayedGames($count = null)
@@ -116,9 +110,7 @@ class Player extends Client
 
         if (isset($client->total_count) && $client->total_count > 0) {
             // Clean up the games
-            $games = $this->convertToObjects($client->games);
-
-            return $games;
+            return $this->convertToObjects($client->games);
         }
 
         return null;

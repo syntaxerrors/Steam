@@ -14,6 +14,7 @@ class Package extends BaseContainer
     public $price;
     public $platforms;
     public $release;
+    private $controller;
 
     public function __construct($package, $id)
     {
