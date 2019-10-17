@@ -1,7 +1,7 @@
 {
   "name": "syntax/steam-api",
   "description": "A steam-api client for Laravel 5.8+",
-  "version": "2.1.0",
+  "version": "2.1.1",
   "license": "MIT",
   "authors": [
     {
