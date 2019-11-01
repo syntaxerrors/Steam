@@ -395,6 +395,16 @@ group| string or int  | The ID or the name of the group. | Yes
 
 > Example Output: [GetGroupSummary](./examples/group/GetGroupSummary.txt)
 
+## Testing the Steam Package
+
+**Install dependancies**  
+`docker run -it --rm -v $PWD:/opt/app -w /opt/app --network host --name php nicekiwi/php composer install`  
+
+A Steam API key must be provided or most tests will fail.
+  
+**Run Tests**  
+`docker run -it --rm -v $PWD:/opt/app -w /opt/app --network host --name php -e apiKey='YOUR_STEAM_API_KEY' nicekiwi/php ./vendor/bin/phpunit`
+
 ## Contributors
 - [Stygiansabyss](https://github.com/stygiansabyss)
 - [nicekiwi](https://github.com/nicekiwi)
