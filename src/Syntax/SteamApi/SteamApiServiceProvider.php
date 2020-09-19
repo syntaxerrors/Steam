@@ -33,7 +33,7 @@ class SteamApiServiceProvider extends ServiceProvider
     {
         $this->registerAlias();
 
-        $this->app->singleton('steam-api', function () {
+        $this->container->singleton('steam-api', function () {
             return new Client;
         });
     }
@@ -45,7 +45,7 @@ class SteamApiServiceProvider extends ServiceProvider
      */
     protected function registerAlias()
     {
-        $this->app->booting(function () {
+        $this->container->booting(function () {
             $loader = AliasLoader::getInstance();
             $loader->alias('Steam', 'Syntax\SteamApi\Facades\SteamApi');
         });
