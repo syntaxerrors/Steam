@@ -288,7 +288,7 @@ class Client
             throw new Exceptions\InvalidApiKeyException();
         }
         if (is_null($apiKey) || $apiKey == '' || $apiKey == []) {
-            $apiKey = $_ENV['apiKey'];
+            $apiKey = getenv('apiKey');
         }
 
         return $apiKey;
