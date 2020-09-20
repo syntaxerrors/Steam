@@ -9,8 +9,8 @@
 [![License](https://poser.pugx.org/syntax/steam-api/license.svg)](https://packagist.org/packages/syntax/steam-api)
 
 **Version Support**  
-`Laravel >= 5.8.0`  
-`PHP >= 7.2.0`  
+`Laravel >= 6.0`  
+`PHP >= 7.3.0`  
 
 - [Installation](#installation)
 - [Usage](#usage)
@@ -29,7 +29,7 @@ This package provides an easy way to get details from the Steam API service.  Th
 Begin by installing this package with composer.
 
 	"require": {
-		"syntax/steam-api": "2.1.*"
+		"syntax/steam-api": "2.2.*"
 	}
 	
 Next, update composer from the terminal.
