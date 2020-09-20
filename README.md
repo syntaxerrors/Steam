@@ -415,3 +415,4 @@ A Steam API key must be provided or most tests will fail.
 - [JRizzle88](https://github.com/JRizzle88)
 - [jastend](https://github.com/jastend)
 - [Teakowa](https://github.com/Teakowa)
+- [Ben Sherred](https://github.com/bensherred)
