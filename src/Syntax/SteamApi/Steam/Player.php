@@ -34,6 +34,10 @@ class Player extends Client
     public function GetPlayerLevelDetails()
     {
         $details = $this->GetBadges();
+        
+        if(count((array)$details) == 0){
+            return NULL;
+        }
 
         $details = new Level($details);
 
