@@ -397,13 +397,12 @@ group| string or int  | The ID or the name of the group. | Yes
 
 ## Testing the Steam Package
 
-**Install dependancies**  
-`docker run -it --rm -v $PWD:/opt/app -w /opt/app --network host --name php nicekiwi/php composer install`  
-
 A Steam API key must be provided or most tests will fail.
   
-**Run Tests**  
-`docker run -it --rm -v $PWD:/opt/app -w /opt/app --network host --name php -e apiKey='YOUR_STEAM_API_KEY' nicekiwi/php ./vendor/bin/phpunit`
+**Run Tests (In PHP 8 container, assumes `apiKey` is set in `.env` file)**  
+```
+docker run -it --rm -v $(pwd):/srv/app nicekiwi/php:latest /bin/bash -c "composer install && ./vendor/bin/phpunit"
+```
 
 ## Contributors
 - [Stygiansabyss](https://github.com/stygiansabyss)
