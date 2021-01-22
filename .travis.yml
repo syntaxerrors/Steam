@@ -1,12 +1,16 @@
 language: php
 
+os: linux
+
+dist: focal
+
 php:
   - 8.0
   - 7.4
   - 7.3
 
 notifications:
-  slack: nukacode:HyFrc2QLi5PC5fPxadm07O5v
+  slack: 'nukacode:HyFrc2QLi5PC5fPxadm07O5v'
   webhooks:
       urls:
         - https://webhooks.gitter.im/e/213257627c4e40ffc03c
@@ -14,7 +18,7 @@ notifications:
       on_failure: always  # options: [always|never|change] default: always
       on_start: never     # default: false
 
-matrix:
+jobs:
   fast_finish: true
 
 before_script:
