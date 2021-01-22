@@ -34,7 +34,7 @@ class BaseTester extends TestCase {
 
         // Use .env when available
         if (file_exists($root . '/.env')) {
-            $dotenv = Dotenv::create($root);
+            $dotenv = Dotenv::createUnsafeImmutable($root);
             $dotenv->load();
         }
 
