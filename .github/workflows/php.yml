@@ -51,5 +51,8 @@ jobs:
         env:
           apiKey: ${{ secrets.STEAM_API_KEY }}
           CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
+          XDEBUG_MODE: coverage
         with:
           coverageCommand: composer run-script coverage
+          coverageLocations: ${{github.workspace}}/coverage.clover:clover
+          debug: true

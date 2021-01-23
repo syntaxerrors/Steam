@@ -39,6 +39,6 @@
   "minimum-stability": "stable",
   "scripts": {
     "test": "vendor/bin/phpunit",
-    "coverage": "XDEBUG_MODE=coverage vendor/bin/phpunit --coverage-clover=coverage.clover"
+    "coverage": "vendor/bin/phpunit --coverage-clover=coverage.clover"
   }
 }
