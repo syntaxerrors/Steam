@@ -1,4 +1,4 @@
-name: Steam
+name: Unit Tests
 
 on:
   push:
@@ -11,7 +11,8 @@ jobs:
     runs-on: ubuntu-20.04
     strategy:
       matrix:
-        php: [ '7.3', '7.4', '8.0' ]
+        php: [ '8.0', '7.4', '7.3' ]
+    continue-on-error: true
     steps:
       - uses: actions/checkout@v2
 
@@ -42,6 +43,18 @@ jobs:
         env:
           apiKey: ${{ secrets.STEAM_API_KEY }}
         run: composer run-script test
+
+      - name: Publish Test Coverage
+        uses: paambaati/codeclimate-action@v2.7.5
+        if: ${{ matrix.php }} == '8.0' && ${{ github.ref }} == 'master'
+        env:
+          apiKey: ${{ secrets.STEAM_API_KEY }}
+          CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
+          XDEBUG_MODE: coverage
+        with:
+          coverageCommand: composer run-script coverage
+          coverageLocations: ${{github.workspace}}/coverage.clover:clover
+          debug: true
 
       - uses: sarisia/actions-status-discord@v1
         if: ${{ failure() }}
