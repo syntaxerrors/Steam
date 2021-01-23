@@ -399,9 +399,16 @@ group| string or int  | The ID or the name of the group. | Yes
 
 A Steam API key must be provided or most tests will fail.
   
-**Run Tests (In PHP 8 container, assumes `apiKey` is set in `.env` file)**  
+**Run Tests**  
 ```
-docker run -it --rm -v $(pwd):/srv/app nicekiwi/php:latest /bin/bash -c "composer install && ./vendor/bin/phpunit"
+# Install dependancies
+docker-compose run php composer install
+
+# Run tests (assumes apiKey is set in .env file)
+docker-compose run php ./vendor/bin/phpunit
+
+# Or with the apiKey inline
+docker-compose run -e api=YOUR_STEAM_API_KEY php ./vendor/bin/phpunit
 ```
 
 ## Contributors
