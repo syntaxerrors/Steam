@@ -405,10 +405,16 @@ A Steam API key must be provided or most tests will fail.
 docker-compose run php composer install
 
 # Run tests (assumes apiKey is set in .env file)
-docker-compose run php ./vendor/bin/phpunit
+docker-compose run php composer test
 
 # Or with the apiKey inline
-docker-compose run -e api=YOUR_STEAM_API_KEY php ./vendor/bin/phpunit
+docker-compose run -e api=YOUR_STEAM_API_KEY php composer test
+
+# With coverage
+docker-compose run php composer coverage
+
+# Play around
+docker-compose run php bash
 ```
 
 ## Contributors

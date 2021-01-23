@@ -36,5 +36,9 @@
       ]
     }
   },
-  "minimum-stability": "stable"
+  "minimum-stability": "stable",
+  "scripts": {
+    "test": "vendor/bin/phpunit",
+    "coverage": "XDEBUG_MODE=coverage vendor/bin/phpunit --coverage-clover=coverage.clover"
+  }
 }
