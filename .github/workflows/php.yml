@@ -39,6 +39,8 @@ jobs:
         run: composer install
 
       - name: PHP ${{ matrix.php }} - Run coverage test suite
+        env:
+          apiKey: ${{ secrets.STEAM_API_KEY }}
         run: composer run-script coverage
 
       - name: PHP ${{ matrix.php }} - Publish Coverage
