@@ -30,7 +30,7 @@ This package provides an easy way to get details from the Steam API service.  Th
 Begin by installing this package with composer.
 
 	"require": {
-		"syntax/steam-api": "2.2.*"
+		"syntax/steam-api": "2.3.*"
 	}
 	
 Next, update composer from the terminal.
