@@ -21,6 +21,7 @@ jobs:
         uses: shivammathur/setup-php@v2
         with:
           php-version: ${{ matrix.php }}
+          extensions: bcmath, simplexml, libxml, curl, json
           coverage: pcov
 
       - name: PHP ${{ matrix.php }} - Validate composer.json and composer.lock
@@ -42,9 +43,13 @@ jobs:
       - name: PHP ${{ matrix.php }} - Run coverage test suite
         env:
           apiKey: ${{ secrets.STEAM_API_KEY }}
-        run: composer run-script coverage
+        run: composer run-script test
 
-      - name: PHP ${{ matrix.php }} - Publish Coverage
+      - name: Publish Coverage
+        if: matrix.php == '8.0'
         uses: paambaati/codeclimate-action@v2.7.5
         env:
+          apiKey: ${{ secrets.STEAM_API_KEY }}
           CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
+        with:
+          coverageCommand: composer run-script coverage
