@@ -10,14 +10,22 @@ on:
 jobs:
   build:
     runs-on: ubuntu-20.04
+    strategy:
+      matrix:
+        php: [ '7.3', '7.4', '8.0' ]
 
     steps:
       - uses: actions/checkout@v2
 
-      - name: Validate composer.json and composer.lock
+      - name: Setup PHP
+        uses: nanasess/setup-php@master
+        with:
+          php-version: ${{ matrix.php }}
+
+      - name: PHP ${{ matrix.php }} - Validate composer.json and composer.lock
         run: composer validate
 
-      - name: Cache Composer packages
+      - name: PHP ${{ matrix.php }} - Cache Composer packages
         id: composer-cache
         uses: actions/cache@v2
         with:
@@ -26,14 +34,14 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-php-
 
-      - name: Install dependencies
+      - name: PHP ${{ matrix.php }} - Install dependencies
         if: steps.composer-cache.outputs.cache-hit != 'true'
         run: composer install
 
-      - name: Run coverage test suite
+      - name: PHP ${{ matrix.php }} - Run coverage test suite
         run: composer run-script coverage
 
-      - name: Publish Coverage
+      - name: PHP ${{ matrix.php }} - Publish Coverage
         uses: paambaati/codeclimate-action@v2.7.5
         env:
           CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
