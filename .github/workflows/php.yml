@@ -1,0 +1,65 @@
+name: Unit Tests
+
+on:
+  push:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 0 1 * *"
+
+jobs:
+  test:
+    runs-on: ubuntu-20.04
+    strategy:
+      matrix:
+        php: [ '8.0', '7.4', '7.3' ]
+    continue-on-error: true
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php }}
+          extensions: bcmath, simplexml, libxml, curl, json
+          coverage: pcov
+
+      - name: PHP ${{ matrix.php }} - Validate composer.json and composer.lock
+        run: composer validate
+
+      - name: PHP ${{ matrix.php }} - Cache Composer packages
+        id: composer-cache
+        uses: actions/cache@v2
+        with:
+          path: vendor
+          key: ${{ runner.os }}-php-${{ hashFiles('**/composer.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-php-
+
+      - name: PHP ${{ matrix.php }} - Install dependencies
+        if: steps.composer-cache.outputs.cache-hit != 'true'
+        run: composer install
+
+      - name: PHP ${{ matrix.php }} - Run coverage test suite
+        env:
+          apiKey: ${{ secrets.STEAM_API_KEY }}
+        run: composer run-script test
+
+      - name: Publish Test Coverage
+        uses: paambaati/codeclimate-action@v2.7.5
+        if: ${{ matrix.php }} == '8.0' && ${{ github.ref }} == 'master'
+        env:
+          apiKey: ${{ secrets.STEAM_API_KEY }}
+          CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
+          XDEBUG_MODE: coverage
+        with:
+          coverageCommand: composer run-script coverage
+          coverageLocations: ${{github.workspace}}/coverage.clover:clover
+          debug: true
+
+      - uses: sarisia/actions-status-discord@v1
+        if: ${{ failure() }}
+        with:
+          status: ${{ job.status }}
+          webhook: ${{ secrets.DISCORD_WEBHOOK }}
+          title: "${{ matrix.php }}: Tests failed."
+          color: 'red'

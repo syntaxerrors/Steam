@@ -1,16 +1,17 @@
-# Steam
+# Steam API
 
 [![Join the chat at https://gitter.im/syntaxerrors/Steam](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/syntaxerrors/Steam?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
-[![Build Status](https://travis-ci.org/syntaxerrors/Steam.svg)](https://travis-ci.org/syntaxerrors/Steam)
-[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/syntaxerrors/Steam/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/syntaxerrors/Steam/?branch=master)
+![Unit Tests](https://github.com/syntaxerrors/Steam/workflows/Unit%20Tests/badge.svg)
+[![Maintainability](https://api.codeclimate.com/v1/badges/eb99d8de80e750fd4c27/maintainability)](https://codeclimate.com/github/syntaxerrors/Steam/maintainability)
+<a href="https://codeclimate.com/github/syntaxerrors/Steam/test_coverage"><img src="https://api.codeclimate.com/v1/badges/eb99d8de80e750fd4c27/test_coverage" /></a>
 [![Latest Stable Version](https://poser.pugx.org/syntax/steam-api/v/stable.svg)](https://packagist.org/packages/syntax/steam-api)
 [![Total Downloads](https://poser.pugx.org/syntax/steam-api/downloads.svg)](https://packagist.org/packages/syntax/steam-api)
 [![License](https://poser.pugx.org/syntax/steam-api/license.svg)](https://packagist.org/packages/syntax/steam-api)
 
 **Version Support**  
-`Laravel >= 5.8.0`  
-`PHP >= 7.2.0`  
+`Laravel >= 6.0`  
+`PHP >= 7.3.0`  
 
 - [Installation](#installation)
 - [Usage](#usage)
@@ -29,7 +30,7 @@ This package provides an easy way to get details from the Steam API service.  Th
 Begin by installing this package with composer.
 
 	"require": {
-		"syntax/steam-api": "2.1.*"
+		"syntax/steam-api": "2.3.*"
 	}
 	
 Next, update composer from the terminal.
@@ -397,13 +398,25 @@ group| string or int  | The ID or the name of the group. | Yes
 
 ## Testing the Steam Package
 
-**Install dependancies**  
-`docker run -it --rm -v $PWD:/opt/app -w /opt/app --network host --name php nicekiwi/php composer install`  
-
 A Steam API key must be provided or most tests will fail.
   
 **Run Tests**  
-`docker run -it --rm -v $PWD:/opt/app -w /opt/app --network host --name php -e apiKey='YOUR_STEAM_API_KEY' nicekiwi/php ./vendor/bin/phpunit`
+```
+# Install dependancies
+docker-compose run php composer install
+
+# Run tests (assumes apiKey is set in .env file)
+docker-compose run php composer test
+
+# Or with the apiKey inline
+docker-compose run -e api=YOUR_STEAM_API_KEY php composer test
+
+# With coverage
+docker-compose run php composer coverage
+
+# Play around
+docker-compose run php bash
+```
 
 ## Contributors
 - [Stygiansabyss](https://github.com/stygiansabyss)
@@ -415,3 +428,4 @@ A Steam API key must be provided or most tests will fail.
 - [JRizzle88](https://github.com/JRizzle88)
 - [jastend](https://github.com/jastend)
 - [Teakowa](https://github.com/Teakowa)
+- [Ben Sherred](https://github.com/bensherred)

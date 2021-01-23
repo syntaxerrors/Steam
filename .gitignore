@@ -6,3 +6,4 @@ ocular.phar
 uploadTests.sh
 .env
 .phpunit.*
+*.clover
