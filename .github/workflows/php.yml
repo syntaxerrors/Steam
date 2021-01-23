@@ -43,3 +43,11 @@ jobs:
         env:
           apiKey: ${{ secrets.STEAM_API_KEY }}
         run: composer run-script test
+
+      - uses: sarisia/actions-status-discord@v1
+        if: ${{ failure() }}
+        with:
+          status: ${{ job.status }}
+          webhook: ${{ secrets.DISCORD_WEBHOOK }}
+          title: "${{ matrix.php }}: Tests failed."
+          color: 'red'
