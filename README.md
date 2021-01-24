@@ -366,7 +366,7 @@ Name | Type | Description | Required | Default
 appId| int  | The appid of the game you want for | Yes |
 steamid | int | The steamid of the Steam user you want for | Yes |
 
-⚠️ **Now known to supports**:`440`, `570`, `620`, `730`, `205790`, `221540`, `238460`
+⚠️ **Now known to supports**:`440`, `570`, `620`, `205790`, `221540`, `238460`
 
 > Example Output: [GetPlayerItems](./examples/item/GetPlayerItems.txt)
 

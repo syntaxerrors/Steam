@@ -19,7 +19,7 @@ class Id
     /**
      * @param integer $id
      */
-    function __construct($id)
+    function __construct(int $id)
     {
         $client = new Client;
 

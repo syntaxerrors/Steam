@@ -34,26 +34,26 @@ class Game extends BaseContainer
         $this->playtimeForeverReadable  = $this->convertFromMinutes($this->playtimeForever);
         $this->icon                     = $this->checkIssetImage($app, 'img_icon_url');
         $this->logo                     = $this->checkIssetImage($app, 'img_logo_url');
-        $this->header                   = 'http://cdn.akamai.steamstatic.com/steam/apps/' . $this->appId . '/header.jpg';
+        $this->header                   = 'https://cdn.akamai.steamstatic.com/steam/apps/' . $this->appId . '/header.jpg';
         $this->hasCommunityVisibleStats = $this->checkIssetField($app, 'has_community_visible_stats', 0);
     }
 
     /**
      * @param        $app
      * @param string $field
-     * @param string $value
+     * @param null $value
      *
      * @return null|string
      */
-    protected function checkIssetImage($app, $field, $value = null)
+    protected function checkIssetImage($app, string $field, $value = null): ?string
     {
         return isset($app->$field) ? $this->getImageForGame($app->appid, $app->$field) : $value;
     }
 
-    protected function getImageForGame($appId, $hash)
+    protected function getImageForGame($appId, $hash): ?string
     {
         if ($hash != null) {
-            return 'http://media.steampowered.com/steamcommunity/public/images/apps/' . $appId . '/' . $hash . '.jpg';
+            return 'https://media.steampowered.com/steamcommunity/public/images/apps/' . $appId . '/' . $hash . '.jpg';
         }
 
         return null;

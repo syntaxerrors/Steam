@@ -31,16 +31,20 @@ class Player extends Client
         return $client->player_level;
     }
 
-    public function GetPlayerLevelDetails()
+    public function GetPlayerLevelDetails(): ?Level
     {
         $details = $this->GetBadges();
+
+        if(count((array) $details) == 0) {
+            return null;
+        }
 
         $details = new Level($details);
 
         return $details;
     }
 
-    public function GetBadges()
+    public function GetBadges(): string
     {
         // Set up the api details
         $this->setApiDetails(__FUNCTION__, 'v0001');
@@ -52,7 +56,7 @@ class Player extends Client
         return $this->getServiceResponse($arguments);
     }
 
-    public function GetCommunityBadgeProgress($badgeId = null)
+    public function GetCommunityBadgeProgress($badgeId = null): string
     {
         // Set up the api details
         $this->setApiDetails(__FUNCTION__, 'v0001');
@@ -94,7 +98,7 @@ class Player extends Client
         return $this->convertToObjects(isset($client->games) ? $client->games : []);
     }
 
-    public function GetRecentlyPlayedGames($count = null)
+    public function GetRecentlyPlayedGames($count = null): ?Collection
     {
         // Set up the api details
         $this->setApiDetails(__FUNCTION__, 'v0001');
@@ -133,7 +137,7 @@ class Player extends Client
         return $client->lender_steamid;
     }
 
-    protected function convertToObjects($games)
+    protected function convertToObjects($games): Collection
     {
         $convertedGames = $this->convertGames($games);
 
@@ -142,7 +146,7 @@ class Player extends Client
         return $games;
     }
 
-    private function convertGames($games)
+    private function convertGames($games): Collection
     {
         $convertedGames = new Collection;
 

@@ -61,6 +61,8 @@ class App extends BaseContainer
     
     public $movies;
 
+    public $screenshots;
+
     public function __construct($app)
     {
 
@@ -91,10 +93,10 @@ class App extends BaseContainer
         $this->achievements       = $this->checkIssetField($app, 'achievements', $this->getFakeAchievementsObject());
         $this->dlc                = $this->checkIssetCollection($app, 'dlc', new Collection());
         $this->movies             = $this->checkIssetCollection($app, 'movies', new Collection());
-
+        $this->screenshots        = $this->checkIssetCollection($app, 'screenshots', new Collection());
     }
 
-    protected function getFakeMetacriticObject()
+    protected function getFakeMetacriticObject(): stdClass
     {
         $object        = new stdClass();
         $object->url   = null;
@@ -102,14 +104,14 @@ class App extends BaseContainer
         return $object;
     }
 
-    protected function getFakePriceObject()
+    protected function getFakePriceObject(): stdClass
     {
         $object        = new stdClass();
         $object->final = 'No price found';
         return $object;
     }
 
-    protected function getFakeFullgameObject()
+    protected function getFakeFullgameObject(): stdClass
     {
         $object        = new stdClass();
         $object->appid = null;
@@ -117,14 +119,14 @@ class App extends BaseContainer
         return $object;
     }
 
-    protected function getFakeRecommendationsObject()
+    protected function getFakeRecommendationsObject(): stdClass
     {
         $object        = new stdClass();
         $object->total = 0;
         return $object;
     }
 
-    protected function getFakeAchievementsObject()
+    protected function getFakeAchievementsObject(): stdClass
     {
         $object        = new stdClass();
         $object->total = 0;

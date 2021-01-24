@@ -39,7 +39,7 @@ class Client
 
     public $validFormats = ['json', 'xml', 'vdf'];
 
-    protected $url = 'http://api.steampowered.com/';
+    protected $url = 'https://api.steampowered.com/';
 
     protected $client;
 
@@ -87,7 +87,7 @@ class Client
      * @throws ApiCallFailedException
      * @throws GuzzleException
      */
-    protected function setUpService($arguments = null)
+    protected function setUpService($arguments = null): string
     {
         // Services have a different url syntax
         if ($arguments == null) {
@@ -183,7 +183,7 @@ class Client
      * @throws ApiCallFailedException
      * @throws GuzzleException
      */
-    protected function sendRequest(Request $request)
+    protected function sendRequest(Request $request): stdClass
     {
         // Try to get the result.  Handle the possible exceptions that can arise
         try {
@@ -191,7 +191,7 @@ class Client
 
             $result       = new stdClass();
             $result->code = $response->getStatusCode();
-            $result->body = json_decode($response->getBody(true));
+            $result->body = json_decode($response->getBody());
         } catch (ClientException $e) {
             throw new ApiCallFailedException($e->getMessage(), $e->getResponse()->getStatusCode(), $e);
         } catch (ServerException $e) {
@@ -204,7 +204,7 @@ class Client
         return $result;
     }
 
-    private function buildUrl($version = false)
+    private function buildUrl($version = false): string
     {
         // Set up the basic url
         $url = $this->url . $this->interface . '/' . $this->method . '/';
@@ -251,7 +251,7 @@ class Client
      *
      * @return Collection
      */
-    protected function sortObjects($objects)
+    protected function sortObjects(Collection $objects): Collection
     {
         return $objects->sortBy(function ($object) {
             return $object->name;
@@ -262,25 +262,25 @@ class Client
      * @param string $method
      * @param string $version
      */
-    protected function setApiDetails($method, $version)
+    protected function setApiDetails(string $method, string $version)
     {
         $this->method  = $method;
         $this->version = $version;
     }
 
-    protected function getServiceResponse($arguments)
+    protected function getServiceResponse($arguments): string
     {
         $arguments = json_encode($arguments);
 
         // Get the client
-        return $this->setUpService($arguments)->response;
+        return $this->setUpService($arguments);
     }
 
     /**
      * @return string
      * @throws Exceptions\InvalidApiKeyException
      */
-    protected function getApiKey()
+    protected function getApiKey(): string
     {
         $apiKey = Config::get('steam-api.steamApiKey');
 

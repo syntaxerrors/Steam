@@ -9,11 +9,11 @@ abstract class BaseContainer
     /**
      * @param        $app
      * @param string $field
-     * @param mixed  $value
+     * @param mixed $value
      *
      * @return mixed
      */
-    protected function checkIsNullField($app, $field, $value = null)
+    protected function checkIsNullField($app, string $field, $value = null)
     {
         return ! is_null($app->$field) ? $app->$field : $value;
     }
@@ -21,11 +21,11 @@ abstract class BaseContainer
     /**
      * @param        $app
      * @param string $field
-     * @param mixed  $value
+     * @param mixed $value
      *
      * @return mixed
      */
-    protected function checkIssetField($app, $field, $value = null)
+    protected function checkIssetField($app, string $field, $value = null)
     {
         return isset($app->$field) ? $app->$field : $value;
     }
@@ -33,11 +33,11 @@ abstract class BaseContainer
     /**
      * @param        $app
      * @param string $field
-     * @param mixed  $value
+     * @param mixed $value
      *
      * @return mixed
      */
-    protected function checkIssetCollection($app, $field, $value = null)
+    protected function checkIssetCollection($app, string $field, $value = null): Collection
     {
         return isset($app->$field) ? new Collection($app->$field) : $value;
     }
@@ -47,7 +47,7 @@ abstract class BaseContainer
      *
      * @return string
      */
-    protected function getImageForAvatar($image)
+    protected function getImageForAvatar(string $image): string
     {
         return '<img src="' . $image . '" />';
     }
@@ -61,7 +61,7 @@ abstract class BaseContainer
      *
      * @return string
      */
-    protected function pluralize($word, $count)
+    protected function pluralize($word, $count): string
     {
         if ((int) $count === 1) {
             return $word .' ';
@@ -77,7 +77,7 @@ abstract class BaseContainer
      *
      * @return string
      */
-    protected function convertFromMinutes($minutes)
+    protected function convertFromMinutes($minutes): string
     {
         $seconds = $minutes * 60;
 

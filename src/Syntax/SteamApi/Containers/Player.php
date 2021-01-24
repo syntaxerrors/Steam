@@ -94,7 +94,7 @@ class Player extends BaseContainer
         }
     }
 
-    protected function getLocation()
+    protected function getLocation(): \stdClass
     {
         $countriesFile = json_decode(\file_get_contents(__DIR__ . '/../Resources/countries.json'));
         $result        = new \stdClass;
@@ -116,7 +116,7 @@ class Player extends BaseContainer
         return $result;
     }
 
-    protected function convertPersonaState($personaState)
+    protected function convertPersonaState($personaState): string
     {
         switch ($personaState) {
             case 0:

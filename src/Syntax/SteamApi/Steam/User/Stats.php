@@ -22,7 +22,7 @@ class Stats extends Client
      *
      * @return array
      */
-    public function GetPlayerAchievementsAPI($appId)
+    public function GetPlayerAchievementsAPI($appId): ?array
     {
         // Set up the api details
         $this->method  = 'GetPlayerAchievementsAPI';
@@ -50,16 +50,16 @@ class Stats extends Client
         return $this->convertToObjects($client->achievements, $stats);
     }
 
-    public function GetPlayerAchievements($appId)
+    public function GetPlayerAchievements($appId): ?array
     {
         // Set up the api details
         $this->interface = null;
         $this->method    = 'achievements';
 
         if (is_numeric($this->steamId)) {
-            $this->url = 'http://steamcommunity.com/profiles/';
+            $this->url = 'https://steamcommunity.com/profiles/';
         } else {
-            $this->url = 'http://steamcommunity.com/id/';
+            $this->url = 'https://steamcommunity.com/id/';
         }
 
         $this->url = $this->url . $this->steamId . '/stats/' . $appId;
@@ -121,7 +121,7 @@ class Stats extends Client
      *
      * @return mixed
      */
-    public function GetUserStatsForGame($appId, $all = false)
+    public function GetUserStatsForGame(int $appId, $all = false)
     {
         // Set up the api details
         $this->method  = __FUNCTION__;
@@ -168,7 +168,7 @@ class Stats extends Client
         return $this->setUpClient($arguments);
     }
 
-    protected function convertToObjects($achievements)
+    protected function convertToObjects($achievements): array
     {
         $cleanedAchievements = [];
 

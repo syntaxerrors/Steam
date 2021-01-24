@@ -89,7 +89,7 @@ trait SteamId
         $this->formatted->{self::$ID3} = $formatted;
     }
 
-    private function determineIDType($id)
+    private function determineIDType($id): array
     {
         $id = trim($id);
 

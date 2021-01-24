@@ -15,17 +15,17 @@ class App extends Client
     public function __construct()
     {
         parent::__construct();
-        $this->url       = 'http://store.steampowered.com/';
+        $this->url       = 'https://store.steampowered.com/';
         $this->interface = 'api';
     }
 
     /**
-     * @param $appIds
+     * @param $appId
      * @param null $country
      * @param null $language
      * @return Collection
      */
-    public function appDetails($appIds, $country = null, $language = null)
+    public function appDetails($appId, $country = null, $language = null)
     {
         // Set up the api details
         $this->method  = 'appdetails';
@@ -33,7 +33,7 @@ class App extends Client
 
         // Set up the arguments
         $arguments = [
-            'appids' => $appIds,
+            'appids' => $appId,
             'cc' => $country,
             'l' => $language,
         ];
@@ -47,7 +47,7 @@ class App extends Client
     public function GetAppList()
     {
         // Set up the api details
-        $this->url       = 'http://api.steampowered.com/';
+        $this->url       = 'https://api.steampowered.com/';
         $this->interface = 'ISteamApps';
         $this->method    = __FUNCTION__;
         $this->version   = 'v0001';

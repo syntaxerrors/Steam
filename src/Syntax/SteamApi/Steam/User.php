@@ -57,7 +57,7 @@ class User extends Client
      *
      * @return array
      */
-    public function GetPlayerSummaries($steamId = null)
+    public function GetPlayerSummaries($steamId = null): array
     {
         // Set up the api details
         $this->method  = __FUNCTION__;
@@ -76,7 +76,7 @@ class User extends Client
         return $this->compressPlayerSummaries($map);
     }
 
-    private function getChunkedPlayerSummaries($chunk)
+    private function getChunkedPlayerSummaries($chunk): array
     {
         // Set up the arguments
         $arguments = [
@@ -123,7 +123,7 @@ class User extends Client
         return $client->players;
     }
 
-    public function GetFriendList($relationship = 'all', $summaries = true)
+    public function GetFriendList($relationship = 'all', $summaries = true): array
     {
         // Set up the api details
         $this->method  = __FUNCTION__;
@@ -158,7 +158,7 @@ class User extends Client
         return $friends;
     }
 
-    protected function convertToObjects($players)
+    protected function convertToObjects($players): array
     {
         $cleanedPlayers = [];
 
