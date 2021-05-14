@@ -28,7 +28,7 @@ class Player extends Client
         // Get the client
         $client = $this->getServiceResponse($arguments);
 
-        return $client->player_level;
+        return isset($client->player_level) ? $client->player_level : null;
     }
 
     public function GetPlayerLevelDetails()
