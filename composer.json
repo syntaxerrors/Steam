@@ -1,7 +1,7 @@
 {
   "name": "syntax/steam-api",
   "description": "A steam-api client for Laravel 6+",
-  "version": "2.3.0",
+  "version": "2.4.0",
   "license": "MIT",
   "authors": [
     {
@@ -10,8 +10,8 @@
     }
   ],
   "require": {
-    "php": "^7.3|^8.0",
-    "laravel/framework": "^6.20.12|^7.30.3|^8.22.1",
+    "php": "^7.4|^8.0|^8.1",
+    "laravel/framework": "^6.20.12|^8.83.7|^9.7.0",
     "guzzlehttp/guzzle": "^7.0",
     "ext-bcmath": "*",
     "ext-simplexml": "*",
@@ -39,6 +39,7 @@
   "minimum-stability": "stable",
   "scripts": {
     "test": "vendor/bin/phpunit",
-    "coverage": "vendor/bin/phpunit --coverage-clover=coverage.clover"
+    "coverage": "XDEBUG_MODE=coverage vendor/bin/phpunit --coverage-clover=coverage.clover",
+    "coverage:html": "XDEBUG_MODE=coverage vendor/bin/phpunit --coverage-html ./coverage"
   }
 }

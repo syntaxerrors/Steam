@@ -402,6 +402,9 @@ A Steam API key must be provided or most tests will fail.
   
 **Run Tests**  
 ```
+# Build container
+docker-compose build
+
 # Install dependancies
 docker-compose run php composer install
 

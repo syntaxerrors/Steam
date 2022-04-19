@@ -1,5 +1,6 @@
 /.idea
 /vendor
+/coverage
 composer.phar
 .DS_Store
 ocular.phar
