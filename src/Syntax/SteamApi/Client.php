@@ -199,6 +199,11 @@ class Client
         } catch (Exception $e) {
             throw new ApiCallFailedException($e->getMessage(), $e->getCode(), $e);
         }
+        
+        // For some resources, the Steam API responds with an empty response
+        if (empty($result->body)) {
+            throw new ApiCallFailedException('API call failed due to empty response', $result->code);
+        }
 
         // If all worked out, return the result
         return $result;
