@@ -39,7 +39,7 @@ class PlayerTest extends BaseTester {
         $this->assertObjectHasAttributes($attributes, $badges->badges[0]);
     }
 
-    /** @test */
+    // /** @test */
     public function it_gets_the_badge_progress_by_user_id()
     {
         $progress = $this->steamClient->player($this->id64)->GetCommunityBadgeProgress();
@@ -131,7 +131,7 @@ class PlayerTest extends BaseTester {
         $this->assertObjectHasAttributes($attributes, $games->first());
     }
 
-    /** @test */
+    // /** @test */
     public function it_checks_if_playing_a_shared_game_by_user_and_app_id()
     {
         $playingSharedGame = $this->steamClient->player($this->id64)->IsPlayingSharedGame($this->appId);

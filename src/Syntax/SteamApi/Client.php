@@ -61,7 +61,7 @@ class Client
     {
         $apiKey = $this->getApiKey();
 
-        $this->client = new GuzzleClient();
+        $this->client = new GuzzleClient;
         $this->apiKey = $apiKey;
 
         // Set up the Ids
@@ -81,7 +81,7 @@ class Client
     /**
      * @param string $arguments
      *
-     * @return string
+     * @return mixed
      *
      * @throws ApiArgumentRequired
      * @throws ApiCallFailedException
@@ -189,9 +189,10 @@ class Client
         try {
             $response = $this->client->send($request);
 
-            $result       = new stdClass();
-            $result->code = $response->getStatusCode();
-            $result->body = json_decode($response->getBody(true));
+            return (object) [
+                "code" => $response->getStatusCode(),
+                "body" => json_decode($response->getBody()->getContents()),
+            ];
         } catch (ClientException $e) {
             throw new ApiCallFailedException($e->getMessage(), $e->getResponse()->getStatusCode(), $e);
         } catch (ServerException $e) {
@@ -199,9 +200,6 @@ class Client
         } catch (Exception $e) {
             throw new ApiCallFailedException($e->getMessage(), $e->getCode(), $e);
         }
-
-        // If all worked out, return the result
-        return $result;
     }
 
     private function buildUrl($version = false)

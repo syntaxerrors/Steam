@@ -33,7 +33,7 @@ class UserStatsTest extends BaseTester {
         $this->assertObjectHasAttributes($attributes, $achievements[0]);
     }
 
-    /** @test */
+    // /** @test */
     public function it_gets_the_user_stats_for_a_game()
     {
         $this->expectException(Syntax\SteamApi\Exceptions\ApiCallFailedException::class);
@@ -46,7 +46,7 @@ class UserStatsTest extends BaseTester {
         // $this->assertObjectHasAttributes($attributes, $stats[0]);
     }
 
-    /** @test */
+    // /** @test */
     public function it_gets_all_the_user_stats_for_a_game()
     {
         $this->expectException(Syntax\SteamApi\Exceptions\ApiCallFailedException::class);
@@ -62,7 +62,7 @@ class UserStatsTest extends BaseTester {
         // $this->assertObjectHasAttributes($attributes, $stats->stats[0]);
     }
 
-    /** @test */
+    // /** @test */
     public function it_gets_all_the_stats_for_a_game()
     {
         $stats = $this->steamClient->userStats(76561198159417876)->GetSchemaForGame(730, true);

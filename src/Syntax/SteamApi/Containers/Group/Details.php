@@ -2,9 +2,11 @@
 
 namespace Syntax\SteamApi\Containers\Group;
 
+use Illuminate\Contracts\Support\Arrayable;
+use Illuminate\Contracts\Support\Jsonable;
 use Syntax\SteamApi\Containers\BaseContainer;
 
-class Details extends BaseContainer
+class Details extends BaseContainer implements Arrayable, Jsonable
 {
     public $name;
 
@@ -38,5 +40,26 @@ class Details extends BaseContainer
         $this->avatarIconUrl   = (string)$details->avatarIcon;
         $this->avatarMediumUrl = (string)$details->avatarMedium;
         $this->avatarFullUrl   = (string)$details->avatarFull;
+    }
+
+    public function toArray()
+    {
+        return [
+            "name" => $this->name,
+            "url" => $this->url,
+            "headline" => $this->headline,
+            "summary" => $this->summary,
+            "avatarIcon" => $this->avatarIcon,
+            "avatarMedium" => $this->avatarMedium,
+            "avatarFull" => $this->avatarFull,
+            "avatarIconUrl" => $this->avatarIconUrl,
+            "avatarMediumUrl" => $this->avatarMediumUrl,
+            "avatarFullUrl" => $this->avatarFullUrl,
+        ];
+    }
+
+    public function toJson($options = 0)
+    {
+        return json_encode($this->toArray());
     }
 }
