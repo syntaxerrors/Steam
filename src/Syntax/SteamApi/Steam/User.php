@@ -2,14 +2,16 @@
 
 namespace Syntax\SteamApi\Steam;
 
+use GuzzleHttp\Exception\GuzzleException;
 use InvalidArgumentException;
 use Syntax\SteamApi\Client;
 use Syntax\SteamApi\Containers\Player as PlayerContainer;
+use Syntax\SteamApi\Exceptions\ApiCallFailedException;
 use Syntax\SteamApi\Exceptions\UnrecognizedId;
 
 class User extends Client
 {
-    private $friendRelationships = [
+    private array $friendRelationships = [
         'all',
         'friend',
     ];
@@ -30,7 +32,7 @@ class User extends Client
      *
      * @throws UnrecognizedId
      */
-    public function ResolveVanityURL($displayName = null)
+    public function ResolveVanityURL($displayName = null): mixed
     {
         // This only works with a display name.  Make sure we have one.
         if ($displayName == null) {
@@ -43,21 +45,16 @@ class User extends Client
 
         $results = $this->setUpClient(['vanityurl' => $displayName])->response;
 
-        // The message key is used when something goes wrong.  If it exists, return it.
-        if (isset($results->message)) {
-            return $results->message;
-        }
-
         // Return the full steam ID object for the display name.
-        return $this->convertId($results->steamid);
+        return $results->message ?? $this->convertId($results->steamid);
     }
 
     /**
-     * @param string $steamId
+     * @param string|null $steamId
      *
      * @return array
      */
-    public function GetPlayerSummaries($steamId = null)
+    public function GetPlayerSummaries(string $steamId = null): array
     {
         // Set up the api details
         $this->method  = __FUNCTION__;
@@ -71,12 +68,16 @@ class User extends Client
 
         $chunks = array_chunk(explode(',', $steamId), 100);
 
-        $map = array_map([$this, 'getChunkedPlayerSummaries'], $chunks);
+        $map = array_map($this->getChunkedPlayerSummaries(...), $chunks);
 
         return $this->compressPlayerSummaries($map);
     }
 
-    private function getChunkedPlayerSummaries($chunk)
+    /**
+     * @throws ApiCallFailedException
+     * @throws GuzzleException
+     */
+    private function getChunkedPlayerSummaries($chunk): array
     {
         // Set up the arguments
         $arguments = [
@@ -90,7 +91,7 @@ class User extends Client
         return $this->convertToObjects($client->players);
     }
 
-    private function compressPlayerSummaries($summaries)
+    private function compressPlayerSummaries($summaries): array
     {
         $result = [];
         $keys   = array_keys($summaries);
@@ -102,6 +103,10 @@ class User extends Client
         return $result;
     }
 
+    /**
+     * @throws ApiCallFailedException
+     * @throws GuzzleException
+     */
     public function GetPlayerBans($steamId = null)
     {
         // Set up the api details
@@ -123,7 +128,11 @@ class User extends Client
         return $client->players;
     }
 
-    public function GetFriendList($relationship = 'all', $summaries = true)
+    /**
+     * @throws ApiCallFailedException
+     * @throws GuzzleException
+     */
+    public function GetFriendList($relationship = 'all', $summaries = true): array
     {
         // Set up the api details
         $this->method  = __FUNCTION__;
@@ -158,7 +167,7 @@ class User extends Client
         return $friends;
     }
 
-    protected function convertToObjects($players)
+    protected function convertToObjects($players): array
     {
         $cleanedPlayers = [];
 

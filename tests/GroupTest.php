@@ -28,10 +28,10 @@ class GroupTest extends BaseTester {
      */
     protected function checkClasses($group)
     {
-        $this->assertInstanceOf('Syntax\SteamApi\Containers\Group', $group);
-        $this->assertInstanceOf('Syntax\SteamApi\Containers\Group\Details', $group->groupDetails);
-        $this->assertInstanceOf('Syntax\SteamApi\Containers\Group\MemberDetails', $group->memberDetails);
-        $this->assertInstanceOf('Illuminate\Support\Collection', $group->members);
+        $this->assertInstanceOf(\Syntax\SteamApi\Containers\Group::class, $group);
+        $this->assertInstanceOf(\Syntax\SteamApi\Containers\Group\Details::class, $group->groupDetails);
+        $this->assertInstanceOf(\Syntax\SteamApi\Containers\Group\MemberDetails::class, $group->memberDetails);
+        $this->assertInstanceOf(\Illuminate\Support\Collection::class, $group->members);
     }
 
 }

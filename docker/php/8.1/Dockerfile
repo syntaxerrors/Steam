@@ -1,7 +1,7 @@
 FROM php:8.1-alpine
 
 # Install deps
-RUN apk --update add bash autoconf build-base wget curl git zip unzip zlib-dev shadow libpq
+RUN apk --update add linux-headers bash autoconf build-base wget curl git zip unzip zlib-dev shadow libpq
 
 # Install PHP extensions
 RUN docker-php-ext-install exif pcntl bcmath

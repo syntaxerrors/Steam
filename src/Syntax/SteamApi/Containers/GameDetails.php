@@ -4,15 +4,15 @@ namespace Syntax\SteamApi\Containers;
 
 class GameDetails extends BaseContainer
 {
-    public $gameId;
+    public ?int $gameId;
 
-    public $serverIp;
+    public mixed $serverIp;
 
-    public $serverSteamId;
+    public mixed $serverSteamId;
     
-    public $lobbyId;
+    public mixed $lobbyId;
 
-    public $extraInfo;
+    public mixed $extraInfo;
 
     public function __construct($gameDetails)
     {

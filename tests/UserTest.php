@@ -25,9 +25,9 @@ class UserTest extends BaseTester {
     public function it_throws_an_exception_when_no_display_name_is_provided()
     {
         if (method_exists($this, 'setExpectedException')) {
-            $this->setExpectedException('Syntax\SteamApi\Exceptions\UnrecognizedId');
+            $this->setExpectedException(\Syntax\SteamApi\Exceptions\UnrecognizedId::class);
         } else {
-            $this->expectException('Syntax\SteamApi\Exceptions\UnrecognizedId');
+            $this->expectException(\Syntax\SteamApi\Exceptions\UnrecognizedId::class);
         }
         
         $steamObject = $this->steamClient->user($this->id64)->ResolveVanityURL();
@@ -122,7 +122,7 @@ class UserTest extends BaseTester {
         $this->assertCount(1, $bans);
 
         $attributes = ['SteamId', 'CommunityBanned', 'VACBanned', 'NumberOfVACBans', 'DaysSinceLastBan', 'EconomyBan'];
-        $this->assertObjectHasAttributes($attributes, $bans[0]);
+        $this->assertObjectHasProperties($attributes, $bans[0]);
     }
 
     /** @test */
@@ -133,14 +133,14 @@ class UserTest extends BaseTester {
         $this->assertCount(1, $bans);
 
         $attributes = ['SteamId', 'CommunityBanned', 'VACBanned', 'NumberOfVACBans', 'DaysSinceLastBan', 'EconomyBan'];
-        $this->assertObjectHasAttributes($attributes, $bans[0]);
+        $this->assertObjectHasProperties($attributes, $bans[0]);
 
         $this->assertNotEquals($bans[0]->SteamId, $this->id64);
     }
 
     private function checkPlayerClasses($friendsList)
     {
-        $this->assertInstanceOf('Syntax\SteamApi\Containers\Player', $friendsList[0]);
-        $this->assertInstanceOf('Syntax\SteamApi\Containers\Id', $friendsList[0]->steamIds);
+        $this->assertInstanceOf(\Syntax\SteamApi\Containers\Player::class, $friendsList[0]);
+        $this->assertInstanceOf(\Syntax\SteamApi\Containers\Id::class, $friendsList[0]->steamIds);
     }
 }

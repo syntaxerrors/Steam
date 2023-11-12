@@ -4,13 +4,7 @@ namespace Syntax\SteamApi;
 
 class Inventory
 {
-    public $numberOfBackpackSlots;
-
-    public $items;
-
-    public function __construct($slots, $items)
+    public function __construct(public $numberOfBackpackSlots, public $items)
     {
-        $this->numberOfBackpackSlots = $slots;
-        $this->items                 = $items;
     }
 }

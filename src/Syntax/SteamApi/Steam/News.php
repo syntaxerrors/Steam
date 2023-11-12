@@ -2,7 +2,9 @@
 
 namespace Syntax\SteamApi\Steam;
 
+use GuzzleHttp\Exception\GuzzleException;
 use Syntax\SteamApi\Client;
+use Syntax\SteamApi\Exceptions\ApiCallFailedException;
 
 class News extends Client
 {
@@ -12,6 +14,10 @@ class News extends Client
         $this->interface = 'ISteamNews';
     }
 
+    /**
+     * @throws ApiCallFailedException
+     * @throws GuzzleException
+     */
     public function GetNewsForApp($appId, $count = 5, $maxLength = null)
     {
         // Set up the api details

@@ -47,67 +47,67 @@ class BaseTester extends TestCase {
         $this->assertTrue(true);
     }
 
-    protected function assertObjectHasAttributes($attributes, $object)
+    protected function assertObjectHasProperties($attributes, $object): void
     {
         foreach ($attributes as $attribute) {
-            $this->assertObjectHasAttribute($attribute, $object);
+            $this->assertObjectHasProperty($attribute, $object);
         }
     }
 
-    protected function checkSteamIdsProperties($steamId)
+    protected function checkSteamIdsProperties($steamId): void
     {
         $attributes = [
             'id32', 'id64', 'id3', 'communityId', 'steamId'
         ];
-        $this->assertObjectHasAttributes($attributes, $steamId);
+        $this->assertObjectHasProperties($attributes, $steamId);
     }
 
-    protected function checkPlayerProperties($friendsList)
+    protected function checkPlayerProperties($friendsList): void
     {
         $attributes = [
             'steamId', 'steamIds', 'communityVisibilityState', 'profileState', 'lastLogoff', 'profileUrl', 'realName', 'primaryClanId', 'timecreated'
         ];
-        $this->assertObjectHasAttributes($attributes, $friendsList[0]);
+        $this->assertObjectHasProperties($attributes, $friendsList[0]);
 
         $attributes = [
             'avatar', 'avatarMedium', 'avatarFull', 'avatarUrl', 'avatarMediumUrl', 'avatarFullUrl',
         ];
-        $this->assertObjectHasAttributes($attributes, $friendsList[0]);
+        $this->assertObjectHasProperties($attributes, $friendsList[0]);
 
         $attributes = [
             'personaName', 'personaState', 'personaStateId', 'personaStateFlags'
         ];
-        $this->assertObjectHasAttributes($attributes, $friendsList[0]);
+        $this->assertObjectHasProperties($attributes, $friendsList[0]);
 
         $attributes = [
             'locCountryCode', 'locStateCode', 'locCityId', 'location'
         ];
-        $this->assertObjectHasAttributes($attributes, $friendsList[0]);
+        $this->assertObjectHasProperties($attributes, $friendsList[0]);
 
         $this->checkSteamIdsProperties($friendsList[0]->steamIds);
     }
 
-    protected function checkAchievementProperties($achievement)
+    protected function checkAchievementProperties($achievement): void
     {
         $attributes = [
             'apiName', 'achieved', 'name', 'description'
         ];
-        $this->assertObjectHasAttributes($attributes, $achievement);
+        $this->assertObjectHasProperties($attributes, $achievement);
     }
 
-    protected function checkAppProperties($app)
+    protected function checkAppProperties($app): void
     {
         $this->checkMainAppProperties($app);
         $this->checkGeneralAppProperties($app);
         $this->checkNestedAppProperties($app);
     }
 
-    protected function checkPackageProperties($package)
+    protected function checkPackageProperties($package): void
     {
         $this->checkNestedPackageProperties($package);
     }
 
-    protected function checkGroupProperties($group)
+    protected function checkGroupProperties($group): void
     {
         $this->checkGroupMainSummaryProperties($group);
         $this->checkGroupDetailProperties($group);
@@ -121,7 +121,7 @@ class BaseTester extends TestCase {
     protected function checkItemProperties($item)
     {
         $attributes = ['id', 'originalId', 'level', 'quality', 'quantity'];
-        $this->assertObjectHasAttributes($attributes, $item);
+        $this->assertObjectHasProperties($attributes, $item);
     }
 
     /**
@@ -132,7 +132,7 @@ class BaseTester extends TestCase {
         $attributes = [
             'id', 'type', 'name', 'controllerSupport', 'description', 'about', 'fullgame', 'header', 'website', 'shortDescription'
         ];
-        $this->assertObjectHasAttributes($attributes, $app);
+        $this->assertObjectHasProperties($attributes, $app);
     }
 
     /**
@@ -143,7 +143,7 @@ class BaseTester extends TestCase {
         $attributes = [
             'pcRequirements', 'legal', 'developers', 'publishers', 'price', 'platforms', 'metacritic', 'categories', 'genres', 'release', 'requiredAge', 'isFree', 'supportedLanguages', 'recommendations'
         ];
-        $this->assertObjectHasAttributes($attributes, $app);
+        $this->assertObjectHasProperties($attributes, $app);
     }
 
     /**
@@ -151,22 +151,22 @@ class BaseTester extends TestCase {
      */
     private function checkNestedAppProperties($app)
     {
-        $this->assertObjectHasAttribute('minimum', $app->pcRequirements);
+        $this->assertObjectHasProperty('minimum', $app->pcRequirements);
 
         $attributes = ['currency', 'initial', 'final', 'discount_percent'];
-        $this->assertObjectHasAttributes($attributes, $app->price);
+        $this->assertObjectHasProperties($attributes, $app->price);
 
         $attributes = ['windows', 'mac', 'linux'];
-        $this->assertObjectHasAttributes($attributes, $app->platforms);
+        $this->assertObjectHasProperties($attributes, $app->platforms);
 
         $attributes = ['score', 'url'];
-        $this->assertObjectHasAttributes($attributes, $app->metacritic);
+        $this->assertObjectHasProperties($attributes, $app->metacritic);
 
         $attributes = ['total'];
-        $this->assertObjectHasAttributes($attributes, $app->recommendations);
+        $this->assertObjectHasProperties($attributes, $app->recommendations);
 
         $attributes = ['total'];
-        $this->assertObjectHasAttributes($attributes, $app->achievements);
+        $this->assertObjectHasProperties($attributes, $app->achievements);
     }
 
     /**
@@ -175,10 +175,10 @@ class BaseTester extends TestCase {
     private function checkNestedPackageProperties($package)
     {
         $attributes = ['currency', 'initial', 'final', 'discount_percent', 'individual'];
-        $this->assertObjectHasAttributes($attributes, $package->price);
+        $this->assertObjectHasProperties($attributes, $package->price);
 
         $attributes = ['windows', 'mac', 'linux'];
-        $this->assertObjectHasAttributes($attributes, $package->platforms);
+        $this->assertObjectHasProperties($attributes, $package->platforms);
     }
 
     /**
@@ -186,11 +186,11 @@ class BaseTester extends TestCase {
      */
     private function checkGroupMainSummaryProperties($group)
     {
-        $this->assertObjectHasAttribute('groupID64', $group);
-        $this->assertObjectHasAttribute('groupDetails', $group);
-        $this->assertObjectHasAttribute('memberDetails', $group);
-        $this->assertObjectHasAttribute('startingMember', $group);
-        $this->assertObjectHasAttribute('members', $group);
+        $this->assertObjectHasProperty('groupID64', $group);
+        $this->assertObjectHasProperty('groupDetails', $group);
+        $this->assertObjectHasProperty('memberDetails', $group);
+        $this->assertObjectHasProperty('startingMember', $group);
+        $this->assertObjectHasProperty('members', $group);
     }
 
     /**
@@ -198,16 +198,16 @@ class BaseTester extends TestCase {
      */
     private function checkGroupDetailProperties($group)
     {
-        $this->assertObjectHasAttribute('name', $group->groupDetails);
-        $this->assertObjectHasAttribute('url', $group->groupDetails);
-        $this->assertObjectHasAttribute('headline', $group->groupDetails);
-        $this->assertObjectHasAttribute('summary', $group->groupDetails);
-        $this->assertObjectHasAttribute('avatarIcon', $group->groupDetails);
-        $this->assertObjectHasAttribute('avatarMedium', $group->groupDetails);
-        $this->assertObjectHasAttribute('avatarFull', $group->groupDetails);
-        $this->assertObjectHasAttribute('avatarIconUrl', $group->groupDetails);
-        $this->assertObjectHasAttribute('avatarMediumUrl', $group->groupDetails);
-        $this->assertObjectHasAttribute('avatarFullUrl', $group->groupDetails);
+        $this->assertObjectHasProperty('name', $group->groupDetails);
+        $this->assertObjectHasProperty('url', $group->groupDetails);
+        $this->assertObjectHasProperty('headline', $group->groupDetails);
+        $this->assertObjectHasProperty('summary', $group->groupDetails);
+        $this->assertObjectHasProperty('avatarIcon', $group->groupDetails);
+        $this->assertObjectHasProperty('avatarMedium', $group->groupDetails);
+        $this->assertObjectHasProperty('avatarFull', $group->groupDetails);
+        $this->assertObjectHasProperty('avatarIconUrl', $group->groupDetails);
+        $this->assertObjectHasProperty('avatarMediumUrl', $group->groupDetails);
+        $this->assertObjectHasProperty('avatarFullUrl', $group->groupDetails);
     }
 
     /**
@@ -215,10 +215,10 @@ class BaseTester extends TestCase {
      */
     private function checkGroupMemberDetailsProperties($group)
     {
-        $this->assertObjectHasAttribute('count', $group->memberDetails);
-        $this->assertObjectHasAttribute('inChat', $group->memberDetails);
-        $this->assertObjectHasAttribute('inGame', $group->memberDetails);
-        $this->assertObjectHasAttribute('online', $group->memberDetails);
+        $this->assertObjectHasProperty('count', $group->memberDetails);
+        $this->assertObjectHasProperty('inChat', $group->memberDetails);
+        $this->assertObjectHasProperty('inGame', $group->memberDetails);
+        $this->assertObjectHasProperty('online', $group->memberDetails);
     }
 
     /**
@@ -228,9 +228,9 @@ class BaseTester extends TestCase {
     {
         $startingMember = $group->members->get($group->startingMember);
 
-        $this->assertObjectHasAttribute('id32', $startingMember);
-        $this->assertObjectHasAttribute('id64', $startingMember);
-        $this->assertObjectHasAttribute('id3', $startingMember);
+        $this->assertObjectHasProperty('id32', $startingMember);
+        $this->assertObjectHasProperty('id64', $startingMember);
+        $this->assertObjectHasProperty('id3', $startingMember);
     }
 
 }
