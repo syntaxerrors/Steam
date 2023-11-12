@@ -10,17 +10,17 @@ class NewsTest extends BaseTester {
     {
         $newsArticle = $this->steamClient->news()->GetNewsForApp($this->appId, 1, 20);
 
-        $this->assertObjectHasAttribute('appid', $newsArticle);
+        $this->assertObjectHasProperty('appid', $newsArticle);
         $this->assertEquals($this->appId, $newsArticle->appid);
-        $this->assertObjectHasAttribute('newsitems', $newsArticle);
+        $this->assertObjectHasProperty('newsitems', $newsArticle);
         $this->assertGreaterThan(0, count($newsArticle->newsitems));
 
         $attributes = [
             'gid', 'title', 'url', 'is_external_url', 'author', 'contents', 'feedlabel', 'date', 'feedname'
         ];
-        $this->assertObjectHasAttributes($attributes, $newsArticle->newsitems[0]);
+        $this->assertObjectHasProperties($attributes, $newsArticle->newsitems[0]);
 
-        $this->assertTrue(strlen(strip_tags($newsArticle->newsitems[0]->contents)) <= 23);
+        $this->assertTrue(strlen(strip_tags((string) $newsArticle->newsitems[0]->contents)) <= 23);
     }
 
     /** @test */
@@ -43,8 +43,8 @@ class NewsTest extends BaseTester {
     public function it_has_full_news_article_by_app_id($defaultNewsCall)
     {
         foreach ($defaultNewsCall->newsitems as $newsItem) {
-            if (strlen(strip_tags($newsItem->contents)) > 0) {
-                $this->assertGreaterThan(23, strlen(strip_tags($newsItem->contents)));
+            if (strlen(strip_tags((string) $newsItem->contents)) > 0) {
+                $this->assertGreaterThan(23, strlen(strip_tags((string) $newsItem->contents)));
             }
         }
     }

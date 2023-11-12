@@ -8,10 +8,10 @@ on:
 
 jobs:
   test:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     strategy:
       matrix:
-        php: [ '8.0', '7.4', '7.3' ]
+        php: [ '8.1' ]
     continue-on-error: true
     steps:
       - uses: actions/checkout@v2
@@ -20,8 +20,11 @@ jobs:
         uses: shivammathur/setup-php@v2
         with:
           php-version: ${{ matrix.php }}
-          extensions: bcmath, simplexml, libxml, curl, json
+          extensions: bcmath, simplexml, libxml, curl, json, sodium
           coverage: pcov
+
+      - name: Mitigate Composer lock issues
+        run: composer update
 
       - name: PHP ${{ matrix.php }} - Validate composer.json and composer.lock
         run: composer validate
@@ -46,7 +49,7 @@ jobs:
 
       - name: Publish Test Coverage
         uses: paambaati/codeclimate-action@v2.7.5
-        if: ${{ matrix.php }} == '8.0' && ${{ github.ref }} == 'master'
+        if: ${{ matrix.php }} == '8.1' && ${{ github.ref }} == 'master'
         env:
           apiKey: ${{ secrets.STEAM_API_KEY }}
           CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}

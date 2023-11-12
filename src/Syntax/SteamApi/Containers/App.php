@@ -94,7 +94,7 @@ class App extends BaseContainer
 
     }
 
-    protected function getFakeMetacriticObject()
+    protected function getFakeMetacriticObject(): stdClass
     {
         $object        = new stdClass();
         $object->url   = null;
@@ -102,14 +102,14 @@ class App extends BaseContainer
         return $object;
     }
 
-    protected function getFakePriceObject()
+    protected function getFakePriceObject(): stdClass
     {
         $object        = new stdClass();
         $object->final = 'No price found';
         return $object;
     }
 
-    protected function getFakeFullgameObject()
+    protected function getFakeFullgameObject(): stdClass
     {
         $object        = new stdClass();
         $object->appid = null;
@@ -117,14 +117,14 @@ class App extends BaseContainer
         return $object;
     }
 
-    protected function getFakeRecommendationsObject()
+    protected function getFakeRecommendationsObject(): stdClass
     {
         $object        = new stdClass();
         $object->total = 0;
         return $object;
     }
 
-    protected function getFakeAchievementsObject()
+    protected function getFakeAchievementsObject(): stdClass
     {
         $object        = new stdClass();
         $object->total = 0;

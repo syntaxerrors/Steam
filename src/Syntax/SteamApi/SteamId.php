@@ -56,7 +56,7 @@ trait SteamId
 
     private function convertToAll($id)
     {
-        list($type, $matches) = $this->determineIDType($id);
+        [$type, $matches] = $this->determineIDType($id);
 
         $this->getRawValue($id, $type, $matches);
 
@@ -91,7 +91,7 @@ trait SteamId
 
     private function determineIDType($id)
     {
-        $id = trim($id);
+        $id = trim((string) $id);
 
         if (preg_match('/^STEAM_[0-1]:([0-1]):([0-9]+)$/', $id, $matches)) {
             return ['ID32', $matches];
@@ -117,14 +117,14 @@ trait SteamId
     {
         switch ($type) {
             case 'ID32':
-                $this->rawValue = bcmul($matches[2], '2', 0);
-                $this->rawValue = bcadd($this->rawValue, $matches[1], 0);
+                $this->rawValue = bcmul((string) $matches[2], '2', 0);
+                $this->rawValue = bcadd($this->rawValue, (string) $matches[1], 0);
 
                 $this->formatted->{self::$ID32} = $id;
 
                 break;
             case 'ID64':
-                $this->rawValue = bcsub($id, self::$id64Base, 0);
+                $this->rawValue = bcsub((string) $id, self::$id64Base, 0);
 
                 $this->formatted->{self::$ID64} = $id;
 

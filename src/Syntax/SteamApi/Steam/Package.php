@@ -2,9 +2,11 @@
 
 namespace Syntax\SteamApi\Steam;
 
+use GuzzleHttp\Exception\GuzzleException;
 use Syntax\SteamApi\Client;
 use Illuminate\Support\Collection;
 use Syntax\SteamApi\Containers\Package as PackageContainer;
+use Syntax\SteamApi\Exceptions\ApiCallFailedException;
 
 class Package extends Client
 {
@@ -15,7 +17,11 @@ class Package extends Client
         $this->interface = 'api';
     }
 
-    public function packageDetails($packIds, $cc = null, $language = null)
+    /**
+     * @throws ApiCallFailedException
+     * @throws GuzzleException
+     */
+    public function packageDetails($packIds, $cc = null, $language = null): Collection
     {
         // Set up the api details
         $this->method = 'packagedetails';
@@ -32,12 +38,10 @@ class Package extends Client
         return $this->convertToObjects($client, $packIds);
     }
 
-    protected function convertToObjects($package, $packIds)
+    protected function convertToObjects($package, $packIds): Collection
     {
         $convertedPacks = $this->convertPacks($package, $packIds);
-        $package = $this->sortObjects($convertedPacks);
-
-        return $package;
+        return $this->sortObjects($convertedPacks);
     }
 
     /**
@@ -45,7 +49,7 @@ class Package extends Client
      * @param $packIds
      * @return Collection
      */
-    protected function convertPacks($packages, $packIds)
+    protected function convertPacks($packages, $packIds): Collection
     {
         $convertedPacks = new Collection();
         foreach ($packages as $package) {

@@ -31,7 +31,7 @@ class Package extends BaseContainer
         $this->release = $package->release_date;
     }
 
-    protected function getFakePriceObject()
+    protected function getFakePriceObject(): \stdClass
     {
         $object        = new \stdClass();
         $object->final = 'No price found';

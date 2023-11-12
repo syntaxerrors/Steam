@@ -10,8 +10,8 @@
 [![License](https://poser.pugx.org/syntax/steam-api/license.svg)](https://packagist.org/packages/syntax/steam-api)
 
 **Version Support**  
-`Laravel >= 6.0`  
-`PHP >= 7.3.0`  
+`Laravel >= 9.0`  
+`PHP >= 8.1`  
 
 - [Installation](#installation)
 - [Usage](#usage)
@@ -30,7 +30,7 @@ This package provides an easy way to get details from the Steam API service.  Th
 Begin by installing this package with composer.
 
 	"require": {
-		"syntax/steam-api": "2.3.*"
+		"syntax/steam-api": "3.*"
 	}
 	
 Next, update composer from the terminal.
@@ -402,20 +402,23 @@ A Steam API key must be provided or most tests will fail.
   
 **Run Tests**  
 ```
+# Build container
+docker-compose build
+
 # Install dependancies
-docker-compose run php composer install
+docker-compose run --rm php composer install
 
 # Run tests (assumes apiKey is set in .env file)
-docker-compose run php composer test
+docker-compose run --rm php composer test
 
 # Or with the apiKey inline
-docker-compose run -e api=YOUR_STEAM_API_KEY php composer test
+docker-compose run --rm -e api=YOUR_STEAM_API_KEY php composer test
 
 # With coverage
-docker-compose run php composer coverage
+docker-compose run --rm php composer coverage
 
 # Play around
-docker-compose run php bash
+docker-compose run --rm php bash
 ```
 
 ## Contributors

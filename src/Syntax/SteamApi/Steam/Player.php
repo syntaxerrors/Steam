@@ -2,10 +2,13 @@
 
 namespace Syntax\SteamApi\Steam;
 
+use GuzzleHttp\Exception\GuzzleException;
 use Syntax\SteamApi\Client;
 use Illuminate\Support\Collection;
 use Syntax\SteamApi\Containers\Game;
 use Syntax\SteamApi\Containers\Player\Level;
+use Syntax\SteamApi\Exceptions\ApiArgumentRequired;
+use Syntax\SteamApi\Exceptions\ApiCallFailedException;
 
 class Player extends Client
 {
@@ -17,6 +20,12 @@ class Player extends Client
         $this->steamId   = $steamId;
     }
 
+    /**
+     * @throws ApiCallFailedException
+     * @throws ApiArgumentRequired
+     * @throws GuzzleException
+     * @throws \JsonException
+     */
     public function GetSteamLevel()
     {
         // Set up the api details
@@ -31,19 +40,29 @@ class Player extends Client
         return $client->player_level;
     }
 
-    public function GetPlayerLevelDetails()
+    /**
+     * @throws ApiCallFailedException
+     * @throws ApiArgumentRequired
+     * @throws GuzzleException
+     * @throws \JsonException
+     */
+    public function GetPlayerLevelDetails(): ?Level
     {
         $details = $this->GetBadges();
         
         if(count((array)$details) == 0){
-            return NULL;
+            return null;
         }
 
-        $details = new Level($details);
-
-        return $details;
+        return new Level($details);
     }
 
+    /**
+     * @throws ApiCallFailedException
+     * @throws ApiArgumentRequired
+     * @throws GuzzleException
+     * @throws \JsonException
+     */
     public function GetBadges()
     {
         // Set up the api details
@@ -56,6 +75,12 @@ class Player extends Client
         return $this->getServiceResponse($arguments);
     }
 
+    /**
+     * @throws ApiArgumentRequired
+     * @throws ApiCallFailedException
+     * @throws GuzzleException
+     * @throws \JsonException
+     */
     public function GetCommunityBadgeProgress($badgeId = null)
     {
         // Set up the api details
@@ -71,7 +96,13 @@ class Player extends Client
         return $this->getServiceResponse($arguments);
     }
 
-    public function GetOwnedGames($includeAppInfo = true, $includePlayedFreeGames = false, $appIdsFilter = [])
+    /**
+     * @throws ApiCallFailedException
+     * @throws ApiArgumentRequired
+     * @throws GuzzleException
+     * @throws \JsonException
+     */
+    public function GetOwnedGames($includeAppInfo = true, $includePlayedFreeGames = false, $appIdsFilter = []): Collection
     {
         // Set up the api details
         $this->setApiDetails(__FUNCTION__, 'v0001');
@@ -95,10 +126,16 @@ class Player extends Client
         $client = $this->getServiceResponse($arguments);
 
         // Clean up the games
-        return $this->convertToObjects(isset($client->games) ? $client->games : []);
+        return $this->convertToObjects($client->games ?? []);
     }
 
-    public function GetRecentlyPlayedGames($count = null)
+    /**
+     * @throws ApiCallFailedException
+     * @throws ApiArgumentRequired
+     * @throws GuzzleException
+     * @throws \JsonException
+     */
+    public function GetRecentlyPlayedGames($count = null): ?Collection
     {
         // Set up the api details
         $this->setApiDetails(__FUNCTION__, 'v0001');
@@ -120,6 +157,12 @@ class Player extends Client
         return null;
     }
 
+    /**
+     * @throws ApiCallFailedException
+     * @throws ApiArgumentRequired
+     * @throws GuzzleException
+     * @throws \JsonException
+     */
     public function IsPlayingSharedGame($appIdPlaying)
     {
         // Set up the api details
@@ -137,7 +180,7 @@ class Player extends Client
         return $client->lender_steamid;
     }
 
-    protected function convertToObjects($games)
+    protected function convertToObjects($games): Collection
     {
         $convertedGames = $this->convertGames($games);
 
@@ -146,7 +189,7 @@ class Player extends Client
         return $games;
     }
 
-    private function convertGames($games)
+    private function convertGames($games): Collection
     {
         $convertedGames = new Collection;
 
