@@ -41,9 +41,18 @@ Next, update composer from the terminal.
 
 Lastly, publish the config file.  You can get your API key from [Steam](http://steamcommunity.com/dev/apikey).
 
-	php artisan vendor:publish
+	php artisan vendor:publish --provider="Syntax\SteamApi\SteamApiServiceProvider"
 
 ## Usage
+
+```php
+use SteamApi;
+
+/** Get Portal 2 */
+$apps = SteamApi::app()->appDetails([620]);
+
+echo $app->first()->name;
+```
 
 Each service from the Steam API has its own methods you can use.
 
@@ -75,7 +84,7 @@ format | string | The format you want back. | No | null
 ##### Example usage
 
 ```php
-Steam::convertId($id, $format);
+SteamApi::convertId($id, $format);
 ```
 
 > Example Output: [convertId](./examples/global/convertId.txt)
@@ -84,7 +93,7 @@ Steam::convertId($id, $format);
 The [Steam News](https://developer.valvesoftware.com/wiki/Steam_Web_API#GetNewsForApp_.28v0002.29) web api is used to get articles for games.
 
 ```php
-Steam::news()
+SteamApi::news()
 ```
 
 #### GetNewsForApp
@@ -102,7 +111,7 @@ maxlength | int | The maximum number of characters to return | No | null
 
 ```php
 <?php
-	$news = Steam::news()->GetNewsForApp($appId, 5, 500)->newsitems;
+	$news = SteamApi::news()->GetNewsForApp($appId, 5, 500)->newsitems;
 ?>
 ```
 
@@ -114,7 +123,7 @@ The [Player Service](https://developer.valvesoftware.com/wiki/Steam_Web_API#GetO
 When instantiating the player class, you are required to pass a steamId or Steam community ID.
 
 ```php
-Steam::player($steamId)
+SteamApi::player($steamId)
 ```
 
 #### GetSteamLevel
@@ -178,7 +187,7 @@ The [User](https://developer.valvesoftware.com/wiki/Steam_Web_API#GetFriendList_
 When instantiating the user class, you are required to pass at least one steamId or steam community ID.
 
 ```php
-Steam::user($steamId)
+SteamApi::user($steamId)
 ```
 
 #### ResolveVanityURL
@@ -191,7 +200,7 @@ Name | Type | Description | Required | Default
 displayName| string  | The display name to get the steam ID for.  In `http://steamcommunity.com/id/gabelogannewell` it would be `gabelogannewell`.  | Yes | NULL
 
 ```php
-	$player = Steam::user($steamId)->ResolveVanityURL('gabelogannewell');
+	$player = SteamApi::user($steamId)->ResolveVanityURL('gabelogannewell');
 ```
 
 > Example Output: [ResolveVanityURL](./examples/user/ResolveVanityURL.txt)
@@ -208,11 +217,11 @@ steamId| int[]  | An array of (or singular) steam ID(s) to get details for  | No
 ```php
 	// One user
 	$steamId = 76561197960287930;
-	$player = Steam::user($steamId)->GetPlayerSummaries()[0];
+	$player = SteamApi::user($steamId)->GetPlayerSummaries()[0];
 	
 	// Several users
 	$steamIds = [76561197960287930, 76561197968575517]
-	$players = Steam::user($steamIds)->GetPlayerSummaries();
+	$players = SteamApi::user($steamIds)->GetPlayerSummaries();
 ```
 
 > Example Output: [GetPlayerSummaries](./examples/user/GetPlayerSummaries.txt)
@@ -250,7 +259,7 @@ The [User Stats](https://developer.valvesoftware.com/wiki/Steam_Web_API#GetPlaye
 When instantiating the user stats class, you are required to pass a steamID or Steam community ID.
 
 ```php
-Steam::userStats($steamId)
+SteamApi::userStats($steamId)
 ```
 
 #### GetPlayerAchievements
@@ -306,7 +315,7 @@ appId| int | The ID of the game you want the details for. | Yes |
 This area will get details for games.
 
 ```php
-Steam::app()
+SteamApi::app()
 ```
 
 #### appDetails
@@ -332,7 +341,7 @@ This method will return an array of app objects directly from Steam.  It include
 This method will get details for packages.
 
 ```php
-Steam::package()
+SteamApi::package()
 ```
 
 #### packageDetails
@@ -353,7 +362,7 @@ l | string | The l is the language parameter, you can get the appropriate langua
 This method will get user inventory for item.
 
 ```php
-Steam::item()
+SteamApi::item()
 ```
 
 #### GetPlayerItems
@@ -374,7 +383,7 @@ steamid | int | The steamid of the Steam user you want for | Yes |
 This service is used to get details on a Steam group.
 
 ```php
-Steam::group()
+SteamApi::group()
 ```
 
 #### GetGroupSummary
@@ -390,7 +399,7 @@ group| string or int  | The ID or the name of the group. | Yes
 
 ```php
 <?php
-	$news = Steam::group()->GetGroupSummary('Valve');
+	$news = SteamApi::group()->GetGroupSummary('Valve');
 ?>
 ```
 

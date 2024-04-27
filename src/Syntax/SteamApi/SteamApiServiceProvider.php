@@ -2,24 +2,16 @@
 
 namespace Syntax\SteamApi;
 
-use Illuminate\Foundation\AliasLoader;
 use Illuminate\Support\ServiceProvider;
 
 class SteamApiServiceProvider extends ServiceProvider
 {
     /**
-     * Indicates if loading of the provider is deferred.
-     *
-     * @var bool
-     */
-    protected $defer = false;
-
-    /**
      * Bootstrap the application events.
      *
      * @return void
      */
-    public function boot()
+    public function boot(): void
     {
         $this->publishes([__DIR__ . '/../../config/config.php' => config_path('steam-api.php')]);
     }
@@ -29,24 +21,9 @@ class SteamApiServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    public function register()
+    public function register(): void
     {
-        $this->registerAlias();
-
-        $this->app->singleton('steam-api', fn() => new Client);
-    }
-
-    /**
-     * Register the alias for package.
-     *
-     * @return void
-     */
-    protected function registerAlias()
-    {
-        $this->app->booting(function () {
-            $loader = AliasLoader::getInstance();
-            $loader->alias('Steam', \Syntax\SteamApi\Facades\SteamApi::class);
-        });
+        $this->app->singleton('steam-api', fn () => new Client());
     }
 
     /**
@@ -54,7 +31,7 @@ class SteamApiServiceProvider extends ServiceProvider
      *
      * @return string[]
      */
-    public function provides()
+    public function provides(): array
     {
         return ['steam-api'];
     }

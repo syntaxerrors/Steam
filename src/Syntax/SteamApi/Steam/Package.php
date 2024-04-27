@@ -22,40 +22,40 @@ class Package extends Client
      * @throws ApiCallFailedException
      * @throws GuzzleException
      */
-    public function packageDetails($packIds, $cc = null, $language = null): Collection
+    public function packageDetails($packId, $cc = null, $language = null): Collection
     {
         // Set up the api details
         $this->method = 'packagedetails';
         $this->version = null;
         // Set up the arguments
         $arguments = [
-            'packageids' => $packIds,
+            'packageids' => $packId,
             'cc'         => $cc,
             'l'          => $language,
         ];
         // Get the client
         $client = $this->setUpClient($arguments);
 
-        return $this->convertToObjects($client, $packIds);
+        return $this->convertToObjects($client, $packId);
     }
 
-    protected function convertToObjects($package, $packIds): Collection
+    protected function convertToObjects($package, $packId): Collection
     {
-        $convertedPacks = $this->convertPacks($package, $packIds);
+        $convertedPacks = $this->convertPacks($package, $packId);
         return $this->sortObjects($convertedPacks);
     }
 
     /**
      * @param $packages
-     * @param $packIds
+     * @param $packId
      * @return Collection
      */
-    protected function convertPacks($packages, $packIds): Collection
+    protected function convertPacks($packages, $packId): Collection
     {
         $convertedPacks = new Collection();
         foreach ($packages as $package) {
             if (isset($package->data)) {
-                $convertedPacks->add(new PackageContainer($package->data, $packIds));
+                $convertedPacks->add(new PackageContainer($package->data, $packId));
             }
         }
 
