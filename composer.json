@@ -11,7 +11,7 @@
   ],
   "require": {
     "php": "^8.1",
-    "laravel/framework": "^9.0",
+    "laravel/framework": "^10.0",
     "guzzlehttp/guzzle": "^7.2",
     "ext-bcmath": "*",
     "ext-simplexml": "*",
@@ -39,8 +39,8 @@
   },
   "minimum-stability": "stable",
   "scripts": {
-    "test": "vendor/bin/phpunit",
-    "coverage": "XDEBUG_MODE=coverage vendor/bin/phpunit --coverage-clover=coverage.clover",
-    "coverage:html": "XDEBUG_MODE=coverage vendor/bin/phpunit --coverage-html ./coverage"
+    "test": "XDEBUG_MODE=off vendor/bin/phpunit -d memory_limit=512M",
+    "coverage": "XDEBUG_MODE=coverage vendor/bin/phpunit -d memory_limit=512M --coverage-clover=coverage.clover",
+    "coverage:html": "XDEBUG_MODE=coverage vendor/bin/phpunit -d memory_limit=512M --coverage-html ./coverage"
   }
 }

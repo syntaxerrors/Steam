@@ -101,6 +101,10 @@ class Stats extends Client
         }
     }
 
+    /**
+     * @throws ApiCallFailedException
+     * @throws GuzzleException
+     */
     public function GetGlobalAchievementPercentagesForApp($gameId)
     {
         // Set up the api details
@@ -124,8 +128,10 @@ class Stats extends Client
      * @param $all   bool Return all stats when true and only achievements when false
      *
      * @return mixed
+     * @throws ApiCallFailedException
+     * @throws GuzzleException
      */
-    public function GetUserStatsForGame($appId, $all = false): mixed
+    public function GetUserStatsForGame(int $appId, bool $all = false): mixed
     {
         // Set up the api details
         $this->method  = __FUNCTION__;
@@ -152,9 +158,11 @@ class Stats extends Client
     /**
      * @param $appId
      *
+     * @return mixed
+     * @throws ApiCallFailedException
+     * @throws GuzzleException
      * @link https://wiki.teamfortress.com/wiki/WebAPI/GetSchemaForGame
      *
-     * @return mixed
      */
     public function GetSchemaForGame($appId): mixed
     {
