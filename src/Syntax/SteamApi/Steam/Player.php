@@ -162,8 +162,9 @@ class Player extends Client
      * @throws ApiArgumentRequired
      * @throws GuzzleException
      * @throws \JsonException
+     * @deprecated - use ISteamUser.CheckAppOwnership
      */
-    public function IsPlayingSharedGame($appIdPlaying)
+    public function IsPlayingSharedGame($appIdPlaying): string
     {
         // Set up the api details
         $this->setApiDetails(__FUNCTION__, 'v0001');
@@ -184,9 +185,7 @@ class Player extends Client
     {
         $convertedGames = $this->convertGames($games);
 
-        $games = $this->sortObjects($convertedGames);
-
-        return $games;
+        return $this->sortObjects($convertedGames);
     }
 
     private function convertGames($games): Collection

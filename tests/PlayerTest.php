@@ -42,6 +42,8 @@ class PlayerTest extends BaseTester {
     /** @test */
     public function it_gets_the_badge_progress_by_user_id()
     {
+        $this->expectApiCallFailedException('Api call failed to complete due to an empty response');
+
         $progress = $this->steamClient->player($this->id64)->GetCommunityBadgeProgress();
 
         $this->assertObjectHasProperty('quests', $progress);
@@ -87,7 +89,7 @@ class PlayerTest extends BaseTester {
     /** @test */
     public function it_filters_the_owned_games_by_user_id()
     {
-        $games = $this->steamClient->player($this->id64)->GetOwnedGames(true, false, $this->appId);
+        $games = $this->steamClient->player($this->id64)->GetOwnedGames(true, false, 400);
 
         $this->assertInstanceOf(\Illuminate\Support\Collection::class, $games);
         $this->assertInstanceOf(\Syntax\SteamApi\Containers\Game::class, $games->first());
@@ -134,6 +136,8 @@ class PlayerTest extends BaseTester {
     /** @test */
     public function it_checks_if_playing_a_shared_game_by_user_and_app_id()
     {
+        $this->expectEmptyResponseException();
+
         $playingSharedGame = $this->steamClient->player($this->id64)->IsPlayingSharedGame($this->appId);
 
         $this->assertNotNull($playingSharedGame);

@@ -14,6 +14,7 @@ class Item extends Client
     public function __construct()
     {
         parent::__construct();
+
         $this->url       = 'http://store.steampowered.com/';
         $this->isService = true;
         $this->interface = 'api';

@@ -10,21 +10,22 @@ trait SteamId
 
     private $rawValue;
 
-    private static $ID32 = 'id32';
+    private static string $ID32 = 'id32';
 
-    private static $ID64 = 'id64';
+    private static string $ID64 = 'id64';
 
-    private static $ID3 = 'id3';
+    private static string $ID3 = 'id3';
 
-    private static $id64Base = '76561197960265728';
+    private static string $id64Base = '76561197960265728';
 
     /**
-     * @param string|int  $id
+     * @param int|string $id
      * @param string|null $format
      *
      * @return mixed
+     * @throws UnrecognizedId
      */
-    public function convertId($id, $format = null)
+    public function convertId(int|string $id, string $format = null)
     {
         $this->convertToAll($id);
 
@@ -46,7 +47,7 @@ trait SteamId
         }
     }
 
-    protected function setUpFormatted()
+    protected function setUpFormatted(): void
     {
         $this->formatted                = new \stdClass();
         $this->formatted->{self::$ID32} = null;
@@ -54,6 +55,9 @@ trait SteamId
         $this->formatted->{self::$ID3}  = null;
     }
 
+    /**
+     * @throws UnrecognizedId
+     */
     private function convertToAll($id)
     {
         [$type, $matches] = $this->determineIDType($id);
@@ -68,7 +72,7 @@ trait SteamId
         return $this->formatted;
     }
 
-    private function convertToID32()
+    private function convertToID32(): void
     {
         $z                              = bcdiv($this->rawValue, '2', 0);
         $y                              = bcmul($z, '2', 0);
@@ -77,19 +81,22 @@ trait SteamId
         $this->formatted->{self::$ID32} = $formatted;
     }
 
-    private function convertToID64()
+    private function convertToID64(): void
     {
         $formatted                      = bcadd($this->rawValue, self::$id64Base, 0);
         $this->formatted->{self::$ID64} = $formatted;
     }
 
-    private function convertToID3()
+    private function convertToID3(): void
     {
         $formatted                     = "[U:1:$this->rawValue]";
         $this->formatted->{self::$ID3} = $formatted;
     }
 
-    private function determineIDType($id)
+    /**
+     * @throws UnrecognizedId
+     */
+    private function determineIDType($id): array
     {
         $id = trim((string) $id);
 
@@ -113,7 +120,7 @@ trait SteamId
      * @param $type
      * @param $matches
      */
-    private function getRawValue($id, $type, $matches)
+    private function getRawValue($id, $type, $matches): void
     {
         switch ($type) {
             case 'ID32':

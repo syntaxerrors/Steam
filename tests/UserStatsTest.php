@@ -16,7 +16,7 @@ class UserStatsTest extends BaseTester {
     /** @test */
     public function it_gets_the_users_achievements_for_a_game()
     {
-        $achievements = $this->steamClient->userStats($this->id64)->GetPlayerAchievements(252950);
+        $achievements = $this->steamClient->userStats(76561198022436617)->GetPlayerAchievements(252950);
 
         $this->assertInstanceOf(\Syntax\SteamApi\Containers\Achievement::class, $achievements[0]);
         $this->checkAchievementProperties($achievements[0]);
@@ -36,36 +36,32 @@ class UserStatsTest extends BaseTester {
     /** @test */
     public function it_gets_the_user_stats_for_a_game()
     {
-        $this->expectException(Syntax\SteamApi\Exceptions\ApiCallFailedException::class);
+        $stats = $this->steamClient->userStats(76_561_198_159_417_876)->GetUserStatsForGame($this->appId);
 
-        $stats = $this->steamClient->userStats(76_561_198_159_417_876)->GetUserStatsForGame(730);
+         $this->assertTrue(is_array($stats));
 
-        // $this->assertTrue(is_array($stats));
-
-        // $attributes = ['name', 'achieved'];
-        // $this->assertObjectHasPropertys($attributes, $stats[0]);
+         $attributes = ['name', 'achieved'];
+         $this->assertObjectHasProperties($attributes, $stats[0]);
     }
 
     /** @test */
     public function it_gets_all_the_user_stats_for_a_game()
     {
-        $this->expectException(Syntax\SteamApi\Exceptions\ApiCallFailedException::class);
+         $stats = $this->steamClient->userStats(76_561_198_159_417_876)->GetUserStatsForGame($this->appId, true);
 
-        $stats = $this->steamClient->userStats(76_561_198_159_417_876)->GetUserStatsForGame(730, true);
+         $this->assertTrue(is_object($stats));
 
-        // $this->assertTrue(is_object($stats));
+         $attributes = ['name', 'achieved'];
+         $this->assertObjectHasProperties($attributes, $stats->achievements[0]);
 
-        // $attributes = ['name', 'achieved'];
-        // $this->assertObjectHasPropertys($attributes, $stats->achievements[0]);
-
-        // $attributes = ['name', 'value'];
-        // $this->assertObjectHasPropertys($attributes, $stats->stats[0]);
+         $attributes = ['name', 'value'];
+         $this->assertObjectHasProperties($attributes, $stats->stats[0]);
     }
 
     /** @test */
     public function it_gets_all_the_stats_for_a_game()
     {
-        $stats = $this->steamClient->userStats(76_561_198_159_417_876)->GetSchemaForGame(730, true);
+        $stats = $this->steamClient->userStats(76_561_198_159_417_876)->GetSchemaForGame($this->appId);
 
         $this->assertTrue(is_object($stats));
 

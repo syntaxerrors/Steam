@@ -6,25 +6,25 @@ use Dotenv\Dotenv;
 
 class BaseTester extends TestCase {
 
-    protected $id32      = 'STEAM_1:1:31085444';
+    protected string $id32   = 'STEAM_0:1:859819470';
 
-    protected $id64      = 76561198022436617;
+    protected int $id64      = 76561199679904669;
 
-    protected $id3       = '[U:1:62170889]';
+    protected string $id3    = '[U:1:1719638941]';
 
-    protected $altId64   = 76561197979958413;
+    protected int $altId64   = 76561197979958413;
 
-    protected $appId     = 620;
+    protected int $appId     = 620; // Portal 2
 
-    protected $packageId = 32848;
+    protected int $packageId = 469; // The Orange Box
 
-    protected $itemAppId = 440;
+    protected int $itemAppId = 5021; // Mann Co. Supply Crate Key
 
-    protected $groupId   = 103582791429521412;
+    protected int $groupId   = 103582791429521412; // Valve
 
-    protected $groupName = 'Valve';
+    protected string $groupName = 'Valve';
 
-    protected $steamClient;
+    protected Client $steamClient;
 
     protected function setUp(): void
     {
@@ -118,7 +118,7 @@ class BaseTester extends TestCase {
     /**
      * @param $item
      */
-    protected function checkItemProperties($item)
+    protected function checkItemProperties($item): void
     {
         $attributes = ['id', 'originalId', 'level', 'quality', 'quantity'];
         $this->assertObjectHasProperties($attributes, $item);
@@ -127,7 +127,7 @@ class BaseTester extends TestCase {
     /**
      * @param $app
      */
-    private function checkMainAppProperties($app)
+    private function checkMainAppProperties($app): void
     {
         $attributes = [
             'id', 'type', 'name', 'controllerSupport', 'description', 'about', 'fullgame', 'header', 'website', 'shortDescription'
@@ -138,7 +138,7 @@ class BaseTester extends TestCase {
     /**
      * @param $app
      */
-    private function checkGeneralAppProperties($app)
+    private function checkGeneralAppProperties($app): void
     {
         $attributes = [
             'pcRequirements', 'legal', 'developers', 'publishers', 'price', 'platforms', 'metacritic', 'categories', 'genres', 'release', 'requiredAge', 'isFree', 'supportedLanguages', 'recommendations'
@@ -149,7 +149,7 @@ class BaseTester extends TestCase {
     /**
      * @param $app
      */
-    private function checkNestedAppProperties($app)
+    private function checkNestedAppProperties($app): void
     {
         $this->assertObjectHasProperty('minimum', $app->pcRequirements);
 
@@ -172,7 +172,7 @@ class BaseTester extends TestCase {
     /**
      * @param $package
      */
-    private function checkNestedPackageProperties($package)
+    private function checkNestedPackageProperties($package): void
     {
         $attributes = ['currency', 'initial', 'final', 'discount_percent', 'individual'];
         $this->assertObjectHasProperties($attributes, $package->price);
@@ -184,7 +184,7 @@ class BaseTester extends TestCase {
     /**
      * @param $group
      */
-    private function checkGroupMainSummaryProperties($group)
+    private function checkGroupMainSummaryProperties($group): void
     {
         $this->assertObjectHasProperty('groupID64', $group);
         $this->assertObjectHasProperty('groupDetails', $group);
@@ -196,7 +196,7 @@ class BaseTester extends TestCase {
     /**
      * @param $group
      */
-    private function checkGroupDetailProperties($group)
+    private function checkGroupDetailProperties($group): void
     {
         $this->assertObjectHasProperty('name', $group->groupDetails);
         $this->assertObjectHasProperty('url', $group->groupDetails);
@@ -213,7 +213,7 @@ class BaseTester extends TestCase {
     /**
      * @param $group
      */
-    private function checkGroupMemberDetailsProperties($group)
+    private function checkGroupMemberDetailsProperties($group): void
     {
         $this->assertObjectHasProperty('count', $group->memberDetails);
         $this->assertObjectHasProperty('inChat', $group->memberDetails);
@@ -224,13 +224,24 @@ class BaseTester extends TestCase {
     /**
      * @param $group
      */
-    private function checkGroupMemberProperties($group)
+    private function checkGroupMemberProperties($group): void
     {
         $startingMember = $group->members->get($group->startingMember);
 
         $this->assertObjectHasProperty('id32', $startingMember);
         $this->assertObjectHasProperty('id64', $startingMember);
         $this->assertObjectHasProperty('id3', $startingMember);
+    }
+
+    protected function expectApiCallFailedException(string $message): void
+    {
+        $this->expectException(\Syntax\SteamApi\Exceptions\ApiCallFailedException::class);
+        $this->expectExceptionMessage($message);
+    }
+
+    protected function expectEmptyResponseException(): void
+    {
+        $this->expectApiCallFailedException( 'Api call failed to complete due to an empty response');
     }
 
 }

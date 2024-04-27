@@ -13,6 +13,7 @@ class Package extends Client
     public function __construct()
     {
         parent::__construct();
+
         $this->url = 'http://store.steampowered.com/';
         $this->interface = 'api';
     }

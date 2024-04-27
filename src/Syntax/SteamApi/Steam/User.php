@@ -6,6 +6,7 @@ use GuzzleHttp\Exception\GuzzleException;
 use InvalidArgumentException;
 use Syntax\SteamApi\Client;
 use Syntax\SteamApi\Containers\Player as PlayerContainer;
+use Syntax\SteamApi\Exceptions\ApiArgumentRequired;
 use Syntax\SteamApi\Exceptions\ApiCallFailedException;
 use Syntax\SteamApi\Exceptions\UnrecognizedId;
 
@@ -30,7 +31,11 @@ class User extends Client
      *
      * @return mixed
      *
+     * @throws ApiArgumentRequired
+     * @throws ApiCallFailedException
+     * @throws GuzzleException
      * @throws UnrecognizedId
+     * @throws \JsonException
      */
     public function ResolveVanityURL($displayName = null): mixed
     {
@@ -43,7 +48,7 @@ class User extends Client
         $this->method  = __FUNCTION__;
         $this->version = 'v0001';
 
-        $results = $this->setUpClient(['vanityurl' => $displayName])->response;
+        $results = $this->getClientResponse(['vanityurl' => $displayName]);
 
         // Return the full steam ID object for the display name.
         return $results->message ?? $this->convertId($results->steamid);
@@ -74,8 +79,12 @@ class User extends Client
     }
 
     /**
+     * @param $chunk
+     * @return array
      * @throws ApiCallFailedException
      * @throws GuzzleException
+     * @throws \JsonException
+     * @throws ApiArgumentRequired
      */
     private function getChunkedPlayerSummaries($chunk): array
     {

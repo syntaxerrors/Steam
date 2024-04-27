@@ -1,5 +1,7 @@
 <?php
 
+use GuzzleHttp\Exception\GuzzleException;
+use Syntax\SteamApi\Exceptions\ApiCallFailedException;
 use Syntax\SteamApi\Exceptions\UnrecognizedId;
 
 require_once('BaseTester.php');
@@ -21,6 +23,8 @@ class UserTest extends BaseTester {
     /**
      * @test
      * @throws UnrecognizedId
+     * @throws GuzzleException
+     * @throws ApiCallFailedException
      */
     public function it_throws_an_exception_when_no_display_name_is_provided()
     {
@@ -36,6 +40,8 @@ class UserTest extends BaseTester {
     }
 
     /** @test
+     * @throws ApiCallFailedException
+     * @throws GuzzleException
      * @throws UnrecognizedId
      */
     public function it_returns_no_match_from_an_invalid_display_name()
@@ -46,13 +52,15 @@ class UserTest extends BaseTester {
     }
 
     /** @test
+     * @throws ApiCallFailedException
+     * @throws GuzzleException
      * @throws UnrecognizedId
      */
     public function it_gets_the_steam_id_from_a_display_name()
     {
-        $steamObject = $this->steamClient->user($this->id64)->ResolveVanityURL('stygiansabyss');
+        $steamObject = $this->steamClient->user(76561198022436617)->ResolveVanityURL('stygiansabyss');
 
-        $this->assertEquals($this->id64, $steamObject->id64);
+        $this->assertEquals(76561198022436617, $steamObject->id64);
     }
 
     /** @test */
@@ -138,7 +146,7 @@ class UserTest extends BaseTester {
         $this->assertNotEquals($bans[0]->SteamId, $this->id64);
     }
 
-    private function checkPlayerClasses($friendsList)
+    private function checkPlayerClasses($friendsList): void
     {
         $this->assertInstanceOf(\Syntax\SteamApi\Containers\Player::class, $friendsList[0]);
         $this->assertInstanceOf(\Syntax\SteamApi\Containers\Id::class, $friendsList[0]->steamIds);
