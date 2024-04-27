@@ -10,7 +10,7 @@
 [![License](https://poser.pugx.org/syntax/steam-api/license.svg)](https://packagist.org/packages/syntax/steam-api)
 
 **Version Support**  
-`Laravel >= 9.0`  
+`Laravel >= 10.0`  
 `PHP >= 8.1`  
 
 - [Installation](#installation)
