@@ -26,7 +26,7 @@ class GroupTest extends BaseTester {
     /**
      * @param $group
      */
-    protected function checkClasses($group)
+    protected function checkClasses($group): void
     {
         $this->assertInstanceOf(\Syntax\SteamApi\Containers\Group::class, $group);
         $this->assertInstanceOf(\Syntax\SteamApi\Containers\Group\Details::class, $group->groupDetails);

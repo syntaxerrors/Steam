@@ -6,11 +6,11 @@ use Dotenv\Dotenv;
 
 class BaseTester extends TestCase {
 
-    protected string $id32   = 'STEAM_0:1:859819470';
+    protected string $id32   = 'STEAM_1:1:31085444';
 
-    protected int $id64      = 76561199679904669;
+    protected int $id64      = 76561198022436617;
 
-    protected string $id3    = '[U:1:1719638941]';
+    protected string $id3    = '[U:1:62170889]';
 
     protected int $altId64   = 76561197979958413;
 

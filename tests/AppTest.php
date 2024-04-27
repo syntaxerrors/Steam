@@ -30,7 +30,7 @@ class AppTest extends BaseTester {
     /**
      * @param $detail
      */
-    private function checkClasses($detail)
+    private function checkClasses($detail): void
     {
         $this->assertInstanceOf(\Syntax\SteamApi\Containers\App::class, $detail);
         $this->assertInstanceOf(\Illuminate\Support\Collection::class, $detail->developers);
