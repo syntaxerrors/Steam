@@ -49,7 +49,7 @@ Lastly, publish the config file.  You can get your API key from [Steam](http://s
 use Syntax\SteamApi\Facades\SteamApi;
 
 /** Get Portal 2 */
-$apps = SteamApi::app()->appDetails([620]);
+$apps = SteamApi::app()->appDetails(620);
 
 echo $app->first()->name;
 ```
