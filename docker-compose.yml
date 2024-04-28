@@ -1,6 +1,5 @@
-version: '3'
 services:
   php:
-    image: nicekiwi/php:latest
+    build: ./docker/php/${PHP_VERSION:-8.1}
     volumes:
       - $PWD:/srv/app:delegated

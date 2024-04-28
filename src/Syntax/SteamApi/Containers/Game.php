@@ -41,16 +41,16 @@ class Game extends BaseContainer
     /**
      * @param        $app
      * @param string $field
-     * @param string $value
+     * @param string|null $value
      *
      * @return null|string
      */
-    protected function checkIssetImage($app, $field, $value = null)
+    protected function checkIssetImage($app, string $field, string $value = null): ?string
     {
         return isset($app->$field) ? $this->getImageForGame($app->appid, $app->$field) : $value;
     }
 
-    protected function getImageForGame($appId, $hash)
+    protected function getImageForGame($appId, $hash): ?string
     {
         if ($hash != null) {
             return 'http://media.steampowered.com/steamcommunity/public/images/apps/' . $appId . '/' . $hash . '.jpg';

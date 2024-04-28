@@ -1,11 +1,15 @@
 <?php
 
+use Syntax\SteamApi\Exceptions\UnrecognizedId;
+
 require_once('BaseTester.php');
 
 /** @group Id */
 class IdTest extends BaseTester {
 
-    /** @test */
+    /** @test
+     * @throws UnrecognizedId
+     */
     public function it_converts_an_id()
     {
         $ids = $this->steamClient->convertId($this->id64);

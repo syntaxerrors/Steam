@@ -2,19 +2,23 @@
 
 namespace Syntax\SteamApi\Steam;
 
+use GuzzleHttp\Exception\GuzzleException;
 use Syntax\SteamApi\Client;
 use Illuminate\Support\Collection;
 use Syntax\SteamApi\Containers\App as AppContainer;
+use Syntax\SteamApi\Exceptions\ApiCallFailedException;
+use Syntax\SteamApi\Exceptions\InvalidApiKeyException;
 
 class App extends Client
 {
     /**
-     * @var bool
+     * @throws InvalidApiKeyException
      */
 
     public function __construct()
     {
         parent::__construct();
+
         $this->url       = 'http://store.steampowered.com/';
         $this->interface = 'api';
     }
@@ -24,8 +28,10 @@ class App extends Client
      * @param null $country
      * @param null $language
      * @return Collection
+     * @throws ApiCallFailedException
+     * @throws GuzzleException
      */
-    public function appDetails($appIds, $country = null, $language = null)
+    public function appDetails($appIds, $country = null, $language = null): Collection
     {
         // Set up the api details
         $this->method  = 'appdetails';
@@ -44,6 +50,10 @@ class App extends Client
         return $this->convertToObjects($client);
     }
 
+    /**
+     * @throws ApiCallFailedException
+     * @throws GuzzleException
+     */
     public function GetAppList()
     {
         // Set up the api details
@@ -58,13 +68,11 @@ class App extends Client
         return $client->applist->apps->app;
     }
 
-    protected function convertToObjects($apps)
+    protected function convertToObjects($apps): Collection
     {
         $convertedApps = $this->convertGames($apps);
 
-        $apps = $this->sortObjects($convertedApps);
-
-        return $apps;
+        return $this->sortObjects($convertedApps);
     }
 
     /**
@@ -72,7 +80,7 @@ class App extends Client
      *
      * @return Collection
      */
-    protected function convertGames($apps)
+    protected function convertGames($apps): Collection
     {
         $convertedApps = new Collection();
 

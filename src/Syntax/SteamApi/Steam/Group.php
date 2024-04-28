@@ -7,7 +7,7 @@ use Syntax\SteamApi\Containers\Group as GroupContainer;
 
 class Group extends Client
 {
-    public function GetGroupSummary($group)
+    public function GetGroupSummary($group): GroupContainer
     {
         // Set up the api details
         $this->method = 'memberslistxml';
@@ -29,8 +29,6 @@ class Group extends Client
         $client = $this->setUpXml($arguments);
 
         // Clean up the games
-        $group = new GroupContainer($client);
-
-        return $group;
+        return new GroupContainer($client);
     }
 }

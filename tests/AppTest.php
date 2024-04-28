@@ -24,18 +24,18 @@ class AppTest extends BaseTester {
         $apps = $this->steamClient->app()->GetAppList();
 
         $this->assertGreaterThan(0, $apps);
-        $this->assertObjectHasAttributes(['appid', 'name'], $apps[0]);
+        $this->assertObjectHasProperties(['appid', 'name'], $apps[0]);
     }
 
     /**
      * @param $detail
      */
-    private function checkClasses($detail)
+    private function checkClasses($detail): void
     {
-        $this->assertInstanceOf('Syntax\SteamApi\Containers\App', $detail);
-        $this->assertInstanceOf('Illuminate\Support\Collection', $detail->developers);
-        $this->assertInstanceOf('Illuminate\Support\Collection', $detail->publishers);
-        $this->assertInstanceOf('Illuminate\Support\Collection', $detail->categories);
-        $this->assertInstanceOf('Illuminate\Support\Collection', $detail->genres);
+        $this->assertInstanceOf(\Syntax\SteamApi\Containers\App::class, $detail);
+        $this->assertInstanceOf(\Illuminate\Support\Collection::class, $detail->developers);
+        $this->assertInstanceOf(\Illuminate\Support\Collection::class, $detail->publishers);
+        $this->assertInstanceOf(\Illuminate\Support\Collection::class, $detail->categories);
+        $this->assertInstanceOf(\Illuminate\Support\Collection::class, $detail->genres);
     }
 }

@@ -3,8 +3,10 @@
 namespace Syntax\SteamApi\Steam\User;
 
 use Exception;
+use GuzzleHttp\Exception\GuzzleException;
 use Syntax\SteamApi\Client;
 use Syntax\SteamApi\Containers\Achievement;
+use Syntax\SteamApi\Exceptions\ApiCallFailedException;
 
 class Stats extends Client
 {
@@ -16,13 +18,15 @@ class Stats extends Client
     }
 
     /**
-     * @deprecated
-     *
      * @param $appId
      *
-     * @return array
+     * @return array|null
+     * @throws GuzzleException
+     * @throws ApiCallFailedException
+     * @deprecated
+     *
      */
-    public function GetPlayerAchievementsAPI($appId)
+    public function GetPlayerAchievementsAPI($appId): ?array
     {
         // Set up the api details
         $this->method  = 'GetPlayerAchievementsAPI';
@@ -47,10 +51,10 @@ class Stats extends Client
         $stats  = $stats->game->availableGameStats->achievements;
 
         // Clean up the games
-        return $this->convertToObjects($client->achievements, $stats);
+        return $this->convertToObjects($client->achievements);
     }
 
-    public function GetPlayerAchievements($appId)
+    public function GetPlayerAchievements($appId): ?array
     {
         // Set up the api details
         $this->interface = null;
@@ -75,7 +79,7 @@ class Stats extends Client
 
             // Clean up the games
             return $this->convertToObjects($client->achievements->achievement);
-        } catch (Exception $e) {
+        } catch (Exception) {
             // In rare cases, games can force the use of a simplified name instead of an app ID
             // In these cases, try again by grabbing the redirected url.
             if (is_int($appId)) {
@@ -87,7 +91,7 @@ class Stats extends Client
 
                     // Clean up the games
                     return $this->convertToObjects($client->achievements->achievement);
-                } catch (Exception $exception) {
+                } catch (Exception) {
                     return null;
                 }
             }
@@ -97,6 +101,10 @@ class Stats extends Client
         }
     }
 
+    /**
+     * @throws ApiCallFailedException
+     * @throws GuzzleException
+     */
     public function GetGlobalAchievementPercentagesForApp($gameId)
     {
         // Set up the api details
@@ -120,8 +128,10 @@ class Stats extends Client
      * @param $all   bool Return all stats when true and only achievements when false
      *
      * @return mixed
+     * @throws ApiCallFailedException
+     * @throws GuzzleException
      */
-    public function GetUserStatsForGame($appId, $all = false)
+    public function GetUserStatsForGame(int $appId, bool $all = false): mixed
     {
         // Set up the api details
         $this->method  = __FUNCTION__;
@@ -148,11 +158,13 @@ class Stats extends Client
     /**
      * @param $appId
      *
+     * @return mixed
+     * @throws ApiCallFailedException
+     * @throws GuzzleException
      * @link https://wiki.teamfortress.com/wiki/WebAPI/GetSchemaForGame
      *
-     * @return mixed
      */
-    public function GetSchemaForGame($appId)
+    public function GetSchemaForGame($appId): mixed
     {
         // Set up the api details
         $this->method  = __FUNCTION__;
@@ -168,7 +180,7 @@ class Stats extends Client
         return $this->setUpClient($arguments);
     }
 
-    protected function convertToObjects($achievements)
+    protected function convertToObjects($achievements): array
     {
         $cleanedAchievements = [];
 

@@ -14,6 +14,8 @@ use GuzzleHttp\Exception\ServerException;
 use Syntax\SteamApi\Exceptions\ApiArgumentRequired;
 use Syntax\SteamApi\Exceptions\ApiCallFailedException;
 use Syntax\SteamApi\Exceptions\ClassNotFoundException;
+use Syntax\SteamApi\Exceptions\InvalidApiKeyException;
+use Syntax\SteamApi\Exceptions\UnrecognizedId;
 use Syntax\SteamApi\Steam\App;
 use Syntax\SteamApi\Steam\Group;
 use Syntax\SteamApi\Steam\Item;
@@ -31,32 +33,35 @@ use Syntax\SteamApi\Steam\User\Stats;
  * @method App        app()
  * @method Package    package()
  * @method Group      group()
- * @method Item       item($appId)
+ * @method Item       item()
  */
 class Client
 {
     use SteamId;
 
-    public $validFormats = ['json', 'xml', 'vdf'];
+    public array $validFormats = ['json', 'xml', 'vdf'];
 
-    protected $url = 'http://api.steampowered.com/';
+    protected string $url = 'http://api.steampowered.com/';
 
-    protected $client;
+    protected GuzzleClient $client;
 
-    protected $interface;
+    protected ?string $interface;
 
-    protected $method;
+    protected string $method;
 
-    protected $version = 'v0002';
+    protected ?string $version = 'v0002';
 
-    protected $apiKey;
+    protected string $apiKey;
 
-    protected $apiFormat = 'json';
+    protected string $apiFormat = 'json';
 
     protected $steamId;
 
-    protected $isService = false;
+    protected bool $isService = false;
 
+    /**
+     * @throws InvalidApiKeyException
+     */
     public function __construct()
     {
         $apiKey = $this->getApiKey();
@@ -68,7 +73,7 @@ class Client
         $this->setUpFormatted();
     }
 
-    public function get()
+    public function get(): static
     {
         return $this;
     }
@@ -79,15 +84,15 @@ class Client
     }
 
     /**
-     * @param string $arguments
+     * @param null $arguments
      *
-     * @return string
+     * @return stdClass
      *
      * @throws ApiArgumentRequired
      * @throws ApiCallFailedException
      * @throws GuzzleException
      */
-    protected function setUpService($arguments = null)
+    protected function setUpService($arguments = null): stdClass
     {
         // Services have a different url syntax
         if ($arguments == null) {
@@ -113,6 +118,10 @@ class Client
         return $response->body;
     }
 
+    /**
+     * @throws GuzzleException
+     * @throws ApiCallFailedException
+     */
     protected function setUpClient(array $arguments = [])
     {
         $versionFlag = ! is_null($this->version);
@@ -145,7 +154,7 @@ class Client
         return $response->body;
     }
 
-    protected function setUpXml(array $arguments = [])
+    protected function setUpXml(array $arguments = []): \SimpleXMLElement|null
     {
         $steamUrl = $this->buildUrl();
 
@@ -163,7 +172,7 @@ class Client
         return $result;
     }
 
-    public function getRedirectUrl()
+    public function getRedirectUrl(): void
     {
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, $this->url);
@@ -177,13 +186,13 @@ class Client
     }
 
     /**
-     * @param Request $request
      *
+     * @param Request $request
      * @return stdClass
      * @throws ApiCallFailedException
      * @throws GuzzleException
      */
-    protected function sendRequest(Request $request)
+    protected function sendRequest(Request $request): stdClass
     {
         // Try to get the result.  Handle the possible exceptions that can arise
         try {
@@ -191,7 +200,7 @@ class Client
 
             $result       = new stdClass();
             $result->code = $response->getStatusCode();
-            $result->body = json_decode($response->getBody(true));
+            $result->body = json_decode((string) $response->getBody(), null, 512, JSON_THROW_ON_ERROR);
         } catch (ClientException $e) {
             throw new ApiCallFailedException($e->getMessage(), $e->getResponse()->getStatusCode(), $e);
         } catch (ServerException $e) {
@@ -205,14 +214,18 @@ class Client
             throw new ApiCallFailedException('API call failed due to empty response', $result->code);
         }
 
+        if (empty((array)$result->body)) {
+            throw new ApiCallFailedException('Api call failed to complete due to an empty response.', $result->code);
+        }
+
         // If all worked out, return the result
         return $result;
     }
 
-    private function buildUrl($version = false)
+    private function buildUrl($version = false): string
     {
         // Set up the basic url
-        $url = $this->url . $this->interface . '/' . $this->method . '/';
+        $url = $this->url . ($this->interface ?? '') . '/' . $this->method . '/';
 
         // If we have a version, add it
         if ($version) {
@@ -222,6 +235,10 @@ class Client
         return $url;
     }
 
+    /**
+     * @throws ClassNotFoundException
+     * @throws UnrecognizedId
+     */
     public function __call($name, $arguments)
     {
         // Handle a steamId being passed
@@ -232,7 +249,7 @@ class Client
         }
 
         // Inside the root steam directory
-        $class      = ucfirst($name);
+        $class      = ucfirst((string) $name);
         $steamClass = '\Syntax\SteamApi\Steam\\' . $class;
 
         if (class_exists($steamClass)) {
@@ -256,53 +273,87 @@ class Client
      *
      * @return Collection
      */
-    protected function sortObjects($objects)
+    protected function sortObjects(Collection $objects): Collection
     {
-        return $objects->sortBy(function ($object) {
-            return $object->name;
-        });
+        return $objects->sortBy(fn($object) => $object->name);
     }
 
     /**
      * @param string $method
      * @param string $version
      */
-    protected function setApiDetails($method, $version)
+    protected function setApiDetails(string $method, string $version): void
     {
         $this->method  = $method;
         $this->version = $version;
     }
 
+    /**
+     * @throws ApiArgumentRequired
+     * @throws ApiCallFailedException
+     * @throws GuzzleException
+     * @throws \JsonException
+     */
     protected function getServiceResponse($arguments)
     {
-        $arguments = json_encode($arguments);
+        $arguments = json_encode($arguments, JSON_THROW_ON_ERROR);
 
         // Get the client
-        return $this->setUpService($arguments)->response;
+        $body = $this->setUpService($arguments);
+
+        if (!isset($body->response) || empty((array)$body->response)) {
+            throw new ApiCallFailedException('Api call failed to complete due to an empty response.', 500);
+        }
+
+        return $body->response;
+    }
+
+    /**
+     * @throws ApiCallFailedException
+     * @throws GuzzleException
+     */
+    protected function getClientResponse($arguments)
+    {
+        // Get the client
+        $body = $this->setUpClient($arguments);
+
+        if (!isset($body->response) || empty((array)$body->response)) {
+            throw new ApiCallFailedException('Api call failed to complete due to an empty response.', 500);
+        }
+
+        return $body->response;
     }
 
     /**
      * @return string
      * @throws Exceptions\InvalidApiKeyException
      */
-    protected function getApiKey()
+    protected function getApiKey(): string
     {
         $apiKey = Config::get('steam-api.steamApiKey');
 
         if ($apiKey == 'YOUR-API-KEY') {
             throw new Exceptions\InvalidApiKeyException();
         }
-        if (is_null($apiKey) || $apiKey == '' || $apiKey == []) {
+
+        if (is_null($apiKey) || $apiKey === '' || $apiKey == []) {
             $apiKey = getenv('apiKey');
         }
 
         return $apiKey;
     }
 
-    private function convertSteamIdTo64()
+    /**
+     * @throws UnrecognizedId
+     */
+    private function convertSteamIdTo64(): void
     {
         if (is_array($this->steamId)) {
-            array_walk($this->steamId, function (&$id) {
+            array_walk(
+                /**
+                 * @throws UnrecognizedId
+                 */
+                $this->steamId, function (&$id) {
                 // Convert the id to all types and grab the 64 bit version
                 $id = $this->convertToAll($id)->id64;
             });

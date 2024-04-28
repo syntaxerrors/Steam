@@ -94,9 +94,12 @@ class Player extends BaseContainer
         }
     }
 
-    protected function getLocation()
+    /**
+     * @throws \JsonException
+     */
+    protected function getLocation(): \stdClass
     {
-        $countriesFile = json_decode(\file_get_contents(__DIR__ . '/../Resources/countries.json'));
+        $countriesFile = json_decode(\file_get_contents(__DIR__ . '/../Resources/countries.json'), null, 512, JSON_THROW_ON_ERROR);
         $result        = new \stdClass;
 
         if ($this->locCountryCode != null && isset($countriesFile->{$this->locCountryCode})) {
@@ -116,34 +119,17 @@ class Player extends BaseContainer
         return $result;
     }
 
-    protected function convertPersonaState($personaState)
+    protected function convertPersonaState(int $personaState): string
     {
-        switch ($personaState) {
-            case 0:
-                $state = '<span class="text-error">Offline</span>';
-                break;
-            case 1:
-                $state = '<span class="text-success">Online</span>';
-                break;
-            case 2:
-                $state = '<span class="text-warning">Busy</span>';
-                break;
-            case 3:
-                $state = '<span class="text-warning">Away</span>';
-                break;
-            case 4:
-                $state = '<span class="text-warning">Snooze</span>';
-                break;
-            case 5:
-                $state = 'Looking to Trade';
-                break;
-            case 6:
-                $state = 'Looking to Play';
-                break;
-            default:
-                $state = 'Unknown';
-        }
-
-        return $state;
+        return match ($personaState) {
+            0 => '<span class="text-error">Offline</span>',
+            1 => '<span class="text-success">Online</span>',
+            2 => '<span class="text-warning">Busy</span>',
+            3 => '<span class="text-warning">Away</span>',
+            4 => '<span class="text-warning">Snooze</span>',
+            5 => 'Looking to Trade',
+            6 => 'Looking to Play',
+            default => 'Unknown',
+        };
     }
 }
