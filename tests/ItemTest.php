@@ -2,10 +2,12 @@
 
 require_once('BaseTester.php');
 
+use PHPUnit\Framework\Attributes\Test;
+
 /** @group Item */
 class ItemTest extends BaseTester
 {
-    /** @test */
+    #[Test]
     public function it_gets_items_for_an_app_by_user_id()
     {
         $inventory = $this->steamClient->item()->GetPlayerItems($this->appId, 76561198022436617);

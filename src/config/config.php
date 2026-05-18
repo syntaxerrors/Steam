@@ -15,6 +15,6 @@ return [
     |
     */
 
-    'steamApiKey' => env('STEAM_API_KEY'),
+    'api_key' => env('STEAM_API_KEY'),
 
 ];

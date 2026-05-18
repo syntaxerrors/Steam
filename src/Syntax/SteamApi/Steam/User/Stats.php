@@ -109,7 +109,7 @@ class Stats extends Client
     {
         // Set up the api details
         $this->method  = __FUNCTION__;
-        $this->version = 'v0002';
+        $this->version = 'v2';
 
         // Set up the arguments
         $arguments = [
@@ -135,7 +135,7 @@ class Stats extends Client
     {
         // Set up the api details
         $this->method  = __FUNCTION__;
-        $this->version = 'v0002';
+        $this->version = 'v2';
 
         // Set up the arguments
         $arguments = [
@@ -168,7 +168,7 @@ class Stats extends Client
     {
         // Set up the api details
         $this->method  = __FUNCTION__;
-        $this->version = 'v0002';
+        $this->version = 'v2';
 
         // Set up the arguments
         $arguments = [

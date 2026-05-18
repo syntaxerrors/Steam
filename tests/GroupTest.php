@@ -2,10 +2,12 @@
 
 require_once('BaseTester.php');
 
+use PHPUnit\Framework\Attributes\Test;
+
 /** @group Group */
 class GroupTest extends BaseTester {
 
-    /** @test */
+    #[Test]
     public function it_gets_a_summary_of_a_group_by_id()
     {
         $group = $this->steamClient->group()->GetGroupSummary($this->groupId);
@@ -14,7 +16,7 @@ class GroupTest extends BaseTester {
         $this->checkClasses($group);
     }
 
-    /** @test */
+    #[Test]
     public function it_gets_a_summary_of_a_group_by_name()
     {
         $group = $this->steamClient->group()->GetGroupSummary($this->groupName);
@@ -23,9 +25,6 @@ class GroupTest extends BaseTester {
         $this->checkClasses($group);
     }
 
-    /**
-     * @param $group
-     */
     protected function checkClasses($group): void
     {
         $this->assertInstanceOf(\Syntax\SteamApi\Containers\Group::class, $group);

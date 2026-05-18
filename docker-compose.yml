@@ -1,5 +1,5 @@
 services:
   php:
-    build: ./docker/php/${PHP_VERSION:-8.1}
+    build: ./docker/php/${PHP_VERSION:-8.3}
     volumes:
       - $PWD:/srv/app:delegated
