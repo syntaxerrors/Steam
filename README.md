@@ -23,7 +23,7 @@ This package provides an easy way to get details from the Steam API service.  Th
 - `IPlayerService`
 - `ISteamUser`
 - `ISteamUserStats`
-- `ISteamApp`
+- `IStoreService`
 
 ## Installation
 
