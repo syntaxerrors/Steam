@@ -3,6 +3,7 @@
 use Orchestra\Testbench\TestCase;
 use Syntax\SteamApi\Client;
 use Dotenv\Dotenv;
+use PHPUnit\Framework\Attributes\Test;
 
 class BaseTester extends TestCase {
 
@@ -41,7 +42,7 @@ class BaseTester extends TestCase {
         $this->steamClient = new Client();
     }
 
-    /** @test */
+    #[Test]
     public function empty_test()
     {
         $this->assertTrue(true);
@@ -115,18 +116,12 @@ class BaseTester extends TestCase {
         $this->checkGroupMemberProperties($group);
     }
 
-    /**
-     * @param $item
-     */
     protected function checkItemProperties($item): void
     {
         $attributes = ['id', 'originalId', 'level', 'quality', 'quantity'];
         $this->assertObjectHasProperties($attributes, $item);
     }
 
-    /**
-     * @param $app
-     */
     private function checkMainAppProperties($app): void
     {
         $attributes = [
@@ -135,9 +130,6 @@ class BaseTester extends TestCase {
         $this->assertObjectHasProperties($attributes, $app);
     }
 
-    /**
-     * @param $app
-     */
     private function checkGeneralAppProperties($app): void
     {
         $attributes = [
@@ -146,9 +138,6 @@ class BaseTester extends TestCase {
         $this->assertObjectHasProperties($attributes, $app);
     }
 
-    /**
-     * @param $app
-     */
     private function checkNestedAppProperties($app): void
     {
         $this->assertObjectHasProperty('minimum', $app->pcRequirements);
@@ -169,9 +158,6 @@ class BaseTester extends TestCase {
         $this->assertObjectHasProperties($attributes, $app->achievements);
     }
 
-    /**
-     * @param $package
-     */
     private function checkNestedPackageProperties($package): void
     {
         $attributes = ['currency', 'initial', 'final', 'discount_percent', 'individual'];
@@ -181,9 +167,6 @@ class BaseTester extends TestCase {
         $this->assertObjectHasProperties($attributes, $package->platforms);
     }
 
-    /**
-     * @param $group
-     */
     private function checkGroupMainSummaryProperties($group): void
     {
         $this->assertObjectHasProperty('groupID64', $group);
@@ -193,9 +176,6 @@ class BaseTester extends TestCase {
         $this->assertObjectHasProperty('members', $group);
     }
 
-    /**
-     * @param $group
-     */
     private function checkGroupDetailProperties($group): void
     {
         $this->assertObjectHasProperty('name', $group->groupDetails);
@@ -210,9 +190,6 @@ class BaseTester extends TestCase {
         $this->assertObjectHasProperty('avatarFullUrl', $group->groupDetails);
     }
 
-    /**
-     * @param $group
-     */
     private function checkGroupMemberDetailsProperties($group): void
     {
         $this->assertObjectHasProperty('count', $group->memberDetails);
@@ -221,9 +198,6 @@ class BaseTester extends TestCase {
         $this->assertObjectHasProperty('online', $group->memberDetails);
     }
 
-    /**
-     * @param $group
-     */
     private function checkGroupMemberProperties($group): void
     {
         $startingMember = $group->members->get($group->startingMember);

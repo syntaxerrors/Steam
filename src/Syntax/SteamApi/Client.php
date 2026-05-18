@@ -49,7 +49,7 @@ class Client
 
     protected string $method;
 
-    protected ?string $version = 'v0002';
+    protected ?string $version = 'v2';
 
     protected string $apiKey;
 
@@ -330,14 +330,10 @@ class Client
      */
     protected function getApiKey(): string
     {
-        $apiKey = Config::get('steam-api.steamApiKey');
+        $apiKey = Config::get('steam-api.api_key') ?: getenv('STEAM_API_KEY');
 
-        if ($apiKey == 'YOUR-API-KEY') {
+        if ($apiKey == 'YOUR-API-KEY' || is_null($apiKey) || $apiKey === '' || $apiKey == []) {
             throw new Exceptions\InvalidApiKeyException();
-        }
-
-        if (is_null($apiKey) || $apiKey === '' || $apiKey == []) {
-            $apiKey = getenv('apiKey');
         }
 
         return $apiKey;

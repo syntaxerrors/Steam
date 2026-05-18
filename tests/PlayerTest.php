@@ -2,10 +2,12 @@
 
 require_once('BaseTester.php');
 
+use PHPUnit\Framework\Attributes\Test;
+
 /** @group Player */
 class PlayerTest extends BaseTester {
 
-    /** @test */
+    #[Test]
     public function it_gets_the_steam_level_by_user_id()
     {
         $steamLevel = $this->steamClient->player($this->id64)->GetSteamLevel();
@@ -13,7 +15,7 @@ class PlayerTest extends BaseTester {
         $this->assertIsInt($steamLevel);
     }
 
-    /** @test */
+    #[Test]
     public function it_gets_the_player_details_by_user_id()
     {
         $details = $this->steamClient->player($this->id64)->GetPlayerLevelDetails();
@@ -27,7 +29,7 @@ class PlayerTest extends BaseTester {
         $this->assertObjectHasProperties($attributes, $details);
     }
 
-    /** @test */
+    #[Test]
     public function it_gets_the_badges_by_user_id()
     {
         $badges = $this->steamClient->player($this->id64)->GetBadges();
@@ -39,7 +41,7 @@ class PlayerTest extends BaseTester {
         $this->assertObjectHasProperties($attributes, $badges->badges[0]);
     }
 
-    /** @test */
+    #[Test]
     public function it_gets_the_badge_progress_by_user_id()
     {
         $this->expectApiCallFailedException('Api call failed to complete due to an empty response');
@@ -52,7 +54,7 @@ class PlayerTest extends BaseTester {
         $this->assertObjectHasProperties($attributes, $progress->quests[0]);
     }
 
-    /** @test */
+    #[Test]
     public function it_gets_the_owned_games_by_user_id()
     {
         $games = $this->steamClient->player($this->id64)->GetOwnedGames();
@@ -67,7 +69,7 @@ class PlayerTest extends BaseTester {
         $this->assertObjectHasProperties($attributes, $games->first());
     }
 
-    /** @test */
+    #[Test]
     public function it_gets_the_owned_games_by_user_id_without_app_details()
     {
         $games = $this->steamClient->player($this->id64)->GetOwnedGames(false);
@@ -86,7 +88,7 @@ class PlayerTest extends BaseTester {
         $this->assertNull($games->first()->logo);
     }
 
-    /** @test */
+    #[Test]
     public function it_filters_the_owned_games_by_user_id()
     {
         $games = $this->steamClient->player($this->id64)->GetOwnedGames(true, false, 400);
@@ -102,7 +104,7 @@ class PlayerTest extends BaseTester {
         $this->assertObjectHasProperties($attributes, $games->first());
     }
 
-    /** @test */
+    #[Test]
     public function it_gets_recently_played_games_by_user_id()
     {
         $games = $this->steamClient->player($this->id64)->GetRecentlyPlayedGames();
@@ -117,7 +119,7 @@ class PlayerTest extends BaseTester {
         $this->assertObjectHasProperties($attributes, $games->first());
     }
 
-    /** @test */
+    #[Test]
     public function it_gets_a_single_recently_played_game_by_user_id()
     {
         $games = $this->steamClient->player($this->id64)->GetRecentlyPlayedGames(1);
@@ -133,7 +135,7 @@ class PlayerTest extends BaseTester {
         $this->assertObjectHasProperties($attributes, $games->first());
     }
 
-    /** @test */
+    #[Test]
     public function it_checks_if_playing_a_shared_game_by_user_and_app_id()
     {
         $this->expectEmptyResponseException();

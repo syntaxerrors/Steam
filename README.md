@@ -417,11 +417,11 @@ docker-compose build
 # Install dependancies
 docker-compose run --rm php composer install
 
-# Run tests (assumes apiKey is set in .env file)
+# Run tests (assumes STEAM_API_KEY is set in .env file)
 docker-compose run --rm php composer test
 
-# Or with the apiKey inline
-docker-compose run --rm -e api=YOUR_STEAM_API_KEY php composer test
+# Or with the STEAM_API_KEY inline
+docker-compose run --rm -e STEAM_API_KEY=YOUR_STEAM_API_KEY php composer test
 
 # With coverage
 docker-compose run --rm php composer coverage
@@ -441,3 +441,4 @@ docker-compose run --rm php bash
 - [jastend](https://github.com/jastend)
 - [Teakowa](https://github.com/Teakowa)
 - [Ben Sherred](https://github.com/bensherred)
+- [ConrDev](https://github.com/conrdev)

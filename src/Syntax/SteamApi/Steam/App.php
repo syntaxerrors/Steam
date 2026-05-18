@@ -58,14 +58,14 @@ class App extends Client
     {
         // Set up the api details
         $this->url       = 'http://api.steampowered.com/';
-        $this->interface = 'ISteamApps';
+        $this->interface = 'IStoreService';
         $this->method    = __FUNCTION__;
-        $this->version   = 'v0001';
+        $this->version   = 'v1';
 
         // Get the client
         $client = $this->setUpClient();
 
-        return $client->applist->apps->app;
+        return $client->response->apps;
     }
 
     protected function convertToObjects($apps): Collection
